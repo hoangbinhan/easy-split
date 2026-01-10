@@ -7,9 +7,8 @@ import { Header, Footer } from "@/components/layout-components";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TikTok Tool Pro - Advanced Image & Video Tools",
-  description:
-    "Free professional tools for TikTok creators. Split images, edit videos, and more.",
+  title: "TikTok Tool Pro",
+  description: "Free professional tools for TikTok creators.",
   applicationName: "TikTok Tool Pro",
   appleWebApp: {
     capable: true,
@@ -26,7 +25,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#6366f1",
+  themeColor: "#FACC15",
 };
 
 export default function RootLayout({
@@ -37,11 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased`}
+        className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}
       >
         <LanguageProvider>
           <Header />
-          <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full max-w-7xl">
+          <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-7xl">
             {children}
           </main>
           <Footer />

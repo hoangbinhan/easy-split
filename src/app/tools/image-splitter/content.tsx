@@ -8,48 +8,73 @@ export default function ImageSplitterContent() {
   const { t } = useLanguage();
 
   return (
-    <div className="space-y-16">
-      <section className="text-center space-y-4 pt-4 sm:pt-8">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+    <div className="space-y-20">
+      <section className="text-center space-y-6 pt-8 sm:pt-12">
+        <div className="inline-block bg-yellow-400 border-4 border-black px-6 py-2 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg] mb-6">
+          <span className="font-black text-lg sm:text-xl uppercase tracking-widest text-black">
+            New Tool
+          </span>
+        </div>
+        <h1 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter leading-none stroke-black layer-text">
           {t.title}
         </h1>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t.subtitle}</p>
+        <p className="text-xl sm:text-2xl font-bold text-slate-700 max-w-3xl mx-auto bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          {t.subtitle}
+        </p>
       </section>
 
       <ImageSplitterClient />
 
-      <article className="prose prose-slate lg:prose-lg mx-auto bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-slate-100">
-        <h2 className="text-2xl font-bold text-slate-900">{t.article_title}</h2>
-        <p>{t.article_intro}</p>
+      <div className="max-w-4xl mx-auto">
+        <article className="bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] mb-12">
+          <h2 className="text-3xl font-black text-black uppercase mb-6 border-b-4 border-black pb-4 inline-block transform -rotate-1">
+            {t.article_title}
+          </h2>
+          <div className="prose prose-lg prose-slate prose-headings:font-black prose-headings:uppercase prose-strong:bg-yellow-200 prose-strong:px-1 prose-strong:border border-black max-w-none text-black">
+            <p className="font-medium text-lg border-l-4 border-black pl-4 bg-gray-50 py-2">
+              {t.article_intro}
+            </p>
 
-        <h3 className="text-xl font-semibold text-slate-800 mt-6">
-          {t.article_why_title}
-        </h3>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>
-            <strong>{t.article_why_1.split(":")[0]}:</strong>{" "}
-            {t.article_why_1.split(":")[1]}
-          </li>
-          <li>
-            <strong>{t.article_why_2.split(":")[0]}:</strong>{" "}
-            {t.article_why_2.split(":")[1]}
-          </li>
-          <li>
-            <strong>{t.article_why_3.split(":")[0]}:</strong>{" "}
-            {t.article_why_3.split(":")[1]}
-          </li>
-        </ul>
+            <h3 className="text-2xl mt-8 bg-black text-white px-4 py-2 inline-block transform rotate-1">
+              {t.article_why_title}
+            </h3>
+            <ul className="list-none pl-0 space-y-4 mt-6">
+              {[t.article_why_1, t.article_why_2, t.article_why_3].map(
+                (item, i) => (
+                  <li key={i} className="flex gap-4 items-start">
+                    <span className="flex-shrink-0 w-8 h-8 bg-cyan-400 border-2 border-black flex items-center justify-center font-bold text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                      {i + 1}
+                    </span>
+                    <span className="font-medium text-lg leading-relaxed">
+                      <strong>{item.split(":")[0]}:</strong>{" "}
+                      {item.split(":")[1]}
+                    </span>
+                  </li>
+                )
+              )}
+            </ul>
 
-        <h3 className="text-xl font-semibold text-slate-800 mt-6">
-          {t.how_to_title}
-        </h3>
-        <ol className="list-decimal pl-5 space-y-2">
-          <li>{t.how_to_1}</li>
-          <li>{t.how_to_2}</li>
-          <li>{t.how_to_3}</li>
-          <li>{t.how_to_4}</li>
-        </ol>
-      </article>
+            <h3 className="text-2xl mt-12 bg-pink-400 text-black border-2 border-black px-4 py-2 inline-block transform -rotate-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              {t.how_to_title}
+            </h3>
+            <ol className="list-none pl-0 space-y-4 mt-6">
+              {[t.how_to_1, t.how_to_2, t.how_to_3, t.how_to_4].map(
+                (step, i) => (
+                  <li
+                    key={i}
+                    className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform"
+                  >
+                    <div className="font-black text-2xl text-slate-300">
+                      0{i + 1}
+                    </div>
+                    <div className="font-bold text-lg">{step}</div>
+                  </li>
+                )
+              )}
+            </ol>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }
