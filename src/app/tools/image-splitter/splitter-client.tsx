@@ -1,16 +1,12 @@
 "use client";
 
 import React, { useState, useRef, useCallback } from "react";
-import {
-  Upload,
-  Download,
-  Image as ImageIcon,
-  CheckCircle,
-  XCircle,
-} from "lucide-react";
+import { Upload, Download, CheckCircle } from "lucide-react";
 import JSZip from "jszip";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function ImageSplitterClient() {
+  const { t } = useLanguage();
   const [image, setImage] = useState<string | null>(null);
   const [segments, setSegments] = useState<string[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -47,7 +43,6 @@ export default function ImageSplitterClient() {
       const sourceX = startX + i * segmentWidth;
 
       // Draw the slice
-      // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
       ctx.drawImage(
         img,
         sourceX,
@@ -146,11 +141,10 @@ export default function ImageSplitterClient() {
           </div>
           <div className="space-y-2">
             <h3 className="text-xl font-semibold text-slate-800">
-              {image ? "Change Image" : "Click or Drag Image Here"}
+              {image ? t.upload_title : t.upload_placeholder}
             </h3>
             <p className="text-sm text-slate-500 max-w-xs mx-auto">
-              Supports JPG, PNG. Recommended 16:9 format (e.g., YouTube
-              Thumbnails)
+              {t.upload_desc}
             </p>
           </div>
         </div>
@@ -162,14 +156,14 @@ export default function ImageSplitterClient() {
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-green-500" />
-              Ready to Download
+              {t.ready_msg}
             </h3>
             <button
               onClick={handleDownloadAll}
               className="hidden sm:flex bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium text-sm items-center gap-2 transition-colors shadow-lg shadow-indigo-100"
             >
               <Download className="w-4 h-4" />
-              Download All (ZIP)
+              {t.download_all}
             </button>
           </div>
 
@@ -189,7 +183,7 @@ export default function ImageSplitterClient() {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                     <div className="absolute top-2 left-2 bg-black/50 backdrop-blur-md text-white/90 text-xs px-2 py-1 rounded-md font-mono">
-                      Part {i + 1}
+                      {t.part} {i + 1}
                     </div>
                   </div>
                   <button
@@ -197,7 +191,7 @@ export default function ImageSplitterClient() {
                     className="w-full bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors"
                   >
                     <Download className="w-4 h-4" />
-                    Save Image
+                    {t.download_part}
                   </button>
                 </div>
               ))}
@@ -210,7 +204,7 @@ export default function ImageSplitterClient() {
             className="w-full sm:hidden bg-indigo-600 active:bg-indigo-700 text-white px-4 py-3.5 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 shadow-xl shadow-indigo-200"
           >
             <Download className="w-5 h-5" />
-            Download ZIP
+            {t.download_zip_mobile}
           </button>
         </div>
       )}
