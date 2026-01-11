@@ -7,13 +7,27 @@ import { Header, Footer } from "@/components/layout-components";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Easy Split - Free Image Splitter Tool",
-  description: "Free professional tools for TikTok creators.",
-  applicationName: "TikTok Tool Pro",
+  title: "Easy Split - Split Photos for TikTok & Instagram",
+  description:
+    "Free tool to split photos into seamless carousel slides for TikTok and Instagram. No watermark, no upload needed.",
+  applicationName: "Easy Split",
+  manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
-    title: "TikTok Tool Pro",
+    title: "Easy Split",
     statusBarStyle: "default",
+  },
+  openGraph: {
+    title: "Easy Split - Free Image Splitter",
+    description: "Split photos into seamless grids/slides instantly.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Easy Split",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Easy Split",
+    description: "Create seamless photo slides for TikTok/IG.",
   },
   formatDetection: {
     telephone: false,

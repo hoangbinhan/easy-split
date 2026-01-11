@@ -5,6 +5,13 @@ import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
 import { ChevronDown } from "lucide-react";
 
+import { Bangers } from "next/font/google";
+
+const bangers = Bangers({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export function Header() {
   const { language, setLanguage, t, isLoaded } = useLanguage();
 
@@ -37,7 +44,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 font-black text-2xl uppercase tracking-tighter hover:-rotate-2 transition-transform group"
+          className={`flex items-center gap-2 font-black text-2xl uppercase tracking-tighter hover:-rotate-2 transition-transform group ${bangers.className}`}
         >
           <span className="bg-yellow-400 border-4 border-black px-2 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-yellow-300 transition-colors">
             Easy

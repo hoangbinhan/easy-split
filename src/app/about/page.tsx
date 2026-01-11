@@ -6,11 +6,20 @@ export const metadata: Metadata = {
   description: "Learn more about Easy Split and our mission.",
 };
 
+import { Bangers } from "next/font/google";
+
+const bangers = Bangers({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="text-center space-y-4">
-        <h1 className="text-4xl sm:text-6xl font-black uppercase layer-text stroke-black text-white">
+        <h1
+          className={`text-4xl sm:text-6xl font-black uppercase layer-text stroke-black text-white ${bangers.className} tracking-widest`}
+        >
           About Us
         </h1>
         <div className="inline-block bg-cyan-300 border-2 border-black px-4 py-1 font-bold text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
