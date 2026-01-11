@@ -239,7 +239,7 @@ export default function ImageSplitterClient() {
   if (!displayImage) {
     return (
       <div
-        className="w-full max-w-4xl mx-auto h-[600px] flex flex-col items-center justify-center relative bg-white border-4 border-black border-dashed p-10 sm:p-20 text-center transition-all hover:bg-yellow-50 cursor-pointer shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
+        className="w-full max-w-4xl mx-auto h-[50vh] sm:h-[600px] flex flex-col items-center justify-center relative bg-white border-4 border-black border-dashed p-10 sm:p-20 text-center transition-all hover:bg-yellow-50 cursor-pointer shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
         onClick={() => fileInputRef.current?.click()}
@@ -249,9 +249,12 @@ export default function ImageSplitterClient() {
           ref={fileInputRef}
           className="hidden"
           accept="image/png, image/jpeg, image/jpg, image/webp, image/avif, image/bmp"
-          onChange={(e) =>
-            e.target.files && handleFileUpload(e.target.files[0])
-          }
+          onChange={(e) => {
+            if (e.target.files && e.target.files[0]) {
+              handleFileUpload(e.target.files[0]);
+              e.target.value = ""; // Reset value to allow re-selecting same file
+            }
+          }}
         />
         <div className="flex flex-col items-center gap-6">
           <div className="w-24 h-24 bg-pink-400 border-4 border-black flex items-center justify-center rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-bounce">
@@ -277,7 +280,12 @@ export default function ImageSplitterClient() {
         ref={fileInputRef}
         className="hidden"
         accept="image/png, image/jpeg, image/jpg, image/webp, image/avif, image/bmp"
-        onChange={(e) => e.target.files && handleFileUpload(e.target.files[0])}
+        onChange={(e) => {
+          if (e.target.files && e.target.files[0]) {
+            handleFileUpload(e.target.files[0]);
+            e.target.value = ""; // Reset value to allow re-selecting same file
+          }
+        }}
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -516,7 +524,7 @@ export default function ImageSplitterClient() {
         {/* RIGHT: Visual Simulation (Cropper as Viewer) */}
         <div className="lg:col-span-8">
           <div className="bg-slate-100 border-4 border-black p-4 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <div className="relative w-full h-[60vh] sm:h-[600px] overflow-hidden">
+            <div className="relative w-full h-[35vh] sm:h-[600px] overflow-hidden">
               <div className="absolute top-4 left-4 z-20 bg-black text-white px-2 py-1 text-xs font-black uppercase pointer-events-none">
                 {activeTab === "edit" ? "Edit Mode" : "Interactive Preview"}
               </div>
