@@ -2,8 +2,6 @@ import React from "react";
 import { Metadata } from "next";
 import ImageSplitterContent from "./content";
 
-export const runtime = "edge";
-
 export const metadata: Metadata = {
   title: "TikTok Image Splitter | Free Online Grid Maker",
   description:
