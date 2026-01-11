@@ -1,26 +1,68 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-	--background: #ffffff;
-	--foreground: #171717;
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
-@theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Custom Scrollbar Hide */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Layered text effect text-shadow */
+  .layer-text {
+    text-shadow: 4px 4px 0px #000;
+    -webkit-text-stroke: 2px black;
+    color: white;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+/* Cropper JS Overrides for Retro Look - Valid CSS, can stay outside layer or in base */
+.cropper-view-box {
+  outline: 2px solid white !important;
+  outline-color: white !important;
 }
 
-body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+.cropper-line {
+  background-color: transparent !important;
+}
+
+.cropper-dashed {
+  border: 0 !important;
+}
+
+.cropper-point {
+  background-color: #22d3ee !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 1 !important;
+}
+
+.cropper-point.point-n,
+.cropper-point.point-s {
+  margin-left: -5px !important;
+}
+
+.cropper-point.point-ne {
+  cursor: nesw-resize;
+}
+.cropper-point.point-nw {
+  cursor: nwse-resize;
+}
+.cropper-point.point-se {
+  cursor: nwse-resize;
+}
+.cropper-point.point-sw {
+  cursor: nesw-resize;
 }

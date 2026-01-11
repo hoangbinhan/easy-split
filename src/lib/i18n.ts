@@ -4,10 +4,10 @@ export const translations = {
   en: {
     title: "TikTok Slide Splitter",
     subtitle:
-      "Convert your landscape photos into 3 seamless vertical slides for TikTok. Upload once, get three perfectly cropped images.",
+      "Convert your landscape photos into seamless vertical slides for TikTok. Upload once, get perfectly cropped images.",
     upload_title: "Change Image",
     upload_placeholder: "Click or Drag Image Here",
-    upload_desc: "Supports JPG, PNG. Recommended 16:9 format",
+    upload_desc: "Supports JPG, PNG, WEBP, AVIF, BMP. Recommended 16:9 format",
     ready_msg: "Ready to Download",
     download_all: "Download All (ZIP)",
     download_part: "Save Image",
@@ -37,10 +37,10 @@ export const translations = {
   vi: {
     title: "Chia Ảnh Slide TikTok",
     subtitle:
-      "Chuyển đổi ảnh ngang thành 3 tấm ảnh dọc liền mạch cho TikTok. Tải lên một lần, nhận ba ảnh cắt chuẩn.",
+      "Chuyển đổi ảnh ngang thành các tấm ảnh dọc liền mạch cho TikTok. Tải lên một lần, nhận các ảnh cắt chuẩn.",
     upload_title: "Đổi Ảnh Khác",
     upload_placeholder: "Nhấn hoặc Kéo thả Ảnh vào đây",
-    upload_desc: "Hỗ trợ JPG, PNG. Khuyên dùng tỉ lệ 16:9",
+    upload_desc: "Hỗ trợ JPG, PNG, WEBP. Khuyên dùng tỉ lệ 16:9",
     ready_msg: "Đã sẵn sàng tải xuống",
     download_all: "Tải tất cả (ZIP)",
     download_part: "Lưu Ảnh",
@@ -53,13 +53,13 @@ export const translations = {
     article_why_1:
       "Tăng tương tác: Người xem có xu hướng vuốt (swipe) để xem hết nội dung.",
     article_why_2:
-      "Kể chuyện tốt hơn: Bạn có thể chia nhỏ một bức ảnh toàn cảnh thành 3 phần liên tiếp.",
+      "Kể chuyện tốt hơn: Bạn có thể chia nhỏ một bức ảnh toàn cảnh thành nhiều phần liên tiếp.",
     article_why_3:
       "Chất lượng cao: Công cụ xử lý ảnh ngay trên trình duyệt, đảm bảo sắc nét.",
     how_to_title: "Hướng dẫn sử dụng",
     how_to_1: "Tải lên ảnh kích thước 16:9 (hoặc ảnh ngang bất kỳ).",
     how_to_2:
-      "Đợi hệ thống tự động tính toán và chia ảnh thành 3 phần bằng nhau.",
+      "Đợi hệ thống tự động tính toán và chia ảnh thành các phần bằng nhau.",
     how_to_3: "Bấm Download All để tải trọn bộ hoặc tải từng tấm riêng lẻ.",
     how_to_4: "Vào TikTok, chọn chế độ 'Ảnh' và chọn 3 ảnh theo đúng thứ tự.",
     nav_home: "TikTok Tool Pro",
@@ -71,10 +71,10 @@ export const translations = {
   ko: {
     title: "TikTok 슬라이드 분배기",
     subtitle:
-      "가로 사진을 TikTok용 3개의 수직 슬라이드로 변환하세요. 한 번 업로드로 완벽하게 잘린 3개의 이미지를 받으세요.",
+      "가로 사진을 TikTok용 수직 슬라이드로 변환하세요. 한 번 업로드로 완벽하게 잘린 이미지를 받으세요.",
     upload_title: "이미지 변경",
     upload_placeholder: "이미지를 클릭하거나 드래그하세요",
-    upload_desc: "JPG, PNG 지원. 16:9 비율 권장",
+    upload_desc: "JPG, PNG, WEBP 지원. 16:9 비율 권장",
     ready_msg: "다운로드 준비 완료",
     download_all: "모두 다운로드 (ZIP)",
     download_part: "이미지 저장",
@@ -87,14 +87,14 @@ export const translations = {
     article_why_1:
       "참여도 증가: 시청자는 모든 콘텐츠를 보기 위해 넘기는 경향이 있습니다.",
     article_why_2:
-      "더 나은 스토리텔링: 파노라마 사진을 3부분으로 나누어 흥미로운 시각 효과를 만듭니다.",
+      "더 나은 스토리텔링: 파노라마 사진을 여러 부분으로 나누어 흥미로운 시각 효과를 만듭니다.",
     article_why_3: "고품질: 브라우저에서 직접 처리하여 화질 저하가 없습니다.",
     how_to_title: "사용 방법",
     how_to_1: "16:9 이미지(또는 가로 이미지)를 업로드하세요.",
-    how_to_2: "시스템이 3등분할 때까지 기다리세요.",
+    how_to_2: "시스템이 이미지를 분할할 때까지 기다리세요.",
     how_to_3: "모두 다운로드를 클릭하거나 개별 이미지를 저장하세요.",
     how_to_4:
-      "TikTok을 열고 사진 모드를 선택한 후 순서대로 3개의 이미지를 선택하세요.",
+      "TikTok을 열고 사진 모드를 선택한 후 순서대로 이미지를 선택하세요.",
     nav_home: "TikTok Tool Pro",
     nav_splitter: "이미지 스플리터",
     privacy: "개인정보 처리방침",
@@ -104,10 +104,10 @@ export const translations = {
   jp: {
     title: "TikTok スライド分割ツール",
     subtitle:
-      "横長の写真をTikTok用に3枚の縦長スライドに変換します。1回アップロードするだけで、完璧にトリミングされた3枚の画像を取得できます。",
+      "横長の写真をTikTok用に縦長スライドに変換します。1回アップロードするだけで、完璧にトリミングされた画像を取得できます。",
     upload_title: "画像を変更",
     upload_placeholder: "クリックまたは画像をドラッグ",
-    upload_desc: "JPG, PNG対応。16:9形式を推奨",
+    upload_desc: "JPG, PNG, WEBP対応。16:9形式を推奨",
     ready_msg: "ダウンロード準備完了",
     download_all: "すべてダウンロード (ZIP)",
     download_part: "画像を保存",
@@ -120,14 +120,14 @@ export const translations = {
     article_why_1:
       "エンゲージメント向上：視聴者はスワイプしてすべてのコンテンツを見る傾向があります。",
     article_why_2:
-      "ストーリーテリング：パノラマ写真を3つの部分に分割し、面白い視覚効果を作成します。",
+      "ストーリーテリング：パノラマ写真を複数の部分に分割し、面白い視覚効果を作成します。",
     article_why_3: "高品質：ブラウザ上で直接処理するため、画質が劣化しません。",
     how_to_title: "使い方",
     how_to_1: "16:9の画像（または横長の画像）をアップロードします。",
-    how_to_2: "システムが3等分するのを待ちます。",
+    how_to_2: "システムが分割するのを待ちます。",
     how_to_3: "「すべてダウンロード」をクリックするか、個別に保存します。",
     how_to_4:
-      "TikTokを開き、フォトモードを選択して、順序通りに3枚の画像を選択します。",
+      "TikTokを開き、フォトモードを選択して、順序通りに画像を選択します。",
     nav_home: "TikTok Tool Pro",
     nav_splitter: "画像分割ツール",
     privacy: "プライバシーポリシー",

@@ -3,22 +3,39 @@
 import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
-import { Globe, Github, Twitter } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export function Header() {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, isLoaded } = useLanguage();
+
+  // Flag mapping
+  const flags: Record<Language, string> = {
+    en: "🇺🇸",
+    vi: "🇻🇳",
+    ko: "🇰🇷",
+    jp: "🇯🇵",
+  };
+
+  const labels: Record<Language, string> = {
+    en: "EN",
+    vi: "VN",
+    ko: "KR",
+    jp: "JP",
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b-4 border-black">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 font-black text-2xl uppercase tracking-tighter hover:-rotate-2 transition-transform"
+          className="flex items-center gap-2 font-black text-2xl uppercase tracking-tighter hover:-rotate-2 transition-transform group"
         >
-          <span className="bg-yellow-400 border-2 border-black px-2 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <span className="bg-yellow-400 border-4 border-black px-2 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-yellow-300 transition-colors">
             TikTok
           </span>
-          <span className="text-black">Tool Pro</span>
+          <span className="text-black hidden sm:inline group-hover:underline decoration-4 decoration-cyan-400 underline-offset-4">
+            Tool Pro
+          </span>
         </Link>
 
         <div className="flex items-center gap-4 sm:gap-6">
@@ -27,28 +44,33 @@ export function Header() {
               href="/tools/image-splitter"
               className="px-4 py-2 border-2 border-transparent hover:border-black hover:bg-cyan-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
-              {t.nav_splitter}
+              {isLoaded ? t.nav_splitter : "..."}
             </Link>
           </nav>
 
-          {/* Retro Style Language Switcher */}
-          <div className="relative group">
-            <div className="flex items-center gap-2 border-2 border-black bg-white px-3 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer">
-              <Globe className="w-5 h-5 text-black" />
+          {/* Retro Flag Dropdown (Refined) */}
+          {isLoaded && (
+            <div className="relative group z-50">
+              {/* Visual Button */}
+              <div className="flex items-center gap-3 border-4 border-black bg-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer min-w-[110px]">
+                <span className="text-2xl">{flags[language]}</span>
+                <span className="font-black text-lg">{labels[language]}</span>
+                <ChevronDown className="w-5 h-5 ml-auto border-l-4 border-black pl-1" />
+              </div>
+
+              {/* Native Select Overlay for Mobile / Click handling */}
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value as Language)}
-                className="bg-transparent border-none outline-none text-sm font-black text-black appearance-none cursor-pointer uppercase tracking-wider pr-6 focus:ring-0"
-                style={{ fontFamily: "monospace" }}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               >
-                <option value="en">ENG</option>
-                <option value="vi">VIE</option>
-                <option value="ko">KOR</option>
-                <option value="jp">JPN</option>
+                <option value="en">🇺🇸 English (US)</option>
+                <option value="vi">🇻🇳 Tiếng Việt</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="jp">🇯🇵 日本語</option>
               </select>
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none border-t-[8px] border-t-black border-x-[5px] border-x-transparent"></div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </header>
@@ -56,34 +78,33 @@ export function Header() {
 }
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, isLoaded } = useLanguage();
+  if (!isLoaded) return null;
+
   return (
     <footer className="border-t-4 border-black bg-white py-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 gap-8">
-        <div className="flex flex-col items-center md:items-start gap-2">
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <div className="flex items-center gap-2">
+            <span className="w-4 h-4 rounded-full bg-red-500 border-2 border-black"></span>
+            <span className="w-4 h-4 rounded-full bg-yellow-500 border-2 border-black"></span>
+            <span className="w-4 h-4 rounded-full bg-green-500 border-2 border-black"></span>
+          </div>
           <p className="font-bold text-black text-lg">
             © {new Date().getFullYear()} {t.footer_rights}
           </p>
-          <div className="flex gap-4">
-            <div className="w-8 h-8 flex items-center justify-center border-2 border-black bg-pink-400 hover:bg-pink-300 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer transition-all">
-              <Github className="w-5 h-5" />
-            </div>
-            <div className="w-8 h-8 flex items-center justify-center border-2 border-black bg-cyan-400 hover:bg-cyan-300 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer transition-all">
-              <Twitter className="w-5 h-5" />
-            </div>
-          </div>
         </div>
 
         <div className="flex gap-6 text-sm font-black uppercase text-black">
           <Link
             href="/privacy"
-            className="hover:underline decoration-4 underline-offset-4 decoration-yellow-400"
+            className="hover:bg-yellow-300 px-2 transition-colors"
           >
             {t.privacy}
           </Link>
           <Link
             href="/terms"
-            className="hover:underline decoration-4 underline-offset-4 decoration-pink-400"
+            className="hover:bg-pink-300 px-2 transition-colors"
           >
             {t.terms}
           </Link>
