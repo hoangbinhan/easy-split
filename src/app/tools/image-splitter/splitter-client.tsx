@@ -41,6 +41,14 @@ export default function ImageSplitterClient() {
   // Settings State
   const [segmentCount, setSegmentCount] = useState<number>(2);
   const [chunkRatio, setChunkRatio] = useState<number>(0); // Default to 0 (Free mode)
+  const [customHW, setCustomHW] = useState({ w: 3, h: 4 });
+  const [activeTab, setActiveTab] = useState<"edit" | "split">("split");
+  const [isEditCropMode, setIsEditCropMode] = useState(false);
+
+  // Reset Edit Crop Mode when switching tabs
+  useEffect(() => {
+    setIsEditCropMode(false);
+  }, [activeTab]);
 
   // UI State
   const [isProcessing, setIsProcessing] = useState(false);
@@ -88,6 +96,26 @@ export default function ImageSplitterClient() {
       }
     }
   }, [segmentCount, chunkRatio]);
+  useEffect(() => {
+    const cropper = cropperRef.current?.cropper;
+    if (!cropper) return;
+
+    if (activeTab === "edit") {
+      if (isEditCropMode) {
+        cropper.crop(); // Init/Show box
+        cropper.setDragMode("crop");
+      } else {
+        cropper.clear(); // Hide box completely
+        cropper.setDragMode("none"); // No interaction
+      }
+    } else {
+      // Split mode
+      cropper.crop(); // Ensure box is there
+      cropper.setDragMode("none"); // Box exists but locked from creating new one (user drags box edges if allowed, or we lock that too?)
+      // In split mode we want the box to exist to define the area. `dragMode: none` means "can't draw NEW box", but existing box is interactable?
+      // Actually `dragMode: none` usually allows crop box interaction if it exists.
+    }
+  }, [activeTab, isEditCropMode]);
 
   // Update Grid Overlay Position on Crop
   const onCrop = () => {
@@ -164,6 +192,18 @@ export default function ImageSplitterClient() {
     setIsProcessing(false);
   }, [segmentCount]);
 
+  // Apply Crop (Edit Mode)
+  const performCrop = () => {
+    const cropper = cropperRef.current?.cropper;
+    if (!cropper) return;
+    const canvas = cropper.getCroppedCanvas();
+    if (canvas) {
+      setDisplayImage(canvas.toDataURL());
+      // Optionally reset to split mode after crop?
+      // setActiveTab("split");
+    }
+  };
+
   const handleDownload = (dataUrl: string, index: number) => {
     const link = document.createElement("a");
     link.href = dataUrl;
@@ -199,7 +239,7 @@ export default function ImageSplitterClient() {
   if (!displayImage) {
     return (
       <div
-        className="w-full max-w-4xl mx-auto relative bg-white border-4 border-black border-dashed p-10 sm:p-20 text-center transition-all hover:bg-yellow-50 cursor-pointer shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
+        className="w-full max-w-4xl mx-auto h-[600px] flex flex-col items-center justify-center relative bg-white border-4 border-black border-dashed p-10 sm:p-20 text-center transition-all hover:bg-yellow-50 cursor-pointer shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
         onClick={() => fileInputRef.current?.click()}
@@ -243,120 +283,242 @@ export default function ImageSplitterClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* LEFT: Controls */}
         <div className="lg:col-span-4 space-y-6">
-          <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col">
-            <h3 className="font-black uppercase text-xl border-b-4 border-black pb-4 mb-6 flex items-center gap-2">
-              <SlidersVertical className="w-5 h-5" /> Config
-            </h3>
-
-            {/* 1. Segments Slider */}
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-2">
-                <label className="font-bold uppercase text-sm">
-                  Segments (Slides)
-                </label>
-                <span className="bg-black text-white px-2 py-0.5 font-black text-sm">
-                  {segmentCount}
-                </span>
-              </div>
-              <input
-                type="range"
-                min="2"
-                max="10"
-                value={segmentCount}
-                onChange={(e) => {
-                  setSegmentCount(Number(e.target.value));
-                }}
-                className="w-full h-4 bg-slate-200 border-2 border-black rounded-full appearance-none accent-black cursor-pointer hover:bg-slate-300 transition-colors"
-              />
-              <div className="flex justify-between text-xs font-bold text-slate-400 mt-1 px-1">
-                <span>2</span>
-                <span>10</span>
-              </div>
+          <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col transition-all">
+            {/* TABS */}
+            <div className="flex border-b-4 border-black mb-6">
+              <button
+                onClick={() => setActiveTab("edit")}
+                className={`flex-1 py-3 font-black uppercase text-sm flex items-center justify-center gap-2 ${
+                  activeTab === "edit"
+                    ? "bg-yellow-300 text-black"
+                    : "bg-white text-slate-400 hover:bg-slate-50"
+                }`}
+              >
+                <Edit3 className="w-4 h-4" /> Edit
+              </button>
+              <button
+                onClick={() => setActiveTab("split")}
+                className={`flex-1 py-3 font-black uppercase text-sm flex items-center justify-center gap-2 border-l-4 border-black ${
+                  activeTab === "split"
+                    ? "bg-cyan-300 text-black"
+                    : "bg-white text-slate-400 hover:bg-slate-50"
+                }`}
+              >
+                <Grid3X3 className="w-4 h-4" /> Split
+              </button>
             </div>
 
-            {/* 2. Ratio Select */}
-            <div className="mb-8">
-              <label className="font-bold uppercase text-sm mb-3 block">
-                Crop Ratio
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {ASPECT_RATIOS.map((r) => (
+            {/* TAB CONTENT: EDIT */}
+            {activeTab === "edit" && (
+              <div className="space-y-6 animate-in slide-in-from-left-4 fade-in duration-300">
+                <div>
+                  <label className="font-bold uppercase text-sm mb-3 block">
+                    Transform
+                  </label>
+                  <div className="grid grid-cols-2 gap-2 mb-2">
+                    <button
+                      onClick={() => cropperRef.current?.cropper?.rotate(90)}
+                      className="bg-white border-2 border-black p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
+                    >
+                      <RotateCw className="w-5 h-5" /> Rotate
+                    </button>
+                    <button
+                      onClick={() =>
+                        cropperRef.current?.cropper?.scaleX(
+                          -(cropperRef.current?.cropper?.getData().scaleX || 1)
+                        )
+                      }
+                      className="bg-white border-2 border-black p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
+                    >
+                      <FlipHorizontal className="w-5 h-5" /> Flip H
+                    </button>
+                  </div>
                   <button
-                    key={r.label}
-                    onClick={() => setChunkRatio(r.value)}
-                    className={`border-2 border-black p-2 font-bold text-sm uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                      Math.abs(chunkRatio - r.value) < 0.001
-                        ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-[1px] translate-y-[1px]"
-                        : "bg-white hover:bg-slate-50 hover:-translate-y-1"
+                    onClick={() => setIsEditCropMode(!isEditCropMode)}
+                    className={`w-full border-2 border-black p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 cursor-pointer ${
+                      isEditCropMode
+                        ? "bg-black text-white"
+                        : "bg-white hover:bg-slate-50"
                     }`}
                   >
-                    <span>{r.icon}</span> {r.label}
+                    <div className="flex flex-col items-center gap-1">
+                      <LayoutTemplate className="w-5 h-5" />
+                      {isEditCropMode ? "Cancel Crop" : "Open Crop Tool"}
+                    </div>
                   </button>
-                ))}
-              </div>
-            </div>
+                </div>
 
-            {/* 3. Transform Tools */}
-            <div className="mb-8">
-              <label className="font-bold uppercase text-sm mb-3 block">
-                Edit
-              </label>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => cropperRef.current?.cropper?.rotate(90)}
-                  className="flex-1 bg-white border-2 border-black p-2 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
-                >
-                  <RotateCw className="w-4 h-4" /> Rotate
-                </button>
-                <button
-                  onClick={() =>
-                    cropperRef.current?.cropper?.scaleX(
-                      -(cropperRef.current?.cropper?.getData().scaleX || 1)
-                    )
-                  }
-                  className="flex-1 bg-white border-2 border-black p-2 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
-                >
-                  <FlipHorizontal className="w-4 h-4" /> Flip H
-                </button>
+                {isEditCropMode && (
+                  <div className="animate-in slide-in-from-top-2 fade-in">
+                    <label className="font-bold uppercase text-sm mb-3 block">
+                      Actions
+                    </label>
+                    <button
+                      onClick={() => {
+                        performCrop();
+                        setIsEditCropMode(false); // Close after apply
+                      }}
+                      className="w-full bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
+                    >
+                      <CheckCircle className="w-5 h-5" /> Apply Crop
+                    </button>
+                    <p className="text-xs text-slate-500 mt-2 font-semibold">
+                      * Overwrites current image
+                    </p>
+                  </div>
+                )}
               </div>
-            </div>
+            )}
 
-            {/* Actions */}
-            <div className="flex flex-col gap-3 mt-auto pt-6 border-t-4 border-black">
+            {/* TAB CONTENT: SPLIT */}
+            {activeTab === "split" && (
+              <div className="space-y-6 animate-in slide-in-from-right-4 fade-in duration-300">
+                {/* 1. Segments Slider */}
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="font-bold uppercase text-sm">
+                      Segments
+                    </label>
+                    <span className="bg-black text-white px-2 py-0.5 font-black text-sm">
+                      {segmentCount}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="2"
+                    max="10"
+                    value={segmentCount}
+                    onChange={(e) => {
+                      setSegmentCount(Number(e.target.value));
+                    }}
+                    className="w-full h-4 bg-slate-200 border-2 border-black rounded-full appearance-none accent-black cursor-pointer hover:bg-slate-300 transition-colors"
+                  />
+                  <div className="flex justify-between text-xs font-bold text-slate-400 mt-1 px-1">
+                    <span>2</span>
+                    <span>10</span>
+                  </div>
+                </div>
+
+                {/* 2. Ratio Select */}
+                <div>
+                  <label className="font-bold uppercase text-sm mb-3 block">
+                    Crop Ratio
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {ASPECT_RATIOS.map((r) => (
+                      <button
+                        key={r.label}
+                        onClick={() => setChunkRatio(r.value)}
+                        className={`border-2 border-black p-2 font-bold text-sm uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                          Math.abs(chunkRatio - r.value) < 0.001
+                            ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
+                            : "bg-white hover:bg-slate-50 hover:-translate-y-1"
+                        }`}
+                      >
+                        <span>{r.icon}</span> {r.label}
+                      </button>
+                    ))}
+                    {/* Custom Button */}
+                    <button
+                      onClick={() => setChunkRatio(customHW.w / customHW.h)}
+                      className={`border-2 border-black p-2 font-bold text-sm uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                        !ASPECT_RATIOS.some(
+                          (r) => Math.abs(r.value - chunkRatio) < 0.001
+                        )
+                          ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
+                          : "bg-white hover:bg-slate-50 hover:-translate-y-1"
+                      }`}
+                    >
+                      <span>✏️</span> Custom
+                    </button>
+                  </div>
+
+                  {/* Custom Inputs Panel */}
+                  {!ASPECT_RATIOS.some(
+                    (r) => Math.abs(r.value - chunkRatio) < 0.001
+                  ) && (
+                    <div className="mt-3 bg-slate-100 border-2 border-dashed border-black p-3 animate-in slide-in-from-top-2">
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1">
+                          <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
+                            Width
+                          </label>
+                          <input
+                            type="number"
+                            min="1"
+                            value={customHW.w}
+                            onChange={(e) => {
+                              const w = Number(e.target.value);
+                              setCustomHW((p) => ({ ...p, w }));
+                              if (w > 0 && customHW.h > 0)
+                                setChunkRatio(w / customHW.h);
+                            }}
+                            className="w-full border-2 border-black p-1 font-bold text-center text-sm focus:outline-none focus:bg-yellow-100"
+                          />
+                        </div>
+                        <span className="font-black text-xl pt-4">:</span>
+                        <div className="flex-1">
+                          <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
+                            Height
+                          </label>
+                          <input
+                            type="number"
+                            min="1"
+                            value={customHW.h}
+                            onChange={(e) => {
+                              const h = Number(e.target.value);
+                              setCustomHW((p) => ({ ...p, h }));
+                              if (customHW.w > 0 && h > 0)
+                                setChunkRatio(customHW.w / h);
+                            }}
+                            className="w-full border-2 border-black p-1 font-bold text-center text-sm focus:outline-none focus:bg-yellow-100"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-col gap-3 mt-auto pt-6 border-t-4 border-black">
+                  <button
+                    onClick={performSplit}
+                    className="bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
+                  >
+                    {isProcessing ? "Processing..." : "Split Image"}{" "}
+                    <ArrowRight strokeWidth={3} />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* SHARED FOOTER: Global Actions */}
+            <div className="mt-8 pt-6 border-t-4 border-black grid grid-cols-2 gap-3">
               <button
-                onClick={performSplit}
-                className="bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
+                onClick={handleChangeImage}
+                className="border-2 border-black py-2 font-bold uppercase hover:bg-yellow-200 text-sm cursor-pointer flex items-center justify-center gap-1"
               >
-                {isProcessing ? "Processing..." : "Split Image"}{" "}
-                <ArrowRight strokeWidth={3} />
+                <ImageIcon className="w-4 h-4" /> Change Img
               </button>
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={handleChangeImage}
-                  className="border-2 border-black py-2 font-bold uppercase hover:bg-yellow-200 text-sm cursor-pointer flex items-center justify-center gap-1"
-                >
-                  <ImageIcon className="w-4 h-4" /> Change Img
-                </button>
-                <button
-                  onClick={() => {
-                    setDisplayImage(null);
-                    setSegments([]);
-                  }}
-                  className="border-2 border-black py-2 font-bold uppercase hover:bg-red-200 text-sm cursor-pointer text-red-600"
-                >
-                  Reset All
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  setDisplayImage(null);
+                  setSegments([]);
+                }}
+                className="border-2 border-black py-2 font-bold uppercase hover:bg-red-200 text-sm cursor-pointer text-red-600"
+              >
+                Reset All
+              </button>
             </div>
           </div>
         </div>
 
         {/* RIGHT: Visual Simulation (Cropper as Viewer) */}
         <div className="lg:col-span-8">
-          <div className="bg-slate-100 border-4 border-black p-2 sm:p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <div className="relative w-full h-[60vh] sm:h-[600px]">
+          <div className="bg-slate-100 border-4 border-black p-4 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="relative w-full h-[60vh] sm:h-[600px] overflow-hidden">
               <div className="absolute top-4 left-4 z-20 bg-black text-white px-2 py-1 text-xs font-black uppercase pointer-events-none">
-                Interactive Preview
+                {activeTab === "edit" ? "Edit Mode" : "Interactive Preview"}
               </div>
 
               {/* 
@@ -367,48 +529,62 @@ export default function ImageSplitterClient() {
                 src={displayImage}
                 style={{ height: "100%", width: "100%" }}
                 // If chunkRatio is 0 (Free), we pass NaN to allow free resize.
-                aspectRatio={chunkRatio === 0 ? NaN : segmentCount * chunkRatio}
-                guides={false} // Disable standard 3x3 guides
+                aspectRatio={
+                  activeTab === "edit"
+                    ? NaN
+                    : chunkRatio === 0
+                    ? NaN
+                    : segmentCount * chunkRatio
+                }
+                guides={activeTab === "edit" && isEditCropMode} // Enable guides only when cropping in edit mode
                 ref={cropperRef}
                 viewMode={1} // Restrict crop box to image size
                 // "crop" makes new box. "move" moves image behind.
-                // User wants "Drag the entire Split Overlay". 'move' logic in cropperjs usually means panning image.
-                // We want to drag the CROP BOX.
-                // To only drag crop box, dragMode should be 'crop'. But we want to prevent drawing NEW boxes.
-                // 'none' allows interaction with crop box if it exists.
-                dragMode="none"
+                dragMode={
+                  activeTab === "edit"
+                    ? isEditCropMode
+                      ? "crop"
+                      : "none"
+                    : "none"
+                }
+                autoCrop={activeTab === "split" || isEditCropMode} // Hide crop box unless in split mode or actively cropping
                 autoCropArea={1} // Start full
                 background={false}
                 highlight={false} // We do our own highlight via overlay logic if needed, but cropper does it well (dim outside)
                 crop={onCrop} // Update our custom grid lines on move
                 className="cropper-container-custom"
                 alt="Image to be split" // Added alt text for accessibility
+                ready={() => {
+                  // Ensure crop box hidden on initial load if needed?
+                  // AutoCrop prop handles this mostly.
+                }}
               />
 
-              {/* CUSTOM GRID OVERLAY (Dashed Lines) */}
-              {/* This sits exactly on top of the Crop Box */}
-              <div style={gridOverlayStyle} className="">
-                {/* Dividers */}
-                {Array.from({ length: segmentCount - 1 }).map((_, i) => (
-                  <div
-                    key={`line-${i}`}
-                    className="absolute top-0 bottom-0 border-l border-dashed border-white/90 -translate-x-1/2"
-                    style={{ left: `${((i + 1) * 100) / segmentCount}%` }}
-                  />
-                ))}
-                {/* Number Labels */}
-                {Array.from({ length: segmentCount }).map((_, i) => (
-                  <div
-                    key={`num-${i}`}
-                    className="absolute top-1/2 -translate-y-1/2 flex justify-center w-0"
-                    style={{ left: `${((i + 0.5) * 100) / segmentCount}%` }}
-                  >
-                    <span className="bg-black/60 text-white text-[10px] font-bold px-1 rounded backdrop-blur-md">
-                      {i + 1}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {/* CUSTOM GRID OVERLAY (Dashed Lines) - Only in Split Mode */}
+              {activeTab === "split" && (
+                <div style={gridOverlayStyle} className="">
+                  {/* Dividers */}
+                  {Array.from({ length: segmentCount - 1 }).map((_, i) => (
+                    <div
+                      key={`line-${i}`}
+                      className="absolute top-0 bottom-0 border-l border-dashed border-white/90 -translate-x-1/2"
+                      style={{ left: `${((i + 1) * 100) / segmentCount}%` }}
+                    />
+                  ))}
+                  {/* Number Labels */}
+                  {Array.from({ length: segmentCount }).map((_, i) => (
+                    <div
+                      key={`num-${i}`}
+                      className="absolute top-1/2 -translate-y-1/2 flex justify-center w-0"
+                      style={{ left: `${((i + 0.5) * 100) / segmentCount}%` }}
+                    >
+                      <span className="bg-black/60 text-white text-[10px] font-bold px-1 rounded backdrop-blur-md">
+                        {i + 1}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
