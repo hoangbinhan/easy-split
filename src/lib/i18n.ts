@@ -33,6 +33,7 @@ export const translations = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     footer_rights: "EASY SPLIT. All rights reserved.",
+    about: "About",
   },
   vi: {
     title: "Easy Split - Chia Ảnh",
@@ -66,6 +67,7 @@ export const translations = {
     privacy: "Chính sách bảo mật",
     terms: "Điều khoản dịch vụ",
     footer_rights: "EASY SPLIT. Bảo lưu mọi quyền.",
+    about: "Giới thiệu",
   },
   ko: {
     title: "Easy Split - 이미지 분할",
@@ -97,6 +99,7 @@ export const translations = {
     privacy: "개인정보 처리방침",
     terms: "이용 약관",
     footer_rights: "EASY SPLIT. All rights reserved.",
+    about: "About",
   },
   jp: {
     title: "Easy Split - 画像分割",
@@ -130,6 +133,7 @@ export const translations = {
     privacy: "プライバシーポリシー",
     terms: "利用規約",
     footer_rights: "EASY SPLIT. All rights reserved.",
+    about: "About",
   },
   th: {
     title: "Easy Split - ตัดภาพ",
@@ -161,6 +165,7 @@ export const translations = {
     privacy: "นโยบายความเป็นส่วนตัว",
     terms: "เงื่อนไขการให้บริการ",
     footer_rights: "EASY SPLIT. สงวนลิขสิทธิ์",
+    about: "เกี่ยวกับเรา",
   },
   id: {
     title: "Easy Split - Pemecah Gambar",
@@ -194,6 +199,7 @@ export const translations = {
     privacy: "Kebijakan Privasi",
     terms: "Ketentuan Layanan",
     footer_rights: "EASY SPLIT. Hak cipta dilindungi undang-undang.",
+    about: "Tentang Kami",
   },
   es: {
     title: "Easy Split - Cortador de Fotos",
@@ -228,5 +234,6 @@ export const translations = {
     privacy: "Política de Privacidad",
     terms: "Términos de Servicio",
     footer_rights: "EASY SPLIT. Todos los derechos reservados.",
+    about: "Acerca de",
   },
 };

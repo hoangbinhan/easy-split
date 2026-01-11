@@ -129,13 +129,12 @@ export function Footer() {
             className="hover:bg-pink-300 px-2 transition-colors"
           >
             {t.terms}
-            {t.terms}
           </Link>
           <Link
             href="/about"
             className="hover:bg-cyan-300 px-2 transition-colors"
           >
-            About
+            {t.about}
           </Link>
         </div>
       </div>
