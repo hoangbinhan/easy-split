@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { translations, Language } from "@/lib/i18n";
+import Cookies from "js-cookie";
 
 type LanguageContextType = {
   language: Language;
@@ -14,39 +15,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // 1. Check LocalStorage
-    const saved = localStorage.getItem("language") as Language;
-    if (saved && ["en", "vi", "ko", "jp"].includes(saved)) {
-      setLanguageState(saved);
-      setIsLoaded(true);
-      return;
-    }
-
-    // 2. Check Browser Language (Navigator)
-    // Note: In a real Edge environment with server components, we'd check headers,
-    // but for client-side purely, navigator is robust.
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith("vi")) {
-      setLanguageState("vi");
-    } else if (browserLang.startsWith("ko")) {
-      setLanguageState("ko");
-    } else if (browserLang.startsWith("ja")) {
-      setLanguageState("jp");
-    } else {
-      setLanguageState("en");
-    }
-
-    setIsLoaded(true);
-  }, []);
+export function LanguageProvider({
+  children,
+  initialLocale = "en",
+}: {
+  children: React.ReactNode;
+  initialLocale?: Language;
+}) {
+  const [language, setLanguageState] = useState<Language>(initialLocale);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem("language", lang);
+    Cookies.set("NEXT_LOCALE", lang, { expires: 365 });
   };
 
   const value = {

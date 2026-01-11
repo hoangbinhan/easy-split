@@ -8,12 +8,15 @@ import { ChevronDown } from "lucide-react";
 export function Header() {
   const { language, setLanguage, t, isLoaded } = useLanguage();
 
-  // Flag mapping
-  const flags: Record<Language, string> = {
-    en: "🇺🇸",
-    vi: "🇻🇳",
-    ko: "🇰🇷",
-    jp: "🇯🇵",
+  // Flag mapping (Using images because Windows doesn't support flag emojis)
+  const getFlagUrl = (lang: Language) => {
+    const codeMap: Record<Language, string> = {
+      en: "us",
+      vi: "vn",
+      ko: "kr",
+      jp: "jp",
+    };
+    return `https://flagcdn.com/w40/${codeMap[lang]}.png`;
   };
 
   const labels: Record<Language, string> = {
@@ -37,7 +40,6 @@ export function Header() {
             Tool Pro
           </span>
         </Link>
-
         <div className="flex items-center gap-4 sm:gap-6">
           <nav className="hidden sm:flex text-sm font-bold uppercase tracking-wide">
             <Link
@@ -53,7 +55,11 @@ export function Header() {
             <div className="relative group z-50">
               {/* Visual Button */}
               <div className="flex items-center gap-3 border-4 border-black bg-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer min-w-[110px]">
-                <span className="text-2xl">{flags[language]}</span>
+                <img
+                  src={getFlagUrl(language)}
+                  alt={language}
+                  className="w-6 h-auto border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
+                />
                 <span className="font-black text-lg">{labels[language]}</span>
                 <ChevronDown className="w-5 h-5 ml-auto border-l-4 border-black pl-1" />
               </div>

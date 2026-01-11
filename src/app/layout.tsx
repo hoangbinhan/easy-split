@@ -28,17 +28,23 @@ export const viewport: Viewport = {
   themeColor: "#FACC15",
 };
 
-export default function RootLayout({
+import { cookies } from "next/headers";
+import { Language } from "@/lib/i18n";
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const locale = (cookieStore.get("NEXT_LOCALE")?.value as Language) || "en";
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}
       >
-        <LanguageProvider>
+        <LanguageProvider initialLocale={locale}>
           <Header />
           <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-7xl">
             {children}
