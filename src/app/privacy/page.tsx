@@ -2,9 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | TikTok Tool Pro",
+  title: "Privacy Policy | Easy Split",
   description:
-    "Privacy Policy for TikTok Tool Pro. We prioritize your privacy with client-side processing.",
+    "Privacy Policy for Easy Split. We prioritize your privacy with client-side processing.",
 };
 
 export default function PrivacyPage() {
@@ -22,10 +22,10 @@ export default function PrivacyPage() {
       <article className="bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
         <div className="prose prose-lg prose-slate max-w-none prose-headings:font-black prose-headings:uppercase prose-a:text-pink-500 prose-a:no-underline hover:prose-a:underline">
           <p className="font-medium text-xl leading-relaxed border-l-8 border-cyan-400 pl-6 bg-slate-50 py-4">
-            At <strong>TikTok Tool Pro</strong>, we believe in privacy by
-            design. Our tools are built to run <strong>client-side</strong>,
-            meaning your data (images, files) stays on your device and is never
-            uploaded to our servers.
+            At <strong>Easy Split</strong>, we believe in privacy by design. Our
+            tools are built to run <strong>client-side</strong>, meaning your
+            data (images, files) stays on your device and is never uploaded to
+            our servers.
           </p>
 
           <h3>1. Information We Collect</h3>

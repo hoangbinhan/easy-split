@@ -15,6 +15,9 @@ export function Header() {
       vi: "vn",
       ko: "kr",
       jp: "jp",
+      th: "th",
+      id: "id",
+      es: "es",
     };
     return `https://flagcdn.com/w40/${codeMap[lang]}.png`;
   };
@@ -24,6 +27,9 @@ export function Header() {
     vi: "VN",
     ko: "KR",
     jp: "JP",
+    th: "TH",
+    id: "ID",
+    es: "ES",
   };
 
   return (
@@ -34,16 +40,16 @@ export function Header() {
           className="flex items-center gap-2 font-black text-2xl uppercase tracking-tighter hover:-rotate-2 transition-transform group"
         >
           <span className="bg-yellow-400 border-4 border-black px-2 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-yellow-300 transition-colors">
-            TikTok
+            Easy
           </span>
           <span className="text-black hidden sm:inline group-hover:underline decoration-4 decoration-cyan-400 underline-offset-4">
-            Tool Pro
+            Split
           </span>
         </Link>
         <div className="flex items-center gap-4 sm:gap-6">
           <nav className="hidden sm:flex text-sm font-bold uppercase tracking-wide">
             <Link
-              href="/tools/image-splitter"
+              href="/"
               className="px-4 py-2 border-2 border-transparent hover:border-black hover:bg-cyan-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               {isLoaded ? t.nav_splitter : "..."}
@@ -74,6 +80,9 @@ export function Header() {
                 <option value="vi">🇻🇳 Tiếng Việt</option>
                 <option value="ko">🇰🇷 한국어</option>
                 <option value="jp">🇯🇵 日本語</option>
+                <option value="th">🇹🇭 ไทย</option>
+                <option value="id">🇮🇩 Indonesia</option>
+                <option value="es">🇪🇸 Español</option>
               </select>
             </div>
           )}
@@ -113,6 +122,13 @@ export function Footer() {
             className="hover:bg-pink-300 px-2 transition-colors"
           >
             {t.terms}
+            {t.terms}
+          </Link>
+          <Link
+            href="/about"
+            className="hover:bg-cyan-300 px-2 transition-colors"
+          >
+            About
           </Link>
         </div>
       </div>

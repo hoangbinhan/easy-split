@@ -2,8 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | TikTok Tool Pro",
-  description: "Terms and conditions for using TikTok Tool Pro.",
+  title: "Terms of Service | Easy Split",
+  description: "Terms and conditions for using Easy Split.",
 };
 
 export default function TermsPage() {
@@ -22,7 +22,7 @@ export default function TermsPage() {
         <div className="prose prose-lg prose-slate max-w-none prose-headings:font-black prose-headings:uppercase">
           <p className="font-medium text-xl leading-relaxed">
             Please read these terms of service ("Terms", "Terms of Service")
-            carefully before using the <strong>TikTok Tool Pro</strong> website
+            carefully before using the <strong>Easy Split</strong> website
             operated by <strong>Hoàng Bình An</strong> ("us", "we", or "our").
           </p>
 

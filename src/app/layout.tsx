@@ -7,7 +7,7 @@ import { Header, Footer } from "@/components/layout-components";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TikTok Tool Pro",
+  title: "Easy Split - Free Image Splitter Tool",
   description: "Free professional tools for TikTok creators.",
   applicationName: "TikTok Tool Pro",
   appleWebApp: {

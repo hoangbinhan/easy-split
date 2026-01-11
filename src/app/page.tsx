@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import ImageSplitterContent from "./tools/image-splitter/content";
 
 export default function Home() {
-  redirect("/tools/image-splitter");
+  return <ImageSplitterContent />;
 }
