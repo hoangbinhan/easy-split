@@ -163,7 +163,7 @@ export default function ImageSplitterContent() {
   return (
     <div className="space-y-20">
       <section className="text-center space-y-6 pt-8 sm:pt-12">
-        <div className="inline-block bg-yellow-400 border-4 border-black px-6 py-2 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg] mb-6">
+        <div className="inline-block bg-yellow-400 border-4 border-black px-6 py-2 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -rotate-2 mb-6">
           <span className="font-black text-lg sm:text-xl uppercase tracking-widest text-black">
             New: Dynamic Split
           </span>
@@ -199,7 +199,7 @@ export default function ImageSplitterContent() {
               {[t.article_why_1, t.article_why_2, t.article_why_3].map(
                 (item, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <span className="flex-shrink-0 w-8 h-8 bg-cyan-400 border-2 border-black flex items-center justify-center font-bold text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    <span className="shrink-0 w-8 h-8 bg-cyan-400 border-2 border-black flex items-center justify-center font-bold text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                       {i + 1}
                     </span>
                     <span className="font-medium text-lg leading-relaxed">

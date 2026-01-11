@@ -3,20 +3,17 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import {
   Upload,
-  Download,
   CheckCircle,
   RotateCw,
   FlipHorizontal,
-  FlipVertical,
-  X,
   Edit3,
   Grid3X3,
   ArrowRight,
   LayoutTemplate,
   Image as ImageIcon,
-  SlidersVertical,
 } from "lucide-react";
 import JSZip from "jszip";
+import NextImage from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
 import Cropper, { ReactCropperElement } from "react-cropper";
 import "cropperjs/dist/cropper.css";
@@ -618,8 +615,11 @@ export default function ImageSplitterClient() {
                     className="min-w-[140px] flex flex-col gap-2 snap-center group"
                   >
                     <div className="bg-slate-200 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform group-hover:-translate-y-1">
-                      <img
+                      <NextImage
                         src={seg}
+                        width={200}
+                        height={350}
+                        unoptimized
                         className="w-full h-auto block"
                         alt={`Split part ${i + 1}`}
                       />
@@ -629,7 +629,7 @@ export default function ImageSplitterClient() {
                     </div>
                     <button
                       onClick={() => handleDownload(seg, i)}
-                      className="bg-cyan-300 border-2 border-black py-2 text-xs font-black uppercase hover:bg-cyan-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none translate-x-[1px] translate-y-[1px] cursor-pointer"
+                      className="bg-cyan-300 border-2 border-black py-2 text-xs font-black uppercase hover:bg-cyan-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none translate-x-px translate-y-px cursor-pointer"
                     >
                       Save
                     </button>

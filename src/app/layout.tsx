@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description:
     "Free tool to split photos into seamless carousel slides for TikTok and Instagram. No watermark, no upload needed.",
   applicationName: "Easy Split",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/apple-touch-icon.png",
+  },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,

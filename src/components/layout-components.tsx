@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
 import { ChevronDown } from "lucide-react";
@@ -68,9 +69,12 @@ export function Header() {
             <div className="relative group z-50">
               {/* Visual Button */}
               <div className="flex items-center gap-3 border-4 border-black bg-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer min-w-[110px]">
-                <img
+                <Image
                   src={getFlagUrl(language)}
                   alt={language}
+                  width={24}
+                  height={18}
+                  unoptimized
                   className="w-6 h-auto border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
                 />
                 <span className="font-black text-lg">{labels[language]}</span>
