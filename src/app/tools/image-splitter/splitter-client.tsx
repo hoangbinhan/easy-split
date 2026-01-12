@@ -299,7 +299,7 @@ export default function ImageSplitterClient() {
                     : "bg-white text-slate-400 hover:bg-slate-50"
                 }`}
               >
-                <Edit3 className="w-4 h-4" /> Edit
+                <Edit3 className="w-4 h-4" /> {t.tab_edit}
               </button>
               <button
                 onClick={() => setActiveTab("split")}
@@ -309,7 +309,7 @@ export default function ImageSplitterClient() {
                     : "bg-white text-slate-400 hover:bg-slate-50"
                 }`}
               >
-                <Grid3X3 className="w-4 h-4" /> Split
+                <Grid3X3 className="w-4 h-4" /> {t.tab_split}
               </button>
             </div>
 
@@ -318,14 +318,14 @@ export default function ImageSplitterClient() {
               <div className="space-y-6 animate-in slide-in-from-left-4 fade-in duration-300">
                 <div>
                   <label className="font-bold uppercase text-sm mb-3 block">
-                    Transform
+                    {t.transform_label}
                   </label>
                   <div className="grid grid-cols-2 gap-2 mb-2">
                     <button
                       onClick={() => cropperRef.current?.cropper?.rotate(90)}
                       className="bg-white border-2 border-black p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
                     >
-                      <RotateCw className="w-5 h-5" /> Rotate
+                      <RotateCw className="w-5 h-5" /> {t.rotate_btn}
                     </button>
                     <button
                       onClick={() =>
@@ -335,7 +335,7 @@ export default function ImageSplitterClient() {
                       }
                       className="bg-white border-2 border-black p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
                     >
-                      <FlipHorizontal className="w-5 h-5" /> Flip H
+                      <FlipHorizontal className="w-5 h-5" /> {t.flip_h_btn}
                     </button>
                   </div>
                   <button
@@ -348,7 +348,7 @@ export default function ImageSplitterClient() {
                   >
                     <div className="flex flex-col items-center gap-1">
                       <LayoutTemplate className="w-5 h-5" />
-                      {isEditCropMode ? "Cancel Crop" : "Open Crop Tool"}
+                      {isEditCropMode ? t.cancel_crop : t.open_crop}
                     </div>
                   </button>
                 </div>
@@ -356,7 +356,7 @@ export default function ImageSplitterClient() {
                 {isEditCropMode && (
                   <div className="animate-in slide-in-from-top-2 fade-in">
                     <label className="font-bold uppercase text-sm mb-3 block">
-                      Actions
+                      {t.actions_label}
                     </label>
                     <button
                       onClick={() => {
@@ -365,10 +365,10 @@ export default function ImageSplitterClient() {
                       }}
                       className="w-full bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
                     >
-                      <CheckCircle className="w-5 h-5" /> Apply Crop
+                      <CheckCircle className="w-5 h-5" /> {t.apply_crop}
                     </button>
                     <p className="text-xs text-slate-500 mt-2 font-semibold">
-                      * Overwrites current image
+                      {t.overwrite_warning}
                     </p>
                   </div>
                 )}
@@ -382,7 +382,7 @@ export default function ImageSplitterClient() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="font-bold uppercase text-sm">
-                      Segments
+                      {t.segments_label}
                     </label>
                     <span className="bg-black text-white px-2 py-0.5 font-black text-sm">
                       {segmentCount}
@@ -404,29 +404,32 @@ export default function ImageSplitterClient() {
                   </div>
                 </div>
 
-                {/* 2. Ratio Select */}
+                {/* 2. Ratio Select - OPTIMIZED HEIGHT FOR MOBILE */}
                 <div>
                   <label className="font-bold uppercase text-sm mb-3 block">
-                    Crop Ratio
+                    {t.crop_ratio_label}
                   </label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-3 sm:grid-cols-2 gap-2">
+                    {" "}
+                    {/* Changed to 3 cols on mobile for compact view */}
                     {ASPECT_RATIOS.map((r) => (
                       <button
                         key={r.label}
                         onClick={() => setChunkRatio(r.value)}
-                        className={`border-2 border-black p-2 font-bold text-sm uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                        className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
                           Math.abs(chunkRatio - r.value) < 0.001
                             ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
                             : "bg-white hover:bg-slate-50 hover:-translate-y-1"
                         }`}
                       >
-                        <span>{r.icon}</span> {r.label}
+                        <span className="hidden sm:inline">{r.icon}</span>{" "}
+                        {r.value === 0 ? t.ratio_free : r.label}
                       </button>
                     ))}
                     {/* Custom Button */}
                     <button
                       onClick={() => setChunkRatio(customHW.w / customHW.h)}
-                      className={`border-2 border-black p-2 font-bold text-sm uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                      className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
                         !ASPECT_RATIOS.some(
                           (r) => Math.abs(r.value - chunkRatio) < 0.001
                         )
@@ -434,7 +437,8 @@ export default function ImageSplitterClient() {
                           : "bg-white hover:bg-slate-50 hover:-translate-y-1"
                       }`}
                     >
-                      <span>✏️</span> Custom
+                      <span className="hidden sm:inline">✏️</span>{" "}
+                      {t.custom_ratio}
                     </button>
                   </div>
 
@@ -446,7 +450,7 @@ export default function ImageSplitterClient() {
                       <div className="flex items-center gap-2">
                         <div className="flex-1">
                           <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
-                            Width
+                            {t.width_label}
                           </label>
                           <input
                             type="number"
@@ -464,7 +468,7 @@ export default function ImageSplitterClient() {
                         <span className="font-black text-xl pt-4">:</span>
                         <div className="flex-1">
                           <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
-                            Height
+                            {t.height_label}
                           </label>
                           <input
                             type="number"
@@ -490,7 +494,7 @@ export default function ImageSplitterClient() {
                     onClick={performSplit}
                     className="bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
                   >
-                    {isProcessing ? "Processing..." : "Split Image"}{" "}
+                    {isProcessing ? t.processing : t.split_image_btn}{" "}
                     <ArrowRight strokeWidth={3} />
                   </button>
                 </div>
@@ -503,7 +507,7 @@ export default function ImageSplitterClient() {
                 onClick={handleChangeImage}
                 className="border-2 border-black py-2 font-bold uppercase hover:bg-yellow-200 text-sm cursor-pointer flex items-center justify-center gap-1"
               >
-                <ImageIcon className="w-4 h-4" /> Change Img
+                <ImageIcon className="w-4 h-4" /> {t.change_img}
               </button>
               <button
                 onClick={() => {
@@ -512,7 +516,7 @@ export default function ImageSplitterClient() {
                 }}
                 className="border-2 border-black py-2 font-bold uppercase hover:bg-red-200 text-sm cursor-pointer text-red-600"
               >
-                Reset All
+                {t.reset_all}
               </button>
             </div>
           </div>
@@ -523,7 +527,7 @@ export default function ImageSplitterClient() {
           <div className="bg-slate-100 border-4 border-black p-4 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <div className="relative w-full h-[35vh] sm:h-[600px] overflow-hidden">
               <div className="absolute top-4 left-4 z-20 bg-black text-white px-2 py-1 text-xs font-black uppercase pointer-events-none">
-                {activeTab === "edit" ? "Edit Mode" : "Interactive Preview"}
+                {activeTab === "edit" ? t.edit_mode : t.interactive_preview}
               </div>
 
               {/* 
@@ -598,13 +602,13 @@ export default function ImageSplitterClient() {
             <div className="mt-8 animate-in fade-in slide-in-from-bottom-6">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="font-black text-xl uppercase bg-yellow-400 inline-block px-2 border-2 border-black transform -rotate-1">
-                  Results
+                  {t.results_label}
                 </h3>
                 <button
                   onClick={handleDownloadAll}
                   className="font-bold underline cursor-pointer hover:text-green-600"
                 >
-                  Download All (ZIP)
+                  {t.download_all}
                 </button>
               </div>
 
@@ -624,14 +628,14 @@ export default function ImageSplitterClient() {
                         alt={`Split part ${i + 1}`}
                       />
                       <div className="absolute bottom-0 inset-x-0 bg-black text-white text-center text-xs font-bold py-1 uppercase opacity-0 group-hover:opacity-100 transition-opacity">
-                        Part {i + 1}
+                        {t.part} {i + 1}
                       </div>
                     </div>
                     <button
                       onClick={() => handleDownload(seg, i)}
                       className="bg-cyan-300 border-2 border-black py-2 text-xs font-black uppercase hover:bg-cyan-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none translate-x-px translate-y-px cursor-pointer"
                     >
-                      Save
+                      {t.download_part}
                     </button>
                   </div>
                 ))}
