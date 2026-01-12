@@ -22,6 +22,7 @@ import "cropperjs/dist/cropper.css";
 // Value 0 = Free/Original
 const ASPECT_RATIOS = [
   { label: "Free", value: 0, icon: "🔓" },
+  { label: "TikTok Thumb", value: 195.66 / 259.53, icon: "🎵" }, // Approx 0.7539
   { label: "9:16", value: 9 / 16, icon: "📱" },
   { label: "4:5", value: 4 / 5, icon: "🖼️" },
   { label: "1:1", value: 1, icon: "🟦" },
@@ -36,7 +37,8 @@ export default function ImageSplitterClient() {
   const [segments, setSegments] = useState<string[]>([]);
 
   // Settings State
-  const [segmentCount, setSegmentCount] = useState<number>(2);
+  const [colCount, setColCount] = useState<number>(2);
+  const [rowCount, setRowCount] = useState<number>(1);
   const [chunkRatio, setChunkRatio] = useState<number>(0); // Default to 0 (Free mode)
   const [customHW, setCustomHW] = useState({ w: 3, h: 4 });
   const [activeTab, setActiveTab] = useState<"edit" | "split">("split");
@@ -88,11 +90,13 @@ export default function ImageSplitterClient() {
       if (chunkRatio === 0) {
         cropper.setAspectRatio(NaN); // Free mode
       } else {
-        // Total Aspect Ratio = Segments * (Single Segment Ratio)
-        cropper.setAspectRatio(segmentCount * chunkRatio);
+        // Total Aspect Ratio = (Columns * Single Width) / (Rows * Single Height)
+        // Since Single Width / Single Height = ChunkRatio => SW = ChunkRatio * SH
+        // Total Aspect Ratio = (Cols * ChunkRatio * SH) / (Rows * SH) = (Cols / Rows) * ChunkRatio
+        cropper.setAspectRatio((colCount / rowCount) * chunkRatio);
       }
     }
-  }, [segmentCount, chunkRatio]);
+  }, [colCount, rowCount, chunkRatio]);
   useEffect(() => {
     const cropper = cropperRef.current?.cropper;
     if (!cropper) return;
@@ -125,7 +129,7 @@ export default function ImageSplitterClient() {
         left: boxData.left,
         width: boxData.width,
         height: boxData.height,
-        display: "flex", // Visible
+        display: "block", // Visible
         position: "absolute",
         pointerEvents: "none", // Allow clicks to pass through to cropper
         zIndex: 10,
@@ -140,7 +144,7 @@ export default function ImageSplitterClient() {
 
     setIsProcessing(true);
 
-    // Get the cropped data (what the user sees in the box)
+    // Get the cropped data
     const croppedCanvas = cropper.getCroppedCanvas({
       minWidth: 100,
       minHeight: 100,
@@ -154,9 +158,6 @@ export default function ImageSplitterClient() {
     const width = croppedCanvas.width;
     const height = croppedCanvas.height;
 
-    // Divide width by segments
-    const segmentWidth = Math.floor(width / segmentCount);
-
     const newSegments: string[] = [];
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
@@ -166,28 +167,35 @@ export default function ImageSplitterClient() {
       return;
     }
 
-    canvas.width = segmentWidth;
-    canvas.height = height;
+    const segmentWidth = Math.floor(width / colCount);
+    const segmentHeight = Math.floor(height / rowCount);
 
-    for (let i = 0; i < segmentCount; i++) {
-      ctx.clearRect(0, 0, segmentWidth, height);
-      ctx.drawImage(
-        croppedCanvas,
-        i * segmentWidth,
-        0,
-        segmentWidth,
-        height, // Source Slice
-        0,
-        0,
-        segmentWidth,
-        height // Dest
-      );
-      newSegments.push(canvas.toDataURL("image/jpeg", 0.95));
+    canvas.width = segmentWidth;
+    canvas.height = segmentHeight;
+
+    // Loop through Rows then Columns (or Columns then Rows?)
+    // Typically reading order: Row 0 -> Left to Right, then Row 1...
+    for (let r = 0; r < rowCount; r++) {
+      for (let c = 0; c < colCount; c++) {
+        ctx.clearRect(0, 0, segmentWidth, segmentHeight);
+        ctx.drawImage(
+          croppedCanvas,
+          c * segmentWidth, // source x
+          r * segmentHeight, // source y
+          segmentWidth, // source w
+          segmentHeight, // source h
+          0,
+          0,
+          segmentWidth,
+          segmentHeight
+        );
+        newSegments.push(canvas.toDataURL("image/jpeg", 0.95));
+      }
     }
 
     setSegments(newSegments);
     setIsProcessing(false);
-  }, [segmentCount]);
+  }, [colCount, rowCount]);
 
   // Apply Crop (Edit Mode)
   const performCrop = () => {
@@ -378,28 +386,54 @@ export default function ImageSplitterClient() {
             {/* TAB CONTENT: SPLIT */}
             {activeTab === "split" && (
               <div className="space-y-6 animate-in slide-in-from-right-4 fade-in duration-300">
-                {/* 1. Segments Slider */}
+                {/* 1. Columns Slider */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="font-bold uppercase text-sm">
-                      {t.segments_label}
+                      {t.split_cols}
                     </label>
                     <span className="bg-black text-white px-2 py-0.5 font-black text-sm">
-                      {segmentCount}
+                      {colCount}
                     </span>
                   </div>
                   <input
                     type="range"
-                    min="2"
+                    min="1"
                     max="10"
-                    value={segmentCount}
+                    value={colCount}
                     onChange={(e) => {
-                      setSegmentCount(Number(e.target.value));
+                      setColCount(Number(e.target.value));
                     }}
                     className="w-full h-4 bg-slate-200 border-2 border-black rounded-full appearance-none accent-black cursor-pointer hover:bg-slate-300 transition-colors"
                   />
                   <div className="flex justify-between text-xs font-bold text-slate-400 mt-1 px-1">
-                    <span>2</span>
+                    <span>1</span>
+                    <span>10</span>
+                  </div>
+                </div>
+
+                {/* 2. Rows Slider */}
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="font-bold uppercase text-sm">
+                      {t.split_rows}
+                    </label>
+                    <span className="bg-black text-white px-2 py-0.5 font-black text-sm">
+                      {rowCount}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="1"
+                    max="10"
+                    value={rowCount}
+                    onChange={(e) => {
+                      setRowCount(Number(e.target.value));
+                    }}
+                    className="w-full h-4 bg-slate-200 border-2 border-black rounded-full appearance-none accent-black cursor-pointer hover:bg-slate-300 transition-colors"
+                  />
+                  <div className="flex justify-between text-xs font-bold text-slate-400 mt-1 px-1">
+                    <span>1</span>
                     <span>10</span>
                   </div>
                 </div>
@@ -543,7 +577,7 @@ export default function ImageSplitterClient() {
                     ? NaN
                     : chunkRatio === 0
                     ? NaN
-                    : segmentCount * chunkRatio
+                    : (colCount / rowCount) * chunkRatio
                 }
                 guides={activeTab === "edit" && isEditCropMode} // Enable guides only when cropping in edit mode
                 ref={cropperRef}
@@ -572,26 +606,44 @@ export default function ImageSplitterClient() {
               {/* CUSTOM GRID OVERLAY (Dashed Lines) - Only in Split Mode */}
               {activeTab === "split" && (
                 <div style={gridOverlayStyle} className="">
-                  {/* Dividers */}
-                  {Array.from({ length: segmentCount - 1 }).map((_, i) => (
+                  {/* Vertical Dividers (Columns) */}
+                  {Array.from({ length: colCount - 1 }).map((_, i) => (
                     <div
-                      key={`line-${i}`}
+                      key={`v-line-${i}`}
                       className="absolute top-0 bottom-0 border-l border-dashed border-white/90 -translate-x-1/2"
-                      style={{ left: `${((i + 1) * 100) / segmentCount}%` }}
+                      style={{
+                        left: `${((i + 1) * 100) / colCount}%`,
+                      }}
                     />
                   ))}
-                  {/* Number Labels */}
-                  {Array.from({ length: segmentCount }).map((_, i) => (
+                  {/* Horizontal Dividers (Rows) */}
+                  {Array.from({ length: rowCount - 1 }).map((_, i) => (
                     <div
-                      key={`num-${i}`}
-                      className="absolute top-1/2 -translate-y-1/2 flex justify-center w-0"
-                      style={{ left: `${((i + 0.5) * 100) / segmentCount}%` }}
-                    >
-                      <span className="bg-black/60 text-white text-[10px] font-bold px-1 rounded backdrop-blur-md">
-                        {i + 1}
-                      </span>
-                    </div>
+                      key={`h-line-${i}`}
+                      className="absolute left-0 right-0 border-t border-dashed border-white/90 -translate-y-1/2"
+                      style={{
+                        top: `${((i + 1) * 100) / rowCount}%`,
+                      }}
+                    />
                   ))}
+                  {/* Cell Numbers */}
+                  {Array.from({ length: rowCount }).map((_, r) =>
+                    Array.from({ length: colCount }).map((_, c) => (
+                      <div
+                        key={`cell-${r}-${c}`}
+                        className="absolute flex justify-center items-center"
+                        style={{
+                          left: `${((c + 0.5) * 100) / colCount}%`,
+                          top: `${((r + 0.5) * 100) / rowCount}%`,
+                          transform: "translate(-50%, -50%)",
+                        }}
+                      >
+                        <span className="bg-black/60 text-white text-[10px] font-bold px-1 rounded backdrop-blur-md">
+                          {r * colCount + c + 1}
+                        </span>
+                      </div>
+                    ))
+                  )}
                 </div>
               )}
             </div>
@@ -612,12 +664,16 @@ export default function ImageSplitterClient() {
                 </button>
               </div>
 
-              <div className="flex gap-4 overflow-x-auto pb-6 snap-x px-1">
+              <div
+                className="grid gap-4 pb-6 px-1"
+                style={{
+                  gridTemplateColumns: `repeat(${colCount}, minmax(0, 1fr))`,
+                  // On mobile, if columns are too many, we might want to allow scrolling or shrinking?
+                  // But user asked to look like the cut.
+                }}
+              >
                 {segments.map((seg, i) => (
-                  <div
-                    key={i}
-                    className="min-w-[140px] flex flex-col gap-2 snap-center group"
-                  >
+                  <div key={i} className="flex flex-col gap-2 group w-full">
                     <div className="bg-slate-200 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform group-hover:-translate-y-1">
                       <NextImage
                         src={seg}
