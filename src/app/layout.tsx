@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
@@ -70,6 +71,19 @@ export default async function RootLayout({
           </main>
           <Footer />
         </LanguageProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-WBG2FZTPRZ');
+          `}
+        </Script>
       </body>
     </html>
   );
