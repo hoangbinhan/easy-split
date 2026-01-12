@@ -95,6 +95,12 @@ export default async function RootLayout({
             gtag('config', 'G-WBG2FZTPRZ');
           `}
         </Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915469150707514"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
