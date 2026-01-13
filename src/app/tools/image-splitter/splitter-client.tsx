@@ -293,15 +293,15 @@ export default function ImageSplitterClient() {
         }}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8">
         {/* LEFT: Controls */}
-        <div className="lg:col-span-4 space-y-6">
-          <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col transition-all">
+        <div className="lg:col-span-4 space-y-4 sm:space-y-6">
+          <div className="bg-white border-4 border-black p-4 sm:p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col transition-all">
             {/* TABS */}
-            <div className="flex border-b-4 border-black mb-6">
+            <div className="flex border-b-4 border-black mb-4 sm:mb-6">
               <button
                 onClick={() => setActiveTab("edit")}
-                className={`flex-1 py-3 font-black uppercase text-sm flex items-center justify-center gap-2 ${
+                className={`flex-1 py-2 sm:py-3 font-black uppercase text-sm flex items-center justify-center gap-2 ${
                   activeTab === "edit"
                     ? "bg-yellow-300 text-black"
                     : "bg-white text-slate-400 hover:bg-slate-50"
@@ -311,7 +311,7 @@ export default function ImageSplitterClient() {
               </button>
               <button
                 onClick={() => setActiveTab("split")}
-                className={`flex-1 py-3 font-black uppercase text-sm flex items-center justify-center gap-2 border-l-4 border-black ${
+                className={`flex-1 py-2 sm:py-3 font-black uppercase text-sm flex items-center justify-center gap-2 border-l-4 border-black ${
                   activeTab === "split"
                     ? "bg-cyan-300 text-black"
                     : "bg-white text-slate-400 hover:bg-slate-50"
@@ -323,7 +323,7 @@ export default function ImageSplitterClient() {
 
             {/* TAB CONTENT: EDIT */}
             {activeTab === "edit" && (
-              <div className="space-y-6 animate-in slide-in-from-left-4 fade-in duration-300">
+              <div className="space-y-3 sm:space-y-6 animate-in slide-in-from-left-4 fade-in duration-300">
                 <div>
                   <label className="font-bold uppercase text-sm mb-3 block">
                     {t.transform_label}
@@ -331,7 +331,7 @@ export default function ImageSplitterClient() {
                   <div className="grid grid-cols-2 gap-2 mb-2">
                     <button
                       onClick={() => cropperRef.current?.cropper?.rotate(90)}
-                      className="bg-white border-2 border-black p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
+                      className="bg-white border-2 border-black p-2 sm:p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
                     >
                       <RotateCw className="w-5 h-5" /> {t.rotate_btn}
                     </button>
@@ -341,14 +341,14 @@ export default function ImageSplitterClient() {
                           -(cropperRef.current?.cropper?.getData().scaleX || 1)
                         )
                       }
-                      className="bg-white border-2 border-black p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
+                      className="bg-white border-2 border-black p-2 sm:p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
                     >
                       <FlipHorizontal className="w-5 h-5" /> {t.flip_h_btn}
                     </button>
                   </div>
                   <button
                     onClick={() => setIsEditCropMode(!isEditCropMode)}
-                    className={`w-full border-2 border-black p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 cursor-pointer ${
+                    className={`w-full border-2 border-black p-2 sm:p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 cursor-pointer ${
                       isEditCropMode
                         ? "bg-black text-white"
                         : "bg-white hover:bg-slate-50"
@@ -371,7 +371,7 @@ export default function ImageSplitterClient() {
                         performCrop();
                         setIsEditCropMode(false); // Close after apply
                       }}
-                      className="w-full bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
+                      className="w-full bg-green-400 border-2 border-black py-3 sm:py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
                     >
                       <CheckCircle className="w-5 h-5" /> {t.apply_crop}
                     </button>
@@ -385,7 +385,7 @@ export default function ImageSplitterClient() {
 
             {/* TAB CONTENT: SPLIT */}
             {activeTab === "split" && (
-              <div className="space-y-6 animate-in slide-in-from-right-4 fade-in duration-300">
+              <div className="space-y-3 sm:space-y-6 animate-in slide-in-from-right-4 fade-in duration-300">
                 {/* 1. Columns Slider */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
@@ -523,10 +523,10 @@ export default function ImageSplitterClient() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-col gap-3 mt-auto pt-6 border-t-4 border-black">
+                <div className="flex flex-col gap-3 mt-auto pt-4 sm:pt-6 border-t-4 border-black">
                   <button
                     onClick={performSplit}
-                    className="bg-green-400 border-2 border-black py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-lg cursor-pointer"
+                    className="bg-green-400 border-2 border-black py-3 sm:py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
                   >
                     {isProcessing ? t.processing : t.split_image_btn}{" "}
                     <ArrowRight strokeWidth={3} />
@@ -558,8 +558,8 @@ export default function ImageSplitterClient() {
 
         {/* RIGHT: Visual Simulation (Cropper as Viewer) */}
         <div className="lg:col-span-8">
-          <div className="bg-slate-100 border-4 border-black p-4 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <div className="relative w-full h-[35vh] sm:h-[600px] overflow-hidden">
+          <div className="bg-slate-100 border-4 border-black p-2 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="relative w-full h-[30vh] sm:h-[600px] overflow-hidden">
               <div className="absolute top-4 left-4 z-20 bg-black text-white px-2 py-1 text-xs font-black uppercase pointer-events-none">
                 {activeTab === "edit" ? t.edit_mode : t.interactive_preview}
               </div>
@@ -665,15 +665,21 @@ export default function ImageSplitterClient() {
               </div>
 
               <div
-                className="grid gap-4 pb-6 px-1"
+                className={`grid gap-2 sm:gap-4 pb-6 px-1 ${
+                  colCount > 1 ? "overflow-x-auto snap-x snap-mandatory" : ""
+                }`}
                 style={{
-                  gridTemplateColumns: `repeat(${colCount}, minmax(0, 1fr))`,
-                  // On mobile, if columns are too many, we might want to allow scrolling or shrinking?
-                  // But user asked to look like the cut.
+                  gridTemplateColumns:
+                    colCount === 1
+                      ? "1fr"
+                      : `repeat(${colCount}, minmax(125px, 1fr))`,
                 }}
               >
                 {segments.map((seg, i) => (
-                  <div key={i} className="flex flex-col gap-2 group w-full">
+                  <div
+                    key={i}
+                    className="flex flex-col gap-2 group w-full min-w-0 snap-center"
+                  >
                     <div className="bg-slate-200 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform group-hover:-translate-y-1">
                       <NextImage
                         src={seg}
