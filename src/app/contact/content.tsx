@@ -33,6 +33,11 @@ export default function ContactContent() {
       from_name: "Easy Split Contact Form",
     };
 
+    interface Web3FormsResponse {
+      success: boolean;
+      message: string;
+    }
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -43,7 +48,7 @@ export default function ContactContent() {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      const result = (await response.json()) as Web3FormsResponse;
 
       if (result.success) {
         setFormStatus("success");
