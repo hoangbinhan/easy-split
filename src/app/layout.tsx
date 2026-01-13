@@ -82,7 +82,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
-          {/* <CookieBanner /> */}
+          <CookieBanner />
         </LanguageProvider>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"
