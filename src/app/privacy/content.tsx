@@ -54,15 +54,21 @@ export default function PrivacyContent() {
           <h3>{t.privacy_links_title}</h3>
           <p>{t.privacy_links_desc}</p>
 
-          <h3>{t.privacy_contact_title}</h3>
-          <p>{t.privacy_contact_desc}</p>
-          <div className="bg-black text-white p-6 border-4 border-yellow-400 inline-block shadow-[8px_8px_0px_0px_#facc15]">
-            <p className="m-0 font-bold uppercase text-sm mb-1 text-yellow-400">
-              {t.owner_label}
+          <section>
+            <h2 className="text-2xl font-black uppercase mb-4">
+              {t.privacy_contact_title}
+            </h2>
+            <p>
+              {t.privacy_contact_desc}{" "}
+              <a
+                href="mailto:hoangbinhan.5398@gmail.com"
+                className="font-bold underline hover:text-blue-600"
+              >
+                hoangbinhan.5398@gmail.com
+              </a>
+              .
             </p>
-            <p className="m-0 text-xl font-black">hba-dev</p>
-            <p className="m-0 text-slate-300 mt-2">hoangbinhana3@gmail.com</p>
-          </div>
+          </section>
         </div>
       </article>
     </div>

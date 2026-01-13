@@ -158,6 +158,12 @@ export function Footer() {
           >
             {t.about}
           </Link>
+          <Link
+            href="/contact"
+            className="hover:bg-green-300 px-2 transition-colors"
+          >
+            {t.contact_title}
+          </Link>
         </div>
       </div>
     </footer>

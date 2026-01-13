@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { Header, Footer } from "@/components/layout-components";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,6 +82,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          {/* <CookieBanner /> */}
         </LanguageProvider>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"

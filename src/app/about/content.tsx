@@ -62,7 +62,7 @@ export default function AboutContent() {
               </p>
               <p className="text-sm">{t.about_creator_bio}</p>
               <a
-                href="mailto:hoangbinhana3@gmail.com"
+                href="mailto:hoangbinhan.5398@gmail.com"
                 className="inline-block mt-4 text-sm font-bold bg-black text-white px-4 py-2 border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-all"
               >
                 {t.about_say_hello}

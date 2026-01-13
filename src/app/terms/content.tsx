@@ -55,14 +55,21 @@ export default function TermsContent() {
           <h3>{t.terms_liability_title}</h3>
           <p>{t.terms_liability_desc}</p>
 
-          <h3>{t.terms_contact_title}</h3>
-          <p>{t.terms_contact_desc}</p>
-          <a
-            href="mailto:hoangbinhana3@gmail.com"
-            className="inline-block bg-black text-white px-6 py-3 font-bold uppercase border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-          >
-            hoangbinhana3@gmail.com
-          </a>
+          <section>
+            <h2 className="text-2xl font-black uppercase mb-4">
+              {t.terms_contact_title}
+            </h2>
+            <p>
+              {t.terms_contact_desc}{" "}
+              <a
+                href="mailto:hoangbinhan.5398@gmail.com"
+                className="font-bold underline hover:text-blue-600"
+              >
+                hoangbinhan.5398@gmail.com
+              </a>
+              .
+            </p>
+          </section>
         </div>
       </article>
     </div>
