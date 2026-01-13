@@ -1,35 +1,63 @@
 "use client";
 
-import React, { useActionState, useEffect } from "react";
+import React, { useState } from "react";
 import { Bangers } from "next/font/google";
 import { useLanguage } from "@/components/LanguageProvider";
 import { Mail, Clock, Send, AlertCircle, CheckCircle } from "lucide-react";
-import { sendContactEmail } from "@/app/actions/contact";
 
 const bangers = Bangers({
   weight: "400",
   subsets: ["latin"],
 });
 
-const initialState = {
-  success: false,
-  message: "",
-};
-
 export default function ContactContent() {
   const { t } = useLanguage();
-  const [state, formAction, isPending] = useActionState(
-    sendContactEmail,
-    initialState
-  );
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState("");
 
-  // Reset form on success (optional, logic can vary)
-  useEffect(() => {
-    if (state.success) {
-      const form = document.getElementById("contact-form") as HTMLFormElement;
-      if (form) form.reset();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus("submitting");
+    setMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    // Add Access Key directly here (Safe on Free tier, no billing quota to steal)
+    const payload = {
+      ...data,
+      access_key: "dd1e2440-345e-4c49-bb4a-808918fffa25",
+      subject: `New Contact from Easy Split: ${data.name}`,
+      from_name: "Easy Split Contact Form",
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormStatus("success");
+        setMessage("Email sent successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setFormStatus("error");
+        setMessage(result.message || "Something went wrong.");
+      }
+    } catch (error) {
+      setFormStatus("error");
+      setMessage("Failed to send email. Please check your connection.");
     }
-  }, [state.success]);
+  };
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -83,22 +111,21 @@ export default function ContactContent() {
 
         {/* Contact Form */}
         <form
-          id="contact-form"
-          action={formAction}
+          onSubmit={handleSubmit}
           className="bg-white border-4 border-black p-6 sm:p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] space-y-4"
         >
-          {state.message && (
+          {message && (
             <div
               className={`p-4 border-2 border-black font-bold flex gap-2 items-center ${
-                state.success ? "bg-green-200" : "bg-red-200"
+                formStatus === "success" ? "bg-green-200" : "bg-red-200"
               }`}
             >
-              {state.success ? (
+              {formStatus === "success" ? (
                 <CheckCircle className="w-5 h-5" />
               ) : (
                 <AlertCircle className="w-5 h-5" />
               )}
-              {state.message}
+              {message}
             </div>
           )}
 
@@ -114,7 +141,7 @@ export default function ContactContent() {
               id="name"
               name="name"
               required
-              disabled={isPending}
+              disabled={formStatus === "submitting"}
               className="w-full bg-slate-50 border-2 border-black p-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50"
             />
           </div>
@@ -131,7 +158,7 @@ export default function ContactContent() {
               id="email"
               name="email"
               required
-              disabled={isPending}
+              disabled={formStatus === "submitting"}
               className="w-full bg-slate-50 border-2 border-black p-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50"
             />
           </div>
@@ -148,17 +175,17 @@ export default function ContactContent() {
               name="message"
               required
               rows={4}
-              disabled={isPending}
+              disabled={formStatus === "submitting"}
               className="w-full bg-slate-50 border-2 border-black p-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            disabled={isPending}
+            disabled={formStatus === "submitting"}
             className="w-full bg-cyan-300 border-2 border-black py-4 font-black uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-cyan-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isPending ? (
+            {formStatus === "submitting" ? (
               <>Sending...</>
             ) : (
               <>
