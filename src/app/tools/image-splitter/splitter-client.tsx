@@ -43,6 +43,7 @@ export default function ImageSplitterClient() {
   const [customHW, setCustomHW] = useState({ w: 3, h: 4 });
   const [activeTab, setActiveTab] = useState<"edit" | "split">("split");
   const [isEditCropMode, setIsEditCropMode] = useState(false);
+  const [isCustomRatio, setIsCustomRatio] = useState(false); // New state to track if custom mode is active explicitly
 
   // Reset Edit Crop Mode when switching tabs
   useEffect(() => {
@@ -449,8 +450,12 @@ export default function ImageSplitterClient() {
                     {ASPECT_RATIOS.map((r) => (
                       <button
                         key={r.label}
-                        onClick={() => setChunkRatio(r.value)}
+                        onClick={() => {
+                          setChunkRatio(r.value);
+                          setIsCustomRatio(false);
+                        }}
                         className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
+                          !isCustomRatio &&
                           Math.abs(chunkRatio - r.value) < 0.001
                             ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
                             : "bg-white hover:bg-slate-50 hover:-translate-y-1"
@@ -462,11 +467,17 @@ export default function ImageSplitterClient() {
                     ))}
                     {/* Custom Button */}
                     <button
-                      onClick={() => setChunkRatio(customHW.w / customHW.h)}
+                      onClick={() => {
+                        setIsCustomRatio(true);
+                        // If values are valid, apply them, otherwise keep current ratio or def to 3:4?
+                        // Actually better to just apply current customHW even if it's 0 (invalid?)
+                        // Safe check:
+                        if (customHW.w > 0 && customHW.h > 0) {
+                          setChunkRatio(customHW.w / customHW.h);
+                        }
+                      }}
                       className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
-                        !ASPECT_RATIOS.some(
-                          (r) => Math.abs(r.value - chunkRatio) < 0.001
-                        )
+                        isCustomRatio
                           ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
                           : "bg-white hover:bg-slate-50 hover:-translate-y-1"
                       }`}
@@ -477,10 +488,8 @@ export default function ImageSplitterClient() {
                   </div>
 
                   {/* Custom Inputs Panel */}
-                  {!ASPECT_RATIOS.some(
-                    (r) => Math.abs(r.value - chunkRatio) < 0.001
-                  ) && (
-                    <div className="mt-3 bg-slate-100 border-2 border-dashed border-black p-3 animate-in slide-in-from-top-2">
+                  {isCustomRatio && (
+                    <div className="mt-2 bg-slate-100 border-2 border-dashed border-black p-2 sm:p-3 animate-in slide-in-from-top-2">
                       <div className="flex items-center gap-2">
                         <div className="flex-1">
                           <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
