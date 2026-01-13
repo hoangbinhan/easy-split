@@ -1,4 +1,17 @@
-export type Language = "en" | "vi" | "ko" | "jp" | "th" | "id" | "es";
+export type Language =
+  | "en"
+  | "vi"
+  | "ko"
+  | "jp"
+  | "th"
+  | "id"
+  | "es"
+  | "zh-CN"
+  | "zh-TW"
+  | "de"
+  | "ru"
+  | "hi"
+  | "pt-BR";
 
 export const translations = {
   en: {
@@ -87,7 +100,7 @@ export const translations = {
       "Absolutely! While designed for TikTok, the split images work perfectly for Instagram Carousels (Swipeable Posts). Just choose the 4:5 or 1:1 ratio option.",
     about_tool_title: "About This Tool",
     about_tool_desc:
-      "TikTok Tools is a suite of creative utilities designed for modern content creators. We believe in building tools that are fast, free, and respect user privacy.",
+      "Easy Split is a suite of creative utilities designed for modern content creators. We believe in building tools that are fast, free, and respect user privacy.",
     privacy_commitment_title: "Privacy Commitment",
     privacy_commitment_desc:
       "This Image Splitter operates strictly client-side. We do not store, view, or transmit your images. The 'Download' logic simply saves the processed canvas data directly from your browser's memory to your disk.",
@@ -259,7 +272,7 @@ export const translations = {
       "Chắc chắn rồi! Mặc dù được thiết kế cho TikTok, ảnh cắt hoạt động hoàn hảo cho Instagram Carousels (Bài đăng vuốt). Chỉ cần chọn tùy chọn tỷ lệ 4:5 hoặc 1:1.",
     about_tool_title: "Về Công Cụ Này",
     about_tool_desc:
-      "TikTok Tools là bộ tiện ích sáng tạo được thiết kế cho người sáng tạo nội dung hiện đại. Chúng tôi tin vào việc xây dựng các công cụ nhanh, miễn phí và tôn trọng quyền riêng tư người dùng.",
+      "Easy Split là bộ tiện ích sáng tạo được thiết kế cho người sáng tạo nội dung hiện đại. Chúng tôi tin vào việc xây dựng các công cụ nhanh, miễn phí và tôn trọng quyền riêng tư người dùng.",
     privacy_commitment_title: "Cam Kết Bảo Mật",
     privacy_commitment_desc:
       "Công cụ Cắt Ảnh này hoạt động hoàn toàn ở phía máy khách (client-side). Chúng tôi không lưu trữ, xem hoặc truyền tải ảnh của bạn. Logic 'Tải xuống' chỉ đơn giản là lưu dữ liệu canvas đã xử lý trực tiếp từ bộ nhớ trình duyệt vào đĩa của bạn.",
@@ -431,7 +444,7 @@ export const translations = {
       "물론입니다! TikTok용으로 설계되었지만 잘라낸 이미지는 Instagram 캐러셀(스와이프 게시물)에서도 완벽하게 작동합니다. 4:5 또는 1:1 비율 옵션을 선택하기만 하면 됩니다.",
     about_tool_title: "이 도구에 대하여",
     about_tool_desc:
-      "TikTok Tools는 현대 콘텐츠 크리에이터를 위해 설계된 창의적인 유틸리티 모음입니다. 우리는 빠르고 무료이며 사용자 개인 정보를 존중하는 도구를 만드는 것을 믿습니다.",
+      "Easy Split은 현대 콘텐츠 크리에이터를 위해 설계된 창의적인 유틸리티 모음입니다. 우리는 빠르고 무료이며 사용자 개인 정보를 존중하는 도구를 만드는 것을 믿습니다.",
     privacy_commitment_title: "개인 정보 보호 약속",
     privacy_commitment_desc:
       "이 이미지 분할기는 엄격하게 클라이언트 사이드에서 작동합니다. 귀하의 이미지를 저장, 조회 또는 전송하지 않습니다. '다운로드' 로직은 단순히 처리된 캔버스 데이터를 브라우저 메모리에서 디스크로 저장할 뿐입니다.",
@@ -549,7 +562,7 @@ export const translations = {
     privacy: "プライバシーポリシー",
     terms: "利用規約",
     footer_rights: "EASY SPLIT. All rights reserved.",
-    about: "About",
+    about: "概要",
     tab_edit: "編集",
     tab_split: "分割",
     transform_label: "変形",
@@ -603,7 +616,7 @@ export const translations = {
       "もちろんです！TikTok用に設計されていますが、分割された画像はInstagramカルーセル（スワイプ投稿）でも完璧に機能します。4:5または1:1の比率オプションを選択するだけです。",
     about_tool_title: "このツールについて",
     about_tool_desc:
-      "TikTok Toolsは、現代のコンテンツクリエイター向けに設計されたクリエイティブユーティリティスイートです。高速で無料、そしてユーザーのプライバシーを尊重するツールを構築することを信条としています。",
+      "Easy Splitは、現代のコンテンツクリエイター向けに設計されたクリエイティブユーティリティスイートです。高速で無料、そしてユーザーのプライバシーを尊重するツールを構築することを信条としています.",
     privacy_commitment_title: "プライバシーへの取り組み",
     privacy_commitment_desc:
       "この画像分割ツールは厳密にクライアントサイドで動作します。画像を保存、閲覧、送信することはありません。「ダウンロード」ロジックは、処理されたキャンバスデータをブラウザのメモリからディスクに保存するだけです。",
@@ -774,7 +787,7 @@ export const translations = {
       "ได้แน่นอน! แม้ว่าจะออกแบบมาสำหรับ TikTok แต่ภาพที่ตัดก็ใช้งานได้ดีกับ Instagram Carousels (โพสต์แบบปัด) เพียงเลือกตัวเลือกอัตราส่วน 4:5 หรือ 1:1",
     about_tool_title: "เกี่ยวกับเครื่องมือนี้",
     about_tool_desc:
-      "TikTok Tools เป็นชุดยูทิลิตี้สร้างสรรค์ที่ออกแบบมาเพื่อคอนเทนต์ครีเอเตอร์ยุคใหม่ เราเชื่อในการสร้างเครื่องมือที่รวดเร็ว ฟรี และเคารพความเป็นส่วนตัวของผู้ใช้",
+      "Easy Split เป็นชุดยูทิลิตี้สร้างสรรค์ที่ออกแบบมาเพื่อคอนเทนต์ครีเอเตอร์ยุคใหม่ เราเชื่อในการสร้างเครื่องมือที่รวดเร็ว ฟรี และเคารพความเป็นส่วนตัวของผู้ใช้",
     privacy_commitment_title: "ความมุ่งมั่นด้านความเป็นส่วนตัว",
     privacy_commitment_desc:
       "ตัวตัดภาพนี้ทำงานแบบ client-side อย่างเคร่งครัด เราไม่จัดเก็บ ดู หรือส่งรูปภาพของคุณ ตรรกะ 'ดาวน์โหลด' เพียงแค่บันทึกข้อมูล canvas ที่ประมวลผลแล้วจากหน่วยความจำเบราว์เซอร์ไปยังดิสก์ของคุณโดยตรง",
@@ -945,7 +958,7 @@ export const translations = {
       "Tentu saja! Meskipun dirancang untuk TikTok, gambar yang dipotong bekerja sempurna untuk Instagram Carousel (Postingan Geser). Cukup pilih opsi rasio 4:5 atau 1:1.",
     about_tool_title: "Tentang Alat Ini",
     about_tool_desc:
-      "TikTok Tools adalah seperangkat utilitas kreatif yang dirancang untuk kreator konten modern. Kami percaya dalam membangun alat yang cepat, gratis, dan menghormati privasi pengguna.",
+      "Easy Split adalah seperangkat utilitas kreatif yang dirancang untuk kreator konten modern. Kami percaya dalam membangun alat yang cepat, gratis, dan menghormati privasi pengguna.",
     privacy_commitment_title: "Komitmen Privasi",
     privacy_commitment_desc:
       "Pemisah Gambar ini beroperasi secara ketat di sisi klien. Kami tidak menyimpan, melihat, atau mengirimkan gambar Anda. Logika 'Unduh' hanya menyimpan data kanvas yang diproses langsung dari memori browser ke disk Anda.",
@@ -1119,7 +1132,7 @@ export const translations = {
       "¡Absolutamente! Aunque diseñado para TikTok, las imágenes divididas funcionan perfectamente para Carruseles de Instagram (Publicaciones deslizables). Solo elige la opción de relación 4:5 o 1:1.",
     about_tool_title: "Acerca de esta herramienta",
     about_tool_desc:
-      "TikTok Tools es un conjunto de utilidades creativas diseñadas para creadores de contenido modernos. Creemos en construir herramientas que sean rápidas, gratis y respeten la privacidad del usuario.",
+      "Easy Split es un conjunto de utilidades creativas diseñadas para creadores de contenido modernos. Creemos en construir herramientas que sean rápidas, gratis y respeten la privacidad del usuario.",
     privacy_commitment_title: "Compromiso de privacidad",
     privacy_commitment_desc:
       "Este Cortador de Imágenes opera estrictamente del lado del cliente. No almacenamos, vemos ni transmitimos tus imágenes. La lógica de 'Descargar' simplemente guarda los datos del lienzo procesado directamente desde la memoria del navegador a tu disco.",
@@ -1204,5 +1217,1036 @@ export const translations = {
     about_creator_bio:
       "Apasionado por construir aplicaciones web 'neo-brutalistas' que sean divertidas, rápidas y funcionales.",
     about_say_hello: "Di Hola →",
+  },
+  "zh-CN": {
+    title: "Easy Split - 图片分割",
+    subtitle:
+      "将您的照片分割成无缝网格或垂直幻灯片。非常适合 TikTok、Instagram 等。",
+    upload_title: "更改图片",
+    upload_placeholder: "点击或拖放图片至此",
+    upload_desc: "支持 JPG, PNG, WEBP, AVIF, BMP。推荐 16:9 格式",
+    ready_msg: "准备下载",
+    download_all: "全部下载 (ZIP)",
+    download_part: "保存图片",
+    download_zip_mobile: "下载 ZIP",
+    part: "部分",
+    article_title: "如何分割照片以制作无缝轮播幻灯片",
+    article_intro:
+      "发布巨幅全景图或宽图片通常会导致质量下降或尴尬的裁剪。EASY SPLIT 通过将您的图片分割成完美对齐的片段来解决这个问题，适用于 TikTok、Instagram 轮播等。",
+    article_why_title: "为什么要分割您的图片？",
+    article_why_1: "增加互动：观众会滑动查看完整图片。",
+    article_why_2: "更好的叙事：在社交媒体上创造全景体验。",
+    article_why_3: "高质量：客户端处理确保输出清晰。",
+    how_to_title: "用户指南",
+    how_to_1: "上传任何图片（全景图效果最佳）。",
+    how_to_2: "选择您想要的片段数量（2 到 10）。",
+    how_to_3: "如需调整，请调整裁剪区域，然后点击 Split。",
+    how_to_4: "下载您的片段并上传到您喜欢的平台。",
+    nav_home: "Easy Split",
+    nav_splitter: "图片分割器",
+    privacy: "隐私政策",
+    terms: "服务条款",
+    footer_rights: "EASY SPLIT. 版权所有。",
+    about: "关于",
+    tab_edit: "编辑",
+    tab_split: "分割",
+    transform_label: "变换",
+    rotate_btn: "旋转",
+    flip_h_btn: "水平翻转",
+    open_crop: "打开裁剪工具",
+    cancel_crop: "取消裁剪",
+    actions_label: "操作",
+    apply_crop: "应用裁剪",
+    overwrite_warning: "* 覆盖当前图片",
+    segments_label: "片段",
+    crop_ratio_label: "裁剪比例",
+    custom_ratio: "自定义",
+    split_direction_label: "分割方向",
+    split_cols: "列 (垂直)",
+    split_rows: "行 (水平)",
+    width_label: "宽度",
+    height_label: "高度",
+    split_image_btn: "分割图片",
+    processing: "处理中...",
+    change_img: "更改图片",
+    reset_all: "重置所有",
+    edit_mode: "编辑模式",
+    interactive_preview: "交互式预览",
+    results_label: "结果",
+    feature_client_side_title: "100% 客户端",
+    feature_client_side_desc:
+      "您的照片从未离开您的设备。所有处理都在您的浏览器中进行，以最大程度地保护隐私。",
+    feature_instant_title: "即时分割",
+    feature_instant_desc:
+      "无需上传等待时间。得益于优化的基于浏览器的 canvas 技术，分割即时发生。",
+    feature_quality_title: "无质量损失",
+    feature_quality_desc:
+      "我们优先考虑高保真导出设置，以确保您的 TikTok 轮播看起来清晰专业。",
+    feature_free_title: "100% 免费",
+    feature_free_desc:
+      "无订阅，无水印，无隐藏费用。只是一个为创作者提供的简单工具。",
+    ratio_free: "自由",
+    faq_title: "常见问题",
+    faq_1_q: "如何为 TikTok 制作无缝轮播？",
+    faq_1_a:
+      "上传您的全景图片，选择'3 片段'（或更多），然后使用我们的工具进行分割。发布到 TikTok 时，选择'照片模式'并按顺序上传图片。结果将是一个可滑动的无缝全景图。",
+    faq_2_q: "在这里上传我的照片安全吗？",
+    faq_2_a:
+      "是的！实际上，您并没有将它们'上传'到任何地方。此工具完全在您的浏览器中运行。您的图片从未发送到服务器，确保 100% 隐私。",
+    faq_3_q: "TikTok 幻灯片的最佳尺寸是多少？",
+    faq_3_a:
+      "TikTok 推荐 9:16 的纵横比（1080x1920 像素）。使用标准设置时，我们的工具会自动为您设置此比例。",
+    faq_4_q: "我也能为 Instagram 分割图片吗？",
+    faq_4_a:
+      "当然！虽然专为 TikTok 设计，但分割后的图片非常适合 Instagram 轮播（滑动帖子）。只需选择 4:5 或 1:1 比例选项。",
+    about_tool_title: "关于此工具",
+    about_tool_desc:
+      "Easy Split 是一套专为现代内容创作者设计的创意实用工具。我们致力于构建快速、免费且尊重用户隐私的工具。",
+    privacy_commitment_title: "隐私承诺",
+    privacy_commitment_desc:
+      "此图片分割器严格在客户端运行。我们不存储、查看或传输您的图片。'下载'逻辑仅将处理后的 canvas 数据直接从浏览器内存保存到您的磁盘。",
+    created_by: "创建者",
+    contact: "联系方式",
+    new_dynamic_split: "新功能：动态分割",
+    privacy_title: "隐私政策",
+    last_updated: "最后更新：2026年1月11日",
+    privacy_intro:
+      "在 <strong class='font-black'>Easy Split</strong>，我们秉持隐私至上的设计理念。我们的工具构建为<strong class='font-black'>客户端</strong>运行，这意味着您的数据（图片、文件）保留在您的设备上，从未上传到我们的服务器。",
+    privacy_info_collect_title: "1. 我们收集的信息",
+    privacy_info_collect_desc:
+      "由于我们不需要用户帐户并在本地处理文件，因此我们要收集的数据最少：",
+    privacy_usage_data:
+      "<strong>使用数据：</strong> 我们可能会使用第三方分析（如 Google Analytics）来了解用户如何浏览我们的网站。这些数据是匿名的，不包含个人文件。",
+    privacy_cookies:
+      "<strong>Cookies：</strong> 我们使用必要的 Cookie 来记住您的偏好（如语言设置）。",
+    privacy_process_files_title: "2. 我们如何处理您的文件",
+    privacy_process_files_desc:
+      "当您使用像我们的<strong>图片分割器</strong>这样的工具时，所有图像操作都在您的 Web 浏览器中使用 HTML5 Canvas 技术进行。<strong>我们不会查看、存储或传输您的图片。</strong>",
+    privacy_ads_title: "3. 广告 (Google AdSense)",
+    privacy_ads_desc:
+      "我们使用包括 Google 在内的第三方供应商，根据用户之前访问我们网站或其他网站的情况来投放广告。",
+    privacy_ads_point1:
+      "Google 使用广告 Cookie 使其及其合作伙伴能够根据您的用户对您网站和/或互联网上其他网站的访问情况向其投放广告。",
+    privacy_ads_point2:
+      "用户可以通过访问 <a href='https://www.google.com/settings/ads' target='_blank' rel='nofollow noreferrer'>Google 广告设置</a> 来选择退出个性化广告。",
+    privacy_links_title: "4. 第三方链接",
+    privacy_links_desc:
+      "我们的网站可能包含指向其他网站的链接。如果您点击第三方链接，您将被定向到该网站。请注意，这些外部网站并非由我们运营。因此，我们强烈建议您查看这些网站的隐私政策。",
+    privacy_contact_title: "5. 联系我们",
+    privacy_contact_desc:
+      "如果您对我们的隐私政策有任何问题或建议，请随时联系我们。",
+    owner_label: "所有者",
+    terms_title: "服务条款",
+    terms_last_updated: "最后更新：2026年1月11日",
+    terms_intro:
+      "在使用由 <strong class='font-black'>hba-dev</strong>（'我们'）运营的 <strong class='font-black'>Easy Split</strong> 网站之前，请仔细阅读这些服务条款（'条款'，'服务条款'）。",
+    terms_conditions_title: "1. 使用条件",
+    terms_conditions_desc:
+      "使用本网站即表示您证明您已阅读并审阅本协议，并同意遵守其条款。如果您不想受本协议条款的约束，建议您相应地停止使用本网站。",
+    terms_ip_title: "2. 知识产权",
+    terms_ip_desc:
+      "您同意本网站提供的所有材料、产品和服务均为网站所有者、其关联公司、董事、高管、员工、代理商、供应商或许可方的财产，包括所有版权、商业秘密、商标、专利和其他知识产权。",
+    terms_ugc_label: "用户生成内容",
+    terms_ugc_desc:
+      "您保留使用我们的工具处理的任何图片或内容的完整所有权。由于我们不存储您的文件，因此您对自己的内容负全部责任。",
+    terms_acceptable_use_title: "3. 可接受的使用",
+    terms_acceptable_use_desc:
+      "您同意不为了任何非法目的或本条款禁止的任何目的使用我们的特定工具。您同意不使用我们的服务来：",
+    terms_use_1: "骚扰、辱骂或威胁他人。",
+    terms_use_2: "侵犯他人的权利。",
+    terms_use_3: "实施任何欺诈行为或分发恶意软件或病毒。",
+    terms_indemnification_title: "4.赔偿",
+    terms_indemnification_desc:
+      "您同意赔偿网站所有者及其关联公司，并使我们免受因您使用或滥用我们的服务而引起的法律索赔和要求的损害。",
+    terms_liability_title: "5. 责任限制",
+    terms_liability_desc:
+      "对于因您滥用我们的网站而可能对您造成的任何损害，我们概不负责。我们保留随时编辑、修改和更改本协议的权利。",
+    terms_contact_title: "6. 联系",
+    terms_contact_desc: "有关这些条款的任何问题，请通过以下方式联系我们：",
+    about_us_title: "关于我们",
+    about_us_tagline: "自2026年以来为创作者赋能",
+    about_us_intro:
+      "欢迎来到 <strong class='font-black'>EASY SPLIT</strong>，这是为社交媒体分割图片最简单、最快捷的方式。",
+    about_mission_title: "我们的使命",
+    about_mission_desc:
+      "我们创立 Easy Split 的目标很简单：帮助创作者、摄影师和讲故事的人毫无限制地展示他们的作品。无论是 Instagram 上的无缝轮播还是 TikTok 上的照片幻灯片，我们相信您的全景照片值得以完整的荣耀展示，而不是被裁剪成一个小方块。",
+    about_why_title: "我们为什么构建这个",
+    about_why_desc:
+      "现有工具要么太贵，充斥着广告，要么需要将您的私人照片上传到缓慢的服务器。我们想构建一些东西：",
+    about_why_fast_title: "快速：",
+    about_why_fast_desc: "零上传时间。一切都在您的浏览器中进行。",
+    about_why_private_title: "私密：",
+    about_why_private_desc: "您的照片从未离开您的设备。",
+    about_why_free_title: "免费：",
+    about_why_free_desc: "人人都可以使用专业工具。",
+    about_meet_creator_title: "遇见创作者",
+    about_creator_role: "全栈开发者 & 创作者",
+    about_creator_bio: "热衷于构建有趣、快速且实用的'新粗野主义'网络应用程序。",
+    about_say_hello: "打招呼 →",
+  },
+  "zh-TW": {
+    title: "Easy Split - 圖片分割",
+    subtitle:
+      "將您的照片分割成無縫網格或垂直幻燈片。非常適合 TikTok、Instagram 等。",
+    upload_title: "更改圖片",
+    upload_placeholder: "點擊或拖放圖片至此",
+    upload_desc: "支持 JPG, PNG, WEBP, AVIF, BMP。推薦 16:9 格式",
+    ready_msg: "準備下載",
+    download_all: "全部下載 (ZIP)",
+    download_part: "保存圖片",
+    download_zip_mobile: "下載 ZIP",
+    part: "部分",
+    article_title: "如何分割照片以製作無縫輪播幻燈片",
+    article_intro:
+      "發布巨幅全景圖或寬圖片通常會導致質量下降或尷尬的裁剪。EASY SPLIT 通過將您的圖片分割成完美對齊的片段來解決這個問題，適用於 TikTok、Instagram 輪播等。",
+    article_why_title: "為什麼要分割您的圖片？",
+    article_why_1: "增加互動：觀眾會滑動查看完整圖片。",
+    article_why_2: "更好的敘事：在社交媒體上創造全景體驗。",
+    article_why_3: "高質量：客戶端處理確保輸出清晰。",
+    how_to_title: "用戶指南",
+    how_to_1: "上傳任何圖片（全景圖效果最佳）。",
+    how_to_2: "選擇您想要的片段數量（2 到 10）。",
+    how_to_3: "如需調整，請調整裁剪區域，然後點擊 Split。",
+    how_to_4: "下載您的片段並上傳到您喜歡的平台。",
+    nav_home: "Easy Split",
+    nav_splitter: "圖片分割器",
+    privacy: "隱私政策",
+    terms: "服務條款",
+    footer_rights: "EASY SPLIT. 版權所有。",
+    about: "關於",
+    tab_edit: "編輯",
+    tab_split: "分割",
+    transform_label: "變換",
+    rotate_btn: "旋轉",
+    flip_h_btn: "水平翻轉",
+    open_crop: "打開裁剪工具",
+    cancel_crop: "取消裁剪",
+    actions_label: "操作",
+    apply_crop: "應用裁剪",
+    overwrite_warning: "* 覆蓋當前圖片",
+    segments_label: "片段",
+    crop_ratio_label: "裁剪比例",
+    custom_ratio: "自定義",
+    split_direction_label: "分割方向",
+    split_cols: "列 (垂直)",
+    split_rows: "行 (水平)",
+    width_label: "寬度",
+    height_label: "高度",
+    split_image_btn: "分割圖片",
+    processing: "處理中...",
+    change_img: "更改圖片",
+    reset_all: "重置所有",
+    edit_mode: "編輯模式",
+    interactive_preview: "交互式預覽",
+    results_label: "結果",
+    feature_client_side_title: "100% 客戶端",
+    feature_client_side_desc:
+      "您的照片從未離開您的設備。所有處理都在您的瀏覽器中進行，以最大程度地保護隱私。",
+    feature_instant_title: "即時分割",
+    feature_instant_desc:
+      "無需上傳等待時間。得益於優化的基於瀏覽器的 canvas 技術，分割即時發生。",
+    feature_quality_title: "無質量損失",
+    feature_quality_desc:
+      "我們優先考慮高保真導出設置，以確保您的 TikTok 輪播看起來清晰專業。",
+    feature_free_title: "100% 免費",
+    feature_free_desc:
+      "無訂閱，無水印，無隱藏費用。只是一個為創作者提供的簡單工具。",
+    ratio_free: "自由",
+    faq_title: "常見問題",
+    faq_1_q: "如何為 TikTok 製作無縫輪播？",
+    faq_1_a:
+      "上傳您的全景圖片，選擇'3 片段'（或更多），然後使用我們的工具進行分割。發布到 TikTok 時，選擇'照片模式'並按順序上傳圖片。結果將是一個可滑動的無縫全景圖。",
+    faq_2_q: "在這裡上傳我的照片安全嗎？",
+    faq_2_a:
+      "是的！實際上，您並沒有將它們'上傳'到任何地方。此工具完全在您的瀏覽器中運行。您的圖片從未發送到服務器，確保 100% 隱私。",
+    faq_3_q: "TikTok 幻燈片的最佳尺寸是多少？",
+    faq_3_a:
+      "TikTok 推薦 9:16 的縱橫比（1080x1920 像素）。使用標準設置時，我們的工具會自動為您設置此比例。",
+    faq_4_q: "我也能為 Instagram 分割圖片嗎？",
+    faq_4_a:
+      "當然！雖然專為 TikTok 設計，但分割後的圖片非常適合 Instagram 輪播（滑動帖子）。只需選擇 4:5 或 1:1 比例選項。",
+    about_tool_title: "關於此工具",
+    about_tool_desc:
+      "Easy Split 是一套專為現代內容創作者設計的創意實用工具。我們致力於構建快速、免費且尊重用戶隱私的工具。",
+    privacy_commitment_title: "隱私承諾",
+    privacy_commitment_desc:
+      "此圖片分割器嚴格在客戶端運行。我們不存儲、查看或傳輸您的圖片。'下載'邏輯僅將處理後的 canvas 數據直接從瀏覽器內存保存到您的磁盤。",
+    created_by: "創建者",
+    contact: "聯繫方式",
+    new_dynamic_split: "新功能：動態分割",
+    privacy_title: "隱私政策",
+    last_updated: "最後更新：2026年1月11日",
+    privacy_intro:
+      "在 <strong class='font-black'>Easy Split</strong>，我們秉持隱私至上的設計理念。我們的工具構建為<strong class='font-black'>客戶端</strong>運行，這意味著您的數據（圖片、文件）保留在您的設備上，從未上傳到我們的服務器。",
+    privacy_info_collect_title: "1. 我們收集的信息",
+    privacy_info_collect_desc:
+      "由於我們不需要用戶帳戶並在本地處理文件，因此我們要收集的數據最少：",
+    privacy_usage_data:
+      "<strong>使用數據：</strong> 我們可能會使用第三方分析（如 Google Analytics）來了解用戶如何瀏覽我們的網站。這些數據是匿名的，不包含個人文件。",
+    privacy_cookies:
+      "<strong>Cookies：</strong> 我們使用必要的 Cookie 來記住您的偏好（如語言設置）。",
+    privacy_process_files_title: "2. 我們如何處理您的文件",
+    privacy_process_files_desc:
+      "當您使用像我們的<strong>圖片分割器</strong>這樣的工具時，所有圖像操作都在您的 Web 瀏覽器中使用 HTML5 Canvas 技術進行。<strong>我們不會查看、存儲或傳輸您的圖片。</strong>",
+    privacy_ads_title: "3. 廣告 (Google AdSense)",
+    privacy_ads_desc:
+      "我們使用包括 Google 在內的第三方供應商，根據用戶之前訪問我們網站或其他網站的情況來投放廣告。",
+    privacy_ads_point1:
+      "Google 使用廣告 Cookie 使其及其合作夥伴能夠根據您的用戶對您網站和/或互聯網上其他網站的訪問情況向其投放廣告。",
+    privacy_ads_point2:
+      "用戶可以通過訪問 <a href='https://www.google.com/settings/ads' target='_blank' rel='nofollow noreferrer'>Google 廣告設置</a> 來選擇退出個性化廣告。",
+    privacy_links_title: "4. 第三方鏈接",
+    privacy_links_desc:
+      "我們的網站可能包含指向其他網站的鏈接。如果您點擊第三方鏈接，您將被定向到該網站。請注意，這些外部網站並非由我們運營。因此，我們強烈建議您查看這些網站的隱私政策。",
+    privacy_contact_title: "5. 聯繫我們",
+    privacy_contact_desc:
+      "如果您對我們的隱私政策有任何問題或建議，請隨時聯繫我們。",
+    owner_label: "所有者",
+    terms_title: "服務條款",
+    terms_last_updated: "最後更新：2026年1月11日",
+    terms_intro:
+      "在使用由 <strong class='font-black'>hba-dev</strong>（'我們'）運營的 <strong class='font-black'>Easy Split</strong> 網站之前，請仔細閱讀這些服務條款（'條款'，'服務條款'）。",
+    terms_conditions_title: "1. 使用條件",
+    terms_conditions_desc:
+      "使用本網站即表示您證明您已閱讀並審閱本協議，並同意遵守其條款。如果您不想受本協議條款的約束，建議您相應地停止使用本網站。",
+    terms_ip_title: "2. 知識產權",
+    terms_ip_desc:
+      "您同意本網站提供的所有材料、產品和服務均為網站所有者、其關聯公司、董事、高管、員工、代理商、供應商或許可方的財產，包括所有版權、商業秘密、商標、專利和其他知識產權。",
+    terms_ugc_label: "用戶生成內容",
+    terms_ugc_desc:
+      "您保留使用我們的工具處理的任何圖片或內容的完整所有權。由於我們不存儲您的文件，因此您對自己的內容負全部責任。",
+    terms_acceptable_use_title: "3. 可接受的使用",
+    terms_acceptable_use_desc:
+      "您同意不為了任何非法目的或本條款禁止的任何目的使用我們的特定工具。您同意不使用我們的服務來：",
+    terms_use_1: "騷擾、辱罵或威脅他人。",
+    terms_use_2: "侵犯他人的權利。",
+    terms_use_3: "實施任何欺詐行為或分發惡意軟件或病毒。",
+    terms_indemnification_title: "4.賠償",
+    terms_indemnification_desc:
+      "您同意賠償網站所有者及其關聯公司，並使我們免受因您使用或濫用我們的服務而引起的法律索賠和要求的損害。",
+    terms_liability_title: "5. 責任限制",
+    terms_liability_desc:
+      "對於因您濫用我們的網站而可能對您造成的任何損害，我們概不負責。我們保留隨時編輯、修改和更改本協議的權利。",
+    terms_contact_title: "6. 聯繫",
+    terms_contact_desc: "有關這些條款的任何問題，請通過以下方式聯繫我們：",
+    about_us_title: "關於我們",
+    about_us_tagline: "自2026年以來為創作者賦能",
+    about_us_intro:
+      "歡迎來到 <strong class='font-black'>EASY SPLIT</strong>，這是為社交媒體分割圖片最簡單、最快捷的方式。",
+    about_mission_title: "我們的使命",
+    about_mission_desc:
+      "我們創立 Easy Split 的目標很簡單：幫助創作者、攝影師和講故事的人毫無限制地展示他們的作品。無論是 Instagram 上的無縫輪播還是 TikTok 上的照片幻燈片，我們相信您的全景照片值得以完整的榮耀展示，而不是被裁剪成一個小方塊。",
+    about_why_title: "我們為什麼構建這個",
+    about_why_desc:
+      "現有工具要么太貴，充斥著廣告，要么需要將您的私人照片上傳到緩慢的服務器。我們想構建一些東西：",
+    about_why_fast_title: "快速：",
+    about_why_fast_desc: "零上傳時間。一切都在您的瀏覽器中進行。",
+    about_why_private_title: "私密：",
+    about_why_private_desc: "您的照片從未離開您的設備。",
+    about_why_free_title: "免費：",
+    about_why_free_desc: "人人都可以使用專業工具。",
+    about_meet_creator_title: "遇見創作者",
+    about_creator_role: "全棧開發者 & 創作者",
+    about_creator_bio: "熱衷於構建有趣、快速且實用的'新粗野主義'網絡應用程序。",
+    about_say_hello: "打招呼 →",
+  },
+  de: {
+    title: "Easy Split - Bildteiler",
+    subtitle:
+      "Teilen Sie Ihre Fotos in nahtlose Raster oder vertikale Dias. Perfekt für TikTok, Instagram und mehr.",
+    upload_title: "Bild ändern",
+    upload_placeholder: "Klicken oder Bild hierher ziehen",
+    upload_desc:
+      "Unterstützt JPG, PNG, WEBP, AVIF, BMP. Empfohlenes 16:9-Format",
+    ready_msg: "Bereit zum Herunterladen",
+    download_all: "Alle herunterladen (ZIP)",
+    download_part: "Bild speichern",
+    download_zip_mobile: "ZIP herunterladen",
+    part: "Teil",
+    article_title: "So teilen Sie Fotos für nahtlose Karussell-Dias",
+    article_intro:
+      "Das Posten riesiger Panoramen oder breiter Bilder führt oft zu Qualitätsverlusten oder ungeschicktem Zuschneiden. EASY SPLIT löst dieses Problem, indem es Ihr Bild in perfekt ausgerichtete Segmente für TikTok, Instagram-Karussells und mehr aufteilt.",
+    article_why_title: "Warum Ihre Bilder teilen?",
+    article_why_1:
+      "Erhöhter Engagement: Zuschauer wischen, um das ganze Bild zu sehen.",
+    article_why_2:
+      "Vesseres Storytelling: Erstellen Sie Panorama-Erlebnisse in sozialen Medien.",
+    article_why_3:
+      "Hohe Qualität: Client-seitige Verarbeitung sorgt für scharfe Ausgabe.",
+    how_to_title: "Benutzerhandbuch",
+    how_to_1:
+      "Laden Sie ein beliebiges Bild hoch (Panoramen funktionieren am besten).",
+    how_to_2: "Wählen Sie, wie viele Segmente Sie möchten (2 bis 10).",
+    how_to_3:
+      "Passen Sie den Zuschneidebereich bei Bedarf an und klicken Sie dann auf Split.",
+    how_to_4:
+      "Laden Sie Ihre Segmente herunter und laden Sie sie auf Ihre Lieblingsplattform hoch.",
+    nav_home: "Easy Split",
+    nav_splitter: "Bildteiler",
+    privacy: "Datenschutzrichtlinie",
+    terms: "Nutzungsbedingungen",
+    footer_rights: "EASY SPLIT. Alle Rechte vorbehalten.",
+    about: "Über",
+    tab_edit: "Bearbeiten",
+    tab_split: "Teilen",
+    transform_label: "Transformieren",
+    rotate_btn: "Drehen",
+    flip_h_btn: "Horizontal spiegeln",
+    open_crop: "Zuschneidewerkzeug öffnen",
+    cancel_crop: "Zuschneiden abbrechen",
+    actions_label: "Aktionen",
+    apply_crop: "Zuschneiden anwenden",
+    overwrite_warning: "* Überschreibt das aktuelle Bild",
+    segments_label: "Segmente",
+    crop_ratio_label: "Zuschneideverhältnis",
+    custom_ratio: "Benutzerdefiniert",
+    split_direction_label: "Teilungsrichtung",
+    split_cols: "Spalten (Vertikal)",
+    split_rows: "Zeilen (Horizontal)",
+    width_label: "Breite",
+    height_label: "Höhe",
+    split_image_btn: "Bild teilen",
+    processing: "Verarbeitung...",
+    change_img: "Bild ändern",
+    reset_all: "Alles zurücksetzen",
+    edit_mode: "Bearbeitungsmodus",
+    interactive_preview: "Interaktive Vorschau",
+    results_label: "Ergebnisse",
+    feature_client_side_title: "100% Client-seitig",
+    feature_client_side_desc:
+      "Ihre Fotos verlassen nie Ihr Gerät. Die gesamte Verarbeitung erfolgt direkt in Ihrem Browser für maximale Privatsphäre.",
+    feature_instant_title: "Sofortige Teilung",
+    feature_instant_desc:
+      "Keine Wartezeiten beim Hochladen. Die Teilung erfolgt sofort dank optimierter browserbasierter Canvas-Technologie.",
+    feature_quality_title: "Kein Qualitätsverlust",
+    feature_quality_desc:
+      "Wir priorisieren High-Fidelity-Exporteinstellungen, um sicherzustellen, dass Ihr TikTok-Karussell knackig und professionell aussieht.",
+    feature_free_title: "100% Kostenlos",
+    feature_free_desc:
+      "Keine Abonnements, keine Wasserzeichen, keine versteckten Gebühren. Einfach ein einfaches Werkzeug für Schöpfer.",
+    ratio_free: "Frei",
+    faq_title: "Häufig gestellte Fragen",
+    faq_1_q: "Wie erstelle ich ein nahtloses Karussell für TikTok?",
+    faq_1_a:
+      "Laden Sie Ihr Panoramabild hoch, wählen Sie '3 Segmente' (oder mehr) und verwenden Sie unser Tool, um es zu teilen. Wenn Sie auf TikTok posten, wählen Sie 'Fotomodus' und laden Sie die Bilder in der richtigen Reihenfolge hoch. Das Ergebnis ist ein wischbares, nahtloses Panorama.",
+    faq_2_q: "Ist es sicher, meine Fotos hier hochzuladen?",
+    faq_2_a:
+      "Ja! Tatsächlich laden Sie sie nirgendwo hin 'hoch'. Dieses Tool läuft vollständig in Ihrem Browser. Ihre Bilder werden nie an einen Server gesendet, was 100% Privatsphäre gewährleistet.",
+    faq_3_q: "Was ist die beste Größe für TikTok-Folien?",
+    faq_3_a:
+      "TikTok empfiehlt ein Seitenverhältnis von 9:16 (1080x1920 Pixel). Unser Tool stellt dieses Verhältnis bei Verwendung der Standardeinstellungen automatisch für Sie ein.",
+    faq_4_q: "Kann ich Bilder auch für Instagram teilen?",
+    faq_4_a:
+      "Absolut! Obwohl für TikTok konzipiert, funktionieren die geteilten Bilder perfekt für Instagram-Karussells (Wischbare Beiträge). Wählen Sie einfach die Option für das Verhältnis 4:5 oder 1:1.",
+    about_tool_title: "Über dieses Tool",
+    about_tool_desc:
+      "Easy Split ist eine Suite kreativer Dienstprogramme, die für moderne Content-Ersteller entwickelt wurden. Wir glauben daran, Tools zu entwickeln, die schnell, kostenlos sind und die Privatsphäre der Benutzer respektieren.",
+    privacy_commitment_title: "Datenschutzverpflichtung",
+    privacy_commitment_desc:
+      "Dieser Bildteiler arbeitet streng clientseitig. Wir speichern, sehen oder übertragen Ihre Bilder nicht. Die 'Download'-Logik speichert lediglich die verarbeiteten Canvas-Daten direkt aus dem Browserspeicher auf Ihre Festplatte.",
+    created_by: "Erstellt von",
+    contact: "Kontakt",
+    new_dynamic_split: "Neu: Dynamische Teilung",
+    privacy_title: "Datenschutzrichtlinie",
+    last_updated: "Zuletzt aktualisiert: 11. Januar 2026",
+    privacy_intro:
+      "Bei <strong class='font-black'>Easy Split</strong> glauben wir an Privacy by Design. Unsere Tools sind so konzipiert, dass sie <strong class='font-black'>clientseitig</strong> ausgeführt werden, was bedeutet, dass Ihre Daten (Bilder, Dateien) auf Ihrem Gerät bleiben und niemals auf unsere Server hochgeladen werden.",
+    privacy_info_collect_title: "1. Informationen, die wir sammeln",
+    privacy_info_collect_desc:
+      "Da wir keine Benutzerkonten benötigen und Dateien lokal verarbeiten, sammeln wir nur minimale Daten:",
+    privacy_usage_data:
+      "<strong>Nutzungsdaten:</strong> Wir können Analysen von Drittanbietern (wie Google Analytics) verwenden, um zu verstehen, wie Benutzer auf unserer Website navigieren. Diese Daten sind anonymisiert und enthalten keine persönlichen Dateien.",
+    privacy_cookies:
+      "<strong>Cookies:</strong> Wir verwenden essentielle Cookies, um Ihre Einstellungen (wie Spracheinstellungen) zu speichern.",
+    privacy_process_files_title: "2. Wie wir Ihre Dateien verarbeiten",
+    privacy_process_files_desc:
+      "Wenn Sie Tools wie unseren <strong>Bildteiler</strong> verwenden, erfolgt die gesamte Bildbearbeitung in Ihrem Webbrowser mithilfe der HTML5-Canvas-Technologie. <strong>Wir sehen, speichern oder übertragen Ihre Bilder nicht.</strong>",
+    privacy_ads_title: "3. Werbung (Google AdSense)",
+    privacy_ads_desc:
+      "Wir verwenden Drittanbieter, einschließlich Google, um Anzeigen basierend auf früheren Besuchen eines Benutzers auf unserer Website oder anderen Websites zu schalten.",
+    privacy_ads_point1:
+      "Die Verwendung von Werbecookies durch Google ermöglicht es ihm und seinen Partnern, Ihren Benutzern Anzeigen basierend auf ihrem Besuch auf Ihren Websites und/oder anderen Websites im Internet zu schalten.",
+    privacy_ads_point2:
+      "Benutzer können personalisierte Werbung deaktivieren, indem sie <a href='https://www.google.com/settings/ads' target='_blank' rel='nofollow noreferrer'>Google-Anzeigeneinstellungen</a> besuchen.",
+    privacy_links_title: "4. Links von Drittanbietern",
+    privacy_links_desc:
+      "Unsere Website kann Links zu anderen Websites enthalten. Wenn Sie auf einen Link eines Drittanbieters klicken, werden Sie zu dieser Website weitergeleitet. Beachten Sie, dass diese externen Websites nicht von uns betrieben werden. Daher empfehlen wir Ihnen dringend, die Datenschutzrichtlinie dieser Websites zu lesen.",
+    privacy_contact_title: "5. Kontaktieren Sie uns",
+    privacy_contact_desc:
+      "Wenn Sie Fragen oder Vorschläge zu unserer Datenschutzrichtlinie haben, zögern Sie nicht, uns zu kontaktieren.",
+    owner_label: "Eigentümer",
+    terms_title: "Nutzungsbedingungen",
+    terms_last_updated: "Zuletzt aktualisiert: 11. Januar 2026",
+    terms_intro:
+      "Bitte lesen Sie diese Nutzungsbedingungen ('Bedingungen', 'Nutzungsbedingungen') sorgfältig durch, bevor Sie die Website <strong class='font-black'>Easy Split</strong> nutzen, die von <strong class='font-black'>hba-dev</strong> ('uns', 'wir' oder 'unser') betrieben wird.",
+    terms_conditions_title: "1. Nutzungsbedingungen",
+    terms_conditions_desc:
+      "Durch die Nutzung dieser Website bestätigen Sie, dass Sie diese Vereinbarung gelesen und geprüft haben und dass Sie damit einverstanden sind, deren Bedingungen einzuhalten. Wenn Sie nicht an die Bedingungen dieser Vereinbarung gebunden sein möchten, wird Ihnen empfohlen, die Nutzung der Website entsprechend einzustellen.",
+    terms_ip_title: "2. Geistiges Eigentum",
+    terms_ip_desc:
+      "Sie erklären sich damit einverstanden, dass alle Materialien, Produkte und Dienstleistungen, die auf dieser Website bereitgestellt werden, Eigentum des Website-Eigentümers, seiner verbundenen Unternehmen, Direktoren, leitenden Angestellten, Mitarbeiter, Vertreter, Lieferanten oder Lizenzgeber sind, einschließlich aller Urheberrechte, Geschäftsgeheimnisse, Marken, Patente und anderen geistigen Eigentums.",
+    terms_ugc_label: "Benutzergenerierte Inhalte",
+    terms_ugc_desc:
+      "Sie behalten das volle Eigentum an allen Bildern oder Inhalten, die Sie mit unseren Tools verarbeiten. Da wir Ihre Dateien nicht speichern, sind Sie allein für Ihre eigenen Inhalte verantwortlich.",
+    terms_acceptable_use_title: "3. Akzeptable Nutzung",
+    terms_acceptable_use_desc:
+      "Sie stimmen zu, unsere spezifischen Tools nicht für rechtswidrige Zwecke oder für Zwecke zu verwenden, die unter dieser Klausel verboten sind. Sie stimmen zu, unsere Dienste nicht zu nutzen, um:",
+    terms_use_1: "Andere zu belästigen, zu missbrauchen oder zu bedrohen.",
+    terms_use_2: "Die Rechte anderer verletzen.",
+    terms_use_3: "Betrug begehen oder Malware oder Viren verbreiten.",
+    terms_indemnification_title: "4. Entschädigung",
+    terms_indemnification_desc:
+      "Sie erklären sich damit einverstanden, den Website-Eigentümer und seine verbundenen Unternehmen zu entschädigen und uns von rechtlichen Ansprüchen und Forderungen freizustellen, die sich aus Ihrer Nutzung oder Ihrem Missbrauch unserer Dienste ergeben können.",
+    terms_liability_title: "5. Haftungsbeschränkung",
+    terms_liability_desc:
+      "Wir haften nicht für Schäden, die Ihnen infolge Ihres Missbrauchs unserer Website entstehen können. Wir behalten uns das Recht vor, diese Vereinbarung jederzeit zu bearbeiten, zu modifizieren und zu ändern.",
+    terms_contact_title: "6. Kontakt",
+    terms_contact_desc:
+      "Bei Fragen zu diesen Bedingungen kontaktieren Sie uns bitte unter:",
+    about_us_title: "Über uns",
+    about_us_tagline: "Stärkung von Kreativen seit 2026",
+    about_us_intro:
+      "Willkommen bei <strong class='font-black'>EASY SPLIT</strong>, der einfachsten und schnellsten Art, Ihre Bilder für soziale Medien zu teilen.",
+    about_mission_title: "Unsere Mission",
+    about_mission_desc:
+      "Wir haben Easy Split mit einem einfachen Ziel gestartet: Kreativen, Fotografen und Geschichtenerzählern zu helfen, ihre Arbeit ohne Grenzen zu präsentieren. Egal, ob es sich um ein nahtloses Karussell auf Instagram oder eine Fotodia auf TikTok handelt, wir glauben, dass Ihre Panoramaaufnahmen es verdienen, in voller Pracht gesehen zu werden, und nicht in ein winziges Quadrat geschnitten werden sollten.",
+    about_why_title: "Warum wir das gebaut haben",
+    about_why_desc:
+      "Bestehende Tools waren entweder zu teuer, voller Werbung oder erforderten das Hochladen Ihrer privaten Fotos auf einen langsamen Server. Wir wollten etwas bauen, das:",
+    about_why_fast_title: "Schnell:",
+    about_why_fast_desc: "Null Upload-Zeit. Alles passiert in Ihrem Browser.",
+    about_why_private_title: "Privat:",
+    about_why_private_desc: "Ihre Fotos verlassen nie Ihr Gerät.",
+    about_why_free_title: "Kostenlos:",
+    about_why_free_desc:
+      "Professionelle Tools sollten für jeden zugänglich sein.",
+    about_meet_creator_title: "Treffen Sie den Ersteller",
+    about_creator_role: "Fullstack-Entwickler & Schöpfer",
+    about_creator_bio:
+      "Leidenschaftlich daran interessiert, unterhaltsame, schnelle und funktionale 'neo-brutalistische' Web-Apps zu erstellen.",
+    about_say_hello: "Sag Hallo →",
+  },
+  ru: {
+    title: "Easy Split - Разделение фото",
+    subtitle:
+      "Разделите ваши фото на бесшовные сетки или вертикальные слайды. Идеально для TikTok, Instagram и других.",
+    upload_title: "Сменить изображение",
+    upload_placeholder: "Нажмите или перетащите изображение сюда",
+    upload_desc:
+      "Поддержка JPG, PNG, WEBP, AVIF, BMP. Рекомендуемый формат 16:9",
+    ready_msg: "Готово к загрузке",
+    download_all: "Скачать все (ZIP)",
+    download_part: "Сохранить изображение",
+    download_zip_mobile: "Скачать ZIP",
+    part: "Часть",
+    article_title: "Как разделить фото для бесшовных слайдов",
+    article_intro:
+      "Публикация огромных панорам или широких изображений часто приводит к потере качества или неудачной обрезке. EASY SPLIT решает эту проблему, нарезая ваше изображение на идеально выровненные сегменты для TikTok, Instagram каруселей и других.",
+    article_why_title: "Зачем разделять изображения?",
+    article_why_1:
+      "Увеличение вовлеченности: Зрители листают, чтобы увидеть полную картину.",
+    article_why_2:
+      "Лучшее повествование: Создавайте панорамные впечатления в социальных сетях.",
+    article_why_3:
+      "Высокое качество: Обработка на стороне клиента обеспечивает четкость.",
+    how_to_title: "Руководство пользователя",
+    how_to_1: "Загрузите любое изображение (панорамы подходят лучше всего).",
+    how_to_2: "Выберите количество сегментов (от 2 до 10).",
+    how_to_3:
+      "Настройте область обрезки при необходимости, затем нажмите Split.",
+    how_to_4: "Скачайте сегменты и загрузите их на вашу любимую платформу.",
+    nav_home: "Easy Split",
+    nav_splitter: "Разделитель фото",
+    privacy: "Политика конфиденциальности",
+    terms: "Условия использования",
+    footer_rights: "EASY SPLIT. Все права защищены.",
+    about: "О нас",
+    tab_edit: "Редактировать",
+    tab_split: "Разделить",
+    transform_label: "Трансформация",
+    rotate_btn: "Повернуть",
+    flip_h_btn: "Отразить по горизонтали",
+    open_crop: "Открыть инструмент обрезки",
+    cancel_crop: "Отменить обрезку",
+    actions_label: "Действия",
+    apply_crop: "Применить обрезку",
+    overwrite_warning: "* Перезаписывает текущее изображение",
+    segments_label: "Сегменты",
+    crop_ratio_label: "Пропорции обрезки",
+    custom_ratio: "Пользовательские",
+    split_direction_label: "Направление разделения",
+    split_cols: "Колонки (Вертикально)",
+    split_rows: "Строки (Горизонтально)",
+    width_label: "Ширина",
+    height_label: "Высота",
+    split_image_btn: "Разделить изображение",
+    processing: "Обработка...",
+    change_img: "Сменить изображение",
+    reset_all: "Сбросить все",
+    edit_mode: "Режим редактирования",
+    interactive_preview: "Интерактивный предпросмотр",
+    results_label: "Результаты",
+    feature_client_side_title: "100% на стороне клиента",
+    feature_client_side_desc:
+      "Ваши фото никогда не покидают ваше устройство. Вся обработка происходит прямо в вашем браузере для максимальной конфиденциальности.",
+    feature_instant_title: "Мгновенное разделение",
+    feature_instant_desc:
+      "Нет времени ожидания загрузки. Разделение происходит мгновенно благодаря оптимизированной технологии canvas в браузере.",
+    feature_quality_title: "Без потери качества",
+    feature_quality_desc:
+      "Мы отдаем приоритет настройкам экспорта высокой точности, чтобы ваша карусель TikTok выглядела четкой и профессиональной.",
+    feature_free_title: "100% Бесплатно",
+    feature_free_desc:
+      "Никаких подписок, водяных знаков, скрытых платежей. Просто простой инструмент для создателей.",
+    ratio_free: "Свободный",
+    faq_title: "Часто задаваемые вопросы",
+    faq_1_q: "Как создать бесшовную карусель для TikTok?",
+    faq_1_a:
+      "Загрузите панорамное изображение, выберите '3 Сегмента' (или больше) и используйте наш инструмент для разделения. При публикации в TikTok выберите 'Режим фото' и загрузите изображения по порядку. Результатом будет бесшовная панорама.",
+    faq_2_q: "Безопасно ли загружать сюда свои фото?",
+    faq_2_a:
+      "Да! На самом деле вы никуда их не 'загружаете'. Этот инструмент работает полностью в вашем браузере. Ваши изображения никогда не отправляются на сервер, обеспечивая 100% конфиденциальность.",
+    faq_3_q: "Какой размер лучше всего для слайдов TikTok?",
+    faq_3_a:
+      "TikTok рекомендует соотношение сторон 9:16 (1080x1920 пикселей). Наш инструмент автоматически устанавливает это соотношение при использовании стандартных настроек.",
+    faq_4_q: "Можно ли разделить изображения и для Instagram?",
+    faq_4_a:
+      "Конечно! Хотя инструмент разработан для TikTok, разделенные изображения отлично работают для Instagram каруселей. Просто выберите опцию соотношения 4:5 или 1:1.",
+    about_tool_title: "Об этом инструменте",
+    about_tool_desc:
+      "Easy Split — это набор креативных утилит, разработанных для современных создателей контента. Мы верим в создание инструментов, которые быстры, бесплатны и уважают конфиденциальность пользователей.",
+    privacy_commitment_title: "Обязательство о конфиденциальности",
+    privacy_commitment_desc:
+      "Этот разделитель изображений работает строго на стороне клиента. Мы не храним, не просматриваем и не передаем ваши изображения. Логика 'Скачать' просто сохраняет обработанные данные canvas прямо из памяти браузера на ваш диск.",
+    created_by: "Создано",
+    contact: "Контакты",
+    new_dynamic_split: "Новое: Динамическое разделение",
+    privacy_title: "Политика конфиденциальности",
+    last_updated: "Последнее обновление: 11 января 2026",
+    privacy_intro:
+      "В <strong class='font-black'>Easy Split</strong> мы верим в конфиденциальность на этапе проектирования. Наши инструменты созданы для работы <strong class='font-black'>на стороне клиента</strong>, что означает, что ваши данные (изображения, файлы) остаются на вашем устройстве и никогда не загружаются на наши серверы.",
+    privacy_info_collect_title: "1. Информация, которую мы собираем",
+    privacy_info_collect_desc:
+      "Поскольку мы не требуем учетных записей пользователей и обрабатываем файлы локально, мы собираем минимум данных:",
+    privacy_usage_data:
+      "<strong>Данные об использовании:</strong> Мы можем использовать стороннюю аналитику (например, Google Analytics), чтобы понять, как пользователи перемещаются по нашему сайту. Эти данные анонимизированы и не включают личные файлы.",
+    privacy_cookies:
+      "<strong>Cookies:</strong> Мы используем необходимые файлы cookie для запоминания ваших предпочтений (например, настроек языка).",
+    privacy_process_files_title: "2. Как мы обрабатываем ваши файлы",
+    privacy_process_files_desc:
+      "Когда вы используете инструменты, такие как наш <strong>Разделитель изображений</strong>, все манипуляции с изображениями происходят внутри вашего веб-браузера с использованием технологии HTML5 Canvas. <strong>Мы не видим, не храним и не передаем ваши изображения.</strong>",
+    privacy_ads_title: "3. Реклама (Google AdSense)",
+    privacy_ads_desc:
+      "Мы используем сторонних поставщиков, включая Google, для показа рекламы на основе предыдущих посещений пользователем нашего веб-сайта или других веб-сайтов.",
+    privacy_ads_point1:
+      "Использование рекламных файлов cookie Google позволяет ему и его партнерам показывать рекламу вашим пользователям на основе их посещения ваших сайтов и/или других сайтов в Интернете.",
+    privacy_ads_point2:
+      "Пользователи могут отказаться от персонализированной рекламы, посетив <a href='https://www.google.com/settings/ads' target='_blank' rel='nofollow noreferrer'>Настройки рекламы Google</a>.",
+    privacy_links_title: "4. Ссылки третьих лиц",
+    privacy_links_desc:
+      "Наш веб-сайт может содержать ссылки на другие веб-сайты. Если вы нажмете на ссылку третьей стороны, вы будете перенаправлены на этот сайт. Обратите внимание, что эти внешние сайты не управляются нами. Поэтому мы настоятельно рекомендуем вам ознакомиться с Политикой конфиденциальности этих веб-сайтов.",
+    privacy_contact_title: "5. Свяжитесь с нами",
+    privacy_contact_desc:
+      "Если у вас есть какие-либо вопросы или предложения относительно нашей Политики конфиденциальности, не стесняйтесь обращаться к нам.",
+    owner_label: "Владелец",
+    terms_title: "Условия использования",
+    terms_last_updated: "Последнее обновление: 11 января 2026",
+    terms_intro:
+      "Пожалуйста, внимательно прочитайте эти условия использования ('Условия', 'Условия использования') перед использованием веб-сайта <strong class='font-black'>Easy Split</strong>, управляемого <strong class='font-black'>hba-dev</strong> ('мы', 'нас' или 'наш').",
+    terms_conditions_title: "1. Условия использования",
+    terms_conditions_desc:
+      "Используя этот веб-сайт, вы подтверждаете, что прочитали и ознакомились с настоящим Соглашением и согласны соблюдать его условия. Если вы не хотите быть связанными условиями настоящего Соглашения, вам рекомендуется прекратить использование веб-сайта.",
+    terms_ip_title: "2. Интеллектуальная собственность",
+    terms_ip_desc:
+      "Вы соглашаетесь с тем, что все материалы, продукты и услуги, предоставляемые на этом веб-сайте, являются собственностью владельца веб-сайта, его аффилированных лиц, директоров, должностных лиц, сотрудников, агентов, поставщиков или лицензиаров, включая все авторские права, коммерческие тайны, товарные знаки, патенты и другую интеллектуальную собственность.",
+    terms_ugc_label: "Пользовательский контент",
+    terms_ugc_desc:
+      "Вы сохраняете полное право собственности на любые изображения или контент, который вы обрабатываете с помощью наших инструментов. Поскольку мы не храним ваши файлы, вы несете полную ответственность за свой собственный контент.",
+    terms_acceptable_use_title: "3. Допустимое использование",
+    terms_acceptable_use_desc:
+      "Вы соглашаетесь не использовать наши инструменты для каких-либо незаконных целей или целей, запрещенных настоящим пунктом. Вы соглашаетесь не использовать наши услуги для:",
+    terms_use_1: "Преследования, оскорбления или угроз другим.",
+    terms_use_2: "Нарушения прав других.",
+    terms_use_3:
+      "Совершения мошенничества или распространения вредоносного ПО или вирусов.",
+    terms_indemnification_title: "4. Возмещение ущерба",
+    terms_indemnification_desc:
+      "Вы соглашаетесь возместить ущерб владельцу веб-сайта и его аффилированным лицам и оградить нас от юридических претензий и требований, которые могут возникнуть в результате вашего использования или неправильного использования наших услуг.",
+    terms_liability_title: "5. Ограничение ответственности",
+    terms_liability_desc:
+      "Мы не несем ответственности за любой ущерб, который может возникнуть у вас в результате неправильного использования нашего веб-сайта. Мы оставляем за собой право редактировать, изменять и вносить поправки в настоящее Соглашение в любое время.",
+    terms_contact_title: "6. Контакты",
+    terms_contact_desc:
+      "По любым вопросам, касающимся этих Условий, пожалуйста, свяжитесь с нами по адресу:",
+    about_us_title: "О нас",
+    about_us_tagline: "Расширение возможностей создателей с 2026 года",
+    about_us_intro:
+      "Добро пожаловать в <strong class='font-black'>EASY SPLIT</strong>, самый простой и быстрый способ разделить ваши изображения для социальных сетей.",
+    about_mission_title: "Наша миссия",
+    about_mission_desc:
+      "Мы запустили Easy Split с простой целью: помочь создателям, фотографам и рассказчикам представлять свои работы без ограничений. Будь то бесшовная карусель в Instagram или слайд-шоу в TikTok, мы верим, что ваши панорамные снимки заслуживают того, чтобы их видели во всей красе, а не обрезанными в крошечный квадрат.",
+    about_why_title: "Почему мы создали это",
+    about_why_desc:
+      "Существующие инструменты были либо слишком дорогими, либо переполнены рекламой, либо требовали загрузки ваших личных фотографий на медленный сервер. Мы хотели создать что-то, что:",
+    about_why_fast_title: "Быстро:",
+    about_why_fast_desc:
+      "Нулевое время загрузки. Все происходит в вашем браузере.",
+    about_why_private_title: "Конфиденциально:",
+    about_why_private_desc: "Ваши фото никогда не покидают ваше устройство.",
+    about_why_free_title: "Бесплатно:",
+    about_why_free_desc:
+      "Профессиональные инструменты должны быть доступны каждому.",
+    about_meet_creator_title: "Встречайте создателя",
+    about_creator_role: "Fullstack-разработчик и создатель",
+    about_creator_bio:
+      "Увлечен созданием веселых, быстрых и функциональных 'нео-бруталистских' веб-приложений.",
+    about_say_hello: "Сказать привет →",
+  },
+  hi: {
+    title: "Easy Split - इमेज स्प्लिटर",
+    subtitle:
+      "अपनी तस्वीरों को सीमलेस ग्रिड या वर्टिकल स्लाइड में विभाजित करें। TikTok, Instagram और अधिक के लिए उत्तम।",
+    upload_title: "छवि बदलें",
+    upload_placeholder: "छवि यहाँ क्लिक या ड्रैग करें",
+    upload_desc:
+      "JPG, PNG, WEBP, AVIF, BMP का समर्थन करता है। अनुशंसित 16:9 प्रारूप",
+    ready_msg: "डाउनलोड के लिए तैयार",
+    download_all: "सभी डाउनलोड करें (ZIP)",
+    download_part: "छवि सहेजें",
+    download_zip_mobile: "ZIP डाउनलोड करें",
+    part: "भाग",
+    article_title: "सीमलेस हिंडोला स्लाइड के लिए तस्वीरों को कैसे विभाजित करें",
+    article_intro:
+      "विशाल पैनोरमा या विस्तृत छवियों को पोस्ट करने से अक्सर गुणवत्ता में कमी आती है या अजीब तरह से क्रॉपिंग होती है। EASY SPLIT आपकी छवि को TikTok, Instagram हिंडोला, और अधिक के लिए पूरी तरह से संरेखित खंडों में विभाजित करके इसे हल करता है।",
+    article_why_title: "अपनी छवियों को क्यों विभाजित करें?",
+    article_why_1:
+      "बढ़ी हुई व्यस्तता: दर्शक पूरी तस्वीर देखने के लिए स्वाइप करते हैं।",
+    article_why_2: "बेहतर कहानी: सोशल मीडिया पर पैनोरमिक अनुभव बनाएं।",
+    article_why_3:
+      "उच्च गुणवत्ता: क्लाइंट-साइड प्रोसेसिंग स्पष्ट आउटपुट सुनिश्चित करती है।",
+    how_to_title: "उपयोगकर्ता गाइड",
+    how_to_1: "कोई भी छवि अपलोड करें (पैनोरमा सबसे अच्छा काम करते हैं)।",
+    how_to_2: "चुनें कि आप कितने खंड चाहते हैं (2 से 10)।",
+    how_to_3:
+      "यदि आवश्यक हो तो क्रॉप क्षेत्र को समायोजित करें, फिर Split पर क्लिक करें।",
+    how_to_4:
+      "अपने खंड डाउनलोड करें और उन्हें अपने पसंदीदा प्लेटफ़ॉर्म पर अपलोड करें।",
+    nav_home: "Easy Split",
+    nav_splitter: "इमेज स्प्लिटर",
+    privacy: "गोपनीयता नीति",
+    terms: "सेवा की शर्तें",
+    footer_rights: "EASY SPLIT. सर्वाधिकार सुरक्षित।",
+    about: "के बारे में",
+    tab_edit: "संपादित करें",
+    tab_split: "विभाजित करें",
+    transform_label: "रूपांतरण",
+    rotate_btn: "घुमाएं",
+    flip_h_btn: "क्षैतिज पलटें",
+    open_crop: "क्रॉप टूल खोलें",
+    cancel_crop: "क्रॉप रद्द करें",
+    actions_label: "क्रियाएं",
+    apply_crop: "क्रॉप लागू करें",
+    overwrite_warning: "* वर्तमान छवि को अधिलेखित करता है",
+    segments_label: "खंड",
+    crop_ratio_label: "क्रॉप अनुपात",
+    custom_ratio: "कस्टम",
+    split_direction_label: "विभाजन दिशा",
+    split_cols: "कॉलम (ऊर्ध्वाधर)",
+    split_rows: "पंक्तियाँ (क्षैतिज)",
+    width_label: "चौड़ाई",
+    height_label: "ऊंचाई",
+    split_image_btn: "छवि विभाजित करें",
+    processing: "प्रक्रिया की जा रही है...",
+    change_img: "छवि बदलें",
+    reset_all: "सभी रीसेट करें",
+    edit_mode: "संपादन मोड",
+    interactive_preview: "इंटरएक्टिव पूर्वावलोकन",
+    results_label: "परिणाम",
+    feature_client_side_title: "100% क्लाइंट-साइड",
+    feature_client_side_desc:
+      "आपकी तस्वीरें कभी भी आपके डिवाइस को नहीं छोड़ती हैं। अधिकतम गोपनीयता के लिए आपके ब्राउज़र में ही सारी प्रोसेसिंग होती है।",
+    feature_instant_title: "तत्काल विभाजन",
+    feature_instant_desc:
+      "कोई अपलोड प्रतीक्षा समय नहीं। अनुकूलित ब्राउज़र-आधारित कैनवास तकनीक के लिए धन्यवाद विभाजन तुरंत होता है।",
+    feature_quality_title: "कोई गुणवत्ता हानि नहीं",
+    feature_quality_desc:
+      "हम यह सुनिश्चित करने के लिए उच्च-निष्ठा निर्यात सेटिंग्स को प्राथमिकता देते हैं कि आपका TikTok हिंडोला कुरकुरा और पेशेवर दिखे।",
+    feature_free_title: "100% निःशुल्क",
+    feature_free_desc:
+      "कोई सदस्यता नहीं, कोई वॉटरमार्क नहीं, कोई छिपी हुई फीस नहीं। रचनाकारों के लिए बस एक सरल उपकरण।",
+    ratio_free: "मुक्त",
+    faq_title: "अक्सर पूछे जाने वाले प्रश्न",
+    faq_1_q: "मैं TikTok के लिए एक सीमलेस हिंडोला कैसे बनाऊं?",
+    faq_1_a:
+      "अपनी पैनोरमिक छवि अपलोड करें, '3 खंड' (या अधिक) चुनें, और इसे विभाजित करने के लिए हमारे टूल का उपयोग करें। TikTok पर पोस्ट करते समय, 'फोटो मोड' चुनें और छवियों को क्रम में अपलोड करें। परिणाम एक स्वाइप करने योग्य, सीमलेस पैनोरमा होगा।",
+    faq_2_q: "क्या मेरी तस्वीरें यहाँ अपलोड करना सुरक्षित है?",
+    faq_2_a:
+      "हाँ! वास्तव में, आप उन्हें कहीं भी 'अपलोड' नहीं कर रहे हैं। यह टूल पूरी तरह से आपके ब्राउज़र में चलता है। आपकी छवियां कभी भी सर्वर पर नहीं भेजी जाती हैं, जो 100% गोपनीयता सुनिश्चित करती हैं।",
+    faq_3_q: "TikTok स्लाइड के लिए सबसे अच्छा आकार क्या है?",
+    faq_3_a:
+      "TikTok 9:16 पहलू अनुपात (1080x1920 पिक्सेल) की सिफारिश करता है। मानक सेटिंग्स का उपयोग करते समय हमारा टूल स्वचालित रूप से आपके लिए यह अनुपात सेट करता है।",
+    faq_4_q: "क्या मैं Instagram के लिए भी छवियां विभाजित कर सकता हूं?",
+    faq_4_a:
+      "बिल्कुल! जबकि TikTok के लिए डिज़ाइन किया गया है, विभाजित छवियां Instagram हिंडोला (स्वाइप करने योग्य पोस्ट) के लिए पूरी तरह से काम करती हैं। बस 4:5 या 1:1 अनुपात विकल्प चुनें।",
+    about_tool_title: "इस टूल के बारे में",
+    about_tool_desc:
+      "Easy Split आधुनिक सामग्री रचनाकारों के लिए डिज़ाइन की गई रचनात्मक उपयोगिताओं का एक सूट है। हम उन उपकरणों को बनाने में विश्वास करते हैं जो तेज़, मुफ़्त हैं और उपयोगकर्ता की गोपनीयता का सम्मान करते हैं।",
+    privacy_commitment_title: "गोपनीयता प्रतिबद्धता",
+    privacy_commitment_desc:
+      "यह इमेज स्प्लिटर सख्ती से क्लाइंट-साइड संचालित होता है। हम आपकी छवियों को संग्रहीत, नहीं देखते या प्रसारित नहीं करते हैं। 'डाउनलोड' तर्क बस संसाधित कैनवास डेटा को सीधे आपके ब्राउज़र की मेमोरी से आपके डिस्क पर सहेजता है।",
+    created_by: "द्वारा निर्मित",
+    contact: "संपर्क",
+    new_dynamic_split: "नया: गतिशील विभाजन",
+    privacy_title: "गोपनीयता नीति",
+    last_updated: "अंतिम अद्यतन: 11 जनवरी 2026",
+    privacy_intro:
+      "<strong class='font-black'>Easy Split</strong> में, हम डिज़ाइन द्वारा गोपनीयता में विश्वास करते हैं। हमारे उपकरण <strong class='font-black'>क्लाइंट-साइड</strong> चलाने के लिए बनाए गए हैं, जिसका अर्थ है कि आपका डेटा (छवियां, फाइलें) आपके डिवाइस पर रहता है और हमारे सर्वर पर कभी अपलोड नहीं होता है।",
+    privacy_info_collect_title: "1. जानकारी जो हम एकत्र करते हैं",
+    privacy_info_collect_desc:
+      "चूंकि हमें उपयोगकर्ता खातों की आवश्यकता नहीं है और हम स्थानीय रूप से फ़ाइलों को संसाधित करते हैं, इसलिए हम न्यूनतम डेटा एकत्र करते हैं:",
+    privacy_usage_data:
+      "<strong>उपयोग डेटा:</strong> हम यह समझने के लिए तृतीय-पक्ष एनालिटिक्स (जैसे Google Analytics) का उपयोग कर सकते हैं कि उपयोगकर्ता हमारी साइट को कैसे नेविगेट करते हैं। यह डेटा अज्ञात है और इसमें व्यक्तिगत फ़ाइलें शामिल नहीं हैं।",
+    privacy_cookies:
+      "<strong>कुकीज़:</strong> हम आपकी प्राथमिकताओं (जैसे भाषा सेटिंग्स) को याद रखने के लिए आवश्यक कुकीज़ का उपयोग करते हैं।",
+    privacy_process_files_title: "2. हम आपकी फ़ाइलों को कैसे संसाधित करते हैं",
+    privacy_process_files_desc:
+      "जब आप हमारे <strong>इमेज स्प्लिटर</strong> जैसे टूल का उपयोग करते हैं, तो सभी छवि हेरफेर HTML5 कैनवास तकनीक का उपयोग करके आपके वेब ब्राउज़र के अंदर होती है। <strong>हम आपकी छवियों को नहीं देखते, संग्रहीत या प्रसारित नहीं करते हैं।</strong>",
+    privacy_ads_title: "3. विज्ञापन (Google AdSense)",
+    privacy_ads_desc:
+      "हम विज्ञापन दिखाने के लिए Google सहित तृतीय-पक्ष विक्रेताओं का उपयोग करते हैं जो उपयोगकर्ता की हमारी वेबसाइट या अन्य वेबसाइटों पर पिछली यात्राओं पर आधारित होते हैं।",
+    privacy_ads_point1:
+      "Google द्वारा विज्ञापन कुकीज़ का उपयोग इसे और इसके भागीदारों को आपकी साइटों और/या इंटरनेट पर अन्य साइटों पर उनकी यात्रा के आधार पर आपके उपयोगकर्ताओं को विज्ञापन दिखाने में सक्षम बनाता है।",
+    privacy_ads_point2:
+      "उपयोगकर्ता <a href='https://www.google.com/settings/ads' target='_blank' rel='nofollow noreferrer'>Google विज्ञापन सेटिंग</a> पर जाकर व्यक्तिगत विज्ञापन से बाहर निकल सकते हैं।",
+    privacy_links_title: "4. तृतीय-पक्ष लिंक",
+    privacy_links_desc:
+      "हमारी वेबसाइट में अन्य वेबसाइटों के लिंक हो सकते हैं। यदि आप किसी तृतीय-पक्ष लिंक पर क्लिक करते हैं, तो आपको उस साइट पर निर्देशित किया जाएगा। ध्यान दें कि ये बाहरी साइटें हमारे द्वारा संचालित नहीं हैं। इसलिए, हम आपको इन वेबसाइटों की गोपनीयता नीति की समीक्षा करने की दृढ़ता से सलाह देते हैं।",
+    privacy_contact_title: "5. हमसे संपर्क करें",
+    privacy_contact_desc:
+      "यदि हमारी गोपनीयता नीति के बारे में आपके कोई प्रश्न या सुझाव हैं, तो हमसे संपर्क करने में संकोच न करें।",
+    owner_label: "मालिक",
+    terms_title: "सेवा की शर्तें",
+    terms_last_updated: "अंतिम अद्यतन: 11 जनवरी 2026",
+    terms_intro:
+      "कृपया <strong class='font-black'>hba-dev</strong> ('हम', 'हमें' या 'हमारा') द्वारा संचालित <strong class='font-black'>Easy Split</strong> वेबसाइट का उपयोग करने से पहले इन सेवा की शर्तों ('शर्तें', 'सेवा की शर्तें') को ध्यान से पढ़ें।",
+    terms_conditions_title: "1. उपयोग की शर्तें",
+    terms_conditions_desc:
+      "इस वेबसाइट का उपयोग करके, आप प्रमाणित करते हैं कि आपने इस समझौते को पढ़ा और समीक्षा की है और आप इसकी शर्तों का पालन करने के लिए सहमत हैं। यदि आप इस समझौते की शर्तों से बाध्य नहीं होना चाहते हैं, तो आपको तदनुसार वेबसाइट का उपयोग बंद करने की सलाह दी जाती है।",
+    terms_ip_title: "2. बौद्धिक संपदा",
+    terms_ip_desc:
+      "आप सहमत हैं कि इस वेबसाइट पर प्रदान की गई सभी सामग्री, उत्पाद और सेवाएं वेबसाइट के मालिक, उसके सहयोगियों, निदेशकों, अधिकारियों, कर्मचारियों, एजेंटों, आपूर्तिकर्ताओं या लाइसेंसदाताओं की संपत्ति हैं, जिसमें सभी कॉपीराइट, व्यापार रहस्य, ट्रेडमार्क, पेटेंट और अन्य बौद्धिक संपदा शामिल हैं।",
+    terms_ugc_label: "उपयोगकर्ता निर्मित सामग्री",
+    terms_ugc_desc:
+      "आप हमारे टूल का उपयोग करके संसाधित की गई किसी भी छवि या सामग्री का पूर्ण स्वामित्व बनाए रखते हैं। चूंकि हम आपकी फ़ाइलों को संग्रहीत नहीं करते हैं, इसलिए आप अपनी सामग्री के लिए पूरी तरह से जिम्मेदार हैं।",
+    terms_acceptable_use_title: "3. स्वीकार्य उपयोग",
+    terms_acceptable_use_desc:
+      "आप सहमत हैं कि हमारे विशिष्ट टूल का उपयोग किसी भी गैरकानूनी उद्देश्य या इस खंड के तहत निषिद्ध किसी भी उद्देश्य के लिए नहीं करेंगे। आप सहमत हैं कि हमारी सेवाओं का उपयोग इसके लिए नहीं करेंगे:",
+    terms_use_1: "दूसरों को परेशान करना, गाली देना या धमकी देना।",
+    terms_use_2: "दूसरों के अधिकारों का उल्लंघन करना।",
+    terms_use_3: "कोई भी धोखाधड़ी करना या मैलवेयर या वायरस वितरित करना।",
+    terms_indemnification_title: "4. क्षतिपूर्ति",
+    terms_indemnification_desc:
+      "आप वेबसाइट के मालिक और उसके सहयोगियों को क्षतिपूर्ति करने और हमारी सेवाओं के आपके उपयोग या दुरुपयोग से उत्पन्न होने वाले कानूनी दावों और मांगों से हमें हानिरहित रखने के लिए सहमत हैं।",
+    terms_liability_title: "5. दायित्व की सीमा",
+    terms_liability_desc:
+      "हम किसी भी क्षति के लिए उत्तरदायी नहीं हैं जो हमारी वेबसाइट के आपके दुरुपयोग के परिणामस्वरूप आपको हो सकती है। हम किसी भी समय इस समझौते को संपादित, संशोधित और बदलने का अधिकार सुरक्षित रखते हैं।",
+    terms_contact_title: "6. संपर्क",
+    terms_contact_desc:
+      "इन शर्तों के संबंध में किसी भी प्रश्न के लिए, कृपया हमसे संपर्क करें:",
+    about_us_title: "हमारे बारे में",
+    about_us_tagline: "2026 से रचनाकारों को सशक्त बनाना",
+    about_us_intro:
+      "<strong class='font-black'>EASY SPLIT</strong> में आपका स्वागत है, सोशल मीडिया के लिए अपनी छवियों को विभाजित करने का सबसे आसान और तेज़ तरीका।",
+    about_mission_title: "हमारा मिशन",
+    about_mission_desc:
+      "हमने एक साधारण लक्ष्य के साथ Easy Split शुरू किया: रचनाकारों, फोटोग्राफरों और कहानीकारों को बिना किसी सीमा के अपना काम पेश करने में मदद करना। चाहे वह Instagram पर एक सीमलेस हिंडोला हो या TikTok पर एक फोटो स्लाइड, हमारा मानना ​​है कि आपके पैनोरमिक शॉट्स को पूरी महिमा में देखा जाना चाहिए, न कि एक छोटे वर्ग में क्रॉप किया जाना चाहिए।",
+    about_why_title: "हमने इसे क्यों बनाया",
+    about_why_desc:
+      "मौजूदा उपकरण या तो बहुत महंगे थे, विज्ञापनों से भरे थे, या आपकी निजी तस्वीरों को धीमे सर्वर पर अपलोड करने की आवश्यकता थी। हम कुछ ऐसा बनाना चाहते थे जो:",
+    about_why_fast_title: "तेज़:",
+    about_why_fast_desc: "शून्य अपलोड समय। सब कुछ आपके ब्राउज़र में होता है।",
+    about_why_private_title: "निजी:",
+    about_why_private_desc:
+      "आपकी तस्वीरें कभी भी आपके डिवाइस को नहीं छोड़ती हैं।",
+    about_why_free_title: "निःशुल्क:",
+    about_why_free_desc: "पेशेवर उपकरण हर किसी के लिए सुलभ होने चाहिए।",
+    about_meet_creator_title: "निर्माता से मिलें",
+    about_creator_role: "फुलस्टैक डेवलपर और निर्माता",
+    about_creator_bio:
+      "मजेदार, तेज़ और कार्यात्मक 'नियो-ब्रूटलिस्ट' वेब ऐप बनाने का शौक।",
+    about_say_hello: "नमस्ते कहें →",
+  },
+  "pt-BR": {
+    title: "Easy Split - Divisor de Imagens",
+    subtitle:
+      "Divida suas fotos em grades perfeitas ou slides verticais. Perfeito para TikTok, Instagram e muito mais.",
+    upload_title: "Alterar Imagem",
+    upload_placeholder: "Clique ou arraste a imagem aqui",
+    upload_desc: "Suporta JPG, PNG, WEBP, AVIF, BMP. Formato recomendado 16:9",
+    ready_msg: "Pronto para download",
+    download_all: "Baixar Tudo (ZIP)",
+    download_part: "Salvar Imagem",
+    download_zip_mobile: "Baixar ZIP",
+    part: "Parte",
+    article_title: "Como Dividir Fotos para Slides de Carrossel Perfeitos",
+    article_intro:
+      "Postar panoramas enormes ou imagens largas geralmente resulta em perda de qualidade ou cortes estranhos. EASY SPLIT resolve isso cortando sua imagem em segmentos perfeitamente alinhados para TikTok, carrosséis do Instagram e muito mais.",
+    article_why_title: "Por que dividir suas imagens?",
+    article_why_1:
+      "Aumento do engajamento: Os espectadores deslizam para ver a imagem completa.",
+    article_why_2:
+      "Melhor narrativa: Crie experiências panorâmicas nas redes sociais.",
+    article_why_3:
+      "Alta qualidade: O processamento no lado do cliente garante uma saída nítida.",
+    how_to_title: "Guia do Usuário",
+    how_to_1: "Carregue qualquer imagem (panoramas funcionam melhor).",
+    how_to_2: "Escolha quantos segmentos você deseja (2 a 10).",
+    how_to_3: "Ajuste a área de corte se necessário, depois clique em Split.",
+    how_to_4: "Baixe seus segmentos e carregue-os na sua plataforma favorita.",
+    nav_home: "Easy Split",
+    nav_splitter: "Divisor de Imagens",
+    privacy: "Política de Privacidade",
+    terms: "Termos de Serviço",
+    footer_rights: "EASY SPLIT. Todos os direitos reservados.",
+    about: "Sobre",
+    tab_edit: "Editar",
+    tab_split: "Dividir",
+    transform_label: "Transformar",
+    rotate_btn: "Girar",
+    flip_h_btn: "Espelhar Horizontalmente",
+    open_crop: "Abrir Ferramenta de Corte",
+    cancel_crop: "Cancelar Corte",
+    actions_label: "Ações",
+    apply_crop: "Aplicar Corte",
+    overwrite_warning: "* Substitui a imagem atual",
+    segments_label: "Segmentos",
+    crop_ratio_label: "Proporção de Corte",
+    custom_ratio: "Personalizado",
+    split_direction_label: "Direção de Divisão",
+    split_cols: "Colunas (Vertical)",
+    split_rows: "Linhas (Horizontal)",
+    width_label: "Largura",
+    height_label: "Altura",
+    split_image_btn: "Dividir Imagem",
+    processing: "Processando...",
+    change_img: "Alterar Imagem",
+    reset_all: "Redefinir Tudo",
+    edit_mode: "Modo de Edição",
+    interactive_preview: "Visualização Interativa",
+    results_label: "Resultados",
+    feature_client_side_title: "100% Lado do Cliente",
+    feature_client_side_desc:
+      "Suas fotos nunca saem do seu dispositivo. Todo o processamento acontece diretamente no seu navegador para máxima privacidade.",
+    feature_instant_title: "Divisão Instantânea",
+    feature_instant_desc:
+      "Sem tempo de espera para upload. A divisão acontece instantaneamente graças à tecnologia canvas otimizada baseada no navegador.",
+    feature_quality_title: "Sem Perda de Qualidade",
+    feature_quality_desc:
+      "Priorizamos configurações de exportação de alta fidelidade para garantir que seu carrossel do TikTok pareça nítido e profissional.",
+    feature_free_title: "100% Grátis",
+    feature_free_desc:
+      "Sem assinaturas, sem marcas d'água, sem taxas ocultas. Apenas uma ferramenta simples para criadores.",
+    ratio_free: "Livre",
+    faq_title: "Perguntas Frequentes",
+    faq_1_q: "Como faço um carrossel perfeito para o TikTok?",
+    faq_1_a:
+      "Carregue sua imagem panorâmica, escolha '3 Segmentos' (ou mais) e use nossa ferramenta para dividi-la. Ao postar no TikTok, escolha o 'Modo Foto' e carregue as imagens em ordem. O resultado será um panorama perfeito e deslizável.",
+    faq_2_q: "É seguro carregar minhas fotos aqui?",
+    faq_2_a:
+      "Sim! Na verdade, você não está 'carregando' para lugar nenhum. Esta ferramenta roda inteiramente no seu navegador. Suas imagens nunca são enviadas para um servidor, garantindo 100% de privacidade.",
+    faq_3_q: "Qual é o melhor tamanho para slides do TikTok?",
+    faq_3_a:
+      "O TikTok recomenda uma proporção de 9:16 (1080x1920 pixels). Nossa ferramenta define automaticamente essa proporção para você ao usar as configurações padrão.",
+    faq_4_q: "Posso dividir imagens para o Instagram também?",
+    faq_4_a:
+      "Com certeza! Embora projetado para o TikTok, as imagens divididas funcionam perfeitamente para carrosséis do Instagram (postagens deslizáveis). Basta escolher a opção de proporção 4:5 ou 1:1.",
+    about_tool_title: "Sobre esta Ferramenta",
+    about_tool_desc:
+      "Easy Split é um conjunto de utilitários criativos projetados para criadores de conteúdo modernos. Acreditamos na construção de ferramentas rápidas, gratuitas e que respeitam a privacidade do usuário.",
+    privacy_commitment_title: "Compromisso de Privacidade",
+    privacy_commitment_desc:
+      "Este divisor de imagens opera estritamente no lado do cliente. Nós não armazenamos, visualizamos ou transmitimos suas imagens. A lógica de 'Download' apenas salva os dados processados do canvas diretamente da memória do navegador para o seu disco.",
+    created_by: "Criado por",
+    contact: "Contato",
+    new_dynamic_split: "Novo: Divisão Dinâmica",
+    privacy_title: "Política de Privacidade",
+    last_updated: "Última atualização: 11 de janeiro de 2026",
+    privacy_intro:
+      "No <strong class='font-black'>Easy Split</strong>, acreditamos na privacidade desde o design. Nossas ferramentas são construídas para rodar <strong class='font-black'>no lado do cliente</strong>, o que significa que seus dados (imagens, arquivos) permanecem no seu dispositivo e nunca são carregados para nossos servidores.",
+    privacy_info_collect_title: "1. Informações que coletamos",
+    privacy_info_collect_desc:
+      "Como não exigimos contas de usuário e processamos arquivos localmente, coletamos o mínimo de dados:",
+    privacy_usage_data:
+      "<strong>Dados de uso:</strong> Podemos usar análises de terceiros (como o Google Analytics) para entender como os usuários navegam em nosso site. Esses dados são anônimos e não incluem arquivos pessoais.",
+    privacy_cookies:
+      "<strong>Cookies:</strong> Usamos cookies essenciais para lembrar suas preferências (como configurações de idioma).",
+    privacy_process_files_title: "2. Como processamos seus arquivos",
+    privacy_process_files_desc:
+      "Quando você usa ferramentas como nosso <strong>Divisor de Imagens</strong>, toda a manipulação de imagem acontece dentro do seu navegador usando a tecnologia HTML5 Canvas. <strong>Nós não vemos, armazenamos ou transmitimos suas imagens.</strong>",
+    privacy_ads_title: "3. Publicidade (Google AdSense)",
+    privacy_ads_desc:
+      "Usamos fornecedores terceirizados, incluindo o Google, para veicular anúncios com base nas visitas anteriores do usuário ao nosso site ou a outros sites.",
+    privacy_ads_point1:
+      "O uso de cookies de publicidade pelo Google permite que ele e seus parceiros veiculem anúncios para seus usuários com base em suas visitas aos seus sites e/ou outros sites na Internet.",
+    privacy_ads_point2:
+      "Os usuários podem optar por sair da publicidade personalizada visitando as <a href='https://www.google.com/settings/ads' target='_blank' rel='nofollow noreferrer'>Configurações de Anúncios do Google</a>.",
+    privacy_links_title: "4. Links de Terceiros",
+    privacy_links_desc:
+      "Nosso site pode conter links para outros sites. Se você clicar em um link de terceiros, será direcionado para esse site. Observe que esses sites externos não são operados por nós. Portanto, recomendamos fortemente que você reveja a Política de Privacidade desses sites.",
+    privacy_contact_title: "5. Contate-nos",
+    privacy_contact_desc:
+      "Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar.",
+    owner_label: "Proprietário",
+    terms_title: "Termos de Serviço",
+    terms_last_updated: "Última atualização: 11 de janeiro de 2026",
+    terms_intro:
+      "Por favor, leia estes termos de serviço ('Termos', 'Termos de Serviço') cuidadosamente antes de usar o site <strong class='font-black'>Easy Split</strong> operado pela <strong class='font-black'>hba-dev</strong> ('nós', 'nos' ou 'nosso').",
+    terms_conditions_title: "1. Condições de Uso",
+    terms_conditions_desc:
+      "Ao usar este site, você certifica que leu e revisou este Acordo e concorda em cumprir seus termos. Se você não quiser ficar vinculado aos termos deste Acordo, é aconselhável que pare de usar o site.",
+    terms_ip_title: "2. Propriedade Intelectual",
+    terms_ip_desc:
+      "Você concorda que todos os materiais, produtos e serviços fornecidos neste site são propriedade do proprietário do site, suas afiliadas, diretores, executivos, funcionários, agentes, fornecedores ou licenciadores, incluindo todos os direitos autorais, segredos comerciais, marcas registradas, patentes e outras propriedades intelectuais.",
+    terms_ugc_label: "Conteúdo Gerado pelo Usuário",
+    terms_ugc_desc:
+      "Você mantém a propriedade total de quaisquer imagens ou conteúdo que processar usando nossas ferramentas. Como não armazenamos seus arquivos, você é o único responsável pelo seu próprio conteúdo.",
+    terms_acceptable_use_title: "3. Uso Aceitável",
+    terms_acceptable_use_desc:
+      "Você concorda em não usar nossas ferramentas específicas para fins ilegais ou proibidos por esta cláusula. Você concorda em não usar nossos serviços para:",
+    terms_use_1: "Assediar, abusar ou ameaçar outras pessoas.",
+    terms_use_2: "Violar os direitos de outras pessoas.",
+    terms_use_3: "Cometer qualquer fraude ou distribuir malware ou vírus.",
+    terms_indemnification_title: "4. Indenização",
+    terms_indemnification_desc:
+      "Você concorda em indenizar o proprietário do site e suas afiliadas e nos isentar de reivindicações e demandas legais que possam surgir do seu uso ou mau uso de nossos serviços.",
+    terms_liability_title: "5. Limitação de Responsabilidade",
+    terms_liability_desc:
+      "Não somos responsáveis por quaisquer danos que possam ocorrer a você como resultado do mau uso do nosso site. Reservamo-nos o direito de editar, modificar e alterar este Acordo a qualquer momento.",
+    terms_contact_title: "6. Contato",
+    terms_contact_desc:
+      "Para quaisquer dúvidas sobre estes Termos, entre em contato conosco em:",
+    about_us_title: "Sobre Nós",
+    about_us_tagline: "Empoderando Criadores desde 2026",
+    about_us_intro:
+      "Bem-vindo ao <strong class='font-black'>EASY SPLIT</strong>, a maneira mais simples e rápida de dividir suas imagens para redes sociais.",
+    about_mission_title: "Nossa Missão",
+    about_mission_desc:
+      "Começamos o Easy Split com um objetivo simples: ajudar criadores, fotógrafos e contadores de histórias a apresentar seu trabalho sem limites. Seja um carrossel perfeito no Instagram ou um slide de fotos no TikTok, acreditamos que suas fotos panorâmicas merecem ser vistas em toda a sua glória, não cortadas em um quadrado minúsculo.",
+    about_why_title: "Por que construímos isso",
+    about_why_desc:
+      "Ferramentas existentes eram muito caras, cheias de anúncios ou exigiam o upload de suas fotos privadas para um servidor lento. Queríamos construir algo que fosse:",
+    about_why_fast_title: "Rápido:",
+    about_why_fast_desc:
+      "Zero tempo de upload. Tudo acontece no seu navegador.",
+    about_why_private_title: "Privado:",
+    about_why_private_desc: "Suas fotos nunca saem do seu dispositivo.",
+    about_why_free_title: "Grátis:",
+    about_why_free_desc:
+      "Ferramentas profissionais devem ser acessíveis a todos.",
+    about_meet_creator_title: "Conheça o Criador",
+    about_creator_role: "Desenvolvedor Fullstack & Criador",
+    about_creator_bio:
+      "Apaixonado por construir aplicativos web 'neo-brutalistas' divertidos, rápidos e funcionais.",
+    about_say_hello: "Diga Olá →",
   },
 };

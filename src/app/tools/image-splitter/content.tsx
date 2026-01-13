@@ -124,8 +124,8 @@ const AboutSection = () => {
           {t.about_tool_title}
         </h2>
         <p className="text-lg font-medium leading-relaxed mb-6">
-          <strong>TikTok Tools</strong>{" "}
-          {t.about_tool_desc.replace("TikTok Tools", "")}
+          <strong>Easy Split</strong>{" "}
+          {t.about_tool_desc.replace("Easy Split", "")}
         </p>
         <div className="bg-white/10 p-6 border-l-4 border-cyan-400 backdrop-blur-sm">
           <h3 className="font-bold text-cyan-400 uppercase mb-2 text-sm tracking-wider">

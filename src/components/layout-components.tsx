@@ -26,6 +26,12 @@ export function Header() {
       th: "th",
       id: "id",
       es: "es",
+      "zh-CN": "cn",
+      "zh-TW": "tw",
+      de: "de",
+      ru: "ru",
+      hi: "in",
+      "pt-BR": "br",
     };
     return `https://flagcdn.com/w40/${codeMap[lang]}.png`;
   };
@@ -38,6 +44,12 @@ export function Header() {
     th: "TH",
     id: "ID",
     es: "ES",
+    "zh-CN": "CN",
+    "zh-TW": "TW",
+    de: "DE",
+    ru: "RU",
+    hi: "HI",
+    "pt-BR": "BR",
   };
 
   return (
@@ -94,6 +106,12 @@ export function Header() {
                 <option value="th">🇹🇭 ไทย</option>
                 <option value="id">🇮🇩 Indonesia</option>
                 <option value="es">🇪🇸 Español</option>
+                <option value="zh-CN">🇨🇳 中文 (简体)</option>
+                <option value="zh-TW">🇹🇼 中文 (繁體)</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="hi">🇮🇳 हिन्दी</option>
+                <option value="pt-BR">🇧🇷 Português (BR)</option>
               </select>
             </div>
           )}
