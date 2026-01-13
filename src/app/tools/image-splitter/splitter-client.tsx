@@ -22,7 +22,7 @@ import "cropperjs/dist/cropper.css";
 // Value 0 = Free/Original
 const ASPECT_RATIOS = [
   { label: "Free", value: 0, icon: "🔓" },
-  { label: "TikTok Thumb", value: 195.66 / 259.53, icon: "🎵" }, // Approx 0.7539
+  { label: "TikTok Insta", value: 195.66 / 259.53, icon: "🎵" }, // Approx 0.7539
   { label: "9:16", value: 9 / 16, icon: "📱" },
   { label: "4:5", value: 4 / 5, icon: "🖼️" },
   { label: "1:1", value: 1, icon: "🟦" },
