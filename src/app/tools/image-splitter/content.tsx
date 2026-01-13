@@ -89,7 +89,9 @@ const FAQSection = () => {
 
   return (
     <section className="mb-20 max-w-4xl mx-auto">
-      <h2 className="text-4xl font-black text-center uppercase mb-10 layer-text text-white">
+      <h2
+        className={`text-5xl font-black text-center uppercase mb-10 layer-text text-white ${bangers.className}`}
+      >
         {t.faq_title}
       </h2>
       <div className="space-y-4">
