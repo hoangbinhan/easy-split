@@ -593,6 +593,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   jp: {
     title: "Easy Split - 画像分割",
@@ -780,6 +790,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   th: {
     title: "Easy Split - ตัดภาพ",
@@ -963,6 +983,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   id: {
     title: "Easy Split - Pemecah Gambar",
@@ -1338,6 +1368,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   "zh-CN": {
     title: "Easy Split - 图片分割",
@@ -1518,6 +1558,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   "zh-TW": {
     title: "Easy Split - 圖片分割",
@@ -1698,6 +1748,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   de: {
     title: "Easy Split - Bildteiler",
@@ -1888,6 +1948,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   ru: {
     title: "Easy Split - Разделение фото",
@@ -2078,6 +2148,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   hi: {
     title: "Easy Split - इमेज स्प्लिटर",
@@ -2266,6 +2346,16 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   "pt-BR": {
     title: "Easy Split - Divisor de Imagens",
@@ -2453,5 +2543,15 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
 };
