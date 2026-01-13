@@ -138,6 +138,45 @@ export default function ImageSplitterClient() {
     }
   };
 
+  // Rotate and Zoom to Fit
+  const handleRotate = useCallback(() => {
+    const cropper = cropperRef.current?.cropper;
+    if (!cropper) return;
+
+    cropper.rotate(90);
+
+    const containerData = cropper.getContainerData();
+    const imageData = cropper.getImageData();
+
+    const rotation = Math.abs(imageData.rotate) % 180;
+    const isRotated90 = rotation === 90;
+
+    const contentWidth = isRotated90
+      ? imageData.naturalHeight
+      : imageData.naturalWidth;
+    const contentHeight = isRotated90
+      ? imageData.naturalWidth
+      : imageData.naturalHeight;
+
+    const scaleRatio = Math.min(
+      containerData.width / contentWidth,
+      containerData.height / contentHeight
+    );
+
+    const newWidth = contentWidth * scaleRatio;
+    const newHeight = contentHeight * scaleRatio;
+
+    const newLeft = (containerData.width - newWidth) / 2;
+    const newTop = (containerData.height - newHeight) / 2;
+
+    cropper.setCanvasData({
+      left: newLeft,
+      top: newTop,
+      width: newWidth,
+      height: newHeight,
+    });
+  }, []);
+
   // The Split Logic
   const performSplit = useCallback(() => {
     const cropper = cropperRef.current?.cropper;
@@ -331,7 +370,7 @@ export default function ImageSplitterClient() {
                   </label>
                   <div className="grid grid-cols-2 gap-2 mb-2">
                     <button
-                      onClick={() => cropperRef.current?.cropper?.rotate(90)}
+                      onClick={handleRotate}
                       className="bg-white border-2 border-black p-2 sm:p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
                     >
                       <RotateCw className="w-5 h-5" /> {t.rotate_btn}
