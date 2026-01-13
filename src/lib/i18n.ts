@@ -199,6 +199,17 @@ export const translations = {
       "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Accept",
     cookie_decline_btn: "Decline",
+    // New Pro Tips Content
+    tips_title: "Pro Tips: Go Viral",
+    tips_1_title: "Tell a Story",
+    tips_1_desc:
+      "Don't just split random photos. Use the seamless slide to reveal a surprise or tell a progressive story from left to right.",
+    tips_2_title: "High Res Only",
+    tips_2_desc:
+      "TikTok compresses images heavily. Always start with the highest resolution possible to ensure your split slides stay crisp.",
+    tips_3_title: "The Hook",
+    tips_3_desc:
+      "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
   },
   vi: {
     title: "Easy Split - Chia Ảnh",
@@ -388,6 +399,16 @@ export const translations = {
       "Chúng tôi sử dụng cookie để cải thiện trải nghiệm của bạn. Bằng cách sử dụng trang web của chúng tôi, bạn đồng ý với việc sử dụng cookie của chúng tôi.",
     cookie_accept_btn: "Chấp nhận",
     cookie_decline_btn: "Từ chối",
+    tips_title: "Mẹo Pro: Để Viral",
+    tips_1_title: "Kể Chuyện",
+    tips_1_desc:
+      "Đừng chỉ cắt ảnh ngẫu nhiên. Hãy dùng sự liền mạch để hé lộ bất ngờ hoặc kể một câu chuyện tiến triển từ trái sang phải.",
+    tips_2_title: "Chất Lượng Cao",
+    tips_2_desc:
+      "TikTok nén ảnh rất mạnh. Luôn bắt đầu với ảnh gốc sắc nét nhất để khi cắt nhỏ ảnh vẫn giữ được chi tiết.",
+    tips_3_title: "Điểm Nhấn",
+    tips_3_desc:
+      "Hãy làm cho tấm ảnh đầu tiên (ngoài cùng bên trái) thật hấp dẫn để người xem dừng lại. Dùng các tấm tiếp theo để dẫn dắt họ.",
   },
   ko: {
     title: "Easy Split - 이미지 분할",

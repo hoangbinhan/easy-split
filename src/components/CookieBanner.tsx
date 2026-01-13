@@ -44,13 +44,13 @@ export function CookieBanner() {
         <div className="flex gap-3 w-full sm:w-auto">
           <button
             onClick={handleDecline}
-            className="flex-1 sm:flex-none px-4 py-2 border-2 border-black font-bold uppercase hover:bg-red-100 transition-colors text-sm"
+            className="flex-1 sm:flex-none px-4 py-2 border-2 border-black font-bold uppercase hover:bg-red-100 transition-colors text-sm cursor-pointer"
           >
             {t.cookie_decline_btn}
           </button>
           <button
             onClick={handleAccept}
-            className="flex-1 sm:flex-none px-6 py-2 bg-black text-white border-2 border-transparent hover:bg-white hover:text-black hover:border-black font-bold uppercase transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-sm"
+            className="flex-1 sm:flex-none px-6 py-2 bg-black text-white border-2 border-transparent hover:bg-white hover:text-black hover:border-black font-bold uppercase transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-sm cursor-pointer"
           >
             {t.cookie_accept_btn}
           </button>

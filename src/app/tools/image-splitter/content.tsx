@@ -183,6 +183,45 @@ export default function ImageSplitterContent() {
 
       <FeaturesSection />
 
+      <section className="max-w-4xl mx-auto mb-20">
+        <div className="bg-orange-300 border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative">
+          <div className="absolute -top-6 -right-6 bg-white border-4 border-black px-4 py-2 rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <span className="font-black text-xl uppercase text-red-500">
+              Hot!
+            </span>
+          </div>
+
+          <h2
+            className={`text-4xl font-black uppercase mb-8 layer-text stroke-black text-white ${bangers.className}`}
+          >
+            {t.tips_title}
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { title: t.tips_1_title, desc: t.tips_1_desc, bg: "bg-white" },
+              { title: t.tips_2_title, desc: t.tips_2_desc, bg: "bg-white" },
+              { title: t.tips_3_title, desc: t.tips_3_desc, bg: "bg-white" },
+            ].map((tip, i) => (
+              <div
+                key={i}
+                className={`${tip.bg} border-4 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform`}
+              >
+                <div className="text-4xl mb-2">
+                  {i === 0 ? "📖" : i === 1 ? "💎" : "🎣"}
+                </div>
+                <h3 className="font-black text-xl uppercase mb-2">
+                  {tip.title}
+                </h3>
+                <p className="font-medium text-sm leading-relaxed text-slate-700">
+                  {tip.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <div className="max-w-4xl mx-auto">
         <article className="bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] mb-12">
           <h2 className="text-3xl font-black text-black uppercase mb-6 border-b-4 border-black pb-4 inline-block transform -rotate-1">
