@@ -293,7 +293,7 @@ export default function ImageSplitterClient() {
           type="file"
           ref={fileInputRef}
           className="hidden"
-          accept="image/png, image/jpeg, image/jpg, image/webp, image/avif, image/bmp"
+          accept="image/*"
           onChange={(e) => {
             if (e.target.files && e.target.files[0]) {
               handleFileUpload(e.target.files[0]);
