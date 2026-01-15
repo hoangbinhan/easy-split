@@ -131,23 +131,23 @@ export default async function BlogIndex({
     <div className="max-w-4xl mx-auto space-y-12">
       <section className="text-center space-y-6 pt-8">
         <h1
-          className={`text-5xl md:text-7xl font-black uppercase text-black ${bangers.className} tracking-widest`}
+          className={`text-4xl sm:text-5xl md:text-7xl font-black uppercase text-black ${bangers.className} tracking-widest`}
         >
           {meta.heading}
         </h1>
-        <p className="text-xl font-bold text-slate-600 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl font-bold text-slate-600 max-w-2xl mx-auto px-4">
           {meta.sub}
         </p>
       </section>
 
-      <div className="grid gap-8">
+      <div className="grid gap-6 sm:gap-8">
         {posts.map((post) => (
           <article
             key={post.slug}
-            className="group bg-white border-4 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
+            className="group bg-white border-4 border-black p-4 sm:p-6 md:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
           >
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between mb-4">
-              <div className="flex items-center gap-4 text-sm font-bold uppercase tracking-wider text-slate-500">
+            <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start md:items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500">
                 <span className="bg-yellow-300 text-black px-2 py-1 border-2 border-black">
                   {post.category}
                 </span>
@@ -161,12 +161,12 @@ export default async function BlogIndex({
             </div>
 
             <Link href={`/blog/${post.slug}`} className="block">
-              <h2 className="text-2xl sm:text-4xl font-black uppercase mb-4 group-hover:underline decoration-4 underline-offset-4 decoration-cyan-400">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-black uppercase mb-4 group-hover:underline decoration-4 underline-offset-4 decoration-cyan-400 break-words">
                 {post.title}
               </h2>
             </Link>
 
-            <p className="text-lg font-medium text-slate-700 mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg font-medium text-slate-700 mb-6 leading-relaxed">
               {post.excerpt}
             </p>
 
@@ -179,7 +179,7 @@ export default async function BlogIndex({
                 alt={post.title}
                 width={1000}
                 height={1000}
-                className="w-auto h-[200px] mb-6"
+                className="w-full max-w-[500px] h-auto mb-6 border-2 border-black"
               />
             </Link>
 

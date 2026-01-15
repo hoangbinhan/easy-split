@@ -91,16 +91,16 @@ export function Header() {
             </div>
           )}
 
-          <nav className="hidden sm:flex text-sm font-bold uppercase tracking-wide gap-4">
+          <nav className="flex items-center gap-2 sm:gap-4 font-bold uppercase tracking-wide">
             <Link
               href="/"
-              className="px-4 py-2 border-2 border-transparent hover:border-black hover:bg-cyan-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              className="hidden sm:block px-4 py-2 border-2 border-transparent hover:border-black hover:bg-cyan-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               {isLoaded ? t.nav_splitter : "..."}
             </Link>
             <Link
               href="/blog"
-              className="px-4 py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              className="px-3 py-2 sm:px-4 sm:py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all sm:text-sm text-xs"
             >
               Blog
             </Link>

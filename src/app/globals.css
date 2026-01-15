@@ -27,6 +27,13 @@
     color: white;
     font-family: "Bangers", system-ui, sans-serif !important;
   }
+
+  .layer-text-sm {
+    text-shadow: 2px 2px 0px #000;
+    -webkit-text-stroke: 1px black;
+    color: white;
+    font-family: "Bangers", system-ui, sans-serif !important;
+  }
 }
 
 /* Cropper JS Overrides for Retro Look - Valid CSS, can stay outside layer or in base */

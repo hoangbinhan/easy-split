@@ -626,34 +626,34 @@ export default async function GuidePost({
   const t = content[lang as Language] || content["en"];
 
   return (
-    <article className="max-w-4xl mx-auto bg-white border-4 border-black p-6 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+    <article className="max-w-4xl mx-auto bg-white border-4 border-black p-4 sm:p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
       {/* Header */}
-      <header className="mb-10 pb-8 border-b-4 border-black border-dashed">
+      <header className="mb-6 sm:mb-10 pb-6 sm:pb-8 border-b-4 border-black border-dashed">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 font-bold uppercase text-sm mb-6 hover:bg-yellow-200 px-2 py-1 transition-colors border-2 border-transparent hover:border-black"
+          className="inline-flex items-center gap-2 font-bold uppercase text-xs sm:text-sm mb-4 sm:mb-6 hover:bg-yellow-200 px-2 py-1 transition-colors border-2 border-transparent hover:border-black"
         >
           <ArrowLeft className="w-4 h-4" /> {t.back}
         </Link>
 
         <h1
-          className={`text-4xl sm:text-6xl font-black uppercase leading-none mb-6 ${bangers.className}`}
+          className={`text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-none mb-4 sm:mb-6 ${bangers.className}`}
         >
           {t.title_part_1}{" "}
-          <span className="text-cyan-500 layer-text stroke-black">
+          <span className="text-cyan-500 layer-text-sm stroke-black inline ">
             {t.title_part_2}
           </span>{" "}
           {t.title_part_3}
         </h1>
 
-        <div className="flex flex-wrap gap-4 text-sm font-bold uppercase text-slate-500">
-          <span className="bg-pink-200 text-black px-3 py-1 border-2 border-black">
+        <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm font-bold uppercase text-slate-500">
+          <span className="bg-pink-200 text-black px-2 sm:px-3 py-1 border-2 border-black">
             {t.tags[0]}
           </span>
-          <span className="bg-green-200 text-black px-3 py-1 border-2 border-black">
+          <span className="bg-green-200 text-black px-2 sm:px-3 py-1 border-2 border-black">
             {t.tags[1]}
           </span>
-          <span>Update: 16/01/2026</span>
+          <span className="py-1">Update: 16/01/2026</span>
         </div>
       </header>
 
