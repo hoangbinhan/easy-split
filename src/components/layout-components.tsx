@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, WifiOff } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import { Bangers } from "next/font/google";
 
@@ -15,6 +16,22 @@ const bangers = Bangers({
 
 export function Header() {
   const { language, setLanguage, t, isLoaded } = useLanguage();
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    setIsOnline(navigator.onLine);
+
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
 
   // Flag mapping (Using images because Windows doesn't support flag emojis)
   const getFlagUrl = (lang: Language) => {
@@ -67,6 +84,13 @@ export function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-4 sm:gap-6">
+          {!isOnline && (
+            <div className="flex items-center gap-2 bg-red-500 border-2 border-black px-3 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white font-bold text-xs uppercase animate-pulse">
+              <WifiOff className="w-4 h-4" />
+              <span className="hidden sm:inline">Offline Mode</span>
+            </div>
+          )}
+
           <nav className="hidden sm:flex text-sm font-bold uppercase tracking-wide">
             <Link
               href="/"
