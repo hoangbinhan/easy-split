@@ -2,10 +2,13 @@ import ImageSplitterContent from "./tools/image-splitter/content";
 import { translations, Language } from "@/lib/i18n";
 import { cookies } from "next/headers";
 
-export default async function Home() {
-  const cookieStore = await cookies();
-  const locale = (cookieStore.get("NEXT_LOCALE")?.value as Language) || "en";
-  const t = translations[locale];
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: Language }>;
+}) {
+  const { lang } = await params;
+  const t = translations[lang] || translations["en"];
 
   const jsonLd = {
     "@context": "https://schema.org",

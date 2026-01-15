@@ -2,9 +2,8 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/LanguageProvider";
-import { Header, Footer } from "@/components/layout-components";
-import { CookieBanner } from "@/components/CookieBanner";
+import { cookies } from "next/headers";
+import { Language } from "@/lib/i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,14 +58,12 @@ export const viewport: Viewport = {
   themeColor: "#FACC15",
 };
 
-import { cookies } from "next/headers";
-import { Language } from "@/lib/i18n";
-
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Try to guess lang from cookie for the HTML tag, though less critical now
   const cookieStore = await cookies();
   const locale = (cookieStore.get("NEXT_LOCALE")?.value as Language) || "en";
 
@@ -75,14 +72,8 @@ export default async function RootLayout({
       <body
         className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}
       >
-        <LanguageProvider initialLocale={locale}>
-          <Header />
-          <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-7xl">
-            {children}
-          </main>
-          <Footer />
-          <CookieBanner />
-        </LanguageProvider>
+        {children}
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"
           strategy="afterInteractive"
