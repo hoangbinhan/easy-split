@@ -179,7 +179,7 @@ export default async function BlogIndex({
                 alt={post.title}
                 width={1000}
                 height={1000}
-                className="w-full max-w-[500px] h-auto mb-6 border-2 border-black"
+                className="w-auto h-auto max-h-[300px] object-cover mb-6 border-2 border-black"
               />
             </Link>
 

@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Easy Split",
+    images: ["/opengraph-image.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
   twitter: {
     card: "summary_large_image",
