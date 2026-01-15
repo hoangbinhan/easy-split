@@ -34,6 +34,7 @@ export default function ImageSplitterClient() {
 
   // Data State
   const [displayImage, setDisplayImage] = useState<string | null>(null);
+  const [originalImage, setOriginalImage] = useState<string | null>(null); // Store original for undo
   const [segments, setSegments] = useState<string[]>([]);
 
   // Settings State
@@ -76,7 +77,9 @@ export default function ImageSplitterClient() {
     if (!file.type.startsWith("image/")) return;
     const reader = new FileReader();
     reader.onload = (e) => {
-      setDisplayImage(e.target?.result as string);
+      const result = e.target?.result as string;
+      setDisplayImage(result);
+      setOriginalImage(result);
       setSegments([]);
     };
     reader.readAsDataURL(file);
@@ -417,6 +420,22 @@ export default function ImageSplitterClient() {
                       {isEditCropMode ? t.cancel_crop : t.open_crop}
                     </div>
                   </button>
+
+                  {/* Reset/Undo Button - Only show if current image != original */}
+                  {displayImage !== originalImage && !isEditCropMode && (
+                    <button
+                      onClick={() => {
+                        if (originalImage) setDisplayImage(originalImage);
+                      }}
+                      className="w-full mt-2 border-2 border-black p-2 sm:p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 cursor-pointer bg-white hover:bg-red-50 text-red-600"
+                    >
+                      <div className="flex flex-col items-center gap-1">
+                        <RotateCw className="w-5 h-5 -scale-x-100" />{" "}
+                        {/* Flip rotate icon to look like undo */}
+                        {t.reset_image}
+                      </div>
+                    </button>
+                  )}
                 </div>
 
                 {isEditCropMode && (
