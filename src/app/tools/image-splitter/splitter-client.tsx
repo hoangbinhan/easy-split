@@ -433,14 +433,24 @@ export default function ImageSplitterClient() {
                   </label>
                   <div className="grid grid-cols-2 gap-2 mb-2">
                     <button
+                      disabled={isEditCropMode}
                       onClick={handleRotate}
-                      className="bg-white border-2 border-black p-2 sm:p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
+                      className={`border-2 border-black p-2 sm:p-3 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 ${
+                        isEditCropMode
+                          ? "bg-slate-100 text-slate-300 cursor-not-allowed"
+                          : "bg-white hover:bg-yellow-200 cursor-pointer"
+                      }`}
                     >
                       <RotateCw className="w-5 h-5" /> {t.rotate_btn}
                     </button>
                     <button
+                      disabled={isEditCropMode}
                       onClick={handleFlip}
-                      className="bg-white border-2 border-black p-2 sm:p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
+                      className={`border-2 border-black p-2 sm:p-3 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 ${
+                        isEditCropMode
+                          ? "bg-slate-100 text-slate-300 cursor-not-allowed"
+                          : "bg-white hover:bg-yellow-200 cursor-pointer"
+                      }`}
                     >
                       <FlipHorizontal className="w-5 h-5" /> {t.flip_h_btn}
                     </button>
@@ -456,23 +466,6 @@ export default function ImageSplitterClient() {
                     <div className="flex flex-col items-center gap-1">
                       <LayoutTemplate className="w-5 h-5" />
                       {isEditCropMode ? t.cancel_crop : t.open_crop}
-                    </div>
-                  </button>
-
-                  {/* Reset/Undo Button - Always visible, disabled if no changes */}
-                  <button
-                    disabled={displayImage === originalImage && !hasTransforms}
-                    onClick={handleReset}
-                    className={`w-full mt-2 border-2 border-black p-2 sm:p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 ${
-                      displayImage === originalImage && !hasTransforms
-                        ? "bg-slate-100 text-slate-300 cursor-not-allowed"
-                        : "bg-white hover:bg-red-50 text-red-600 cursor-pointer"
-                    }`}
-                  >
-                    <div className="flex flex-col items-center gap-1">
-                      <RotateCw className="w-5 h-5 -scale-x-100" />{" "}
-                      {/* Flip rotate icon to look like undo */}
-                      {t.reset_image}
                     </div>
                   </button>
                 </div>
@@ -572,7 +565,7 @@ export default function ImageSplitterClient() {
                     <button
                       onClick={() => {
                         performCrop();
-                        setIsEditCropMode(false); // Close after apply
+                        setTimeout(() => setIsEditCropMode(false), 0); // Close after apply)
                       }}
                       className="w-full bg-green-400 border-2 border-black py-3 sm:py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
                     >
@@ -583,6 +576,23 @@ export default function ImageSplitterClient() {
                     </p>
                   </div>
                 )}
+
+                {/* Reset/Undo Button - Always visible, disabled if no changes */}
+                <button
+                  disabled={displayImage === originalImage && !hasTransforms}
+                  onClick={handleReset}
+                  className={`w-full border-2 border-black p-2 sm:p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 ${
+                    displayImage === originalImage && !hasTransforms
+                      ? "bg-slate-100 text-slate-300 cursor-not-allowed"
+                      : "bg-white hover:bg-red-50 text-red-600 cursor-pointer"
+                  }`}
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <RotateCw className="w-5 h-5 -scale-x-100" />{" "}
+                    {/* Flip rotate icon to look like undo */}
+                    {t.reset_image}
+                  </div>
+                </button>
 
                 <div className="pt-4 mt-4 border-t-4 border-black border-dashed">
                   <button
