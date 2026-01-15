@@ -9,6 +9,9 @@ import { CookieBanner } from "@/components/CookieBanner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || "https://easysplit.click"
+  ),
   title: "Easy Split - Split Photos for TikTok & Instagram",
   description:
     "Free tool to split photos into seamless carousel slides for TikTok and Instagram. No watermark, no upload needed.",
