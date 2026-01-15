@@ -37,13 +37,22 @@ export default function ImageSplitterClient() {
   const [segments, setSegments] = useState<string[]>([]);
 
   // Settings State
+  // Settings State
   const [colCount, setColCount] = useState<number>(2);
   const [rowCount, setRowCount] = useState<number>(1);
-  const [chunkRatio, setChunkRatio] = useState<number>(0); // Default to 0 (Free mode)
+
+  // -- SPLIT TAB RATIO STATE --
+  const [splitRatio, setSplitRatio] = useState<number>(0); // Default to 0 (Free mode)
   const [customHW, setCustomHW] = useState({ w: 3, h: 4 });
+  const [isCustomRatio, setIsCustomRatio] = useState(false);
+
+  // -- EDIT TAB RATIO STATE --
+  const [editRatio, setEditRatio] = useState<number>(0); // Default to 0 (Free mode)
+  const [editCustomHW, setEditCustomHW] = useState({ w: 3, h: 4 });
+  const [isEditCustomRatio, setIsEditCustomRatio] = useState(false);
+
   const [activeTab, setActiveTab] = useState<"edit" | "split">("split");
   const [isEditCropMode, setIsEditCropMode] = useState(false);
-  const [isCustomRatio, setIsCustomRatio] = useState(false); // New state to track if custom mode is active explicitly
 
   // Reset Edit Crop Mode when switching tabs
   useEffect(() => {
@@ -88,16 +97,25 @@ export default function ImageSplitterClient() {
   useEffect(() => {
     const cropper = cropperRef.current?.cropper;
     if (cropper) {
-      if (chunkRatio === 0) {
-        cropper.setAspectRatio(NaN); // Free mode
-      } else {
-        // Total Aspect Ratio = (Columns * Single Width) / (Rows * Single Height)
-        // Since Single Width / Single Height = ChunkRatio => SW = ChunkRatio * SH
-        // Total Aspect Ratio = (Cols * ChunkRatio * SH) / (Rows * SH) = (Cols / Rows) * ChunkRatio
-        cropper.setAspectRatio((colCount / rowCount) * chunkRatio);
+      if (activeTab === "split") {
+        if (splitRatio === 0) {
+          cropper.setAspectRatio(NaN); // Free mode
+        } else {
+          // Total Aspect Ratio = (Columns * Single Width) / (Rows * Single Height)
+          // Since Single Width / Single Height = ChunkRatio => SW = ChunkRatio * SH
+          // Total Aspect Ratio = (Cols * ChunkRatio * SH) / (Rows * SH) = (Cols / Rows) * ChunkRatio
+          cropper.setAspectRatio((colCount / rowCount) * splitRatio);
+        }
+      } else if (activeTab === "edit" && isEditCropMode) {
+        // Edit Mode Ratio
+        if (editRatio === 0) {
+          cropper.setAspectRatio(NaN);
+        } else {
+          cropper.setAspectRatio(editRatio);
+        }
       }
     }
-  }, [colCount, rowCount, chunkRatio]);
+  }, [colCount, rowCount, splitRatio, editRatio, activeTab, isEditCropMode]);
   useEffect(() => {
     const cropper = cropperRef.current?.cropper;
     if (!cropper) return;
@@ -403,6 +421,93 @@ export default function ImageSplitterClient() {
 
                 {isEditCropMode && (
                   <div className="animate-in slide-in-from-top-2 fade-in">
+                    {/* EDIT MODE CROP RATIO UI */}
+                    <div className="mb-4">
+                      <label className="font-bold uppercase text-sm mb-3 block">
+                        {t.crop_ratio_label}
+                      </label>
+                      <div className="grid grid-cols-3 sm:grid-cols-2 gap-2">
+                        {ASPECT_RATIOS.map((r) => (
+                          <button
+                            key={r.label}
+                            onClick={() => {
+                              setEditRatio(r.value);
+                              setIsEditCustomRatio(false);
+                            }}
+                            className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
+                              !isEditCustomRatio &&
+                              Math.abs(editRatio - r.value) < 0.001
+                                ? "bg-yellow-300 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
+                                : "bg-white hover:bg-slate-50 hover:-translate-y-1"
+                            }`}
+                          >
+                            <span className="hidden sm:inline">{r.icon}</span>{" "}
+                            {r.value === 0 ? t.ratio_free : r.label}
+                          </button>
+                        ))}
+                        {/* Custom Button for Edit Mode */}
+                        <button
+                          onClick={() => {
+                            setIsEditCustomRatio(true);
+                            if (editCustomHW.w > 0 && editCustomHW.h > 0) {
+                              setEditRatio(editCustomHW.w / editCustomHW.h);
+                            }
+                          }}
+                          className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
+                            isEditCustomRatio
+                              ? "bg-yellow-300 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
+                              : "bg-white hover:bg-slate-50 hover:-translate-y-1"
+                          }`}
+                        >
+                          <span className="hidden sm:inline">✏️</span>{" "}
+                          {t.custom_ratio}
+                        </button>
+                      </div>
+
+                      {/* Edit Custom Inputs Panel */}
+                      {isEditCustomRatio && (
+                        <div className="mt-2 bg-slate-100 border-2 border-dashed border-black p-2 sm:p-3 animate-in slide-in-from-top-2">
+                          <div className="flex items-center gap-2">
+                            <div className="flex-1">
+                              <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
+                                {t.width_label}
+                              </label>
+                              <input
+                                type="number"
+                                min="1"
+                                value={editCustomHW.w}
+                                onChange={(e) => {
+                                  const w = Number(e.target.value);
+                                  setEditCustomHW((p) => ({ ...p, w }));
+                                  if (w > 0 && editCustomHW.h > 0)
+                                    setEditRatio(w / editCustomHW.h);
+                                }}
+                                className="w-full border-2 border-black p-1 font-bold text-center text-sm focus:outline-none focus:bg-yellow-100"
+                              />
+                            </div>
+                            <span className="font-black text-xl pt-4">:</span>
+                            <div className="flex-1">
+                              <label className="text-[10px] font-bold uppercase text-slate-500 mb-1 block">
+                                {t.height_label}
+                              </label>
+                              <input
+                                type="number"
+                                min="1"
+                                value={editCustomHW.h}
+                                onChange={(e) => {
+                                  const h = Number(e.target.value);
+                                  setEditCustomHW((p) => ({ ...p, h }));
+                                  if (editCustomHW.w > 0 && h > 0)
+                                    setEditRatio(editCustomHW.w / h);
+                                }}
+                                className="w-full border-2 border-black p-1 font-bold text-center text-sm focus:outline-none focus:bg-yellow-100"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                     <label className="font-bold uppercase text-sm mb-3 block">
                       {t.actions_label}
                     </label>
@@ -490,12 +595,12 @@ export default function ImageSplitterClient() {
                       <button
                         key={r.label}
                         onClick={() => {
-                          setChunkRatio(r.value);
+                          setSplitRatio(r.value);
                           setIsCustomRatio(false);
                         }}
                         className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
                           !isCustomRatio &&
-                          Math.abs(chunkRatio - r.value) < 0.001
+                          Math.abs(splitRatio - r.value) < 0.001
                             ? "bg-cyan-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] translate-x-px translate-y-px"
                             : "bg-white hover:bg-slate-50 hover:-translate-y-1"
                         }`}
@@ -512,7 +617,7 @@ export default function ImageSplitterClient() {
                         // Actually better to just apply current customHW even if it's 0 (invalid?)
                         // Safe check:
                         if (customHW.w > 0 && customHW.h > 0) {
-                          setChunkRatio(customHW.w / customHW.h);
+                          setSplitRatio(customHW.w / customHW.h);
                         }
                       }}
                       className={`border-2 border-black p-1 sm:p-2 font-bold text-xs sm:text-sm uppercase flex items-center justify-center gap-1 sm:gap-2 transition-all cursor-pointer ${
@@ -542,7 +647,7 @@ export default function ImageSplitterClient() {
                               const w = Number(e.target.value);
                               setCustomHW((p) => ({ ...p, w }));
                               if (w > 0 && customHW.h > 0)
-                                setChunkRatio(w / customHW.h);
+                                setSplitRatio(w / customHW.h);
                             }}
                             className="w-full border-2 border-black p-1 font-bold text-center text-sm focus:outline-none focus:bg-yellow-100"
                           />
@@ -560,7 +665,7 @@ export default function ImageSplitterClient() {
                               const h = Number(e.target.value);
                               setCustomHW((p) => ({ ...p, h }));
                               if (customHW.w > 0 && h > 0)
-                                setChunkRatio(customHW.w / h);
+                                setSplitRatio(customHW.w / h);
                             }}
                             className="w-full border-2 border-black p-1 font-bold text-center text-sm focus:outline-none focus:bg-yellow-100"
                           />
@@ -619,13 +724,17 @@ export default function ImageSplitterClient() {
               <Cropper
                 src={displayImage}
                 style={{ height: "100%", width: "100%" }}
-                // If chunkRatio is 0 (Free), we pass NaN to allow free resize.
+                // Use editRatio if in Edit mode and Cropping, otherwise use Split logic (or NaN for Free/Edit non-crop)
                 aspectRatio={
                   activeTab === "edit"
+                    ? isEditCropMode
+                      ? editRatio === 0
+                        ? NaN
+                        : editRatio
+                      : NaN
+                    : splitRatio === 0
                     ? NaN
-                    : chunkRatio === 0
-                    ? NaN
-                    : (colCount / rowCount) * chunkRatio
+                    : (colCount / rowCount) * splitRatio
                 }
                 guides={activeTab === "edit" && isEditCropMode} // Enable guides only when cropping in edit mode
                 ref={cropperRef}
