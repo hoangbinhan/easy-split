@@ -724,6 +724,7 @@ export default function ImageSplitterClient() {
               <Cropper
                 src={displayImage}
                 style={{ height: "100%", width: "100%" }}
+                zoomable={false}
                 // Use editRatio if in Edit mode and Cropping, otherwise use Split logic (or NaN for Free/Edit non-crop)
                 aspectRatio={
                   activeTab === "edit"
