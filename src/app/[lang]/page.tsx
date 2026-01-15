@@ -1,6 +1,20 @@
 import ImageSplitterContent from "./tools/image-splitter/content";
 import { translations, Language } from "@/lib/i18n";
-import { cookies } from "next/headers";
+
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Language }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const t = translations[lang] || translations["en"];
+  return {
+    title: t.title,
+    description: t.subtitle,
+  };
+}
 
 export default async function Home({
   params,

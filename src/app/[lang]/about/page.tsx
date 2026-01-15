@@ -2,10 +2,20 @@ import React from "react";
 import { Metadata } from "next";
 import AboutContent from "./content";
 
-export const metadata: Metadata = {
-  title: "About Us | Easy Split",
-  description: "Learn more about Easy Split and our mission.",
-};
+import { translations, Language } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Language }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const t = translations[lang] || translations["en"];
+  return {
+    title: `${t.about_us_title} - Easy Split`,
+    description: t.about_mission_desc.substring(0, 160),
+  };
+}
 
 export default function AboutPage() {
   return <AboutContent />;

@@ -11,11 +11,106 @@ const bangers = Bangers({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Easy Split Blog - Tips & Tricks for TikTok Creators",
-  description:
-    "Learn how to make your TikTok and Instagram profile standout with our tutorials and guides.",
+const blogMeta = {
+  en: {
+    title: "Easy Split Blog - Tips & Tricks for TikTok Creators",
+    description:
+      "Learn how to make your TikTok and Instagram profile standout with our tutorials and guides.",
+    heading: "Blog & Tutorials",
+    sub: "Tips and tricks to help you build a million-view TikTok channel with unique visuals.",
+  },
+  vi: {
+    title: "Blog Easy Split - Mẹo & Thủ thuật cho TikTok",
+    description:
+      "Học cách làm nổi bật hồ sơ TikTok và Instagram của bạn với các hướng dẫn của chúng tôi.",
+    heading: "Blog & Hướng dẫn",
+    sub: "Mẹo hay giúp bạn xây dựng kênh TikTok triệu view với giao diện độc đáo.",
+  },
+  ko: {
+    title: "Easy Split 블로그 - 팁 & 요령",
+    description:
+      "TikTok 및 Instagram 프로필을 돋보이게 만드는 방법을 알아보세요.",
+    heading: "블로그 & 튜토리얼",
+    sub: "독특한 비주얼로 백만 뷰 TikTok 채널을 구축하는 데 도움이 되는 팁과 요령.",
+  },
+  jp: {
+    title: "Easy Split ブログ - ヒントとコツ",
+    description:
+      "TikTokやInstagramのプロフィールを目立たせる方法を学びましょう。",
+    heading: "ブログとチュートリアル",
+    sub: "ユニークなビジュアルで100万ビューのTikTokチャンネルを構築するのに役立つヒントとコツ。",
+  },
+  th: {
+    title: "บล็อก Easy Split - เคล็ดลับและเทคนิค",
+    description: "เรียนรู้วิธีทำให้โปรไฟล์ TikTok และ Instagram ของคุณโดดเด่น",
+    heading: "บล็อก & บทช่วยสอน",
+    sub: "เคล็ดลับและเทคนิคที่จะช่วยให้คุณสร้างช่อง TikTok ยอดวิวล้านวิว",
+  },
+  id: {
+    title: "Blog Easy Split - Tips & Trik",
+    description:
+      "Pelajari cara membuat profil TikTok dan Instagram Anda menonjol.",
+    heading: "Blog & Tutorial",
+    sub: "Tips dan trik untuk membantu Anda membangun saluran TikTok jutaan tayangan.",
+  },
+  es: {
+    title: "Blog de Easy Split - Consejos y Trucos",
+    description: "Aprende a destacar tu perfil de TikTok e Instagram.",
+    heading: "Blog y Tutoriales",
+    sub: "Consejos y trucos para ayudarte a construir un canal de TikTok de un millón de visitas.",
+  },
+  "zh-CN": {
+    title: "Easy Split 博客 - 提示与技巧",
+    description: "了解如何让您的 TikTok 和 Instagram 个人资料脱颖而出。",
+    heading: "博客与教程",
+    sub: "帮助您通过独特的视觉效果建立百万观看 TikTok 频道的提示和技巧。",
+  },
+  "zh-TW": {
+    title: "Easy Split 部落格 - 提示與技巧",
+    description: "了解如何讓您的 TikTok 和 Instagram 個人資料脫穎而出。",
+    heading: "部落格與教程",
+    sub: "幫助您透過獨特的視覺效果建立百萬觀看 TikTok 頻道的提示和技巧。",
+  },
+  de: {
+    title: "Easy Split Blog - Tipps & Tricks",
+    description:
+      "Lernen Sie, wie Sie Ihr TikTok- und Instagram-Profil hervorheben.",
+    heading: "Blog & Tutorials",
+    sub: "Tipps und Tricks für einen TikTok-Kanal mit Millionen Aufrufen.",
+  },
+  ru: {
+    title: "Блог Easy Split - Советы и хитрости",
+    description: "Узнайте, как выделить свой профиль в TikTok и Instagram.",
+    heading: "Блог и уроки",
+    sub: "Советы и хитрости для создания канала TikTok с миллионами просмотров.",
+  },
+  hi: {
+    title: "Easy Split ब्लॉग - टिप्स और ट्रिक्स",
+    description:
+      "अपने TikTok और Instagram प्रोफ़ाइल को अलग बनाने का तरीका जानें।",
+    heading: "ब्लॉग और ट्यूटोरियल्स",
+    sub: "आपको अद्वितीय दृश्यों के साथ मिलियन-व्यू TikTok चैनल बनाने में मदद करने के लिए टिप्स और ट्रिक्स।",
+  },
+  "pt-BR": {
+    title: "Blog Easy Split - Dicas e Truques",
+    description: "Aprenda a destacar seu perfil do TikTok e Instagram.",
+    heading: "Blog e Tutoriais",
+    sub: "Dicas e truques para ajudá-lo a construir um canal do TikTok com milhões de visualizações.",
+  },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Language }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const meta = blogMeta[lang] || blogMeta["en"];
+  return {
+    title: meta.title,
+    description: meta.description,
+  };
+}
 
 export default async function BlogIndex({
   params,
@@ -30,18 +125,18 @@ export default async function BlogIndex({
       ? blogPosts[locale]
       : blogPosts["en"];
 
+  const meta = blogMeta[locale] || blogMeta["en"];
+
   return (
     <div className="max-w-4xl mx-auto space-y-12">
       <section className="text-center space-y-6 pt-8">
         <h1
           className={`text-5xl md:text-7xl font-black uppercase text-black ${bangers.className} tracking-widest`}
         >
-          Blog & Tutorials
+          {meta.heading}
         </h1>
         <p className="text-xl font-bold text-slate-600 max-w-2xl mx-auto">
-          {locale === "vi"
-            ? "Mẹo hay giúp bạn xây dựng kênh TikTok triệu view với giao diện độc đáo."
-            : "Tips and tricks to help you build a million-view TikTok channel with unique visuals."}
+          {meta.sub}
         </p>
       </section>
 

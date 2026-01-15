@@ -9,11 +9,23 @@ const bangers = Bangers({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Guide: Create Seamless Carousel Slides on TikTok",
-  description:
-    "Secrets to splitting Panorama photos into multiple small images for a super attractive seamless sliding effect.",
-};
+import { blogPosts } from "../blog-data";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Language }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const post =
+    blogPosts[lang]?.find((p) => p.slug === "seamless-slide-guide") ||
+    blogPosts["en"].find((p) => p.slug === "seamless-slide-guide");
+
+  return {
+    title: `${post?.title} - Easy Split`,
+    description: post?.excerpt,
+  };
+}
 
 const content: Record<string, any> = {
   en: {

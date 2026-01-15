@@ -9,11 +9,23 @@ const bangers = Bangers({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Guide: Create 'Giant Grid' TikTok Profile - Easy Split",
-  description:
-    "Step-by-step secret to posting huge grid images on your TikTok Profile for a seamless look.",
-};
+import { blogPosts } from "../blog-data";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: Language };
+}): Promise<Metadata> {
+  const { lang } = params;
+  const post =
+    blogPosts[lang]?.find((p) => p.slug === "tiktok-grid-guide") ||
+    blogPosts["en"].find((p) => p.slug === "tiktok-grid-guide");
+
+  return {
+    title: `${post?.title} - Easy Split`,
+    description: post?.excerpt,
+  };
+}
 
 const content: Record<string, any> = {
   en: {
