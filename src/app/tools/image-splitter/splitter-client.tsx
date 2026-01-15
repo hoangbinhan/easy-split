@@ -11,6 +11,7 @@ import {
   ArrowRight,
   LayoutTemplate,
   Image as ImageIcon,
+  Download,
 } from "lucide-react";
 import JSZip from "jszip";
 import NextImage from "next/image";
@@ -35,6 +36,7 @@ export default function ImageSplitterClient() {
   // Data State
   const [displayImage, setDisplayImage] = useState<string | null>(null);
   const [originalImage, setOriginalImage] = useState<string | null>(null); // Store original for undo
+  const [imageType, setImageType] = useState<string>("image/jpeg");
   const [segments, setSegments] = useState<string[]>([]);
 
   // Settings State
@@ -75,6 +77,7 @@ export default function ImageSplitterClient() {
   const handleFileUpload = (file: File) => {
     // Basic check, but accept attribute on input handles most
     if (!file.type.startsWith("image/")) return;
+    setImageType(file.type);
     const reader = new FileReader();
     reader.onload = (e) => {
       const result = e.target?.result as string;
@@ -278,6 +281,27 @@ export default function ImageSplitterClient() {
     link.click();
     document.body.removeChild(link);
   };
+
+  const handleDownloadEditImage = useCallback(() => {
+    const cropper = cropperRef.current?.cropper;
+    if (!cropper) return;
+
+    // Get the canvas with current transforms (crop, rotate, flip)
+    const canvas = cropper.getCroppedCanvas({
+      imageSmoothingQuality: "high",
+    });
+
+    if (canvas) {
+      const ext = imageType.split("/")[1] || "jpg";
+      const dataUrl = canvas.toDataURL(imageType, 0.95);
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = `edit-result-${Date.now()}.${ext}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, [imageType]);
 
   const handleDownloadAll = async () => {
     const zip = new JSZip();
@@ -544,6 +568,15 @@ export default function ImageSplitterClient() {
                     </p>
                   </div>
                 )}
+
+                <div className="pt-4 mt-4 border-t-4 border-black border-dashed">
+                  <button
+                    onClick={handleDownloadEditImage}
+                    className="w-full bg-white text-black border-2 border-black py-3 sm:py-4 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
+                  >
+                    <Download className="w-5 h-5" /> {t.download_image}
+                  </button>
+                </div>
               </div>
             )}
 
