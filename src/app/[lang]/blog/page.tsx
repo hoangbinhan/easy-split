@@ -102,10 +102,10 @@ const blogMeta = {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const meta = blogMeta[lang] || blogMeta["en"];
+  const meta = blogMeta[lang as Language] || blogMeta["en"];
   return {
     title: meta.title,
     description: meta.description,
@@ -115,10 +115,10 @@ export async function generateMetadata({
 export default async function BlogIndex({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const locale = lang || "en";
+  const locale = (lang as Language) || "en";
   // Fallback to EN if specific locale has no posts
   const posts =
     blogPosts[locale] && blogPosts[locale].length > 0

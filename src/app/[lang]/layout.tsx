@@ -26,11 +26,11 @@ export default async function LangLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
   return (
-    <LanguageProvider initialLocale={lang}>
+    <LanguageProvider initialLocale={lang as Language}>
       <Header />
       <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-7xl">
         {children}

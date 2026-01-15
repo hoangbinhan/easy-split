@@ -6,10 +6,10 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const t = translations[lang] || translations["en"];
+  const t = translations[lang as Language] || translations["en"];
   return {
     title: t.title,
     description: t.subtitle,
@@ -19,10 +19,10 @@ export async function generateMetadata({
 export default async function Home({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const t = translations[lang] || translations["en"];
+  const t = translations[lang as Language] || translations["en"];
 
   const jsonLd = {
     "@context": "https://schema.org",

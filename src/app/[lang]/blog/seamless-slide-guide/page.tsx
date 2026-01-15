@@ -14,12 +14,13 @@ import { blogPosts } from "../blog-data";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
   const post =
-    blogPosts[lang]?.find((p) => p.slug === "seamless-slide-guide") ||
-    blogPosts["en"].find((p) => p.slug === "seamless-slide-guide");
+    blogPosts[lang as Language]?.find(
+      (p) => p.slug === "seamless-slide-guide"
+    ) || blogPosts["en"].find((p) => p.slug === "seamless-slide-guide");
 
   return {
     title: `${post?.title} - Easy Split`,
@@ -452,10 +453,10 @@ const content: Record<string, any> = {
 export default async function SeamlessSlideGuide({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const t = content[lang] || content["en"];
+  const t = content[lang as Language] || content["en"];
 
   return (
     <article className="max-w-4xl mx-auto bg-white border-4 border-black p-6 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
