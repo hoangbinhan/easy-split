@@ -56,6 +56,7 @@ export default function ImageSplitterClient() {
 
   const [activeTab, setActiveTab] = useState<"edit" | "split">("split");
   const [isEditCropMode, setIsEditCropMode] = useState(false);
+  const [hasTransforms, setHasTransforms] = useState(false);
 
   // Reset Edit Crop Mode when switching tabs
   useEffect(() => {
@@ -84,6 +85,7 @@ export default function ImageSplitterClient() {
       setDisplayImage(result);
       setOriginalImage(result);
       setSegments([]);
+      setHasTransforms(false);
     };
     reader.readAsDataURL(file);
   };
@@ -164,6 +166,7 @@ export default function ImageSplitterClient() {
 
   // Rotate and Zoom to Fit
   const handleRotate = useCallback(() => {
+    setHasTransforms(true);
     const cropper = cropperRef.current?.cropper;
     if (!cropper) return;
 
@@ -200,6 +203,20 @@ export default function ImageSplitterClient() {
       height: newHeight,
     });
   }, []);
+
+  const handleFlip = useCallback(() => {
+    const cropper = cropperRef.current?.cropper;
+    if (!cropper) return;
+    setHasTransforms(true);
+    cropper.scaleX(-(cropper.getData().scaleX || 1));
+  }, []);
+
+  const handleReset = useCallback(() => {
+    const cropper = cropperRef.current?.cropper;
+    if (cropper) cropper.reset();
+    if (originalImage) setDisplayImage(originalImage);
+    setHasTransforms(false);
+  }, [originalImage]);
 
   // The Split Logic
   const performSplit = useCallback(() => {
@@ -268,6 +285,7 @@ export default function ImageSplitterClient() {
     const canvas = cropper.getCroppedCanvas();
     if (canvas) {
       setDisplayImage(canvas.toDataURL());
+      setHasTransforms(false);
       // Optionally reset to split mode after crop?
       // setActiveTab("split");
     }
@@ -421,11 +439,7 @@ export default function ImageSplitterClient() {
                       <RotateCw className="w-5 h-5" /> {t.rotate_btn}
                     </button>
                     <button
-                      onClick={() =>
-                        cropperRef.current?.cropper?.scaleX(
-                          -(cropperRef.current?.cropper?.getData().scaleX || 1)
-                        )
-                      }
+                      onClick={handleFlip}
                       className="bg-white border-2 border-black p-2 sm:p-3 hover:bg-yellow-200 transition-colors font-bold uppercase text-xs flex flex-col items-center gap-1 cursor-pointer"
                     >
                       <FlipHorizontal className="w-5 h-5" /> {t.flip_h_btn}
@@ -445,21 +459,22 @@ export default function ImageSplitterClient() {
                     </div>
                   </button>
 
-                  {/* Reset/Undo Button - Only show if current image != original */}
-                  {displayImage !== originalImage && !isEditCropMode && (
-                    <button
-                      onClick={() => {
-                        if (originalImage) setDisplayImage(originalImage);
-                      }}
-                      className="w-full mt-2 border-2 border-black p-2 sm:p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 cursor-pointer bg-white hover:bg-red-50 text-red-600"
-                    >
-                      <div className="flex flex-col items-center gap-1">
-                        <RotateCw className="w-5 h-5 -scale-x-100" />{" "}
-                        {/* Flip rotate icon to look like undo */}
-                        {t.reset_image}
-                      </div>
-                    </button>
-                  )}
+                  {/* Reset/Undo Button - Always visible, disabled if no changes */}
+                  <button
+                    disabled={displayImage === originalImage && !hasTransforms}
+                    onClick={handleReset}
+                    className={`w-full mt-2 border-2 border-black p-2 sm:p-3 transition-all font-bold uppercase text-xs flex items-center justify-center gap-2 ${
+                      displayImage === originalImage && !hasTransforms
+                        ? "bg-slate-100 text-slate-300 cursor-not-allowed"
+                        : "bg-white hover:bg-red-50 text-red-600 cursor-pointer"
+                    }`}
+                  >
+                    <div className="flex flex-col items-center gap-1">
+                      <RotateCw className="w-5 h-5 -scale-x-100" />{" "}
+                      {/* Flip rotate icon to look like undo */}
+                      {t.reset_image}
+                    </div>
+                  </button>
                 </div>
 
                 {isEditCropMode && (
