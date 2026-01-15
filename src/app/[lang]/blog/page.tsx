@@ -141,7 +141,7 @@ export default async function BlogIndex({
       </section>
 
       <div className="grid gap-6 sm:gap-8">
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <article
             key={post.slug}
             className="group bg-white border-4 border-black p-4 sm:p-6 md:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
@@ -169,19 +169,26 @@ export default async function BlogIndex({
             <p className="text-base sm:text-lg font-medium text-slate-700 mb-6 leading-relaxed">
               {post.excerpt}
             </p>
-
-            <Link
-              href={`/blog/${post.slug}`}
-              className="w-full h-auto flex justify-center"
+            <div
+              className={`${
+                index === 0
+                  ? "mb-15 w-full md:h-[210px] sm:h-[150px] h-[100px] sm:mb-6"
+                  : "mb-30 sm:mb-15 md:mb-5 w-full md:h-[300px] sm:h-[250px] h-[200px] "
+              } blog-banner-wrapper`}
             >
-              <Image
-                src={post.banner}
-                alt={post.title}
-                width={1000}
-                height={1000}
-                className="w-auto h-auto max-h-[300px] object-cover mb-6 border-2 border-black"
-              />
-            </Link>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="w-full h-auto flex justify-center"
+              >
+                <Image
+                  src={post.banner}
+                  alt={post.title}
+                  width={1000}
+                  height={1000}
+                  className="w-auto h-auto max-h-[300px] object-cover border-2 border-black"
+                />
+              </Link>
+            </div>
 
             <Link
               href={`/blog/${post.slug}`}

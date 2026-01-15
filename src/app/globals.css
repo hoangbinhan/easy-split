@@ -83,3 +83,9 @@
 .cropper-point.point-sw {
   cursor: nesw-resize;
 }
+
+@media screen and (max-width: 480px) {
+  .blog-banner-wrapper {
+    margin-bottom: 20px !important;
+  }
+}
