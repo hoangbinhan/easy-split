@@ -404,7 +404,7 @@ export default function ImageSplitterClient() {
             <div className="flex border-b-4 border-black mb-4 sm:mb-6">
               <button
                 onClick={() => setActiveTab("edit")}
-                className={`flex-1 py-2 sm:py-3 font-black uppercase text-sm flex items-center justify-center gap-2 ${
+                className={`cursor-pointer flex-1 py-2 sm:py-3 font-black uppercase text-sm flex items-center justify-center gap-2 ${
                   activeTab === "edit"
                     ? "bg-yellow-300 text-black"
                     : "bg-white text-slate-400 hover:bg-slate-50"
@@ -414,7 +414,7 @@ export default function ImageSplitterClient() {
               </button>
               <button
                 onClick={() => setActiveTab("split")}
-                className={`flex-1 py-2 sm:py-3 font-black uppercase text-sm flex items-center justify-center gap-2 border-l-4 border-black ${
+                className={`cursor-pointer flex-1 py-2 sm:py-3 font-black uppercase text-sm flex items-center justify-center gap-2 border-l-4 border-black ${
                   activeTab === "split"
                     ? "bg-cyan-300 text-black"
                     : "bg-white text-slate-400 hover:bg-slate-50"
