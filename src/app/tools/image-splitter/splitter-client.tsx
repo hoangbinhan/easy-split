@@ -126,7 +126,7 @@ export default function ImageSplitterClient() {
     if (activeTab === "edit") {
       if (isEditCropMode) {
         cropper.crop(); // Init/Show box
-        cropper.setDragMode("crop");
+        cropper.setDragMode("none");
       } else {
         cropper.clear(); // Hide box completely
         cropper.setDragMode("none"); // No interaction
@@ -732,7 +732,7 @@ export default function ImageSplitterClient() {
         <div className="lg:col-span-8">
           <div className="bg-slate-100 border-4 border-black p-2 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <div className="relative w-full h-[30vh] sm:h-[600px] overflow-hidden">
-              <div className="absolute top-4 left-4 z-20 bg-black text-white px-2 py-1 text-xs font-black uppercase pointer-events-none">
+              <div className="absolute top-2 left-2 z-20 bg-black text-white px-2 py-1 font-black uppercase pointer-events-none text-[9px] sm:text-xs sm:top-4 sm:left-4">
                 {activeTab === "edit" ? t.edit_mode : t.interactive_preview}
               </div>
 
@@ -760,13 +760,7 @@ export default function ImageSplitterClient() {
                 ref={cropperRef}
                 viewMode={1} // Restrict crop box to image size
                 // "crop" makes new box. "move" moves image behind.
-                dragMode={
-                  activeTab === "edit"
-                    ? isEditCropMode
-                      ? "crop"
-                      : "none"
-                    : "none"
-                }
+                dragMode={"none"}
                 autoCrop={activeTab === "split" || isEditCropMode} // Hide crop box unless in split mode or actively cropping
                 autoCropArea={1} // Start full
                 background={false}
@@ -790,6 +784,7 @@ export default function ImageSplitterClient() {
                       className="absolute top-0 bottom-0 border-l border-dashed border-white/90 -translate-x-1/2"
                       style={{
                         left: `${((i + 1) * 100) / colCount}%`,
+                        borderWidth: 1,
                       }}
                     />
                   ))}

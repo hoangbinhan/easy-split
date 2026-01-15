@@ -30,6 +30,8 @@
 }
 
 /* Cropper JS Overrides for Retro Look - Valid CSS, can stay outside layer or in base */
+
+/* Cropper JS Overrides for Retro Look - Valid CSS, can stay outside layer or in base */
 .cropper-view-box {
   outline: 2px solid white !important;
   outline-color: white !important;
@@ -43,16 +45,23 @@
   border: 0 !important;
 }
 
+/* Make points larger for touch */
 .cropper-point {
   background-color: #22d3ee !important;
-  width: 10px !important;
-  height: 10px !important;
+  width: 14px !important;
+  height: 14px !important;
   opacity: 1 !important;
+}
+
+/* Adjust margins for larger points to keep them centered */
+.cropper-point.point-n,
+.cropper-point.point-s {
+  margin-left: -10px !important;
 }
 
 .cropper-point.point-n,
 .cropper-point.point-s {
-  margin-left: -5px !important;
+  margin-left: -7px !important;
 }
 
 .cropper-point.point-ne {
