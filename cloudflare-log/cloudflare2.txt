@@ -1,0 +1,139 @@
+2026-01-16T16:12:18.110895Z	Cloning repository...
+2026-01-16T16:12:18.963622Z	From https://github.com/anhb-cssoft/easy-split
+2026-01-16T16:12:18.96416Z	 * branch            56862cdd2b1ddea6e6acb49ad5f10b19c9b7f75a -> FETCH_HEAD
+2026-01-16T16:12:18.9643Z	
+2026-01-16T16:12:19.002045Z	HEAD is now at 56862cd 68: Update remove route _not-found
+2026-01-16T16:12:19.002904Z	
+2026-01-16T16:12:19.077623Z	
+2026-01-16T16:12:19.078138Z	Using v2 root directory strategy
+2026-01-16T16:12:19.100507Z	Success: Finished cloning repository files
+2026-01-16T16:12:21.433999Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-01-16T16:12:21.434789Z	
+2026-01-16T16:12:21.436168Z	Found wrangler.json file. Reading build configuration...
+2026-01-16T16:12:22.542546Z	A wrangler.toml file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2026-01-16T16:12:22.613117Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2026-01-16T16:12:22.614276Z	Installing project dependencies: npm install --progress=false
+2026-01-16T16:12:53.067782Z	npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2026-01-16T16:12:53.153799Z	npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-01-16T16:12:53.825946Z	npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+2026-01-16T16:12:54.433832Z	npm warn deprecated workbox-google-analytics@6.6.0: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+2026-01-16T16:12:54.560118Z	npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+2026-01-16T16:12:54.577872Z	npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+2026-01-16T16:12:56.033935Z	npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2026-01-16T16:12:58.20254Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-16T16:12:58.333742Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-16T16:12:58.334114Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-16T16:12:59.290659Z	npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+2026-01-16T16:13:19.561111Z	
+2026-01-16T16:13:19.561582Z	added 1448 packages, and audited 1449 packages in 57s
+2026-01-16T16:13:19.561801Z	
+2026-01-16T16:13:19.561986Z	210 packages are looking for funding
+2026-01-16T16:13:19.562104Z	  run `npm fund` for details
+2026-01-16T16:13:19.64752Z	
+2026-01-16T16:13:19.647945Z	14 low severity vulnerabilities
+2026-01-16T16:13:19.648346Z	
+2026-01-16T16:13:19.648431Z	To address issues that do not require attention, run:
+2026-01-16T16:13:19.64849Z	  npm audit fix
+2026-01-16T16:13:19.648588Z	
+2026-01-16T16:13:19.648646Z	To address all issues (including breaking changes), run:
+2026-01-16T16:13:19.64875Z	  npm audit fix --force
+2026-01-16T16:13:19.648813Z	
+2026-01-16T16:13:19.648868Z	Run `npm audit` for details.
+2026-01-16T16:13:19.692698Z	Executing user command: npx @cloudflare/next-on-pages
+2026-01-16T16:13:21.19659Z	npm warn exec The following package was not found and will be installed: @cloudflare/next-on-pages@1.13.16
+2026-01-16T16:13:30.854639Z	npm warn deprecated path-match@1.2.4: This package is archived and no longer maintained. For support, visit https://github.com/expressjs/express/discussions
+2026-01-16T16:13:31.862131Z	npm warn deprecated @cloudflare/next-on-pages@1.13.16: Please use the OpenNext adapter instead: https://opennext.js.org/cloudflare
+2026-01-16T16:13:40.203852Z	⚡️ @cloudflare/next-on-pages CLI v.1.13.16
+2026-01-16T16:13:40.383642Z	⚡️ Detected Package Manager: npm (10.9.2)
+2026-01-16T16:13:40.384031Z	⚡️ Preparing project...
+2026-01-16T16:13:40.387262Z	⚡️ Project is ready
+2026-01-16T16:13:40.387426Z	⚡️ Building project...
+2026-01-16T16:13:41.687006Z	▲  npm warn exec The following package was not found and will be installed: vercel@50.4.5
+2026-01-16T16:13:48.464915Z	▲  Vercel CLI 50.4.5
+2026-01-16T16:13:48.4699Z	▲  > NOTE: The Vercel CLI now collects telemetry regarding usage of the CLI.
+2026-01-16T16:13:48.470205Z	▲  > This information is used to shape the CLI roadmap and prioritize features.
+2026-01-16T16:13:48.470383Z	▲  > You can learn more, including how to opt-out if you'd not like to participate in this program, by visiting the following URL:
+2026-01-16T16:13:48.47051Z	▲  > https://vercel.com/docs/cli/about-telemetry
+2026-01-16T16:13:48.560389Z	▲  WARN! Build not running on Vercel. System environment variables will not be available.
+2026-01-16T16:13:48.723564Z	▲  Installing dependencies...
+2026-01-16T16:13:53.077473Z	▲  added 7 packages in 4s
+2026-01-16T16:13:53.07795Z	▲  213 packages are looking for funding
+2026-01-16T16:13:53.078151Z	▲  run `npm fund` for details
+2026-01-16T16:13:53.091527Z	▲  Detected Next.js version: 15.5.9
+2026-01-16T16:13:53.109622Z	▲  Running "npm run build"
+2026-01-16T16:13:53.304735Z	▲  > easy-split@0.1.0 build
+2026-01-16T16:13:53.305078Z	▲  > next build
+2026-01-16T16:13:54.937307Z	▲  Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-01-16T16:13:54.937765Z	▲  This information is used to shape Next.js' roadmap and prioritize features.
+2026-01-16T16:13:54.938287Z	▲  You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-01-16T16:13:54.938511Z	▲  https://nextjs.org/telemetry
+2026-01-16T16:13:55.014902Z	▲  ▲ Next.js 15.5.9
+2026-01-16T16:13:55.015335Z	▲  
+2026-01-16T16:13:55.094505Z	▲  Creating an optimized production build ...
+2026-01-16T16:13:55.260987Z	▲  > [PWA] Compile server
+2026-01-16T16:13:55.262164Z	▲  > [PWA] Compile server
+2026-01-16T16:13:55.262894Z	▲  > [PWA] Compile client (static)
+2026-01-16T16:13:55.263345Z	▲  > [PWA] Auto register service worker with: /opt/buildhome/repo/node_modules/next-pwa/register.js
+2026-01-16T16:13:55.263613Z	▲  > [PWA] Service worker: /opt/buildhome/repo/public/sw.js
+2026-01-16T16:13:55.263735Z	▲  > [PWA]   url: /sw.js
+2026-01-16T16:13:55.263895Z	▲  > [PWA]   scope: /
+2026-01-16T16:14:08.238822Z	▲  ✓ Compiled successfully in 13.0s
+2026-01-16T16:14:08.245803Z	▲  Skipping linting
+2026-01-16T16:14:08.246032Z	▲  Checking validity of types ...
+2026-01-16T16:14:12.809179Z	▲  Collecting page data ...
+2026-01-16T16:14:13.514277Z	▲  ⚠ Using edge runtime on a page currently disables static generation for that page
+2026-01-16T16:14:14.374185Z	▲  Generating static pages (0/7) ...
+2026-01-16T16:14:15.249129Z	▲  Generating static pages (1/7)
+2026-01-16T16:14:15.249495Z	▲  Generating static pages (3/7) 
+2026-01-16T16:14:15.249712Z	▲    Generating static pages (5/7) 
+2026-01-16T16:14:15.249852Z	▲  ✓ Generating static pages (7/7)
+2026-01-16T16:14:15.74898Z	▲  Finalizing page optimization ...
+2026-01-16T16:14:15.749307Z	▲  Collecting build traces ...
+2026-01-16T16:14:21.821355Z	▲  
+2026-01-16T16:14:21.829274Z	▲  Route (app)                                 Size  First Load JS
+2026-01-16T16:14:21.82972Z	▲  ┌ ƒ /_not-found                            131 B         102 kB
+2026-01-16T16:14:21.829853Z	▲  ├ ƒ /[lang]                                134 B         226 kB
+2026-01-16T16:14:21.830063Z	▲  ├ ƒ /[lang]/about                        1.76 kB         166 kB
+2026-01-16T16:14:21.830152Z	▲  ├ ƒ /[lang]/blog                           278 B         111 kB
+2026-01-16T16:14:21.830227Z	▲  ├ ƒ /[lang]/blog/seamless-slide-guide      271 B         106 kB
+2026-01-16T16:14:21.830491Z	▲  ├ ƒ /[lang]/blog/tiktok-grid-guide         270 B         106 kB
+2026-01-16T16:14:21.830646Z	▲  ├ ƒ /[lang]/contact                      3.44 kB         168 kB
+2026-01-16T16:14:21.83076Z	▲  ├ ƒ /[lang]/privacy                      1.63 kB         166 kB
+2026-01-16T16:14:21.830866Z	▲  ├ ƒ /[lang]/terms                         1.6 kB         166 kB
+2026-01-16T16:14:21.830981Z	▲  ├ ƒ /[lang]/tools/image-splitter           133 B         226 kB
+2026-01-16T16:14:21.83109Z	▲  ├ ○ /apple-icon.png                          0 B            0 B
+2026-01-16T16:14:21.831194Z	▲  ├ ○ /icon.png                                0 B            0 B
+2026-01-16T16:14:21.832191Z	▲  ├ ○ /robots.txt                            131 B         102 kB
+2026-01-16T16:14:21.832343Z	▲  └ ○ /sitemap.xml                           131 B         102 kB
+2026-01-16T16:14:21.832487Z	▲  + First Load JS shared by all             102 kB
+2026-01-16T16:14:21.832584Z	▲  ├ chunks/255-cb395327542b56ef.js       45.9 kB
+2026-01-16T16:14:21.832681Z	▲  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+2026-01-16T16:14:21.832779Z	▲  └ other shared chunks (total)          2.01 kB
+2026-01-16T16:14:21.832872Z	▲  
+2026-01-16T16:14:21.832997Z	▲  
+2026-01-16T16:14:21.833457Z	▲  ƒ Middleware                             34.4 kB
+2026-01-16T16:14:21.833611Z	▲  ○  (Static)   prerendered as static content
+2026-01-16T16:14:21.833721Z	▲  ƒ  (Dynamic)  server-rendered on demand
+2026-01-16T16:14:22.219934Z	▲  Traced Next.js server files in: 294.178ms
+2026-01-16T16:14:22.325333Z	▲  Created all serverless functions in: 105.148ms
+2026-01-16T16:14:23.247767Z	▲  Collected static files (public/, static/, .next/static): 7.411ms
+2026-01-16T16:14:23.381053Z	▲  Build Completed in .vercel/output [35s]
+2026-01-16T16:14:23.457583Z	⚡️ Completed `npx vercel build`.
+2026-01-16T16:14:23.496827Z	⚡️ Warning: your app/not-found route might contain runtime logic, this is currently
+2026-01-16T16:14:23.497267Z	⚡️ not supported by @cloudflare/next-on-pages, if that's actually the case please
+2026-01-16T16:14:23.497538Z	⚡️ remove the runtime logic from your not-found route
+2026-01-16T16:14:24.774287Z	
+2026-01-16T16:14:24.774562Z	⚡️ ERROR: Failed to produce a Cloudflare Pages build from the project.
+2026-01-16T16:14:24.774649Z	⚡️ 
+2026-01-16T16:14:24.774719Z	⚡️ 	The following routes were not configured to run with the Edge Runtime:
+2026-01-16T16:14:24.774781Z	⚡️ 	  - /_not-found
+2026-01-16T16:14:24.774841Z	⚡️ 
+2026-01-16T16:14:24.774899Z	⚡️ 	Please make sure that all your non-static routes export the following edge runtime route segment config:
+2026-01-16T16:14:24.774959Z	⚡️ 	  export const runtime = 'edge';
+2026-01-16T16:14:24.775012Z	⚡️ 
+2026-01-16T16:14:24.775091Z	⚡️ 	You can read more about the Edge Runtime on the Next.js documentation:
+2026-01-16T16:14:24.775152Z	⚡️ 	  https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes
+2026-01-16T16:14:24.77521Z	
+2026-01-16T16:14:24.813278Z	Failed: Error while executing user command. Exited with error code: 1
+2026-01-16T16:14:24.823668Z	Failed: build command exited with code: 1
+2026-01-16T16:14:25.996796Z	Failed: error occurred while running build command
