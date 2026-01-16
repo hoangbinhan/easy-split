@@ -92,12 +92,18 @@ export function Header() {
           )}
 
           <nav className="flex items-center gap-2 sm:gap-4 font-bold uppercase tracking-wide">
-            <Link
-              href="/"
-              className="hidden sm:block px-4 py-2 border-2 border-transparent hover:border-black hover:bg-cyan-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+            <a
+              href="https://www.buymeacoffee.com/hoangbinhan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-2 py-1 sm:px-3 sm:py-2 bg-[#FFDD00] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all text-black font-[Lato]"
+              style={{ fontFamily: "Lato, sans-serif" }}
             >
-              {isLoaded ? t.nav_splitter : "..."}
-            </Link>
+              <span className="text-lg sm:text-xl">☕</span>
+              <span className="font-bold hidden sm:inline uppercase text-sm">
+                Buy me a coffee
+              </span>
+            </a>
             <Link
               href="/blog"
               className="px-3 py-2 sm:px-4 sm:py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all sm:text-sm text-xs"

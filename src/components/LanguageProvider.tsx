@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { translations, Language } from "@/lib/i18n";
 import Cookies from "js-cookie";
 
@@ -23,7 +23,6 @@ export function LanguageProvider({
   children: React.ReactNode;
   initialLocale?: Language;
 }) {
-  const router = useRouter();
   const [language, setLanguageState] = useState<Language>(initialLocale);
   const [isLoaded, setIsLoaded] = useState(true);
 
@@ -39,7 +38,7 @@ export function LanguageProvider({
     if (segments.length >= 2) {
       segments[1] = lang;
       const newPath = segments.join("/");
-      router.push(newPath);
+      window.location.href = newPath;
     }
   };
 
