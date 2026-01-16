@@ -11,7 +11,7 @@
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "build:cf": "opennextjs-cloudflare build"
+    "build:cf": "opennextjs-cloudflare build && node -e \"require('fs').copyFileSync('.open-next/worker.js', '.open-next/assets/_worker.js')\""
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.14.8",
