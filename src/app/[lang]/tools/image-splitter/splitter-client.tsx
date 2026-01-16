@@ -368,9 +368,9 @@ export default function ImageSplitterClient() {
           <div className="w-24 h-24 bg-pink-400 border-4 border-black flex items-center justify-center rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-bounce">
             <Upload className="w-10 h-10 text-white" />
           </div>
-          <h3 className="text-3xl font-black text-black uppercase tracking-tight">
+          <h1 className="text-3xl font-black text-black uppercase tracking-tight">
             {t.upload_placeholder}
-          </h3>
+          </h1>
           <p className="font-bold text-slate-500 bg-white border-2 border-black px-4 py-1">
             {t.upload_desc}
           </p>

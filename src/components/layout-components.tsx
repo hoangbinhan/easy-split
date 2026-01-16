@@ -130,10 +130,14 @@ export function Header() {
               </div>
 
               {/* Native Select Overlay for Mobile / Click handling */}
+              <label htmlFor="lang-select" className="sr-only">
+                Language
+              </label>
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value as Language)}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                id="lang-select"
               >
                 <option value="en">🇺🇸 English (US)</option>
                 <option value="vi">🇻🇳 Tiếng Việt</option>

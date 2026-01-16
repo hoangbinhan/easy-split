@@ -56,7 +56,7 @@ const FeaturesSection = () => {
           <div className="mb-4 bg-white border-2 border-black w-14 h-14 flex items-center justify-center rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
             {f.icon}
           </div>
-          <h3 className="font-black text-xl uppercase mb-2">{f.title}</h3>
+          <h1 className="font-black text-xl uppercase mb-2">{f.title}</h1>
           <p className="font-bold text-sm leading-relaxed opacity-90">
             {f.desc}
           </p>
@@ -257,21 +257,21 @@ export default function ImageSplitterContent() {
             <ol className="list-none pl-0 space-y-4 mt-6">
               {/* Updated dynamic instructions */}
               <li className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform">
-                <div className="font-black text-2xl text-slate-300">01</div>
+                <div className="font-black text-2x">01</div>
                 <div className="font-bold text-lg">{t.how_to_1}</div>
               </li>
               <li className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform">
-                <div className="font-black text-2xl text-slate-300">02</div>
+                <div className="font-black text-2x">02</div>
                 <div className="font-bold text-lg">{t.how_to_2}</div>
               </li>
               <li className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform">
-                <div className="font-black text-2xl text-slate-300">03</div>
+                <div className="font-black text-2x">03</div>
                 <div className="font-bold text-lg">
                   Adjust the crop box to select the perfect area for your story.
                 </div>
               </li>
               <li className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform">
-                <div className="font-black text-2xl text-slate-300">04</div>
+                <div className="font-black text-2x">04</div>
                 <div className="font-bold text-lg">{t.how_to_3}</div>
               </li>
             </ol>
