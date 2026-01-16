@@ -1,0 +1,168 @@
+2026-01-16T16:18:47.446417Z	Cloning repository...
+2026-01-16T16:18:48.29166Z	From https://github.com/anhb-cssoft/easy-split
+2026-01-16T16:18:48.292042Z	 * branch            3b12bdbecefe5bf6356be930c189a2f2d07384ba -> FETCH_HEAD
+2026-01-16T16:18:48.292138Z	
+2026-01-16T16:18:48.333323Z	HEAD is now at 3b12bdb 69: Update build command
+2026-01-16T16:18:48.333781Z	
+2026-01-16T16:18:48.401999Z	
+2026-01-16T16:18:48.402507Z	Using v2 root directory strategy
+2026-01-16T16:18:48.424331Z	Success: Finished cloning repository files
+2026-01-16T16:18:50.416486Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-01-16T16:18:50.417146Z	
+2026-01-16T16:18:50.418046Z	Found wrangler.json file. Reading build configuration...
+2026-01-16T16:18:51.529556Z	A wrangler.toml file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2026-01-16T16:18:51.592825Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2026-01-16T16:18:51.593305Z	Installing project dependencies: npm install --progress=false
+2026-01-16T16:19:22.751749Z	npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2026-01-16T16:19:22.789422Z	npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-01-16T16:19:23.55214Z	npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+2026-01-16T16:19:23.866758Z	npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+2026-01-16T16:19:23.966179Z	npm warn deprecated workbox-google-analytics@6.6.0: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+2026-01-16T16:19:24.172065Z	npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+2026-01-16T16:19:25.418021Z	npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2026-01-16T16:19:27.417407Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-16T16:19:27.515005Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-16T16:19:27.515212Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-01-16T16:19:28.03508Z	npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+2026-01-16T16:19:45.372967Z	
+2026-01-16T16:19:45.373253Z	added 1448 packages, and audited 1449 packages in 53s
+2026-01-16T16:19:45.373408Z	
+2026-01-16T16:19:45.373522Z	210 packages are looking for funding
+2026-01-16T16:19:45.373631Z	  run `npm fund` for details
+2026-01-16T16:19:45.454901Z	
+2026-01-16T16:19:45.455256Z	14 low severity vulnerabilities
+2026-01-16T16:19:45.455433Z	
+2026-01-16T16:19:45.455579Z	To address issues that do not require attention, run:
+2026-01-16T16:19:45.455728Z	  npm audit fix
+2026-01-16T16:19:45.455879Z	
+2026-01-16T16:19:45.456027Z	To address all issues (including breaking changes), run:
+2026-01-16T16:19:45.456166Z	  npm audit fix --force
+2026-01-16T16:19:45.456299Z	
+2026-01-16T16:19:45.456419Z	Run `npm audit` for details.
+2026-01-16T16:19:45.49074Z	Executing user command: npm run build:cf
+2026-01-16T16:19:45.835238Z	
+2026-01-16T16:19:45.835478Z	> easy-split@0.1.0 build:cf
+2026-01-16T16:19:45.835636Z	> opennextjs-cloudflare build
+2026-01-16T16:19:45.835739Z	
+2026-01-16T16:19:47.309132Z	
+2026-01-16T16:19:47.309449Z	┌─────────────────────────────┐
+2026-01-16T16:19:47.309651Z	│ OpenNext — Cloudflare build │
+2026-01-16T16:19:47.309796Z	└─────────────────────────────┘
+2026-01-16T16:19:47.309915Z	
+2026-01-16T16:19:47.447492Z	App directory: /opt/buildhome/repo
+2026-01-16T16:19:47.447916Z	Next.js version : 15.5.9
+2026-01-16T16:19:47.448623Z	@opennextjs/cloudflare version: 1.14.8
+2026-01-16T16:19:47.448777Z	@opennextjs/aws version: 3.9.7
+2026-01-16T16:19:47.451455Z	
+2026-01-16T16:19:47.45167Z	┌─────────────────────────────────┐
+2026-01-16T16:19:47.451815Z	│ OpenNext — Building Next.js app │
+2026-01-16T16:19:47.451925Z	└─────────────────────────────────┘
+2026-01-16T16:19:47.452042Z	
+2026-01-16T16:19:47.62446Z	
+2026-01-16T16:19:47.624796Z	> easy-split@0.1.0 build
+2026-01-16T16:19:47.624927Z	> next build
+2026-01-16T16:19:47.625048Z	
+2026-01-16T16:19:49.12057Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-01-16T16:19:49.124534Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-01-16T16:19:49.124735Z	This information is used to shape Next.js' roadmap and prioritize features.
+2026-01-16T16:19:49.124904Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-01-16T16:19:49.125068Z	https://nextjs.org/telemetry
+2026-01-16T16:19:49.125172Z	
+2026-01-16T16:19:49.201941Z	   ▲ Next.js 15.5.9
+2026-01-16T16:19:49.202231Z	
+2026-01-16T16:19:49.276993Z	   Creating an optimized production build ...
+2026-01-16T16:19:49.414517Z	> [PWA] Compile server
+2026-01-16T16:19:49.415548Z	> [PWA] Compile server
+2026-01-16T16:19:49.416263Z	> [PWA] Compile client (static)
+2026-01-16T16:19:49.416586Z	> [PWA] Auto register service worker with: /opt/buildhome/repo/node_modules/next-pwa/register.js
+2026-01-16T16:19:49.416785Z	> [PWA] Service worker: /opt/buildhome/repo/public/sw.js
+2026-01-16T16:19:49.417156Z	> [PWA]   url: /sw.js
+2026-01-16T16:19:49.417289Z	> [PWA]   scope: /
+2026-01-16T16:20:01.214118Z	 ✓ Compiled successfully in 11.8s
+2026-01-16T16:20:01.219958Z	   Skipping linting
+2026-01-16T16:20:01.220177Z	   Checking validity of types ...
+2026-01-16T16:20:05.371388Z	   Collecting page data ...
+2026-01-16T16:20:05.957751Z	 ⚠ Using edge runtime on a page currently disables static generation for that page
+2026-01-16T16:20:06.776931Z	   Generating static pages (0/7) ...
+2026-01-16T16:20:07.324542Z	   Generating static pages (1/7) 
+2026-01-16T16:20:07.324859Z	   Generating static pages (3/7) 
+2026-01-16T16:20:07.325061Z	   Generating static pages (5/7) 
+2026-01-16T16:20:07.325297Z	 ✓ Generating static pages (7/7)
+2026-01-16T16:20:08.183926Z	   Finalizing page optimization ...
+2026-01-16T16:20:08.184127Z	   Collecting build traces ...
+2026-01-16T16:20:33.626525Z	
+2026-01-16T16:20:33.63388Z	Route (app)                                 Size  First Load JS
+2026-01-16T16:20:33.6341Z	┌ ƒ /_not-found                            131 B         102 kB
+2026-01-16T16:20:33.634232Z	├ ƒ /[lang]                                134 B         226 kB
+2026-01-16T16:20:33.63433Z	├ ƒ /[lang]/about                        1.76 kB         166 kB
+2026-01-16T16:20:33.634449Z	├ ƒ /[lang]/blog                           278 B         111 kB
+2026-01-16T16:20:33.634551Z	├ ƒ /[lang]/blog/seamless-slide-guide      271 B         106 kB
+2026-01-16T16:20:33.634673Z	├ ƒ /[lang]/blog/tiktok-grid-guide         270 B         106 kB
+2026-01-16T16:20:33.634794Z	├ ƒ /[lang]/contact                      3.44 kB         168 kB
+2026-01-16T16:20:33.634892Z	├ ƒ /[lang]/privacy                      1.63 kB         166 kB
+2026-01-16T16:20:33.634977Z	├ ƒ /[lang]/terms                         1.6 kB         166 kB
+2026-01-16T16:20:33.635067Z	├ ƒ /[lang]/tools/image-splitter           133 B         226 kB
+2026-01-16T16:20:33.635162Z	├ ○ /apple-icon.png                          0 B            0 B
+2026-01-16T16:20:33.635259Z	├ ○ /icon.png                                0 B            0 B
+2026-01-16T16:20:33.635365Z	├ ○ /robots.txt                            131 B         102 kB
+2026-01-16T16:20:33.635466Z	└ ○ /sitemap.xml                           131 B         102 kB
+2026-01-16T16:20:33.635565Z	+ First Load JS shared by all             102 kB
+2026-01-16T16:20:33.635658Z	  ├ chunks/255-cb395327542b56ef.js       45.9 kB
+2026-01-16T16:20:33.63576Z	  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+2026-01-16T16:20:33.635857Z	  └ other shared chunks (total)          2.02 kB
+2026-01-16T16:20:33.635953Z	
+2026-01-16T16:20:33.636291Z	
+2026-01-16T16:20:33.636414Z	ƒ Middleware                             34.4 kB
+2026-01-16T16:20:33.636525Z	
+2026-01-16T16:20:33.636653Z	○  (Static)   prerendered as static content
+2026-01-16T16:20:33.636778Z	ƒ  (Dynamic)  server-rendered on demand
+2026-01-16T16:20:33.636876Z	
+2026-01-16T16:20:33.70408Z	
+2026-01-16T16:20:33.704323Z	┌──────────────────────────────┐
+2026-01-16T16:20:33.704547Z	│ OpenNext — Generating bundle │
+2026-01-16T16:20:33.704667Z	└──────────────────────────────┘
+2026-01-16T16:20:33.704796Z	
+2026-01-16T16:20:33.791252Z	Bundling middleware function...
+2026-01-16T16:20:33.836697Z	Bundling static assets...
+2026-01-16T16:20:33.848633Z	Bundling cache assets...
+2026-01-16T16:20:33.858898Z	Building server function: default...
+2026-01-16T16:20:33.889829Z	opennextjs-cloudflare build
+2026-01-16T16:20:33.890074Z	
+2026-01-16T16:20:33.890188Z	Build an OpenNext Cloudflare worker
+2026-01-16T16:20:33.890281Z	
+2026-01-16T16:20:33.890371Z	Options:
+2026-01-16T16:20:33.890459Z	      --help                        Show help                          [boolean]
+2026-01-16T16:20:33.890548Z	      --version                     Show version number                [boolean]
+2026-01-16T16:20:33.890648Z	  -c, --config                      Path to Wrangler configuration file [string]
+2026-01-16T16:20:33.89077Z	      --configPath                  Path to Wrangler configuration file
+2026-01-16T16:20:33.89086Z	                                                           [deprecated] [string]
+2026-01-16T16:20:33.890951Z	  -e, --env                         Wrangler environment to use for operations
+2026-01-16T16:20:33.891048Z	                                                                        [string]
+2026-01-16T16:20:33.891139Z	  -s, --skipNextBuild, --skipBuild  Skip building the Next.js app
+2026-01-16T16:20:33.891229Z	                                                      [boolean] [default: false]
+2026-01-16T16:20:33.891319Z	      --noMinify                    Disable worker minification
+2026-01-16T16:20:33.891408Z	                                                      [boolean] [default: false]
+2026-01-16T16:20:33.891503Z	      --skipWranglerConfigCheck     Skip checking for a Wrangler config
+2026-01-16T16:20:33.891612Z	                                                      [boolean] [default: false]
+2026-01-16T16:20:33.891731Z	      --openNextConfigPath          Path to the OpenNext configuration file
+2026-01-16T16:20:33.891826Z	                                                                        [string]
+2026-01-16T16:20:33.891934Z	
+2026-01-16T16:20:33.892034Z	Error: 
+2026-01-16T16:20:33.892126Z	--------------------------------------------------------------------------------
+2026-01-16T16:20:33.892217Z	app/[lang]/about/page cannot use the edge runtime.
+2026-01-16T16:20:33.892279Z	OpenNext requires edge runtime function to be defined in a separate function.
+2026-01-16T16:20:33.892337Z	See the docs for more information on how to bundle edge runtime functions.
+2026-01-16T16:20:33.892583Z	--------------------------------------------------------------------------------
+2026-01-16T16:20:33.892723Z	        
+2026-01-16T16:20:33.892825Z	    at computeCopyFilesForPage (file:///opt/buildhome/repo/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js:108:23)
+2026-01-16T16:20:33.892911Z	    at file:///opt/buildhome/repo/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js:173:9
+2026-01-16T16:20:33.893022Z	    at Array.forEach (<anonymous>)
+2026-01-16T16:20:33.893115Z	    at copyTracedFiles (file:///opt/buildhome/repo/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js:172:12)
+2026-01-16T16:20:33.893211Z	    at generateBundle (file:///opt/buildhome/repo/node_modules/@opennextjs/cloudflare/dist/cli/build/open-next/createServerBundle.js:121:60)
+2026-01-16T16:20:33.893322Z	    at createServerBundle (file:///opt/buildhome/repo/node_modules/@opennextjs/cloudflare/dist/cli/build/open-next/createServerBundle.js:75:11)
+2026-01-16T16:20:33.893424Z	    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-16T16:20:33.893524Z	    at async build (file:///opt/buildhome/repo/node_modules/@opennextjs/cloudflare/dist/cli/build/build.js:70:5)
+2026-01-16T16:20:33.893628Z	    at async buildCommand (file:///opt/buildhome/repo/node_modules/@opennextjs/cloudflare/dist/cli/commands/build.js:21:5)
+2026-01-16T16:20:33.909058Z	Failed: Error while executing user command. Exited with error code: 1
+2026-01-16T16:20:33.919919Z	Failed: build command exited with code: 1
+2026-01-16T16:20:35.247974Z	Failed: error occurred while running build command

@@ -5,8 +5,6 @@ import "./globals.css";
 import { cookies } from "next/headers";
 import { Language } from "@/lib/i18n";
 
-export const runtime = "edge";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
