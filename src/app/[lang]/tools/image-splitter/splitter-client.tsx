@@ -43,6 +43,7 @@ export default function ImageSplitterClient() {
   // Settings State
   const [colCount, setColCount] = useState<number>(2);
   const [rowCount, setRowCount] = useState<number>(1);
+  const [resultColCount, setResultColCount] = useState<number>(2);
 
   // -- SPLIT TAB RATIO STATE --
   const [splitRatio, setSplitRatio] = useState<number>(0); // Default to 0 (Free mode)
@@ -276,6 +277,7 @@ export default function ImageSplitterClient() {
     }
 
     setSegments(newSegments);
+    setResultColCount(colCount);
     setIsProcessing(false);
   }, [colCount, rowCount]);
 
@@ -897,13 +899,15 @@ export default function ImageSplitterClient() {
 
               <div
                 className={`grid gap-2 sm:gap-4 pb-6 px-1 ${
-                  colCount > 1 ? "overflow-x-auto snap-x snap-mandatory" : ""
+                  resultColCount > 1
+                    ? "overflow-x-auto snap-x snap-mandatory"
+                    : ""
                 }`}
                 style={{
                   gridTemplateColumns:
-                    colCount === 1
+                    resultColCount === 1
                       ? "1fr"
-                      : `repeat(${colCount}, minmax(125px, 1fr))`,
+                      : `repeat(${resultColCount}, minmax(125px, 1fr))`,
                 }}
               >
                 {segments.map((seg, i) => (
