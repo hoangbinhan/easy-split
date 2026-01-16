@@ -212,6 +212,9 @@ export const translations = {
     tips_3_title: "The Hook",
     tips_3_desc:
       "Make your first slide (the left-most one) the most captivating to stop the scroll. Use the second slide to deliver the payoff.",
+    not_found_title: "404 - Page Not Found",
+    not_found_desc: "The page you are looking for does not exist.",
+    not_found_home: "Return Home",
   },
   vi: {
     title: "Easy Split - Chia Ảnh",
@@ -413,6 +416,9 @@ export const translations = {
     tips_3_title: "Điểm Nhấn",
     tips_3_desc:
       "Hãy làm cho tấm ảnh đầu tiên (ngoài cùng bên trái) thật hấp dẫn để người xem dừng lại. Dùng các tấm tiếp theo để dẫn dắt họ.",
+    not_found_title: "404 - Không tìm thấy trang",
+    not_found_desc: "Trang bạn đang tìm kiếm không tồn tại.",
+    not_found_home: "Trở về trang chủ",
   },
   ko: {
     title: "Easy Split - 이미지 분할",
@@ -609,6 +615,9 @@ export const translations = {
     tips_3_title: "후크 (The Hook)",
     tips_3_desc:
       "첫 번째 슬라이드(가장 왼쪽)를 가장 매력적으로 만들어 스크롤을 멈추게 하세요. 두 번째 슬라이드로 보상을 제공하세요.",
+    not_found_title: "404 - 페이지를 찾을 수 없습니다",
+    not_found_desc: "찾으시는 페이지가 존재하지 않습니다.",
+    not_found_home: "홈으로 돌아가기",
   },
   jp: {
     title: "Easy Split - 画像分割",
@@ -809,6 +818,9 @@ export const translations = {
     tips_3_title: "フック (The Hook)",
     tips_3_desc:
       "最初のスライド（一番左）を最も魅力的にして、スクロールを止めさせましょう。2枚目のスライドで答え合わせをしましょう。",
+    not_found_title: "404 - ページが見つかりません",
+    not_found_desc: "お探しのページは存在しません。",
+    not_found_home: "ホームに戻る",
   },
   th: {
     title: "Easy Split - ตัดภาพ",
@@ -1004,6 +1016,9 @@ export const translations = {
     tips_3_title: "จุดดึงดูด",
     tips_3_desc:
       "ทำให้สไลด์แรก (ซ้ายสุด) น่าสนใจที่สุดเพื่อหยุดการเลื่อนดู ใช้สไลด์ที่สองเพื่อส่งมอบสิ่งที่น่าสนใจ",
+    not_found_title: "404 - ไม่พบหน้าที่ต้องการ",
+    not_found_desc: "หน้าที่คุณกำลังค้นหาไม่มีอยู่",
+    not_found_home: "กลับสู่หน้าหลัก",
   },
   id: {
     title: "Easy Split - Pemecah Gambar",
@@ -1204,6 +1219,9 @@ export const translations = {
     tips_3_title: "Daya Tarik",
     tips_3_desc:
       "Buat slide pertama Anda (paling kiri) paling menawan untuk menghentikan scroll. Gunakan slide kedua untuk memberikan imbalan.",
+    not_found_title: "404 - Halaman Tidak Ditemukan",
+    not_found_desc: "Halaman yang Anda cari tidak ada.",
+    not_found_home: "Kembali ke Beranda",
   },
   es: {
     title: "Easy Split - Cortador de Fotos",
@@ -1404,6 +1422,9 @@ export const translations = {
     tips_3_title: "El Gancho",
     tips_3_desc:
       "Haz que tu primera diapositiva (la de más a la izquierda) sea la más cautivadora para detener el desplazamiento. Usa la segunda diapositiva para entregar la recompensa.",
+    not_found_title: "404 - Página no encontrada",
+    not_found_desc: "La página que buscas no existe.",
+    not_found_home: "Volver al inicio",
   },
   "zh-CN": {
     title: "Easy Split - 图片分割",
@@ -1596,6 +1617,9 @@ export const translations = {
     tips_3_title: "钩子 (The Hook)",
     tips_3_desc:
       "让您的第一张幻灯片（最左边）最迷人，以停止滚动。用第二张幻灯片来传递内容。",
+    not_found_title: "404 - 页面未找到",
+    not_found_desc: "您查找的页面不存在。",
+    not_found_home: "返回首页",
   },
   "zh-TW": {
     title: "Easy Split - 圖片分割",
@@ -1788,6 +1812,9 @@ export const translations = {
     tips_3_title: "鉤子 (The Hook)",
     tips_3_desc:
       "讓您的第一張幻燈片（最左邊）最迷人，以停止滾動。用第二張幻燈片來傳遞內容。",
+    not_found_title: "404 - 找不到頁面",
+    not_found_desc: "您要尋找的頁面不存在。",
+    not_found_home: "返回首頁",
   },
   de: {
     title: "Easy Split - Bildteiler",
@@ -1991,6 +2018,9 @@ export const translations = {
     tips_3_title: "Der Aufhänger",
     tips_3_desc:
       "Machen Sie Ihre erste Folie (ganz links) zur fesselndsten, um das Scrollen zu stoppen. Nutzen Sie die zweite Folie für die Auflösung.",
+    not_found_title: "404 - Seite nicht gefunden",
+    not_found_desc: "Die gesuchte Seite existiert nicht.",
+    not_found_home: "Zur Startseite zurückkehren",
   },
   ru: {
     title: "Easy Split - Разделение фото",
@@ -2193,6 +2223,9 @@ export const translations = {
     tips_3_title: "Крючок (The Hook)",
     tips_3_desc:
       "Сделайте ваш первый слайд (самый левый) самым захватывающим, чтобы остановить прокрутку. Используйте второй слайд для развязки.",
+    not_found_title: "404 - Страница не найдена",
+    not_found_desc: "Страница, которую вы ищете, не существует.",
+    not_found_home: "Вернуться на главную",
   },
   hi: {
     title: "Easy Split - इमेज स्प्लिटर",
@@ -2393,6 +2426,9 @@ export const translations = {
     tips_3_title: "हुक",
     tips_3_desc:
       "स्क्रॉल को रोकने के लिए अपनी पहली स्लाइड (सबसे बाईं ओर) को सबसे आकर्षक बनाएं। अदायगी देने के लिए दूसरी स्लाइड का उपयोग करें।",
+    not_found_title: "404 - पृष्ठ नहीं मिला",
+    not_found_desc: "आप जिस पृष्ठ को ढूंढ रहे हैं वह मौजूद नहीं है।",
+    not_found_home: "मुख्य पृष्ठ पर लौटें",
   },
   "pt-BR": {
     title: "Easy Split - Divisor de Imagens",
@@ -2592,5 +2628,8 @@ export const translations = {
     tips_3_title: "O Gancho",
     tips_3_desc:
       "Faça seu primeiro slide (o mais à esquerda) o mais cativante para parar a rolagem. Use o segundo para entregar o conteúdo.",
+    not_found_title: "404 - Página não encontrada",
+    not_found_desc: "A página que você está procurando não existe.",
+    not_found_home: "Voltar para a página inicial",
   },
 };
