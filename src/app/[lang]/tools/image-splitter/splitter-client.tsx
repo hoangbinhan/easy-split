@@ -216,6 +216,7 @@ export default function ImageSplitterClient() {
     if (cropper) cropper.reset();
     if (originalImage) setDisplayImage(originalImage);
     setHasTransforms(false);
+    setIsEditCropMode(false);
   }, [originalImage]);
 
   // The Split Logic
