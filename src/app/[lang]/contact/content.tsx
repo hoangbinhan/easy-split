@@ -86,9 +86,9 @@ export default function ContactContent() {
                 <Mail className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-black text-xl uppercase mb-2">
+                <h2 className="font-black text-xl uppercase mb-2">
                   {t.contact_email_title}
-                </h3>
+                </h2>
                 <p className="mb-2 text-sm">{t.contact_email_desc}</p>
                 <a
                   href="mailto:hoangbinhan.5398@gmail.com"
@@ -106,9 +106,9 @@ export default function ContactContent() {
                 <Clock className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-black text-xl uppercase mb-2">
+                <h2 className="font-black text-xl uppercase mb-2">
                   {t.contact_response_time}
-                </h3>
+                </h2>
               </div>
             </div>
           </div>

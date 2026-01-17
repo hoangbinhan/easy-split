@@ -32,10 +32,10 @@ export default function AboutContent() {
             dangerouslySetInnerHTML={{ __html: t.about_us_intro }}
           />
 
-          <h3>{t.about_mission_title}</h3>
+          <h2>{t.about_mission_title}</h2>
           <p>{t.about_mission_desc}</p>
 
-          <h3>{t.about_why_title}</h3>
+          <h2>{t.about_why_title}</h2>
           <p>{t.about_why_desc}</p>
           <ul>
             <li>
@@ -50,7 +50,7 @@ export default function AboutContent() {
             </li>
           </ul>
 
-          <h3>{t.about_meet_creator_title}</h3>
+          <h2>{t.about_meet_creator_title}</h2>
           <div className="not-prose mt-8 flex flex-col sm:flex-row gap-6 items-center bg-slate-100 border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <div className="w-24 h-24 bg-yellow-400 rounded-full border-4 border-black flex items-center justify-center text-4xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
               👨‍💻

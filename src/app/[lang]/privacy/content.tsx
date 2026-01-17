@@ -32,26 +32,26 @@ export default function PrivacyContent() {
             dangerouslySetInnerHTML={{ __html: t.privacy_intro }}
           />
 
-          <h3>{t.privacy_info_collect_title}</h3>
+          <h2>{t.privacy_info_collect_title}</h2>
           <p>{t.privacy_info_collect_desc}</p>
           <ul>
             <li dangerouslySetInnerHTML={{ __html: t.privacy_usage_data }} />
             <li dangerouslySetInnerHTML={{ __html: t.privacy_cookies }} />
           </ul>
 
-          <h3>{t.privacy_process_files_title}</h3>
+          <h2>{t.privacy_process_files_title}</h2>
           <p
             dangerouslySetInnerHTML={{ __html: t.privacy_process_files_desc }}
           />
 
-          <h3>{t.privacy_ads_title}</h3>
+          <h2>{t.privacy_ads_title}</h2>
           <p>{t.privacy_ads_desc}</p>
           <ul>
             <li>{t.privacy_ads_point1}</li>
             <li dangerouslySetInnerHTML={{ __html: t.privacy_ads_point2 }} />
           </ul>
 
-          <h3>{t.privacy_links_title}</h3>
+          <h2>{t.privacy_links_title}</h2>
           <p>{t.privacy_links_desc}</p>
 
           <section>

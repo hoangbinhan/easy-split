@@ -32,16 +32,16 @@ export default function TermsContent() {
             dangerouslySetInnerHTML={{ __html: t.terms_intro }}
           />
 
-          <h3>{t.terms_conditions_title}</h3>
+          <h2>{t.terms_conditions_title}</h2>
           <p>{t.terms_conditions_desc}</p>
 
-          <h3>{t.terms_ip_title}</h3>
+          <h2>{t.terms_ip_title}</h2>
           <p>{t.terms_ip_desc}</p>
           <p>
             <strong>{t.terms_ugc_label}:</strong> {t.terms_ugc_desc}
           </p>
 
-          <h3>{t.terms_acceptable_use_title}</h3>
+          <h2>{t.terms_acceptable_use_title}</h2>
           <p>{t.terms_acceptable_use_desc}</p>
           <ul>
             <li>{t.terms_use_1}</li>
@@ -49,10 +49,10 @@ export default function TermsContent() {
             <li>{t.terms_use_3}</li>
           </ul>
 
-          <h3>{t.terms_indemnification_title}</h3>
+          <h2>{t.terms_indemnification_title}</h2>
           <p>{t.terms_indemnification_desc}</p>
 
-          <h3>{t.terms_liability_title}</h3>
+          <h2>{t.terms_liability_title}</h2>
           <p>{t.terms_liability_desc}</p>
 
           <section>

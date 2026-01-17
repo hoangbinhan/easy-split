@@ -11,9 +11,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
+  const languages: Record<string, string> = {};
+  (Object.keys(translations) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/privacy`;
+  });
+
   return {
     title: `${t.privacy_title} | Easy Split`,
     description: t.privacy_commitment_desc,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/privacy`,
+      languages: languages,
+    },
   };
 }
 

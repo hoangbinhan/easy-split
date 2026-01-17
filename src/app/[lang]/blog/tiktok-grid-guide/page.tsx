@@ -20,9 +20,18 @@ export async function generateMetadata(props: {
     blogPosts[lang as Language]?.find((p) => p.slug === "tiktok-grid-guide") ||
     blogPosts["en"].find((p) => p.slug === "tiktok-grid-guide");
 
+  const languages: Record<string, string> = {};
+  (Object.keys(content) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/blog/tiktok-grid-guide`;
+  });
+
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/blog/tiktok-grid-guide`,
+      languages: languages,
+    },
   };
 }
 

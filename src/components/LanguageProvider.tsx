@@ -13,7 +13,7 @@ type LanguageContextType = {
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export function LanguageProvider({
@@ -27,7 +27,7 @@ export function LanguageProvider({
   const [isLoaded, setIsLoaded] = useState(true);
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
+    // setLanguageState(lang);
     localStorage.setItem("language", lang);
     Cookies.set("NEXT_LOCALE", lang, { expires: 365 });
 

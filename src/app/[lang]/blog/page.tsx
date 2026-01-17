@@ -106,9 +106,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const meta = blogMeta[lang as Language] || blogMeta["en"];
+  const languages: Record<string, string> = {};
+  (Object.keys(blogMeta) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/blog`;
+  });
+
   return {
     title: meta.title,
     description: meta.description,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/blog`,
+      languages: languages,
+    },
   };
 }
 

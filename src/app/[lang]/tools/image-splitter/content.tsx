@@ -56,7 +56,7 @@ const FeaturesSection = () => {
           <div className="mb-4 bg-white border-2 border-black w-14 h-14 flex items-center justify-center rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
             {f.icon}
           </div>
-          <h1 className="font-black text-xl uppercase mb-2">{f.title}</h1>
+          <h3 className="font-black text-xl uppercase mb-2">{f.title}</h3>
           <p className="font-bold text-sm leading-relaxed opacity-90">
             {f.desc}
           </p>
@@ -247,7 +247,7 @@ export default function ImageSplitterContent() {
                       {item.split(":")[1]}
                     </span>
                   </li>
-                )
+                ),
               )}
             </ul>
 

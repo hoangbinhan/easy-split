@@ -19,12 +19,21 @@ export async function generateMetadata({
   const { lang } = await params;
   const post =
     blogPosts[lang as Language]?.find(
-      (p) => p.slug === "seamless-slide-guide"
+      (p) => p.slug === "seamless-slide-guide",
     ) || blogPosts["en"].find((p) => p.slug === "seamless-slide-guide");
+
+  const languages: Record<string, string> = {};
+  (Object.keys(content) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/blog/seamless-slide-guide`;
+  });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/blog/seamless-slide-guide`,
+      languages: languages,
+    },
   };
 }
 
