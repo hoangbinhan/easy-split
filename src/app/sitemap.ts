@@ -22,6 +22,7 @@ const routes = [
   "/about",
   "/privacy",
   "/terms",
+  "/cookie-policy",
   "/contact",
   "/blog",
   "/blog/seamless-slide-guide",
@@ -54,7 +55,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       } else if (route === "/contact" || route === "/about") {
         priority = 0.7;
         changeFrequency = "monthly";
-      } else if (route === "/privacy" || route === "/terms") {
+      } else if (
+        route === "/privacy" ||
+        route === "/terms" ||
+        route === "/cookie-policy"
+      ) {
         priority = 0.3;
         changeFrequency = "yearly";
       }

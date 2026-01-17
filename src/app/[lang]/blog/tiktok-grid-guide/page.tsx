@@ -35,7 +35,43 @@ export async function generateMetadata(props: {
   };
 }
 
-const content: Record<string, any> = {
+type GuideContent = {
+  back: string;
+  title_part_1: string;
+  title_part_2: string;
+  title_part_3: string;
+  tags: string[];
+  intro: string;
+  step1_title: string;
+  step1_desc_1: string;
+  step1_desc_2: string;
+  step1_desc_3: string;
+  step1_tip: string;
+  step2_title: string;
+  step2_desc: string;
+  step2_check1: string;
+  step2_check2: string;
+  step2_check3: string;
+  step2_action: string;
+  step3_title: string;
+  warning_title: string;
+  warning_desc: string;
+  step3_desc: string;
+  step3_rule1: string;
+  step3_rule2: string;
+  step3_rule3: string;
+  step3_rule4: string;
+  step3_summary: string;
+  step4_title: string;
+  step4_desc: string;
+  step4_li1: string;
+  step4_li2: string;
+  cta_title: string;
+  cta_desc: string;
+  cta_btn: string;
+};
+
+const content: Record<string, GuideContent> = {
   en: {
     back: "Back to Blog",
     title_part_1: "Create a Stunning",

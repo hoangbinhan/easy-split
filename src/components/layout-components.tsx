@@ -108,7 +108,7 @@ export function Header() {
               href={`/${language}/blog`}
               className="px-3 py-2 sm:px-4 sm:py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all sm:text-sm text-xs"
             >
-              Blog
+              Blogs
             </Link>
           </nav>
 
@@ -186,6 +186,12 @@ export function Footer() {
               className="hover:bg-yellow-300 px-2 transition-colors"
             >
               {t.privacy}
+            </Link>
+            <Link
+              href="/cookie-policy"
+              className="hover:bg-orange-300 px-2 transition-colors"
+            >
+              {t.cookie_policy}
             </Link>
             <Link
               href="/terms"

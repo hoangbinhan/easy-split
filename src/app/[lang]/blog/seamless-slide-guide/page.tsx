@@ -37,7 +37,35 @@ export async function generateMetadata({
   };
 }
 
-const content: Record<string, any> = {
+type GuideContent = {
+  back: string;
+  title_part_1: string;
+  title_part_2: string;
+  title_part_3: string;
+  tags: string[];
+  intro: string;
+  step1_title: string;
+  step1_desc: string;
+  step1_tip: string;
+  step2_title: string;
+  step2_desc: string;
+  step2_check1: string;
+  step2_check2: string;
+  step2_action: string;
+  step3_title: string;
+  step3_desc: string;
+  step3_part1: string;
+  step3_part2: string;
+  step4_title: string;
+  step4_desc: string;
+  step4_li1: string;
+  step4_li2: string;
+  cta_title: string;
+  cta_desc: string;
+  cta_btn: string;
+};
+
+const content: Record<string, GuideContent> = {
   en: {
     back: "Back to Blog",
     title_part_1: "Create a",

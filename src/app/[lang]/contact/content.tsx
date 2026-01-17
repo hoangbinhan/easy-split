@@ -58,7 +58,7 @@ export default function ContactContent() {
         setFormStatus("error");
         setMessage(result.message || "Something went wrong.");
       }
-    } catch (error) {
+    } catch {
       setFormStatus("error");
       setMessage("Failed to send email. Please check your connection.");
     }
