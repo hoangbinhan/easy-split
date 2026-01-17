@@ -160,7 +160,7 @@ export default async function BlogIndex({
               </div>
             </div>
 
-            <Link href={`/blog/${post.slug}`} className="block">
+            <Link href={`/${locale}/blog/${post.slug}`} className="block">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-black uppercase mb-4 group-hover:underline decoration-4 underline-offset-4 decoration-cyan-400 break-words">
                 {post.title}
               </h2>
@@ -177,7 +177,7 @@ export default async function BlogIndex({
               } blog-banner-wrapper`}
             >
               <Link
-                href={`/blog/${post.slug}`}
+                href={`/${locale}/blog/${post.slug}`}
                 className="w-full h-auto flex justify-center"
               >
                 <Image
@@ -191,7 +191,7 @@ export default async function BlogIndex({
             </div>
 
             <Link
-              href={`/blog/${post.slug}`}
+              href={`/${locale}/blog/${post.slug}`}
               className="inline-flex items-center gap-2 font-black uppercase bg-black text-white px-6 py-3 hover:bg-cyan-400 hover:text-black transition-colors"
             >
               {locale === "vi" ? "Đọc ngay" : "Read Post"}{" "}

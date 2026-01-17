@@ -105,7 +105,7 @@ export function Header() {
               </span>
             </a>
             <Link
-              href="/blog"
+              href={`/${language}/blog`}
               className="px-3 py-2 sm:px-4 sm:py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all sm:text-sm text-xs"
             >
               Blog
