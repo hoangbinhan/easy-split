@@ -180,7 +180,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-6">
-          <div className="flex gap-6 text-sm font-black uppercase text-black">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm font-black uppercase text-black text-center">
             <Link
               href="/privacy"
               className="hover:bg-yellow-300 px-2 transition-colors"

@@ -185,7 +185,7 @@ export default function ImageSplitterContent() {
 
       <section className="max-w-4xl mx-auto mb-20">
         <div className="bg-orange-300 border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative">
-          <div className="absolute -top-6 -right-6 bg-white border-4 border-black px-4 py-2 rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="absolute -top-6 right-4 md:-right-6 bg-white border-4 border-black px-4 py-2 rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <span className="font-black text-xl uppercase text-red-500">
               Hot!
             </span>
