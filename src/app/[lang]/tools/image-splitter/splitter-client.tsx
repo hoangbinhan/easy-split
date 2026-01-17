@@ -67,12 +67,31 @@ export default function ImageSplitterClient() {
   // UI State
   const [isProcessing, setIsProcessing] = useState(false);
   const [gridOverlayStyle, setGridOverlayStyle] = useState<React.CSSProperties>(
-    { display: "none" }
+    { display: "none" },
   );
 
   // Refs
   const cropperRef = useRef<ReactCropperElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to results when segments are generated
+  useEffect(() => {
+    if (segments.length > 0 && resultsRef.current && window.innerWidth <= 768) {
+      // Small timeout to ensure DOM is ready
+      setTimeout(() => {
+        const el = resultsRef.current;
+        if (!el) return;
+
+        const y = el.getBoundingClientRect().top + window.scrollY - 100;
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }, 100);
+    }
+  }, [segments]);
 
   // --- Handlers ---
 
@@ -188,7 +207,7 @@ export default function ImageSplitterClient() {
 
     const scaleRatio = Math.min(
       containerData.width / contentWidth,
-      containerData.height / contentHeight
+      containerData.height / contentHeight,
     );
 
     const newWidth = contentWidth * scaleRatio;
@@ -270,7 +289,7 @@ export default function ImageSplitterClient() {
           0,
           0,
           segmentWidth,
-          segmentHeight
+          segmentHeight,
         );
         newSegments.push(canvas.toDataURL("image/jpeg", 0.95));
       }
@@ -327,7 +346,7 @@ export default function ImageSplitterClient() {
   const handleDownloadAll = async () => {
     const zip = new JSZip();
     segments.forEach((seg, i) =>
-      zip.file(`snap-part-${i + 1}.jpg`, seg.split(",")[1], { base64: true })
+      zip.file(`snap-part-${i + 1}.jpg`, seg.split(",")[1], { base64: true }),
     );
     const content = await zip.generateAsync({ type: "blob" });
     const link = document.createElement("a");
@@ -814,8 +833,8 @@ export default function ImageSplitterClient() {
                         : editRatio
                       : NaN
                     : splitRatio === 0
-                    ? NaN
-                    : (colCount / rowCount) * splitRatio
+                      ? NaN
+                      : (colCount / rowCount) * splitRatio
                 }
                 guides={activeTab === "edit" && isEditCropMode} // Enable guides only when cropping in edit mode
                 ref={cropperRef}
@@ -875,7 +894,7 @@ export default function ImageSplitterClient() {
                           {r * colCount + c + 1}
                         </span>
                       </div>
-                    ))
+                    )),
                   )}
                 </div>
               )}
@@ -884,7 +903,10 @@ export default function ImageSplitterClient() {
 
           {/* If Segments Exist - Show Result Below */}
           {segments.length > 0 && (
-            <div className="mt-8 animate-in fade-in slide-in-from-bottom-6">
+            <div
+              ref={resultsRef}
+              className="mt-8 animate-in fade-in slide-in-from-bottom-6"
+            >
               <div className="flex justify-between items-center mb-4">
                 <h3 className="font-black text-xl uppercase bg-yellow-400 inline-block px-2 border-2 border-black transform -rotate-1">
                   {t.results_label}
