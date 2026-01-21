@@ -179,12 +179,30 @@ export default function ImageSplitterContent() {
           {t.subtitle}
         </p>
 
-        <div className="flex justify-center pt-4">
+        <div className="flex flex-wrap justify-center gap-4 pt-4">
           <Link
             href={`/${useLanguage().language}/profile-mockups`}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-xl uppercase tracking-wider transform rotate-1 hover:rotate-0"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
           >
-            <span>✨ Try Profile Mockups</span>
+            <span>Profile Mockups</span>
+          </Link>
+          <Link
+            href={`/${useLanguage().language}/tools/circle-crop`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
+          >
+            <span>Circle Crop</span>
+          </Link>
+          <Link
+            href={`/${useLanguage().language}/tools/sharpen-image`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
+          >
+            <span>Sharpen Image</span>
+          </Link>
+          <Link
+            href={`/${useLanguage().language}/tools/black-and-white`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
+          >
+            <span>Black & White</span>
           </Link>
         </div>
       </section>
