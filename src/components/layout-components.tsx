@@ -15,7 +15,7 @@ const bangers = Bangers({
 });
 
 export function Header() {
-  const { language, setLanguage, t, isLoaded } = useLanguage();
+  const { language, setLanguage, isLoaded } = useLanguage();
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
@@ -104,6 +104,7 @@ export function Header() {
                 Buy me a coffee
               </span>
             </a>
+
             <Link
               href={`/${language}/blog`}
               className="px-3 py-2 sm:px-4 sm:py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all sm:text-sm text-xs"

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import ImageSplitterClient from "./splitter-client";
 import { useLanguage } from "@/components/LanguageProvider";
 import {
@@ -177,6 +178,15 @@ export default function ImageSplitterContent() {
         <p className="text-xl sm:text-2xl font-bold text-slate-700 max-w-3xl mx-auto bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           {t.subtitle}
         </p>
+
+        <div className="flex justify-center pt-4">
+          <Link
+            href={`/${useLanguage().language}/profile-mockups`}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-xl uppercase tracking-wider transform rotate-1 hover:rotate-0"
+          >
+            <span>✨ Try Profile Mockups</span>
+          </Link>
+        </div>
       </section>
 
       <ImageSplitterClient />
