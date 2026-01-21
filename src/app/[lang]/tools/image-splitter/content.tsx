@@ -204,6 +204,12 @@ export default function ImageSplitterContent() {
           >
             <span>Black & White</span>
           </Link>
+          <Link
+            href={`/${useLanguage().language}/tools/brightness`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-orange-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
+          >
+            <span>Image Brightness</span>
+          </Link>
         </div>
       </section>
 
