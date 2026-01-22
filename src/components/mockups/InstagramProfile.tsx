@@ -80,7 +80,7 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
         <div
           ref={frameRef}
           className={`
-        relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-14 rounded-[2.5rem] h-[800px] w-[375px] shadow-2xl overflow-hidden
+        relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-8 rounded-[2.5rem] h-[800px] w-[375px] shadow-2xl overflow-hidden
         ${isDark ? "dark" : ""}
       `}
         >

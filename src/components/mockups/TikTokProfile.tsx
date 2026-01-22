@@ -66,7 +66,7 @@ export const TikTokProfile = forwardRef<ProfileRefs, TikTokProfileProps>(
         <div
           ref={frameRef}
           className={`
-        relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-14 rounded-[2.5rem] h-[800px] w-[375px] shadow-2xl overflow-hidden
+        relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-8 rounded-[2.5rem] h-[800px] w-[375px] shadow-2xl overflow-hidden
         ${isDark ? "dark" : ""}
       `}
         >
@@ -183,7 +183,7 @@ export const TikTokProfile = forwardRef<ProfileRefs, TikTokProfileProps>(
 
               {/* Tabs */}
               <div
-                className={`grid grid-cols-4 border-b mt-2 sticky top-[80px] z-99 ${isDark ? "border-gray-800 bg-[#121212]" : "border-gray-200 bg-white"}`}
+                className={`grid grid-cols-4 border-b mt-2 sticky top-[80px] z-9 ${isDark ? "border-gray-800 bg-[#121212]" : "border-gray-200 bg-white"}`}
               >
                 {[
                   { id: "videos", icon: Grid },

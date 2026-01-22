@@ -1,39 +1,130 @@
-import { MockupContainer } from "@/components/mockups/MockupContainer";
+import ProfileMockupsContent from "./content";
+import { translations, Language } from "@/lib/i18n";
 import { Metadata } from "next";
-import { ToolsNavigation } from "@/components/ToolsNavigation";
-import { bangers } from "@/app/constants";
 
-export const metadata: Metadata = {
-  title: "Social Profile Mockup Generator | Easy Split",
-  description:
-    "Create and customize social media profile mockups for TikTok and Instagram. Edit text, images, and stats to preview your designs.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const t = translations[lang as Language] || translations["en"];
+  const languages: Record<string, string> = {};
+  (Object.keys(translations) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/tools/profile-mockups`;
+  });
 
-export default function ProfileMockupsPage() {
+  return {
+    title: `${t.pm_title} | Easy Split`,
+    description: t.pm_subtitle,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/tools/profile-mockups`,
+      languages: languages,
+    },
+  };
+}
+
+export default async function ProfileMockupsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const t = translations[lang as Language] || translations["en"];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: t.pm_title,
+        applicationCategory: "MultimediaApplication",
+        operatingSystem: "Web",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        description: t.pm_subtitle,
+        featureList: "Create fake TikTok profile, Instagram mockup generator",
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: t.pm_faq_1_q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: t.pm_faq_1_a,
+            },
+          },
+          {
+            "@type": "Question",
+            name: t.pm_faq_2_q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: t.pm_faq_2_a,
+            },
+          },
+          {
+            "@type": "Question",
+            name: t.pm_faq_3_q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: t.pm_faq_3_a,
+            },
+          },
+          {
+            "@type": "Question",
+            name: t.pm_faq_4_q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: t.pm_faq_4_a,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "HowTo",
+        name: t.pm_article_title,
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Select Platform",
+            text: t.pm_how_to_1,
+            position: 1,
+          },
+          {
+            "@type": "HowToStep",
+            name: "Edit Profile",
+            text: t.pm_how_to_2,
+            position: 2,
+          },
+          {
+            "@type": "HowToStep",
+            name: "Customize Options",
+            text: t.pm_how_to_3,
+            position: 3,
+          },
+          {
+            "@type": "HowToStep",
+            name: "Download",
+            text: t.pm_how_to_4,
+            position: 4,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
-      <div className="w-full mb-8">
-        <ToolsNavigation />
-      </div>
-      <div className="pt-8 sm:pt-12 flex flex-col items-center justify-center py-8 w-full">
-        <div className="mb-12 text-center space-y-4">
-          <div className="inline-block bg-cyan-300 border-4 border-black px-6 py-2 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] -rotate-2 mb-4">
-            <span className="font-black text-lg sm:text-l uppercase tracking-widest text-black">
-              New Tool
-            </span>
-          </div>
-          <h1
-            className={`text-4xl sm:text-7xl ${bangers.className} font-black text-black uppercase tracking-widest leading-none stroke-black layer-text`}
-          >
-            Mockup Generator
-          </h1>
-          <p className="text-xl sm:text-2xl font-bold text-slate-700 max-w-3xl mx-auto bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            Create realistic social media profile mockups. Select a platform
-            below and start editing!
-          </p>
-        </div>
-        <MockupContainer />
-      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProfileMockupsContent />
     </>
   );
 }
