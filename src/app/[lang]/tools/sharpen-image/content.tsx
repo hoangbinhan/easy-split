@@ -144,7 +144,6 @@ export default function SharpenImageClient() {
   if (!image) {
     return (
       <div className="w-full max-w-6xl mx-auto space-y-6 sm:space-y-8">
-        <ToolsNavigation />
         <div
           className="w-full max-w-4xl mx-auto h-[40vh] sm:h-[500px] flex flex-col items-center justify-center relative bg-white border-4 border-black border-dashed p-6 sm:p-10 text-center transition-all hover:bg-yellow-50 cursor-pointer shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
           onDragOver={(e) => e.preventDefault()}

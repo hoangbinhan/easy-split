@@ -295,41 +295,41 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                       d="M3 3H21V21H3z"
                     ></path>
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                       d="M9.01486 3 9.01486 21"
                     ></path>
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                       d="M14.98514 3 14.98514 21"
                     ></path>
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                       d="M21 9.01486 3 9.01486"
                     ></path>
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                       d="M21 14.98514 3 14.98514"
                     ></path>
                   </svg>
@@ -347,21 +347,21 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
                     <title>Feed</title>
                     <g
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeWidth="2px"
                     >
                       <path
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                         d="M6 7H18V17H6z"
                         fill="none"
                       ></path>
                       <path
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         d="M6.00183 3.00372 18.00012 3.00372"
                         fill="none"
                       ></path>
                       <path
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         d="M6.00183 20.99981 18.00012 20.99981"
                         fill="none"
                       ></path>
@@ -381,29 +381,29 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
                     <title>Reels</title>
                     <g
                       stroke="currentColor"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                     >
                       <path d="M2.0493 7.002 21.9503 7.002" fill="none"></path>
                       <path
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                         d="M13.50427 2.001 16.36227 7.002"
                         fill="none"
                       ></path>
                       <path
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                         d="M7.20677 2.1099 10.00177 7.0019"
                         fill="none"
                       ></path>
                       <path
                         d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552z"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                         fill="none"
                       ></path>
                     </g>
                     <path
                       d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0z"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                     ></path>
                   </svg>
                 </div>
@@ -421,9 +421,9 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2px"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2px"
                       d="M20 21 12 13.44 4 21 4 3 20 3 20 21z"
                     ></path>
                   </svg>
@@ -540,16 +540,16 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
                     d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z"
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                   ></path>
                   <line
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     x1="16.511"
                     x2="22"
                     y1="16.511"
@@ -584,15 +584,15 @@ export const InstagramProfile = forwardRef<ProfileRefs, InstagramProfileProps>(
                     d="M13.973 20.046 21.77 6.928C22.8 5.195 21.55 3 19.535 3H4.466C2.138 3 .984 5.825 2.646 7.456l4.842 4.752 1.723 7.121c.548 2.266 3.571 2.721 4.762.717Z"
                     fill="none"
                     stroke="currentColor"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                   ></path>
                   <line
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     x1="7.488"
                     x2="15.515"
                     y1="12.208"
