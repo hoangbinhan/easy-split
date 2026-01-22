@@ -161,6 +161,16 @@ export default function BrightnessClient() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
 
+  // Debounce and auto-apply
+  React.useEffect(() => {
+    if (image) {
+      const timer = setTimeout(() => {
+        applyBrightness();
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [brightness, image]);
+
   const handleFileUpload = (file: File) => {
     if (!file.type.startsWith("image/")) return;
     const reader = new FileReader();
@@ -170,6 +180,18 @@ export default function BrightnessClient() {
       setBrightness(0);
     };
     reader.readAsDataURL(file);
+
+    // Auto scroll
+    setTimeout(() => {
+      if (resultRef.current && window.innerWidth < 1024) {
+        const el = resultRef.current;
+        const y = el.getBoundingClientRect().top + window.scrollY - 300;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }
+    }, 200);
   };
 
   const onDrop = (e: React.DragEvent) => {
@@ -211,12 +233,7 @@ export default function BrightnessClient() {
       // Auto scroll
       setTimeout(() => {
         if (resultRef.current && window.innerWidth < 1024) {
-          const el = resultRef.current;
-          const y = el.getBoundingClientRect().top + window.scrollY - 120;
-          window.scrollTo({
-            top: y,
-            behavior: "smooth",
-          });
+          // Skip auto-scroll on brightness adjustment for smoother UX
         }
       }, 100);
     };
@@ -363,13 +380,6 @@ export default function BrightnessClient() {
                     <Upload className="w-4 h-4" /> {t.br_new_image}
                   </button>
                 </div>
-
-                <button
-                  onClick={applyBrightness}
-                  className="w-full bg-orange-400 border-2 border-black p-3 sm:p-4 font-black uppercase text-lg sm:text-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center gap-2 sm:gap-3"
-                >
-                  <Sun className="w-6 h-6 sm:w-8 sm:h-8" /> {t.br_apply_btn}
-                </button>
               </div>
             </div>
 

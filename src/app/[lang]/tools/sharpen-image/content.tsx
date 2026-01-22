@@ -160,6 +160,16 @@ export default function SharpenImageClient() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
 
+  // Debounce effect to avoid too many calculations
+  React.useEffect(() => {
+    if (image) {
+      const timer = setTimeout(() => {
+        applySharpen();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [amount, image]);
+
   const handleFileUpload = (file: File) => {
     if (!file.type.startsWith("image/")) return;
     const reader = new FileReader();
@@ -168,6 +178,17 @@ export default function SharpenImageClient() {
       setSharpenedImage(null);
     };
     reader.readAsDataURL(file);
+
+    setTimeout(() => {
+      if (resultRef.current && window.innerWidth < 1024) {
+        const el = resultRef.current;
+        const y = el.getBoundingClientRect().top + window.scrollY - 300;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }
+    }, 200);
   };
 
   const onDrop = (e: React.DragEvent) => {
@@ -231,12 +252,8 @@ export default function SharpenImageClient() {
 
       setTimeout(() => {
         if (resultRef.current && window.innerWidth < 1024) {
-          const el = resultRef.current;
-          const y = el.getBoundingClientRect().top + window.scrollY - 120;
-          window.scrollTo({
-            top: y,
-            behavior: "smooth",
-          });
+          // Only scroll if this was a new image upload, not just an adjustment
+          // But here we can just skip auto-scroll on adjustment to avoid jumping
         }
       }, 100);
     };
@@ -382,13 +399,6 @@ export default function SharpenImageClient() {
                     <Upload className="w-4 h-4" /> {t.si_new_image}
                   </button>
                 </div>
-
-                <button
-                  onClick={applySharpen}
-                  className="w-full bg-yellow-400 border-2 border-black p-3 sm:p-4 font-black uppercase text-lg sm:text-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center gap-2 sm:gap-3"
-                >
-                  <Zap className="w-6 h-6 sm:w-8 sm:h-8" /> {t.si_apply_btn}
-                </button>
               </div>
             </div>
 

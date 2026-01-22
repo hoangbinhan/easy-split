@@ -160,6 +160,12 @@ export default function BlackAndWhiteClient() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
 
+  React.useEffect(() => {
+    if (image) {
+      applyBlackAndWhite();
+    }
+  }, [image]);
+
   const handleFileUpload = (file: File) => {
     if (!file.type.startsWith("image/")) return;
     const reader = new FileReader();
@@ -341,13 +347,6 @@ export default function BlackAndWhiteClient() {
                     <Upload className="w-4 h-4" /> {t.bw_new_image}
                   </button>
                 </div>
-
-                <button
-                  onClick={applyBlackAndWhite}
-                  className="w-full bg-zinc-800 text-white border-2 border-black p-3 sm:p-4 font-black uppercase text-lg sm:text-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center gap-2 sm:gap-3"
-                >
-                  <Wand2 className="w-6 h-6 sm:w-8 sm:h-8" /> {t.bw_convert_btn}
-                </button>
               </div>
             </div>
 
