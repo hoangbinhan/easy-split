@@ -1,4 +1,4 @@
-import ImageSplitterContent from "./tools/image-splitter/content";
+import ImageSplitterContent from "./tools/split-image/content";
 import { translations, Language } from "@/lib/i18n";
 
 import { Metadata } from "next";

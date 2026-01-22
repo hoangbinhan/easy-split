@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import ImageSplitterClient from "./splitter-client";
 import { useLanguage } from "@/components/LanguageProvider";
 import {
@@ -11,12 +10,6 @@ import {
   Wallet,
   ChevronDown,
 } from "lucide-react";
-import { Bangers } from "next/font/google";
-
-const bangers = Bangers({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 const FeaturesSection = () => {
   const { t } = useLanguage();
@@ -159,11 +152,15 @@ const AboutSection = () => {
   );
 };
 
+import { ToolsNavigation } from "@/components/ToolsNavigation";
+import { bangers } from "@/app/constants";
+
 export default function ImageSplitterContent() {
   const { t } = useLanguage();
 
   return (
     <div className="space-y-20">
+      <ToolsNavigation />
       <section className="text-center space-y-6 pt-8 sm:pt-12">
         <div className="inline-block bg-yellow-400 border-4 border-black px-6 py-2 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -rotate-2 mb-6">
           <span className="font-black text-lg sm:text-xl uppercase tracking-widest text-black">
@@ -178,39 +175,6 @@ export default function ImageSplitterContent() {
         <p className="text-xl sm:text-2xl font-bold text-slate-700 max-w-3xl mx-auto bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           {t.subtitle}
         </p>
-
-        <div className="flex flex-wrap justify-center gap-4 pt-4">
-          <Link
-            href={`/${useLanguage().language}/profile-mockups`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
-          >
-            <span>Profile Mockups</span>
-          </Link>
-          <Link
-            href={`/${useLanguage().language}/tools/circle-crop`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
-          >
-            <span>Circle Crop</span>
-          </Link>
-          <Link
-            href={`/${useLanguage().language}/tools/sharpen-image`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
-          >
-            <span>Sharpen Image</span>
-          </Link>
-          <Link
-            href={`/${useLanguage().language}/tools/black-and-white`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
-          >
-            <span>Black & White</span>
-          </Link>
-          <Link
-            href={`/${useLanguage().language}/tools/brightness`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-orange-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black text-lg uppercase tracking-wider"
-          >
-            <span>Image Brightness</span>
-          </Link>
-        </div>
       </section>
 
       <ImageSplitterClient />
