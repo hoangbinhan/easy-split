@@ -2,6 +2,7 @@ import { profileTranslations } from "./i18n-profile";
 import { circleTranslations } from "./i18n-circle";
 import { sharpenTranslations } from "./i18n-sharpen";
 import { bwTranslations } from "./i18n-bw";
+import { brightnessTranslations } from "./i18n-brightness";
 export type Language =
   | "en"
   | "vi"
@@ -23,6 +24,7 @@ export const translations = {
     ...circleTranslations.en,
     ...sharpenTranslations.en,
     ...bwTranslations.en,
+    ...brightnessTranslations.en,
     title: "Easy Split",
     subtitle:
       "Split your photos into seamless grids or vertical slides. Perfect for TikTok, Instagram, and more.",
@@ -230,6 +232,7 @@ export const translations = {
     ...circleTranslations.vi,
     ...sharpenTranslations.vi,
     ...bwTranslations.vi,
+    ...brightnessTranslations.vi,
     title: "Easy Split - Chia Ảnh",
     subtitle:
       "Chia nhỏ ảnh của bạn thành các tấm ảnh dọc hoặc lưới liền mạch. Tuyệt vời cho TikTok, Instagram và hơn thế nữa.",
@@ -439,6 +442,7 @@ export const translations = {
     ...circleTranslations.ko,
     ...sharpenTranslations.ko,
     ...bwTranslations.ko,
+    ...brightnessTranslations.ko,
     title: "Easy Split - 이미지 분할",
     subtitle:
       "사진을 매끄러운 그리드나 세로 슬라이드로 나누세요. TikTok, Instagram 등에 완벽합니다.",
@@ -643,6 +647,7 @@ export const translations = {
     ...circleTranslations.jp,
     ...sharpenTranslations.jp,
     ...bwTranslations.jp,
+    ...brightnessTranslations.jp,
     title: "Easy Split - 画像分割",
     subtitle:
       "写真をシームレスなグリッドや縦型スライドに分割します。TikTokやInstagramなどに最適です。",
@@ -851,6 +856,7 @@ export const translations = {
     ...circleTranslations.th,
     ...sharpenTranslations.th,
     ...bwTranslations.th,
+    ...brightnessTranslations.th,
     title: "Easy Split - ตัดภาพ",
     subtitle:
       "ตัดภาพของคุณเป็นตารางหรือสไลด์แนวตั้งที่ไร้รอยต่อ เหมาะสำหรับ TikTok, Instagram และอื่นๆ",
@@ -1054,6 +1060,7 @@ export const translations = {
     ...circleTranslations.id,
     ...sharpenTranslations.id,
     ...bwTranslations.id,
+    ...brightnessTranslations.id,
     title: "Easy Split - Pemecah Gambar",
     subtitle:
       "Pecah foto Anda menjadi slide vertikal atau grid yang mulus. Sempurna untuk TikTok, Instagram, dan lainnya.",
@@ -1262,6 +1269,7 @@ export const translations = {
     ...circleTranslations.es,
     ...sharpenTranslations.es,
     ...bwTranslations.es,
+    ...brightnessTranslations.es,
     title: "Easy Split - Cortador de Fotos",
     subtitle:
       "Divide tus fotos en diapositivas verticales o cuadrículas perfectas. Ideal para TikTok, Instagram y más.",
@@ -1470,6 +1478,7 @@ export const translations = {
     ...circleTranslations["zh-CN"],
     ...sharpenTranslations["zh-CN"],
     ...bwTranslations["zh-CN"],
+    ...brightnessTranslations["zh-CN"],
     title: "Easy Split - 图片分割",
     subtitle:
       "将您的照片分割成无缝网格或垂直幻灯片。非常适合 TikTok、Instagram 等。",
@@ -1670,6 +1679,7 @@ export const translations = {
     ...circleTranslations["zh-TW"],
     ...sharpenTranslations["zh-TW"],
     ...bwTranslations["zh-TW"],
+    ...brightnessTranslations["zh-TW"],
     title: "Easy Split - 圖片分割",
     subtitle:
       "將您的照片分割成無縫網格或垂直幻燈片。非常適合 TikTok、Instagram 等。",
@@ -1870,6 +1880,7 @@ export const translations = {
     ...circleTranslations.de,
     ...sharpenTranslations.de,
     ...bwTranslations.de,
+    ...brightnessTranslations.de,
     title: "Easy Split - Bildteiler",
     subtitle:
       "Teilen Sie Ihre Fotos in nahtlose Raster oder vertikale Dias. Perfekt für TikTok, Instagram und mehr.",
@@ -2081,6 +2092,7 @@ export const translations = {
     ...circleTranslations.ru,
     ...sharpenTranslations.ru,
     ...bwTranslations.ru,
+    ...brightnessTranslations.ru,
     title: "Easy Split - Разделение фото",
     subtitle:
       "Разделите ваши фото на бесшовные сетки или вертикальные слайды. Идеально для TikTok, Instagram и других.",
@@ -2291,6 +2303,7 @@ export const translations = {
     ...circleTranslations.hi,
     ...sharpenTranslations.hi,
     ...bwTranslations.hi,
+    ...brightnessTranslations.hi,
     title: "Easy Split - इमेज स्प्लिटर",
     subtitle:
       "अपनी तस्वीरों को सीमलेस ग्रिड या वर्टिकल स्लाइड में विभाजित करें। TikTok, Instagram और अधिक के लिए उत्तम।",
@@ -2499,6 +2512,7 @@ export const translations = {
     ...circleTranslations["pt-BR"],
     ...sharpenTranslations["pt-BR"],
     ...bwTranslations["pt-BR"],
+    ...brightnessTranslations["pt-BR"],
     title: "Easy Split - Divisor de Imagens",
     subtitle:
       "Divida suas fotos em grades perfeitas ou slides verticais. Perfeito para TikTok, Instagram e muito mais.",
