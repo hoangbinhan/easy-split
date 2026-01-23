@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self';",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://tagmanager.google.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.google-analytics.com https://ssl.google-analytics.com https://static.cloudflareinsights.com https://*.adtrafficquality.google https://*.googlesyndication.com https://www.google.com https://*.google.com;",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://tagmanager.google.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.google-analytics.com https://ssl.google-analytics.com https://static.cloudflareinsights.com https://*.adtrafficquality.google https://*.googlesyndication.com https://www.google.com https://*.google.com https://fundingchoicesmessages.google.com;",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://tagmanager.google.com;",
               "font-src 'self' https://fonts.gstatic.com;",
               "img-src 'self' blob: data: https://*.google-analytics.com https://*.analytics.google.com https://*.googlesyndication.com https://pagead2.googlesyndication.com https://flagcdn.com https://*.adtrafficquality.google https://www.googletagmanager.com https://fonts.gstatic.com https://www.gstatic.com https://www.google.com https://*.google.com https://*.g.doubleclick.net;",
