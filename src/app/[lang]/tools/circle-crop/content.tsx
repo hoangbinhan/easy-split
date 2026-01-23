@@ -132,7 +132,7 @@ const AboutSection = () => {
           <p className="text-sm text-slate-300">{t.privacy_commitment_desc}</p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-700">
+        {/* <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-700">
           <div>
             <h4 className="font-bold text-pink-400 uppercase text-xs tracking-widest mb-1">
               {t.created_by}
@@ -150,7 +150,7 @@ const AboutSection = () => {
               hoangbinhan.5398@gmail.com
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
