@@ -602,7 +602,7 @@ export default async function GuidePost({
           </h2>
           <p className="text-xl font-bold mb-6 text-slate-800">{t.cta_desc}</p>
           <Link
-            href="/tools/tiktok-profile-mockup"
+            href="/tools/profile-mockups"
             className="inline-block bg-black text-white px-8 py-4 border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-transform font-black uppercase text-xl no-underline"
           >
             {t.cta_btn}
