@@ -1,11 +1,28 @@
 import { InstagramProfile } from "@/components/mockups/InstagramProfile";
 import { Metadata } from "next";
+import { translations, Language } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Instagram Profile Mockup Generator | Easy Split",
-  description:
-    "Create and customize an Instagram profile mockup. Edit text, images, and stats to preview your profile design.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const t = translations[lang as Language] || translations["en"];
+  const languages: Record<string, string> = {};
+  (Object.keys(translations) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/instagram-profile-mockup`;
+  });
+
+  return {
+    title: t.instagram_mockup_title,
+    description: t.instagram_mockup_desc,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/instagram-profile-mockup`,
+      languages: languages,
+    },
+  };
+}
 
 export default function InstagramMockupPage() {
   return (

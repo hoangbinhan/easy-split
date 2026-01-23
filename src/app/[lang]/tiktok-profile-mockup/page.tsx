@@ -1,11 +1,28 @@
 import { TikTokProfile } from "@/components/mockups/TikTokProfile";
 import { Metadata } from "next";
+import { translations, Language } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "TikTok Profile Mockup Generator | Easy Split",
-  description:
-    "Create and customize a TikTok profile mockup. Edit text, images, and stats to preview your profile design.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const t = translations[lang as Language] || translations["en"];
+  const languages: Record<string, string> = {};
+  (Object.keys(translations) as Language[]).forEach((l) => {
+    languages[l] = `https://easysplit.click/${l}/tiktok-profile-mockup`;
+  });
+
+  return {
+    title: t.tiktok_mockup_title,
+    description: t.tiktok_mockup_desc,
+    alternates: {
+      canonical: `https://easysplit.click/${lang}/tiktok-profile-mockup`,
+      languages: languages,
+    },
+  };
+}
 
 export default function TikTokMockupPage() {
   return (
