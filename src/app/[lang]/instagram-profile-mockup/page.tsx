@@ -19,7 +19,7 @@ export default function InstagramMockupPage() {
           marketing materials, or just for fun. Click on any element to edit it.
         </p>
       </div>
-      <InstagramProfile />
+      <InstagramProfile isDark={false} />
     </div>
   );
 }

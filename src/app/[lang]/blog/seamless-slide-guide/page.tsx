@@ -10,6 +10,7 @@ const bangers = Bangers({
 });
 
 import { blogPosts } from "../blog-data";
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -573,6 +574,16 @@ export default async function SeamlessSlideGuide({
         <p>
           <strong>{t.step2_action}</strong>
         </p>
+        <div>
+          <Image
+            src="/blog/tiktok-slide-guide-1.png"
+            alt="tiktok-slide-guide-1"
+            width={1000}
+            height={1000}
+            className="w-full h-auto m-0"
+            style={{ margin: 0 }}
+          />
+        </div>
 
         <h2 className="flex items-center gap-3 mt-12">
           <span className="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full text-xl shadow-[4px_4px_0px_0px_rgba(255,204,0,1)]">
@@ -585,9 +596,29 @@ export default async function SeamlessSlideGuide({
         <div className="grid grid-cols-2 gap-4 not-prose mb-6">
           <div className="bg-slate-100 border-2 border-black p-4 text-center font-bold">
             {t.step3_part1}
+            <div>
+              <Image
+                src="/blog/snap-part-1.jpg"
+                alt="snap-part-1"
+                width={1000}
+                height={1000}
+                className="w-full h-auto m-0"
+                style={{ margin: 0 }}
+              />
+            </div>
           </div>
           <div className="bg-slate-100 border-2 border-black p-4 text-center font-bold">
             {t.step3_part2}
+            <div>
+              <Image
+                src="/blog/snap-part-2.jpg"
+                alt="snap-part-2"
+                width={1000}
+                height={1000}
+                className="w-full h-auto m-0"
+                style={{ margin: 0 }}
+              />
+            </div>
           </div>
         </div>
 
@@ -604,9 +635,18 @@ export default async function SeamlessSlideGuide({
           </li>
           <li>{t.step4_li2}</li>
         </ol>
+        <div className="flex items-center justify-center min-h-[800px]">
+          <video
+            className="w-full md:w-1/2"
+            src="/blog/demo.mp4"
+            autoPlay
+            loop
+            muted
+          />
+        </div>
 
         <div className="mt-12 p-8 bg-cyan-300 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center transform -rotate-1">
-          <h3 className="text-2xl font-black uppercase mb-4 m-0">
+          <h3 className="text-2xl font-black uppercase mt-2 mb-4 m-0">
             {t.cta_title}
           </h3>
           <p className="font-bold mb-6">{t.cta_desc}</p>

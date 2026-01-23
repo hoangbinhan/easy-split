@@ -228,6 +228,7 @@ export const TikTokProfile = forwardRef<ProfileRefs, TikTokProfileProps>(
                         }}
                         className="w-full h-full object-cover"
                         rounded="rounded-none"
+                        key={`grid-${i}`}
                       />
                       <div className="absolute bottom-1 left-1 flex items-center gap-1 text-white drop-shadow-md">
                         <svg

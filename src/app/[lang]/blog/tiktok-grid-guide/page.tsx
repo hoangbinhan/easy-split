@@ -10,6 +10,7 @@ const bangers = Bangers({
 });
 
 import { blogPosts } from "../blog-data";
+import Image from "next/image";
 
 export async function generateMetadata(props: {
   params: Promise<{ lang: string }>;
@@ -757,6 +758,16 @@ export default async function GuidePost({
         <p>
           <strong>{t.step2_action}</strong>
         </p>
+        <div>
+          <Image
+            src="/blog/tiktok-grid-guide-1.png"
+            alt="tiktok-grid-guide-1"
+            width={1000}
+            height={1000}
+            className="w-full h-auto m-0"
+            style={{ margin: 0 }}
+          />
+        </div>
 
         <h2 className="flex items-center gap-3 mt-12">
           <span className="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full text-xl shadow-[4px_4px_0px_0px_rgba(255,204,0,1)]">
@@ -784,6 +795,17 @@ export default async function GuidePost({
         <p>
           <strong>{t.step3_summary}</strong>
         </p>
+
+        <div>
+          <Image
+            src="/blog/tiktok-grid-guide-2.png"
+            alt="tiktok-grid-guide-2"
+            width={1000}
+            height={1000}
+            className="w-full h-auto m-0"
+            style={{ margin: 0 }}
+          />
+        </div>
 
         <h2 className="flex items-center gap-3 mt-12">
           <span className="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full text-xl shadow-[4px_4px_0px_0px_rgba(255,204,0,1)]">

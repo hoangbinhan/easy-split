@@ -6,10 +6,11 @@ import { cookies } from "next/headers";
 import { Language } from "@/lib/i18n";
 
 const inter = Inter({ subsets: ["latin"] });
+const NODE_ENV = process.env.NODE_ENV;
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "https://easysplit.click"
+    process.env.NEXT_PUBLIC_BASE_URL || "https://easysplit.click",
   ),
   title: "Easy Split - Split Photos for TikTok & Instagram",
   description:
@@ -75,26 +76,29 @@ export default async function RootLayout({
         className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}
       >
         {children}
-
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        {NODE_ENV === "production" && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-WBG2FZTPRZ');
           `}
-        </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915469150707514"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
+            </Script>
+            <Script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915469150707514"
+              crossOrigin="anonymous"
+              strategy="beforeInteractive"
+            />
+          </>
+        )}
       </body>
     </html>
   );

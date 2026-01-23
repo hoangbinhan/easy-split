@@ -178,32 +178,27 @@ export default async function BlogIndex({
             <p className="text-base sm:text-lg font-medium text-slate-700 mb-6 leading-relaxed">
               {post.excerpt}
             </p>
-            <div
-              className={`${
-                index === 0
-                  ? "mb-15 w-full md:h-[210px] sm:h-[150px] h-[100px] sm:mb-6"
-                  : "mb-30 sm:mb-15 md:mb-5 w-full md:h-[300px] sm:h-[250px] h-[200px] "
-              } blog-banner-wrapper`}
-            >
+
+            <div className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px]">
               <Link
                 href={`/${locale}/blog/${post.slug}`}
-                className="w-full h-auto flex justify-center"
+                className="w-full h-full flex justify-center"
               >
                 <Image
                   src={post.banner}
                   alt={post.title}
                   width={1000}
                   height={1000}
-                  className="w-auto h-auto max-h-[300px] object-cover border-2 border-black"
+                  className="w-auto h-auto object-contain"
                 />
               </Link>
             </div>
 
             <Link
               href={`/${locale}/blog/${post.slug}`}
-              className="inline-flex items-center gap-2 font-black uppercase bg-black text-white px-6 py-3 hover:bg-cyan-400 hover:text-black transition-colors"
+              className="mt-3 inline-flex items-center gap-2 font-black uppercase bg-black text-white px-6 py-3 hover:bg-cyan-400 hover:text-black transition-colors"
             >
-              {locale === "vi" ? "Đọc ngay" : "Read Post"}{" "}
+              {locale === "vi" ? "Đọc ngay" : "Read Post"}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </article>

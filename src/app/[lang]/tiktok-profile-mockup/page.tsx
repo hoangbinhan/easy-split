@@ -19,7 +19,7 @@ export default function TikTokMockupPage() {
           marketing materials, or just for fun. Click on any element to edit it.
         </p>
       </div>
-      <TikTokProfile />
+      <TikTokProfile isDark={false} />
     </div>
   );
 }
