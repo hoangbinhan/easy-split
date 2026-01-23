@@ -50,7 +50,7 @@ export const ToolsNavigation = () => {
   ];
 
   return (
-    <div className="w-full py-4 mb-8 top-0">
+    <div className="w-full py-0 mb-0 top-0 sm:py-2">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {tools.map((tool) => {

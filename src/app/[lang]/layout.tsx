@@ -32,7 +32,7 @@ export default async function LangLayout({
   return (
     <LanguageProvider initialLocale={lang as Language}>
       <Header />
-      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-7xl">
+      <main className="py-4 flex-1 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">
         {children}
       </main>
       <Footer />

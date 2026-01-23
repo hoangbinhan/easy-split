@@ -4,7 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
-import { ChevronDown, WifiOff } from "lucide-react";
+import {
+  ChevronDown,
+  WifiOff,
+  Scissors,
+  UserCircle,
+  Crop,
+  Zap,
+  Wand2,
+  Sun,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Bangers } from "next/font/google";
@@ -17,6 +26,7 @@ const bangers = Bangers({
 export function Header() {
   const { language, setLanguage, isLoaded } = useLanguage();
   const [isOnline, setIsOnline] = useState(true);
+  const [showTools, setShowTools] = useState(false);
 
   useEffect(() => {
     setIsOnline(navigator.onLine);
@@ -32,6 +42,45 @@ export function Header() {
       window.removeEventListener("offline", handleOffline);
     };
   }, []);
+
+  const tools = [
+    {
+      name: "Split Image",
+      slug: "split-image",
+      icon: <Scissors className="w-4 h-4" />,
+      color: "bg-purple-300",
+    },
+    {
+      name: "Profile Mockups",
+      slug: "profile-mockups",
+      icon: <UserCircle className="w-4 h-4" />,
+      color: "bg-cyan-300",
+    },
+    {
+      name: "Circle Crop",
+      slug: "circle-crop",
+      icon: <Crop className="w-4 h-4" />,
+      color: "bg-green-300",
+    },
+    {
+      name: "Sharpen Image",
+      slug: "sharpen-image",
+      icon: <Zap className="w-4 h-4" />,
+      color: "bg-yellow-300",
+    },
+    {
+      name: "Black & White",
+      slug: "black-and-white",
+      icon: <Wand2 className="w-4 h-4" />,
+      color: "bg-white",
+    },
+    {
+      name: "Brightness",
+      slug: "brightness",
+      icon: <Sun className="w-4 h-4" />,
+      color: "bg-orange-300",
+    },
+  ];
 
   // Flag mapping (Using images because Windows doesn't support flag emojis)
   const getFlagUrl = (lang: Language) => {
@@ -83,7 +132,7 @@ export function Header() {
             Split
           </span>
         </Link>
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex items-center gap-2 sm:gap-6">
           {!isOnline && (
             <div className="flex items-center gap-2 bg-red-500 border-2 border-black px-3 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white font-bold text-xs uppercase animate-pulse">
               <WifiOff className="w-4 h-4" />
@@ -105,6 +154,43 @@ export function Header() {
               </span>
             </a>
 
+            {/* Tools Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowTools(true)}
+              onMouseLeave={() => setShowTools(false)}
+            >
+              <button
+                onClick={() => setShowTools(!showTools)}
+                className="flex items-center gap-1 px-3 py-2 sm:px-4 sm:py-2 bg-blue-300 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all text-black sm:text-sm text-xs"
+              >
+                <span>Tools</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    showTools ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {showTools && (
+                <div className="absolute top-full right-0 sm:left-0 pt-2 w-56 z-[100]">
+                  <div className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col p-2 gap-2">
+                    {tools.map((tool) => (
+                      <Link
+                        key={tool.slug}
+                        href={`/${language}/tools/${tool.slug}`}
+                        className={`flex items-center gap-3 p-2 border-2 border-transparent hover:border-black ${tool.color} transition-all font-bold text-sm uppercase`}
+                        onClick={() => setShowTools(false)}
+                      >
+                        {tool.icon}
+                        {tool.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <Link
               href={`/${language}/blog`}
               className="px-3 py-2 sm:px-4 sm:py-2 border-2 border-transparent hover:border-black hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all sm:text-sm text-xs"
@@ -115,7 +201,7 @@ export function Header() {
 
           {/* Retro Flag Dropdown (Refined) */}
           {isLoaded && (
-            <div className="relative group z-50">
+            <div className="relative group z-50 hidden sm:block">
               {/* Visual Button */}
               <div className="flex items-center gap-3 border-4 border-black bg-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer min-w-[110px]">
                 <Image
@@ -139,6 +225,40 @@ export function Header() {
                 onChange={(e) => setLanguage(e.target.value as Language)}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                 id="lang-select"
+              >
+                <option value="en">🇺🇸 English (US)</option>
+                <option value="vi">🇻🇳 Tiếng Việt</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="jp">🇯🇵 日本語</option>
+                <option value="th">🇹🇭 ไทย</option>
+                <option value="id">🇮🇩 Indonesia</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="zh-CN">🇨🇳 中文 (简体)</option>
+                <option value="zh-TW">🇹🇼 中文 (繁體)</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="hi">🇮🇳 हिन्दी</option>
+                <option value="pt-BR">🇧🇷 Português (BR)</option>
+              </select>
+            </div>
+          )}
+          {/* Mobile Language Selector (Compact) */}
+          {isLoaded && (
+            <div className="relative sm:hidden">
+              <div className="flex items-center justify-center w-10 h-10 border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <Image
+                  src={getFlagUrl(language)}
+                  alt={language}
+                  width={24}
+                  height={18}
+                  unoptimized
+                  className="w-6 h-auto"
+                />
+              </div>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value as Language)}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               >
                 <option value="en">🇺🇸 English (US)</option>
                 <option value="vi">🇻🇳 Tiếng Việt</option>
