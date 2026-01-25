@@ -264,9 +264,7 @@ export default function ImageSplitterContent() {
               </li>
               <li className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform">
                 <div className="font-black text-2x">03</div>
-                <div className="font-bold text-lg">
-                  Adjust the crop box to select the perfect area for your story.
-                </div>
+                <div className="font-bold text-lg">{t.how_to_3_desc}</div>
               </li>
               <li className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex gap-4 items-center hover:translate-x-1 transition-transform">
                 <div className="font-black text-2x">04</div>

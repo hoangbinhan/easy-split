@@ -19,7 +19,7 @@ export async function generateMetadata({
     title: t.split_tool_title,
     description: t.split_tool_desc,
     alternates: {
-      canonical: `https://easysplit.click/${lang}/tools/split-image`,
+      canonical: `https://easysplit.click/${lang}`,
       languages: languages,
     },
   };

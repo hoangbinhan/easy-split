@@ -55,6 +55,8 @@ export const translations = {
     how_to_3: "Adjust the crop area if needed, then click Split.",
     how_to_4:
       "Download your segments and upload them to your favorite platform.",
+    how_to_3_desc:
+      "Adjust the crop box to select the perfect area for your story.",
     nav_home: "Easy Split",
     nav_splitter: "Image Splitter",
     privacy: "Privacy Policy",
@@ -264,6 +266,8 @@ export const translations = {
     how_to_2: "Chọn số lượng phần muốn chia (từ 2 đến 10).",
     how_to_3: "Điều chỉnh vùng cắt nếu cần, sau đó bấm Split.",
     how_to_4: "Tải xuống các phần đã cắt và đăng lên nền tảng yêu thích.",
+    how_to_3_desc:
+      "Điều chỉnh khung cắt để chọn vùng hoàn hảo cho câu chuyện của bạn.",
     nav_home: "Easy Split",
     nav_splitter: "Chia Ảnh",
     privacy: "Chính sách bảo mật",
@@ -473,6 +477,7 @@ export const translations = {
     how_to_2: "원하는 조각 수를 선택하세요 (2~10개).",
     how_to_3: "필요한 경우 자르기 영역을 조정한 다음 Split을 클릭하세요.",
     how_to_4: "조각을 다운로드하여 좋아하는 플랫폼에 업로드하세요.",
+    how_to_3_desc: "자르기 상자를 조정하여 스토리에 완벽한 영역을 선택하세요.",
     nav_home: "Easy Split",
     nav_splitter: "이미지 분할",
     privacy: "개인정보 처리방침",
@@ -681,6 +686,8 @@ export const translations = {
     how_to_3: "必要に応じて切り取り領域を調整し、Splitをクリックします。",
     how_to_4:
       "セグメントをダウンロードして、お気に入りのプラットフォームにアップロードします。",
+    how_to_3_desc:
+      "切り抜きボックスを調整して、ストーリーに最適な領域を選択します。",
     nav_home: "Easy Split",
     nav_splitter: "画像分割",
     privacy: "プライバシーポリシー",
@@ -888,7 +895,9 @@ export const translations = {
     how_to_1: "อัปโหลดภาพใดก็ได้ (ภาพพาโนรามาจะดีที่สุด)",
     how_to_2: "เลือกจำนวนส่วนที่คุณต้องการ (2 ถึง 10)",
     how_to_3: "ปรับพื้นที่ตัดถ้าจำเป็น แล้วคลิก Split",
-    how_to_4: "ดาวน์โหลดส่วนของคุณและอัปโหลดไปยังแพลตฟอร์มที่คุณชื่นชอบ",
+    how_to_4: "ดาวน์โหลดส่วนที่คุณแยกไว้และอัปโหลดไปยังแพลตฟอร์มที่คุณชื่นชอบ",
+    how_to_3_desc:
+      "ปรับกล่องตัดเพื่อเลือกพื้นที่ที่สมบูรณ์แบบสำหรับเรื่องราวของคุณ",
     nav_home: "Easy Split",
     nav_splitter: "ตัดภาพ",
     privacy: "นโยบายความเป็นส่วนตัว",
@@ -1096,6 +1105,8 @@ export const translations = {
     how_to_2: "Pilih berapa banyak segmen yang Anda inginkan (2 hingga 10).",
     how_to_3: "Sesuaikan area potong jika perlu, lalu klik Split.",
     how_to_4: "Unduh segmen Anda dan unggah ke platform favorit Anda.",
+    how_to_3_desc:
+      "Sesuaikan kotak pemotongan untuk memilih area yang sempurna untuk cerita Anda.",
     nav_home: "Easy Split",
     nav_splitter: "Pemecah Gambar",
     privacy: "Kebijakan Privasi",
@@ -1154,7 +1165,7 @@ export const translations = {
       "TikTok merekomendasikan rasio aspek 9:16 (1080x1920 piksel). Alat kami secara otomatis mengatur rasio ini untuk Anda saat menggunakan pengaturan standar.",
     faq_4_q: "Bisakah saya memotong gambar untuk Instagram juga?",
     faq_4_a:
-      "Tentu saja! Meskipun dirancang untuk TikTok, gambar yang dipotong bekerja sempurna untuk Instagram Carousel (Postingan Geser). Cukup pilih opsi rasio 4:5 atau 1:1.",
+      "Tentu saja! Meskipun dirancang untuk TikTok, gambar yang dipotong bekerja sempurna untuk Instagram Carousels (Postingan Geser). Cukup pilih opsi rasio 4:5 atau 1:1.",
     about_tool_title: "Tentang Alat Ini",
     about_tool_desc:
       "Easy Split adalah seperangkat utilitas kreatif yang dirancang untuk kreator konten modern. Kami percaya dalam membangun alat yang cepat, gratis, dan menghormati privasi pengguna.",
@@ -1170,14 +1181,14 @@ export const translations = {
       "Di <strong class='font-black'>Easy Split</strong>, kami percaya pada privasi sejak desain awal. Alat kami dibangun untuk berjalan di <strong class='font-black'>sisi klien</strong>, yang berarti data Anda (gambar, file) tetap berada di perangkat Anda dan tidak pernah diunggah ke server kami.",
     privacy_info_collect_title: "1. Informasi yang Kami Kumpulkan",
     privacy_info_collect_desc:
-      "Karena kami tidak memerlukan akun pengguna dan memproses file secara lokal, kami mengumpulkan data minimal:",
+      "Karena kami tidak memerlukan akunผู้ใช้ dan memproses file secara lokal, kami mengumpulkan data minimal:",
     privacy_usage_data:
       "<strong>Data Penggunaan:</strong> Kami dapat menggunakan analitik pihak ketiga (seperti Google Analytics) untuk memahami bagaimana pengguna menavigasi situs kami. Data ini dianonimkan dan tidak termasuk file pribadi.",
     privacy_cookies:
-      "<strong>Cookie:</strong> Kami menggunakan cookie penting untuk mengingat preferensi Anda (seperti pengaturan bahasa).",
+      "<strong>คุ้กกี้:</strong> Kami menggunakan cookie yang diperlukan untuk mengingat preferensi Anda (seperti pengaturan bahasa).",
     privacy_process_files_title: "2. Bagaimana Kami Memproses File Anda",
     privacy_process_files_desc:
-      "Saat Anda menggunakan alat seperti <strong>Pemisah Gambar</strong> kami, semua manipulasi gambar terjadi di dalam browser web Anda menggunakan teknologi HTML5 Canvas. <strong>Kami tidak melihat, menyimpan, atau mengirimkan gambar Anda.</strong>",
+      "Ketika Anda menggunakan alat seperti <strong>Pemisah Gambar</strong> kami, semua manipulasi gambar terjadi di dalam browser web Anda menggunakan teknologi HTML5 Canvas. <strong>Kami tidak melihat, menyimpan, atau mengirimkan gambar Anda.</strong>",
     privacy_ads_title: "3. Periklanan (Google AdSense)",
     privacy_ads_desc:
       "Kami menggunakan vendor pihak ketiga, termasuk Google, untuk menayangkan iklan berdasarkan kunjungan pengguna sebelumnya ke situs web kami atau situs web lain.",
@@ -1208,7 +1219,7 @@ export const translations = {
     terms_acceptable_use_title: "3. Penggunaan yang Dapat Diterima",
     terms_acceptable_use_desc:
       "Anda setuju untuk tidak menggunakan alat khusus kami untuk tujuan apa pun yang melanggar hukum atau tujuan apa pun yang dilarang berdasarkan klausul ini. Anda setuju untuk tidak menggunakan layanan kami untuk:",
-    terms_use_1: "Melecehkan, menyalahgunakan, atau mengancam orang lain.",
+    terms_use_1: "Melecehkan, menyalahgunakan, atau mengancamผู้อื่น",
     terms_use_2: "Melanggar hak orang lain.",
     terms_use_3: "Melakukan penipuan atau menyebarkan malware atau virus.",
     terms_indemnification_title: "4. Ganti Rugi",
@@ -1216,7 +1227,7 @@ export const translations = {
       "Anda setuju untuk mengganti kerugian pemilik situs web dan afiliasinya dan membebaskan kami dari klaim hukum dan tuntutan yang mungkin timbul dari penggunaan atau penyalahgunaan layanan kami oleh Anda.",
     terms_liability_title: "5. Batasan Tanggung Jawab",
     terms_liability_desc:
-      "Kami tidak bertanggung jawab atas segala kerusakan yang mungkin terjadi pada Anda sebagai akibat dari penyalahgunaan situs web kami oleh Anda. Kami berhak untuk mengedit, memodifikasi, dan mengubah Perjanjian ini kapan saja.",
+      "Kami tidak bertanggung jawab atas segala kerusakan yang mungkin terjadi pada Andaอันเป็นผลมาจากการใช้เว็บไซต์ kami dalamทางที่ผิด Kami berhak untuk mengedit, memodifikasi, dan mengubah Perjanjian ini kapan saja.",
     terms_contact_title: "6. Kontak",
     terms_contact_desc:
       "Untuk pertanyaan apa pun mengenai Ketentuan ini, silakan hubungi kami di:",
@@ -1226,7 +1237,7 @@ export const translations = {
       "Selamat datang di <strong class='font-black'>EASY SPLIT</strong>, cara termudah dan tercepat untuk memotong gambar Anda untuk media sosial.",
     about_mission_title: "Misi Kami",
     about_mission_desc:
-      "Kami memulai Easy Split dengan tujuan sederhana: membantu kreator, fotografer, dan pendongeng menyajikan karya mereka tanpa batas. Baik itu carousel mulus di Instagram atau slide foto di TikTok, kami percaya bidikan panorama Anda layak dilihat dalam kemuliaan penuh, bukan dipotong menjadi kotak kecil.",
+      "Kami memulai Easy Split dengan tujuan sederhana: untuk membantu kreator, fotografer, dan pendongeng menyajikan karya mereka tanpa batas. Baik itu carousel mulus di Instagram atau slide foto di TikTok, kami percaya bidikan panorama Anda layak dilihat dalam kemuliaan penuh, bukan dipotong menjadi kotak kecil.",
     about_why_title: "Mengapa Kami Membangun Ini",
     about_why_desc:
       "Alat yang ada terlalu mahal, penuh dengan iklan, atau mengharuskan pengunggahan foto pribadi Anda ke server yang lambat. Kami ingin membangun sesuatu yang:",
@@ -1255,7 +1266,7 @@ export const translations = {
     contact_form_message: "Pesan",
     contact_form_submit: "Kirim Pesan",
     cookie_banner_msg:
-      "Kami menggunakan cookie untuk meningkatkan pengalaman Anda. Dengan menggunakan situs kami, Anda menyetujui penggunaan cookie kami.",
+      "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
     cookie_accept_btn: "Terima",
     cookie_decline_btn: "Tolak",
     tips_title: "Tips Pro: Jadi Viral",
@@ -1307,6 +1318,8 @@ export const translations = {
     how_to_3:
       "Ajusta el área de recorte si es necesario, luego haz clic en Split.",
     how_to_4: "Descarga tus segmentos y súbelos a tu plataforma favorita.",
+    how_to_3_desc:
+      "Ajusta el cuadro de recorte para seleccionar el área perfecta para tu historia.",
     nav_home: "Easy Split",
     nav_splitter: "Cortar Foto",
     privacy: "Política de Privacidad",
@@ -1512,7 +1525,8 @@ export const translations = {
     how_to_1: "上传任何图片（全景图效果最佳）。",
     how_to_2: "选择您想要的片段数量（2 到 10）。",
     how_to_3: "如需调整，请调整裁剪区域，然后点击 Split。",
-    how_to_4: "下载您的片段并上传到您喜欢的平台。",
+    how_to_4: "下载您的切片并上传到您喜欢的平台。",
+    how_to_3_desc: "调整裁剪框以选择故事的完美区域。",
     nav_home: "Easy Split",
     nav_splitter: "图片分割器",
     privacy: "隐私政策",
@@ -1714,7 +1728,8 @@ export const translations = {
     how_to_1: "上傳任何圖片（全景圖效果最佳）。",
     how_to_2: "選擇您想要的片段數量（2 到 10）。",
     how_to_3: "如需調整，請調整裁剪區域，然後點擊 Split。",
-    how_to_4: "下載您的片段並上傳到您喜歡的平台。",
+    how_to_4: "下載您的切片並上傳到您喜歡的平台。",
+    how_to_3_desc: "調整裁剪框以選擇故事的完美區域。",
     nav_home: "Easy Split",
     nav_splitter: "圖片分割器",
     privacy: "隱私政策",
@@ -1924,6 +1939,8 @@ export const translations = {
       "Passen Sie den Zuschneidebereich bei Bedarf an und klicken Sie dann auf Split.",
     how_to_4:
       "Laden Sie Ihre Segmente herunter und laden Sie sie auf Ihre Lieblingsplattform hoch.",
+    how_to_3_desc:
+      "Passen Sie das Zuschneidefeld an, um den perfekten Bereich für Ihre Geschichte auszuwählen.",
     nav_home: "Easy Split",
     nav_splitter: "Bildteiler",
     privacy: "Datenschutzrichtlinie",
@@ -2134,7 +2151,10 @@ export const translations = {
     how_to_2: "Выберите количество сегментов (от 2 до 10).",
     how_to_3:
       "Настройте область обрезки при необходимости, затем нажмите Split.",
-    how_to_4: "Скачайте сегменты и загрузите их на вашу любимую платформу.",
+    how_to_4:
+      "Скачайте свои сегменты и загрузите их на вашу любимую платформу.",
+    how_to_3_desc:
+      "Отрегулируйте рамку обрезки, чтобы выбрать идеальную область для вашей истории.",
     nav_home: "Easy Split",
     nav_splitter: "Разделитель фото",
     privacy: "Политика конфиденциальности",
@@ -2347,6 +2367,8 @@ export const translations = {
       "यदि आवश्यक हो तो क्रॉप क्षेत्र को समायोजित करें, फिर Split पर क्लिक करें।",
     how_to_4:
       "अपने खंड डाउनलोड करें और उन्हें अपने पसंदीदा प्लेटफ़ॉर्म पर अपलोड करें।",
+    how_to_3_desc:
+      "अपनी कहानी के लिए सही क्षेत्र चुनने के लिए क्रॉप बॉक्स को समायोजित करें।",
     nav_home: "Easy Split",
     nav_splitter: "इमेज स्प्लिटर",
     privacy: "गोपनीयता नीति",
@@ -2554,7 +2576,9 @@ export const translations = {
     how_to_1: "Carregue qualquer imagem (panoramas funcionam melhor).",
     how_to_2: "Escolha quantos segmentos você deseja (2 a 10).",
     how_to_3: "Ajuste a área de corte se necessário, depois clique em Split.",
-    how_to_4: "Baixe seus segmentos e carregue-os na sua plataforma favorita.",
+    how_to_4: "Baixe seus segmentos e envie-os para sua plataforma favorita.",
+    how_to_3_desc:
+      "Ajuste a caixa de corte para selecionar a área perfeita para sua história.",
     nav_home: "Easy Split",
     nav_splitter: "Divisor de Imagens",
     privacy: "Política de Privacidade",
