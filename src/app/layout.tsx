@@ -72,6 +72,13 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915469150707514"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}
       >
@@ -91,12 +98,6 @@ export default async function RootLayout({
             gtag('config', 'G-WBG2FZTPRZ');
           `}
             </Script>
-            <Script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915469150707514"
-              crossOrigin="anonymous"
-              strategy="beforeInteractive"
-            />
           </>
         )}
       </body>
