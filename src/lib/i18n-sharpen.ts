@@ -3,6 +3,8 @@ export const sharpenTranslations = {
     si_title: "Sharpen Image",
     si_subtitle:
       "Enhance and sharpen your images instantly. Free, fast, and easy to use.",
+    si_aeo_intro:
+      "Easy Split Sharpen Image is a free browser-based image sharpener for improving soft or slightly blurry photos. You can adjust the sharpening strength, preview the result, and download the processed image without uploading your file to a server.",
     si_new_tool: "Image Enhancer",
     si_upload_title: "Upload Image to Sharpen",
     si_drag_drop: "Drag & Drop or Click to Upload",
@@ -36,6 +38,9 @@ export const sharpenTranslations = {
       "No. All processing happens in your browser. We never see or store your files.",
     si_faq_3_q: "What formats are supported?",
     si_faq_3_a: "We support JPG, PNG, WEBP, and most common image formats.",
+    si_faq_4_q: "Can this fix every blurry photo?",
+    si_faq_4_a:
+      "Sharpening can improve edge contrast and make slightly soft images look clearer, but it cannot recover details that are completely missing. For best results, start with the highest quality original image and use a moderate sharpen amount.",
     si_article_title: "How to Sharpen Images Online",
     si_article_intro:
       "Fix blurry photos and enhance details with our free online image sharpener. No complex software needed.",

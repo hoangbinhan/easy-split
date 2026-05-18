@@ -1,4 +1,9 @@
-import { staticRoutes, baseUrl, languages } from "@/lib/sitemap-constants";
+import {
+  staticRoutes,
+  baseUrl,
+  languages,
+  lastModified,
+} from "@/lib/sitemap-constants";
 
 export const dynamic = "force-static";
 
@@ -25,7 +30,7 @@ export async function GET(
       return `
   <url>
     <loc>${baseUrl}/${lang}${route}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${lastModified}</lastmod>
     <changefreq>${route === "" ? "daily" : "weekly"}</changefreq>
     <priority>${route === "" ? "1.0" : "0.8"}</priority>
   </url>`;

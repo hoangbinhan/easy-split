@@ -1,14 +1,17 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 import { translations, Language } from "@/lib/i18n";
 import Cookies from "js-cookie";
 
+type TranslationText = (typeof translations)["en"] &
+  Record<string, string | undefined>;
+
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (typeof translations)["en"];
+  t: TranslationText;
   isLoaded: boolean;
 };
 
@@ -25,6 +28,10 @@ export function LanguageProvider({
 }) {
   const [language, setLanguageState] = useState<Language>(initialLocale);
   const [isLoaded, setIsLoaded] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const setLanguage = (lang: Language) => {
     // setLanguageState(lang);
@@ -45,7 +52,7 @@ export function LanguageProvider({
   const value = {
     language,
     setLanguage,
-    t: translations[language],
+    t: translations[language] as TranslationText,
     isLoaded,
   };
 

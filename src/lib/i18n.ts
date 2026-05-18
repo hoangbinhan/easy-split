@@ -31,6 +31,8 @@ export const translations = {
     title: "Easy Split",
     subtitle:
       "Split your photos into seamless grids or vertical slides. Perfect for TikTok, Instagram, and more.",
+    aeo_intro:
+      "Easy Split is a free browser-based image splitter that cuts one image into multiple equal parts for TikTok photo slides, Instagram carousels, grids, and panoramic posts. Your image is processed locally in your browser and is not uploaded to a server.",
     upload_title: "Change Image",
     upload_placeholder: "Click or Drag Image Here",
     upload_desc: "Supports JPG, PNG, WEBP, AVIF, BMP. Recommended 16:9 format",
@@ -116,6 +118,15 @@ export const translations = {
     faq_4_q: "Can I split images for Instagram too?",
     faq_4_a:
       "Absolutely! While designed for TikTok, the split images work perfectly for Instagram Carousels (Swipeable Posts). Just choose the 4:5 or 1:1 ratio option.",
+    faq_5_q: "How do I split an image into equal parts online?",
+    faq_5_a:
+      "Upload an image, choose the number of rows or columns, adjust the crop area if needed, and click Split Image. Easy Split creates equal image parts in your browser so you can download each piece or save them together as a ZIP file.",
+    faq_6_q: "Can I split an image without uploading it?",
+    faq_6_a:
+      "Yes. Easy Split processes images locally with browser canvas technology. The original image and generated parts stay on your device, which is useful for private photos, drafts, client images, and social content you do not want to send to a server.",
+    faq_7_q: "What image formats are supported?",
+    faq_7_a:
+      "Easy Split supports common browser image formats including JPG, PNG, WEBP, AVIF, and BMP. Output quality depends on the source image size, so start with the highest resolution image available for sharper TikTok or Instagram slides.",
     about_tool_title: "About This Tool",
     about_tool_desc:
       "Easy Split is a suite of creative utilities designed for modern content creators. We believe in building tools that are fast, free, and respect user privacy.",

@@ -1,6 +1,9 @@
 import BrightnessClient from "./content";
 import { translations, Language } from "@/lib/i18n";
 import { Metadata } from "next";
+import { buildToolJsonLd, buildToolMetadata } from "@/lib/seo";
+
+const toolPath = "/tools/brightness";
 
 export async function generateMetadata({
   params,
@@ -9,19 +12,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
-  const languages: Record<string, string> = {};
-  (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/tools/brightness`;
-  });
 
-  return {
+  return buildToolMetadata({
+    lang,
+    path: toolPath,
     title: `${t.br_title} | Easy Split`,
     description: t.br_subtitle,
-    alternates: {
-      canonical: `https://easysplit.click/${lang}/tools/brightness`,
-      languages: languages,
-    },
-  };
+  });
 }
 
 export default async function BrightnessPage({
@@ -31,84 +28,34 @@ export default async function BrightnessPage({
 }) {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
+  const optionalText = t as typeof translations["en"] &
+    Record<string, string | undefined>;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        name: t.br_title,
-        applicationCategory: "MultimediaApplication",
-        operatingSystem: "Web",
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-        },
-        description: t.br_subtitle,
-        featureList: "Adjust image brightness, Instant processing, No upload",
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: t.br_faq_1_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.br_faq_1_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.br_faq_2_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.br_faq_2_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.br_faq_3_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.br_faq_3_a,
-            },
-          },
-        ],
-      },
-      {
-        "@type": "HowTo",
-        name: t.br_article_title,
-        step: [
-          {
-            "@type": "HowToStep",
-            name: "Upload",
-            text: t.br_how_to_1,
-            position: 1,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Adjust",
-            text: t.br_how_to_2,
-            position: 2,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Apply",
-            text: t.br_how_to_3,
-            position: 3,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Download",
-            text: t.br_how_to_4,
-            position: 4,
-          },
-        ],
-      },
+  const jsonLd = buildToolJsonLd({
+    lang,
+    path: toolPath,
+    title: t.br_title,
+    description: t.br_subtitle,
+    featureList: [
+      "Adjust image brightness",
+      "Lighten or darken photos",
+      "Client-side image processing",
+      "No image upload",
     ],
-  };
+    faq: [
+      { question: t.br_faq_1_q, answer: t.br_faq_1_a },
+      { question: t.br_faq_2_q, answer: t.br_faq_2_a },
+      { question: t.br_faq_3_q, answer: t.br_faq_3_a },
+      { question: optionalText.br_faq_4_q, answer: optionalText.br_faq_4_a },
+    ],
+    howToName: t.br_article_title,
+    howToSteps: [
+      { name: "Upload", text: t.br_how_to_1 },
+      { name: "Adjust", text: t.br_how_to_2 },
+      { name: "Apply", text: t.br_how_to_3 },
+      { name: "Download", text: t.br_how_to_4 },
+    ],
+  });
 
   return (
     <>

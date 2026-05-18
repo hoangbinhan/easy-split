@@ -1,6 +1,8 @@
 export const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || "https://easysplit.click";
 
+export const lastModified = "2026-05-18";
+
 export const languages = [
   "en",
   "vi",

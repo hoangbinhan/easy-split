@@ -3,6 +3,8 @@ export const bwTranslations = {
     bw_title: "Black & White Converter",
     bw_subtitle:
       "Convert your colored images to professional black and white grayscale instantly. Free and private.",
+    bw_aeo_intro:
+      "Easy Split Black & White Converter is a free online tool that turns color images into grayscale photos directly in your browser. It keeps your image on your device, preserves the original resolution, and lets you download a clean black and white result.",
     bw_new_tool: "Classic Filter",
     bw_upload_title: "Upload Image",
     bw_drag_drop: "Drag & Drop or Click to Upload",
@@ -33,6 +35,9 @@ export const bwTranslations = {
       "No. All processing happens in your browser. We never see or store your files.",
     bw_faq_3_q: "What formats are supported?",
     bw_faq_3_a: "We support JPG, PNG, WEBP, and most common image formats.",
+    bw_faq_4_q: "Will the black and white image keep its original size?",
+    bw_faq_4_a:
+      "Yes. The converter keeps the original image dimensions when applying the grayscale filter. Starting with a high-resolution source image gives you a sharper downloadable result for posts, prints, and profile graphics.",
     bw_article_title: "How to Make Photos Black and White Online",
     bw_article_intro:
       "Converting images to black and white can add drama and focus to your photography. Our tool makes it instant and easy.",

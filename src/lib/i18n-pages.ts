@@ -1,8 +1,9 @@
 export const pagesTranslations = {
   en: {
-    split_tool_title: "TikTok Image Splitter | Free Online Grid Maker",
+    split_tool_title:
+      "Split Image Online | Free TikTok & Instagram Carousel Splitter",
     split_tool_desc:
-      "Split your 16:9 images into 3 perfectly sized 9:16 vertical segments for TikTok carousels. Free, fast, and no quality loss.",
+      "Split images into equal parts for TikTok photo slides, Instagram carousels, grids, and panoramas. Free browser-based tool with no image upload.",
     instagram_mockup_title: "Instagram Profile Mockup Generator | Easy Split",
     instagram_mockup_desc:
       "Create and customize an Instagram profile mockup. Edit text, images, and stats to preview your profile design.",

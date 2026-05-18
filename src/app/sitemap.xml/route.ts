@@ -1,4 +1,4 @@
-import { languages, baseUrl } from "@/lib/sitemap-constants";
+import { languages, baseUrl, lastModified } from "@/lib/sitemap-constants";
 
 export const dynamic = "force-static";
 
@@ -12,7 +12,7 @@ export async function GET() {
       (url) => `
   <sitemap>
     <loc>${url}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${lastModified}</lastmod>
   </sitemap>`,
     )
     .join("")}

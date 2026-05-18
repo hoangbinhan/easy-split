@@ -1,6 +1,9 @@
 import ProfileMockupsContent from "./content";
 import { translations, Language } from "@/lib/i18n";
 import { Metadata } from "next";
+import { buildToolJsonLd, buildToolMetadata } from "@/lib/seo";
+
+const toolPath = "/tools/profile-mockups";
 
 export async function generateMetadata({
   params,
@@ -9,19 +12,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
-  const languages: Record<string, string> = {};
-  (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/tools/profile-mockups`;
-  });
 
-  return {
+  return buildToolMetadata({
+    lang,
+    path: toolPath,
     title: `${t.pm_title} | Easy Split`,
     description: t.pm_subtitle,
-    alternates: {
-      canonical: `https://easysplit.click/${lang}/tools/profile-mockups`,
-      languages: languages,
-    },
-  };
+  });
 }
 
 export default async function ProfileMockupsPage({
@@ -31,92 +28,35 @@ export default async function ProfileMockupsPage({
 }) {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
+  const optionalText = t as typeof translations["en"] &
+    Record<string, string | undefined>;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        name: t.pm_title,
-        applicationCategory: "MultimediaApplication",
-        operatingSystem: "Web",
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-        },
-        description: t.pm_subtitle,
-        featureList: "Create fake TikTok profile, Instagram mockup generator",
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: t.pm_faq_1_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.pm_faq_1_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.pm_faq_2_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.pm_faq_2_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.pm_faq_3_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.pm_faq_3_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.pm_faq_4_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.pm_faq_4_a,
-            },
-          },
-        ],
-      },
-      {
-        "@type": "HowTo",
-        name: t.pm_article_title,
-        step: [
-          {
-            "@type": "HowToStep",
-            name: "Select Platform",
-            text: t.pm_how_to_1,
-            position: 1,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Edit Profile",
-            text: t.pm_how_to_2,
-            position: 2,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Customize Options",
-            text: t.pm_how_to_3,
-            position: 3,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Download",
-            text: t.pm_how_to_4,
-            position: 4,
-          },
-        ],
-      },
+  const jsonLd = buildToolJsonLd({
+    lang,
+    path: toolPath,
+    title: t.pm_title,
+    description: t.pm_subtitle,
+    featureList: [
+      "Create TikTok profile mockups",
+      "Create Instagram profile mockups",
+      "Download profile preview images",
+      "Client-side mockup generation",
     ],
-  };
+    faq: [
+      { question: t.pm_faq_1_q, answer: t.pm_faq_1_a },
+      { question: t.pm_faq_2_q, answer: t.pm_faq_2_a },
+      { question: t.pm_faq_3_q, answer: t.pm_faq_3_a },
+      { question: t.pm_faq_4_q, answer: t.pm_faq_4_a },
+      { question: optionalText.pm_faq_5_q, answer: optionalText.pm_faq_5_a },
+    ],
+    howToName: t.pm_article_title,
+    howToSteps: [
+      { name: "Select Platform", text: t.pm_how_to_1 },
+      { name: "Edit Profile", text: t.pm_how_to_2 },
+      { name: "Customize Options", text: t.pm_how_to_3 },
+      { name: "Download", text: t.pm_how_to_4 },
+    ],
+  });
 
   return (
     <>

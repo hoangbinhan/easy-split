@@ -3,6 +3,8 @@ export const profileTranslations = {
     pm_title: "Social Profile Mockup Generator",
     pm_subtitle:
       "Create and customize realistic social media profile mockups for TikTok and Instagram. Edit text, images, and stats to preview your designs.",
+    pm_aeo_intro:
+      "Easy Split Profile Mockup Generator is a free browser-based tool for creating TikTok and Instagram profile mockups. You can edit names, bios, stats, profile pictures, and visual options, then download a PNG preview for presentations, design concepts, or content planning.",
     pm_new_tool: "New Tool",
     pm_feature_preview_title: "Instant Preview",
     pm_feature_preview_desc:
@@ -53,6 +55,9 @@ export const profileTranslations = {
     pm_faq_4_q: "Will you add more platforms?",
     pm_faq_4_a:
       "Yes, we plan to add more platforms like Twitter/X and Facebook in the future.",
+    pm_faq_5_q: "Can I download the profile mockup as an image?",
+    pm_faq_5_a:
+      "Yes. After editing the profile details and previewing the design, you can export the mockup as a PNG image. The generator runs in your browser, so the preview is created locally on your device.",
     pm_about_tool_title: "About Profile Mockups",
     pm_about_tool_desc:
       "This tool allows you to easily generate social media profile mockups for various purposes, from design prototyping to fun content creation.",

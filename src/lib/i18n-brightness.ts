@@ -3,6 +3,8 @@ export const brightnessTranslations = {
     br_title: "Image Brightness",
     br_subtitle:
       "Lighten or darken your images with precision. Free, fast, and secure.",
+    br_aeo_intro:
+      "Easy Split Image Brightness is a free online editor for making photos brighter or darker in your browser. The adjustment is processed locally, so your image is not uploaded, and you can fine-tune exposure before downloading the final file.",
     br_new_tool: "Light Control",
     br_upload_title: "Upload Image",
     br_drag_drop: "Drag & Drop or Click to Upload",
@@ -36,12 +38,15 @@ export const brightnessTranslations = {
     br_faq_3_q: "Can I use it on mobile?",
     br_faq_3_a:
       "Yes, it works perfectly on all devices including smartphones and tablets.",
+    br_faq_4_q: "Can I fix a photo that is too dark?",
+    br_faq_4_a:
+      "Yes. Upload the photo, move the brightness slider toward Brighter, preview the change, and download the adjusted image. Very dark photos may still have noise or missing detail, so a higher quality original gives better results.",
     br_article_title: "How to Adjust Image Brightness Online",
     br_article_intro:
       "Proper lighting can make or break a photo. Use our free online tool to fix underexposed or overexposed images instantly.",
     br_how_to_title: "How to Use",
     br_how_to_1:
-      "Upload your image by dragging needed or clicking the upload box.",
+      "Upload your image by dragging it or clicking the upload box.",
     br_how_to_2: "Use the slider to increase or decrease brightness.",
     br_how_to_3: "Click 'Apply Adjustment' to render the final image.",
     br_how_to_4: "Download your perfectly lit photo instantly.",

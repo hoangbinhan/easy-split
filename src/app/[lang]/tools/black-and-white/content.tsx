@@ -81,7 +81,11 @@ const FAQSection = () => {
       q: t.bw_faq_3_q,
       a: t.bw_faq_3_a,
     },
-  ];
+    {
+      q: t.bw_faq_4_q,
+      a: t.bw_faq_4_a,
+    },
+  ].filter((item) => item.q && item.a);
 
   return (
     <section className="mb-20 max-w-4xl mx-auto">
@@ -259,6 +263,9 @@ export default function BlackAndWhiteClient() {
         </h1>
         <p className="text-xl sm:text-2xl font-bold text-slate-700 max-w-3xl mx-auto bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           {t.bw_subtitle}
+        </p>
+        <p className="max-w-3xl mx-auto text-base sm:text-lg font-semibold leading-relaxed text-slate-800">
+          {t.bw_aeo_intro || t.bw_subtitle}
         </p>
       </section>
 

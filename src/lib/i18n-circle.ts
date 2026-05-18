@@ -3,6 +3,8 @@ export const circleTranslations = {
     cc_title: "Circle Crop Image",
     cc_subtitle:
       "Crop your images into a perfect circle instantly. Free, fast, and easy to use.",
+    cc_aeo_intro:
+      "Easy Split Circle Crop is a free online tool for turning square or rectangular photos into circular profile images. The crop runs in your browser, keeps the image on your device, and exports a transparent PNG for social profiles, badges, and design assets.",
     cc_new_tool: "New Tool",
     cc_upload_title: "Upload Image to Crop",
     cc_drag_drop: "Drag & Drop or Click to Upload",
@@ -34,6 +36,12 @@ export const circleTranslations = {
       "No. All processing happens in your browser. We never see or store your files.",
     cc_faq_3_q: "What formats are supported?",
     cc_faq_3_a: "We support JPG, PNG, WEBP, and most common image formats.",
+    cc_faq_4_q: "Can I make a round profile picture with a transparent background?",
+    cc_faq_4_a:
+      "Yes. After you adjust the circular crop, Easy Split exports the result as a PNG with a transparent background, which works well for profile photos, avatars, stickers, and simple design assets.",
+    cc_faq_5_q: "Do I need Photoshop to crop an image into a circle?",
+    cc_faq_5_a:
+      "No. This tool is built for quick circular crops in the browser. Upload the image, position the crop area, click Crop Circle, and download the PNG without installing design software.",
     cc_article_title: "How to Crop Images into Circles",
     cc_article_intro:
       "Creating circular profile pictures or badges is easy with our tool. No complex software like Photoshop is needed.",

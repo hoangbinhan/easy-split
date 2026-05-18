@@ -84,7 +84,15 @@ const FAQSection = () => {
       q: t.cc_faq_3_q,
       a: t.cc_faq_3_a,
     },
-  ];
+    {
+      q: t.cc_faq_4_q,
+      a: t.cc_faq_4_a,
+    },
+    {
+      q: t.cc_faq_5_q,
+      a: t.cc_faq_5_a,
+    },
+  ].filter((item) => item.q && item.a);
 
   return (
     <section className="mb-20 max-w-4xl mx-auto">
@@ -267,6 +275,9 @@ export default function CircleCropClient() {
         </h1>
         <p className="text-xl sm:text-2xl font-bold text-slate-700 max-w-3xl mx-auto bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           {t.cc_subtitle}
+        </p>
+        <p className="max-w-3xl mx-auto text-base sm:text-lg font-semibold leading-relaxed text-slate-800">
+          {t.cc_aeo_intro || t.cc_subtitle}
         </p>
       </section>
 

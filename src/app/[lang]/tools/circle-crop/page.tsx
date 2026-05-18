@@ -1,6 +1,9 @@
 import CircleCropClient from "./content";
 import { translations, Language } from "@/lib/i18n";
 import { Metadata } from "next";
+import { buildToolJsonLd, buildToolMetadata } from "@/lib/seo";
+
+const toolPath = "/tools/circle-crop";
 
 export async function generateMetadata({
   params,
@@ -9,19 +12,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
-  const languages: Record<string, string> = {};
-  (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/tools/circle-crop`;
-  });
 
-  return {
+  return buildToolMetadata({
+    lang,
+    path: toolPath,
     title: `${t.cc_title} | Easy Split`,
     description: t.cc_subtitle,
-    alternates: {
-      canonical: `https://easysplit.click/${lang}/tools/circle-crop`,
-      languages: languages,
-    },
-  };
+  });
 }
 
 export default async function CircleCropPage({
@@ -31,84 +28,35 @@ export default async function CircleCropPage({
 }) {
   const { lang } = await params;
   const t = translations[lang as Language] || translations["en"];
+  const optionalText = t as typeof translations["en"] &
+    Record<string, string | undefined>;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        name: t.cc_title,
-        applicationCategory: "MultimediaApplication",
-        operatingSystem: "Web",
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-        },
-        description: t.cc_subtitle,
-        featureList: "Crop image to circle, Instant download, Transparent PNG",
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: t.cc_faq_1_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.cc_faq_1_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.cc_faq_2_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.cc_faq_2_a,
-            },
-          },
-          {
-            "@type": "Question",
-            name: t.cc_faq_3_q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t.cc_faq_3_a,
-            },
-          },
-        ],
-      },
-      {
-        "@type": "HowTo",
-        name: t.cc_article_title,
-        step: [
-          {
-            "@type": "HowToStep",
-            name: "Upload",
-            text: t.cc_how_to_1,
-            position: 1,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Adjust",
-            text: t.cc_how_to_2,
-            position: 2,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Crop",
-            text: t.cc_how_to_3,
-            position: 3,
-          },
-          {
-            "@type": "HowToStep",
-            name: "Download",
-            text: t.cc_how_to_4,
-            position: 4,
-          },
-        ],
-      },
+  const jsonLd = buildToolJsonLd({
+    lang,
+    path: toolPath,
+    title: t.cc_title,
+    description: t.cc_subtitle,
+    featureList: [
+      "Crop images into circles",
+      "Download transparent PNG",
+      "Client-side image processing",
+      "No image upload",
     ],
-  };
+    faq: [
+      { question: t.cc_faq_1_q, answer: t.cc_faq_1_a },
+      { question: t.cc_faq_2_q, answer: t.cc_faq_2_a },
+      { question: t.cc_faq_3_q, answer: t.cc_faq_3_a },
+      { question: optionalText.cc_faq_4_q, answer: optionalText.cc_faq_4_a },
+      { question: optionalText.cc_faq_5_q, answer: optionalText.cc_faq_5_a },
+    ],
+    howToName: t.cc_article_title,
+    howToSteps: [
+      { name: "Upload", text: t.cc_how_to_1 },
+      { name: "Adjust", text: t.cc_how_to_2 },
+      { name: "Crop", text: t.cc_how_to_3 },
+      { name: "Download", text: t.cc_how_to_4 },
+    ],
+  });
 
   return (
     <>
