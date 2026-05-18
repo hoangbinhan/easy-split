@@ -1,5 +1,7 @@
 import { languages, baseUrl } from "@/lib/sitemap-constants";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const sitemaps = languages.map((lang) => `${baseUrl}/sitemap/${lang}.xml`);
 

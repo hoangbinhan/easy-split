@@ -1,7 +1,13 @@
 import { staticRoutes, baseUrl, languages } from "@/lib/sitemap-constants";
 
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return languages.map((lang) => ({ id: `${lang}.xml` }));
+}
+
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;

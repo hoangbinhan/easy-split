@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { Header, Footer } from "@/components/layout-components";
 import { LanguageProvider } from "@/components/LanguageProvider";
-import { translations, Language } from "@/lib/i18n";
-import { cookies } from "next/headers";
+import { translations } from "@/lib/i18n";
 
-export const runtime = "edge";
-
-export default async function NotFound() {
-  const cookieStore = await cookies();
-  const lang = (cookieStore.get("NEXT_LOCALE")?.value as Language) || "en";
+export default function NotFound() {
+  const lang = "en";
   // Fallback to English if translation key is missing for the language
   const tSource = translations[lang] || translations["en"];
 

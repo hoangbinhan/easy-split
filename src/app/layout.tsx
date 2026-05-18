@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { cookies } from "next/headers";
-import { Language } from "@/lib/i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 const NODE_ENV = process.env.NODE_ENV;
@@ -66,12 +64,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Try to guess lang from cookie for the HTML tag, though less critical now
-  const cookieStore = await cookies();
-  const locale = (cookieStore.get("NEXT_LOCALE")?.value as Language) || "en";
-
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <script
           async
