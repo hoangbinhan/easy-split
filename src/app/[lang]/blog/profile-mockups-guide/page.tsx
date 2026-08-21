@@ -502,7 +502,7 @@ export default async function GuidePost({
       {/* Header */}
       <header className="mb-6 sm:mb-10 pb-6 sm:pb-8 border-b-4 border-black border-dashed">
         <Link
-          href="/blog"
+          href={`/${lang}/blog`}
           className="inline-flex items-center gap-2 font-bold uppercase text-xs sm:text-sm mb-4 sm:mb-6 hover:bg-yellow-200 px-2 py-1 transition-colors border-2 border-transparent hover:border-black"
         >
           <ArrowLeft className="w-4 h-4" /> {t.back}
@@ -600,7 +600,7 @@ export default async function GuidePost({
           </h2>
           <p className="text-xl font-bold mb-6 text-slate-800">{t.cta_desc}</p>
           <Link
-            href="/tools/profile-mockups"
+            href={`/${lang}/tools/profile-mockups`}
             className="inline-block bg-black text-white px-8 py-4 border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-transform font-black uppercase text-xl no-underline"
           >
             {t.cta_btn}

@@ -572,7 +572,7 @@ export default async function GuidePost({
       {/* Header */}
       <header className="mb-6 sm:mb-10 pb-6 sm:pb-8 border-b-4 border-black border-dashed">
         <Link
-          href="/blog"
+          href={`/${lang}/blog`}
           className="inline-flex items-center gap-2 font-bold uppercase text-xs sm:text-sm mb-4 sm:mb-6 hover:bg-yellow-200 px-2 py-1 transition-colors border-2 border-transparent hover:border-black"
         >
           <ArrowLeft className="w-4 h-4" /> {t.back}
@@ -617,7 +617,7 @@ export default async function GuidePost({
         </ul>
         <div className="my-6">
           <Link
-            href="/tools/sharpen-image"
+            href={`/${lang}/tools/sharpen-image`}
             className="inline-block bg-pink-400 text-black px-6 py-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform font-bold uppercase no-underline"
           >
             Go to Sharpen Tool
@@ -636,7 +636,7 @@ export default async function GuidePost({
         </ul>
         <div className="my-6">
           <Link
-            href="/tools/brightness"
+            href={`/${lang}/tools/brightness`}
             className="inline-block bg-orange-400 text-black px-6 py-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform font-bold uppercase no-underline"
           >
             Go to Brightness Tool
@@ -655,7 +655,7 @@ export default async function GuidePost({
         </ul>
         <div className="my-6">
           <Link
-            href="/tools/black-and-white"
+            href={`/${lang}/tools/black-and-white`}
             className="inline-block bg-zinc-300 text-black px-6 py-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform font-bold uppercase no-underline"
           >
             Go to B&W Tool
@@ -674,7 +674,7 @@ export default async function GuidePost({
         </ul>
         <div className="my-6">
           <Link
-            href="/tools/circle-crop"
+            href={`/${lang}/tools/circle-crop`}
             className="inline-block bg-blue-400 text-black px-6 py-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform font-bold uppercase no-underline"
           >
             Go to Circle Crop Tool
@@ -687,7 +687,7 @@ export default async function GuidePost({
           </h2>
           <p className="text-xl font-bold mb-6 text-slate-800">{t.cta_desc}</p>
           <Link
-            href="/"
+            href={`/${lang}`}
             className="inline-block bg-black text-white px-8 py-4 border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-transform font-black uppercase text-xl no-underline"
           >
             {t.cta_btn}

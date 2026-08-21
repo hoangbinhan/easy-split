@@ -501,7 +501,7 @@ export default async function SeamlessSlideGuide({
       {/* Header */}
       <header className="mb-6 sm:mb-10 pb-6 sm:pb-8 border-b-4 border-black border-dashed">
         <Link
-          href="/blog"
+          href={`/${lang}/blog`}
           className="inline-flex items-center gap-2 font-bold uppercase text-xs sm:text-sm mb-4 sm:mb-6 hover:bg-yellow-200 px-2 py-1 transition-colors border-2 border-transparent hover:border-black"
         >
           <ArrowLeft className="w-4 h-4" /> {t.back}
@@ -542,7 +542,7 @@ export default async function SeamlessSlideGuide({
         </h2>
         <p>
           {t.step1_desc}{" "}
-          <Link href="/" className="text-blue-600 hover:underline font-bold">
+          <Link href={`/${lang}`} className="text-blue-600 hover:underline font-bold">
             EasySplit.click
           </Link>
         </p>
@@ -651,7 +651,7 @@ export default async function SeamlessSlideGuide({
           </h3>
           <p className="font-bold mb-6">{t.cta_desc}</p>
           <Link
-            href="/"
+            href={`/${lang}`}
             className="inline-block bg-white text-black font-black uppercase text-xl px-8 py-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all"
           >
             {t.cta_btn}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
+import { localePath } from "@/lib/locale-path";
 import {
   ChevronDown,
   WifiOff,
@@ -122,7 +123,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-white border-b-4 border-black">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
-          href="/"
+          href={localePath(language)}
           className={`flex items-center gap-2 font-black text-2xl uppercase tracking-tighter hover:-rotate-2 transition-transform group ${bangers.className}`}
         >
           <span className="bg-yellow-400 border-4 border-black px-2 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-yellow-300 transition-colors">
@@ -283,7 +284,7 @@ export function Header() {
 }
 
 export function Footer() {
-  const { t, isLoaded } = useLanguage();
+  const { t, language, isLoaded } = useLanguage();
   if (!isLoaded) return null;
 
   return (
@@ -303,31 +304,31 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm font-black uppercase text-black text-center">
             <Link
-              href="/privacy"
+              href={localePath(language, "/privacy")}
               className="hover:bg-yellow-300 px-2 transition-colors"
             >
               {t.privacy}
             </Link>
             <Link
-              href="/cookie-policy"
+              href={localePath(language, "/cookie-policy")}
               className="hover:bg-orange-300 px-2 transition-colors"
             >
               {t.cookie_policy}
             </Link>
             <Link
-              href="/terms"
+              href={localePath(language, "/terms")}
               className="hover:bg-pink-300 px-2 transition-colors"
             >
               {t.terms}
             </Link>
             <Link
-              href="/about"
+              href={localePath(language, "/about")}
               className="hover:bg-cyan-300 px-2 transition-colors"
             >
               {t.about}
             </Link>
             <Link
-              href="/contact"
+              href={localePath(language, "/contact")}
               className="hover:bg-green-300 px-2 transition-colors"
             >
               {t.contact_title}
