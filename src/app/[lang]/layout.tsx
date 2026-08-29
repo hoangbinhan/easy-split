@@ -1,6 +1,7 @@
 import { Header, Footer } from "@/components/layout-components";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { CookieBanner } from "@/components/CookieBanner";
+import { AdBanner } from "@/components/AdBanner";
 import { Language } from "@/lib/i18n";
 
 export async function generateStaticParams() {
@@ -37,6 +38,7 @@ export default async function LangLayout({
       </main>
       <Footer />
       <CookieBanner />
+      <AdBanner />
     </LanguageProvider>
   );
 }
