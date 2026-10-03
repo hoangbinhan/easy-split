@@ -1,5 +1,8 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import ImageSplitterContent from "./tools/split-image/content";
 import { translations, Language } from "@/lib/i18n";
+
+import { baseUrl } from "@/lib/sitemap-constants";
 
 import { Metadata } from "next";
 
@@ -12,14 +15,15 @@ export async function generateMetadata({
   const t = translations[lang as Language] || translations["en"];
   const languages: Record<string, string> = {};
   (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}`;
+    languages[languageTag(l)] = `${baseUrl}${localePath(l)}`;
   });
+  languages["x-default"] = `${baseUrl}/`;
 
   return {
     title: t.title,
     description: t.subtitle,
     alternates: {
-      canonical: `https://easysplit.click/${lang}`,
+      canonical: `${baseUrl}${localePath(lang)}`,
       languages: languages,
     },
   };

@@ -1,7 +1,6 @@
-import { Header, Footer } from "@/components/layout-components";
-import { LanguageProvider } from "@/components/LanguageProvider";
-import { CookieBanner } from "@/components/CookieBanner";
-import { AdBanner } from "@/components/AdBanner";
+import { DocumentLayout } from "@/components/DocumentLayout";
+export { metadata, viewport } from "@/components/DocumentLayout";
+import { SiteLayout } from "@/components/SiteLayout";
 import { Language } from "@/lib/i18n";
 
 export async function generateStaticParams() {
@@ -31,14 +30,8 @@ export default async function LangLayout({
 }) {
   const { lang } = await params;
   return (
-    <LanguageProvider initialLocale={lang as Language}>
-      <Header />
-      <main className="py-4 flex-1 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">
-        {children}
-      </main>
-      <Footer />
-      <CookieBanner />
-      <AdBanner />
-    </LanguageProvider>
+    <DocumentLayout lang={lang}>
+      <SiteLayout lang={lang as Language}>{children}</SiteLayout>
+    </DocumentLayout>
   );
 }

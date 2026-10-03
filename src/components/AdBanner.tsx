@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Cookies from "js-cookie";
+import { CONSENT_CHANGED, CONSENT_SETTINGS, getConsent } from "@/lib/consent";
 import Image from "next/image";
 import { X } from "lucide-react";
 
@@ -10,7 +10,15 @@ export function AdBanner() {
   const [liftForCookieBanner, setLiftForCookieBanner] = useState(false);
 
   useEffect(() => {
-    setLiftForCookieBanner(!Cookies.get("cookie_consent"));
+    const sync = () => setLiftForCookieBanner(getConsent() === null);
+    const openSettings = () => setLiftForCookieBanner(true);
+    sync();
+    window.addEventListener(CONSENT_CHANGED, sync);
+    window.addEventListener(CONSENT_SETTINGS, openSettings);
+    return () => {
+      window.removeEventListener(CONSENT_CHANGED, sync);
+      window.removeEventListener(CONSENT_SETTINGS, openSettings);
+    };
   }, []);
 
   if (!isVisible) return null;

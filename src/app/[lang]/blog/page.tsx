@@ -1,3 +1,4 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import Link from "next/link";
 import { Bangers } from "next/font/google";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
@@ -108,14 +109,14 @@ export async function generateMetadata({
   const meta = blogMeta[lang as Language] || blogMeta["en"];
   const languages: Record<string, string> = {};
   (Object.keys(blogMeta) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/blog`;
+    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog")}`;
   });
 
   return {
     title: meta.title,
     description: meta.description,
     alternates: {
-      canonical: `https://easysplit.click/${lang}/blog`,
+      canonical: `https://easysplit.click${localePath(lang, "/blog")}`,
       languages: languages,
     },
   };

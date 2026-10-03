@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { ConsentScripts } from "@/components/ConsentScripts";
+import { languageTag } from "@/lib/locale-path";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-const NODE_ENV = process.env.NODE_ENV;
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   description:
     "Free tool to split photos into seamless carousel slides for TikTok and Instagram. No watermark, no upload needed.",
   applicationName: "Easy Split",
+  other: { "google-adsense-account": "ca-pub-6546615127998089" },
 
   manifest: "/manifest.json",
   appleWebApp: {
@@ -59,41 +61,12 @@ export const viewport: Viewport = {
   themeColor: "#FACC15",
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export function DocumentLayout({ children, lang }: { children: React.ReactNode; lang: string }) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915469150707514"
-          crossOrigin="anonymous"
-        />
-      </head>
-      <body
-        className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}
-      >
+    <html lang={languageTag(lang)}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-[#FFFDF5] text-black antialiased selection:bg-black selection:text-white`}>
         {children}
-        {NODE_ENV === "production" && (
-          <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-WBG2FZTPRZ"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-WBG2FZTPRZ');
-          `}
-            </Script>
-          </>
-        )}
+        <ConsentScripts />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 import { translations, Language } from "@/lib/i18n";
 import Cookies from "js-cookie";
+import { languageTag, localePath } from "@/lib/locale-path";
 
 type TranslationText = (typeof translations)["en"] &
   Record<string, string | undefined>;
@@ -30,7 +31,7 @@ export function LanguageProvider({
   const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
-    document.documentElement.lang = language;
+    document.documentElement.lang = languageTag(language);
   }, [language]);
 
   const setLanguage = (lang: Language) => {
@@ -40,6 +41,10 @@ export function LanguageProvider({
 
     // Redirect to new path with updated locale
     const currentPath = window.location.pathname;
+    if (currentPath === "/" || /^\/[^/]+\/?$/.test(currentPath)) {
+      window.location.href = localePath(lang);
+      return;
+    }
     const segments = currentPath.split("/");
     // path is usually /lang/... so segments[0] is "", segments[1] is lang
     if (segments.length >= 2) {

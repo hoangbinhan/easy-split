@@ -1,3 +1,4 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import { InstagramProfile } from "@/components/mockups/InstagramProfile";
 import { Metadata } from "next";
 import { translations, Language } from "@/lib/i18n";
@@ -11,14 +12,14 @@ export async function generateMetadata({
   const t = translations[lang as Language] || translations["en"];
   const languages: Record<string, string> = {};
   (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/instagram-profile-mockup`;
+    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/instagram-profile-mockup")}`;
   });
 
   return {
     title: t.instagram_mockup_title,
     description: t.instagram_mockup_desc,
     alternates: {
-      canonical: `https://easysplit.click/${lang}/instagram-profile-mockup`,
+      canonical: `https://easysplit.click${localePath(lang, "/instagram-profile-mockup")}`,
       languages: languages,
     },
   };

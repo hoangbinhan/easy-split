@@ -1,4 +1,6 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import Link from "next/link";
+
 import { Bangers } from "next/font/google";
 import { ArrowLeft, CheckCircle, Image as ImageIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -25,14 +27,14 @@ export async function generateMetadata({
 
   const languages: Record<string, string> = {};
   (Object.keys(content) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/blog/seamless-slide-guide`;
+    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog/seamless-slide-guide")}`;
   });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
     alternates: {
-      canonical: `https://easysplit.click/${lang}/blog/seamless-slide-guide`,
+      canonical: `https://easysplit.click${localePath(lang, "/blog/seamless-slide-guide")}`,
       languages: languages,
     },
   };
@@ -542,7 +544,7 @@ export default async function SeamlessSlideGuide({
         </h2>
         <p>
           {t.step1_desc}{" "}
-          <Link href={`/${lang}`} className="text-blue-600 hover:underline font-bold">
+          <Link href={localePath(lang)} className="text-blue-600 hover:underline font-bold">
             EasySplit.click
           </Link>
         </p>
@@ -651,7 +653,7 @@ export default async function SeamlessSlideGuide({
           </h3>
           <p className="font-bold mb-6">{t.cta_desc}</p>
           <Link
-            href={`/${lang}`}
+            href={localePath(lang)}
             className="inline-block bg-white text-black font-black uppercase text-xl px-8 py-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all"
           >
             {t.cta_btn}

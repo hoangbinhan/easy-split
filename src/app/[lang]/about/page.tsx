@@ -1,3 +1,4 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import React from "react";
 import { Metadata } from "next";
 import AboutContent from "./content";
@@ -13,14 +14,14 @@ export async function generateMetadata({
   const t = translations[lang as Language] || translations["en"];
   const languages: Record<string, string> = {};
   (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/about`;
+    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/about")}`;
   });
 
   return {
     title: `${t.about_us_title} - Easy Split`,
     description: t.about_mission_desc.substring(0, 160),
     alternates: {
-      canonical: `https://easysplit.click/${lang}/about`,
+      canonical: `https://easysplit.click${localePath(lang, "/about")}`,
       languages: languages,
     },
   };

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { baseUrl, languages } from "@/lib/sitemap-constants";
+import { languageTag, localePath } from "@/lib/locale-path";
 
 type FaqItem = {
   question?: string;
@@ -26,7 +27,7 @@ const absoluteUrl = (path: string) => `${baseUrl}${path}`;
 
 export function buildLanguageAlternates(path: string) {
   return languages.reduce<Record<string, string>>((acc, lang) => {
-    acc[lang] = absoluteUrl(`/${lang}${path}`);
+    acc[languageTag(lang)] = absoluteUrl(localePath(lang, path));
     return acc;
   }, {});
 }
@@ -41,13 +42,13 @@ export function buildToolMetadata({
     title,
     description,
     alternates: {
-      canonical: absoluteUrl(`/${lang}${path}`),
+      canonical: absoluteUrl(localePath(lang, path)),
       languages: buildLanguageAlternates(path),
     },
     openGraph: {
       title,
       description,
-      url: absoluteUrl(`/${lang}${path}`),
+      url: absoluteUrl(localePath(lang, path)),
       type: "website",
       siteName: "Easy Split",
       images: ["/opengraph-image.png"],
@@ -70,7 +71,7 @@ export function buildToolJsonLd({
   howToName,
   howToSteps,
 }: ToolSeoInput) {
-  const url = absoluteUrl(`/${lang}${path}`);
+  const url = absoluteUrl(localePath(lang, path));
   const faqItems = faq.filter((item) => item.question && item.answer);
   const steps = howToSteps.filter((step) => step.name && step.text);
 
@@ -82,7 +83,7 @@ export function buildToolJsonLd({
         "@id": `${url}#app`,
         name: title,
         url,
-        inLanguage: lang,
+        inLanguage: languageTag(lang),
         applicationCategory: "MultimediaApplication",
         operatingSystem: "Web",
         isAccessibleForFree: true,
@@ -97,7 +98,7 @@ export function buildToolJsonLd({
       {
         "@type": "FAQPage",
         "@id": `${url}#faq`,
-        inLanguage: lang,
+        inLanguage: languageTag(lang),
         mainEntity: faqItems.map((item) => ({
           "@type": "Question",
           name: item.question,
@@ -111,7 +112,7 @@ export function buildToolJsonLd({
         "@type": "HowTo",
         "@id": `${url}#howto`,
         name: howToName,
-        inLanguage: lang,
+        inLanguage: languageTag(lang),
         step: steps.map((step, index) => ({
           "@type": "HowToStep",
           name: step.name,
@@ -127,17 +128,11 @@ export function buildToolJsonLd({
             "@type": "ListItem",
             position: 1,
             name: "Easy Split",
-            item: absoluteUrl(`/${lang}`),
+            item: absoluteUrl(localePath(lang)),
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Tools",
-            item: absoluteUrl(`/${lang}/tools`),
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
             name: title,
             item: url,
           },

@@ -4,6 +4,7 @@ import {
   languages,
   lastModified,
 } from "@/lib/sitemap-constants";
+import { localePath } from "@/lib/locale-path";
 
 export const dynamic = "force-static";
 
@@ -29,7 +30,7 @@ export async function GET(
     .map((route) => {
       return `
   <url>
-    <loc>${baseUrl}/${lang}${route}</loc>
+    <loc>${baseUrl}${localePath(lang, route)}</loc>
     <lastmod>${lastModified}</lastmod>
     <changefreq>${route === "" ? "daily" : "weekly"}</changefreq>
     <priority>${route === "" ? "1.0" : "0.8"}</priority>

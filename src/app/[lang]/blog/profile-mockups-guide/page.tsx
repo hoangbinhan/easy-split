@@ -1,3 +1,4 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import Link from "next/link";
 import { Bangers } from "next/font/google";
 import { ArrowLeft, CheckCircle, Smartphone, Layers } from "lucide-react";
@@ -23,14 +24,14 @@ export async function generateMetadata(props: {
 
   const languages: Record<string, string> = {};
   (Object.keys(content) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/blog/profile-mockups-guide`;
+    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog/profile-mockups-guide")}`;
   });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
     alternates: {
-      canonical: `https://easysplit.click/${lang}/blog/profile-mockups-guide`,
+      canonical: `https://easysplit.click${localePath(lang, "/blog/profile-mockups-guide")}`,
       languages: languages,
     },
   };

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Cookies from "js-cookie";
+import { clearAnalyticsCookies, CONSENT_SETTINGS, getConsent, setConsent } from "@/lib/consent";
 import { useLanguage } from "./LanguageProvider";
 import { Cookie } from "lucide-react";
 
@@ -10,21 +10,24 @@ export function CookieBanner() {
   const { t } = useLanguage();
 
   useEffect(() => {
-    // Check if user has already consented
-    const consent = Cookies.get("cookie_consent");
-    if (!consent) {
-      setIsVisible(true);
-    }
+    setIsVisible(getConsent() === null);
+    const openSettings = () => setIsVisible(true);
+    window.addEventListener(CONSENT_SETTINGS, openSettings);
+    return () => window.removeEventListener(CONSENT_SETTINGS, openSettings);
   }, []);
 
   const handleAccept = () => {
-    Cookies.set("cookie_consent", "true", { expires: 365 });
+    setConsent(true);
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    Cookies.set("cookie_consent", "false", { expires: 365 });
+    const wasAccepted = getConsent() === true;
+    setConsent(false);
+    clearAnalyticsCookies();
     setIsVisible(false);
+    // Already-loaded third-party scripts cannot be unloaded by removing their tags.
+    if (wasAccepted) window.location.reload();
   };
 
   if (!isVisible) return null;

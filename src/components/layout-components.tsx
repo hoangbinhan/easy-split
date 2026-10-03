@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Language } from "@/lib/i18n";
 import { localePath } from "@/lib/locale-path";
+import { CONSENT_SETTINGS } from "@/lib/consent";
+import { consentSettingsLabels } from "@/lib/i18n-consent";
 import {
   ChevronDown,
   WifiOff,
@@ -179,7 +181,7 @@ export function Header() {
                     {tools.map((tool) => (
                       <Link
                         key={tool.slug}
-                        href={`/${language}/tools/${tool.slug}`}
+                        href={localePath(language, tool.slug === "split-image" ? "" : `/tools/${tool.slug}`)}
                         className={`flex items-center gap-3 p-2 border-2 border-transparent hover:border-black ${tool.color} transition-all font-bold text-sm uppercase`}
                         onClick={() => setShowTools(false)}
                       >
@@ -315,6 +317,13 @@ export function Footer() {
             >
               {t.cookie_policy}
             </Link>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event(CONSENT_SETTINGS))}
+              className="hover:bg-orange-300 px-2 transition-colors cursor-pointer uppercase"
+            >
+              {consentSettingsLabels[language]}
+            </button>
             <Link
               href={localePath(language, "/terms")}
               className="hover:bg-pink-300 px-2 transition-colors"

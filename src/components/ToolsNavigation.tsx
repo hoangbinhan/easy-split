@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
+import { localePath } from "@/lib/locale-path";
 import { usePathname } from "next/navigation";
 import { Scissors, UserCircle, Crop, Zap, Wand2, Sun } from "lucide-react";
 
@@ -13,7 +14,7 @@ export const ToolsNavigation = () => {
   const tools = [
     {
       name: "Split Image",
-      href: `/${language}/tools/split-image`,
+      href: localePath(language),
       icon: <Scissors className="w-5 h-5" />,
       color: "bg-purple-300",
     },
@@ -55,9 +56,8 @@ export const ToolsNavigation = () => {
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {tools.map((tool) => {
             const isActive =
-              pathname === tool.href ||
-              (tool.href.endsWith("/split-image") &&
-                pathname === `/${language}`);
+              pathname.replace(/\/$/, "") === tool.href.replace(/\/$/, "") ||
+              (tool.name === "Split Image" && pathname.includes("/tools/split-image"));
 
             if (isActive) return null;
 

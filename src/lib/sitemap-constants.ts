@@ -21,7 +21,6 @@ export const languages = [
 
 export const staticRoutes = [
   "",
-  "/tools/split-image",
   "/tools/circle-crop",
   "/tools/sharpen-image",
   "/tools/black-and-white",

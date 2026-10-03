@@ -1,4 +1,6 @@
+import { languageTag, localePath } from "@/lib/locale-path";
 import Link from "next/link";
+
 import { Bangers } from "next/font/google";
 import { ArrowLeft, Zap, Sun, Moon, Circle } from "lucide-react";
 import { Metadata } from "next";
@@ -21,14 +23,14 @@ export async function generateMetadata(props: {
 
   const languages: Record<string, string> = {};
   (Object.keys(content) as Language[]).forEach((l) => {
-    languages[l] = `https://easysplit.click/${l}/blog/tools-guide`;
+    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog/tools-guide")}`;
   });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
     alternates: {
-      canonical: `https://easysplit.click/${lang}/blog/tools-guide`,
+      canonical: `https://easysplit.click${localePath(lang, "/blog/tools-guide")}`,
       languages: languages,
     },
   };
@@ -687,7 +689,7 @@ export default async function GuidePost({
           </h2>
           <p className="text-xl font-bold mb-6 text-slate-800">{t.cta_desc}</p>
           <Link
-            href={`/${lang}`}
+            href={localePath(lang)}
             className="inline-block bg-black text-white px-8 py-4 border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-transform font-black uppercase text-xl no-underline"
           >
             {t.cta_btn}
