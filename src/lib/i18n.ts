@@ -167,7 +167,7 @@ export const translations = {
     terms_title: "Terms of Service",
     terms_last_updated: "Last Updated: January 11, 2026",
     terms_intro:
-      "Please read these terms of service ('Terms', 'Terms of Service') carefully before using the <strong class='font-black'>Easy Split</strong> website operated by <strong class='font-black'>hba-dev</strong> ('us', 'we', or 'our').",
+      "Please read these terms of service ('Terms', 'Terms of Service') carefully before using the <strong class='font-black'>Easy Split</strong> website operated by <strong class='font-black'>easysplit</strong> ('us', 'we', or 'our').",
     terms_conditions_title: "1. Conditions of Use",
     terms_conditions_desc:
       "By using this website, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to stop using the website accordingly.",
@@ -378,7 +378,7 @@ export const translations = {
     terms_title: "Điều khoản dịch vụ",
     terms_last_updated: "Cập nhật lần cuối: 11 Tháng 1, 2026",
     terms_intro:
-      "Vui lòng đọc kỹ các điều khoản dịch vụ này ('Điều khoản', 'Điều khoản dịch vụ') trước khi sử dụng trang web <strong class='font-black'>Easy Split</strong> do <strong class='font-black'>hba-dev</strong> điều hành ('chúng tôi').",
+      "Vui lòng đọc kỹ các điều khoản dịch vụ này ('Điều khoản', 'Điều khoản dịch vụ') trước khi sử dụng trang web <strong class='font-black'>Easy Split</strong> do <strong class='font-black'>easysplit</strong> điều hành ('chúng tôi').",
     terms_conditions_title: "1. Điều kiện sử dụng",
     terms_conditions_desc:
       "Bằng cách sử dụng trang web này, bạn xác nhận rằng bạn đã đọc và xem xét Thỏa thuận này và bạn đồng ý tuân thủ các điều khoản của nó. Nếu bạn không muốn bị ràng buộc bởi các điều khoản của Thỏa thuận này, bạn nên ngừng sử dụng trang web.",
@@ -588,7 +588,7 @@ export const translations = {
     terms_title: "이용 약관",
     terms_last_updated: "최종 업데이트: 2026년 1월 11일",
     terms_intro:
-      "<strong class='font-black'>hba-dev</strong>('우리' 또는 '저희')가 운영하는 <strong class='font-black'>Easy Split</strong> 웹사이트를 사용하기 전에 본 이용 약관('약관', '이용 약관')을 주의 깊게 읽어주시기 바랍니다.",
+      "<strong class='font-black'>easysplit</strong>('우리' 또는 '저희')가 운영하는 <strong class='font-black'>Easy Split</strong> 웹사이트를 사용하기 전에 본 이용 약관('약관', '이용 약관')을 주의 깊게 읽어주시기 바랍니다.",
     terms_conditions_title: "1. 사용 조건",
     terms_conditions_desc:
       "본 웹사이트를 사용함으로써, 귀하는 본 계약을 읽고 검토했으며 그 조건에 따를 것에 동의함을 증명합니다. 본 계약의 조건에 구속받기를 원하지 않는 경우, 웹사이트 사용을 중단하는 것이 좋습니다.",
@@ -798,7 +798,7 @@ export const translations = {
     terms_title: "利用規約",
     terms_last_updated: "最終更新日：2026年1月11日",
     terms_intro:
-      "<strong class='font-black'>hba-dev</strong>（「私たち」、「我々」、または「当方」）が運営する<strong class='font-black'>Easy Split</strong>ウェブサイトを使用する前に、これらの利用規約（「規約」、「利用規約」）をよくお読みください。",
+      "<strong class='font-black'>easysplit</strong>（「私たち」、「我々」、または「当方」）が運営する<strong class='font-black'>Easy Split</strong>ウェブサイトを使用する前に、これらの利用規約（「規約」、「利用規約」）をよくお読みください。",
     terms_conditions_title: "1. 利用条件",
     terms_conditions_desc:
       "本ウェブサイトを利用することにより、利用者は本契約を読み、検討し、その条件に従うことに同意したことを証明するものとします。本契約の条件に拘束されることを望まない場合は、それに応じてウェブサイトの使用を中止することをお勧めします。",
@@ -1008,7 +1008,7 @@ export const translations = {
     terms_title: "เงื่อนไขการให้บริการ",
     terms_last_updated: "อัปเดตล่าสุด: 11 มกราคม 2026",
     terms_intro:
-      "โปรดอ่านเงื่อนไขการให้บริการเหล่านี้ ('เงื่อนไข', 'เงื่อนไขการให้บริการ') อย่างละเอียดก่อนใช้เว็บไซต์ <strong class='font-black'>Easy Split</strong> ที่ดำเนินการโดย <strong class='font-black'>hba-dev</strong> ('เรา')",
+      "โปรดอ่านเงื่อนไขการให้บริการเหล่านี้ ('เงื่อนไข', 'เงื่อนไขการให้บริการ') อย่างละเอียดก่อนใช้เว็บไซต์ <strong class='font-black'>Easy Split</strong> ที่ดำเนินการโดย <strong class='font-black'>easysplit</strong> ('เรา')",
     terms_conditions_title: "1. เงื่อนไขการใช้งาน",
     terms_conditions_desc:
       "การใช้เว็บไซต์นี้ คุณรับรองว่าคุณได้อ่านและทบทวนข้อตกลงนี้แล้วและตกลงที่จะปฏิบัติตามเงื่อนไข หากคุณไม่ต้องการผูกพันตามเงื่อนไขของข้อตกลงนี้ คุณควรหยุดใช้เว็บไซต์",
@@ -1217,7 +1217,7 @@ export const translations = {
     terms_title: "Ketentuan Layanan",
     terms_last_updated: "Terakhir Diperbarui: 11 Januari 2026",
     terms_intro:
-      "Harap baca ketentuan layanan ini ('Ketentuan', 'Ketentuan Layanan') dengan cermat sebelum menggunakan situs web <strong class='font-black'>Easy Split</strong> yang dioperasikan oleh <strong class='font-black'>hba-dev</strong> ('kami').",
+      "Harap baca ketentuan layanan ini ('Ketentuan', 'Ketentuan Layanan') dengan cermat sebelum menggunakan situs web <strong class='font-black'>Easy Split</strong> yang dioperasikan oleh <strong class='font-black'>easysplit</strong> ('kami').",
     terms_conditions_title: "1. Syarat Penggunaan",
     terms_conditions_desc:
       "Dengan menggunakan situs web ini, Anda menyatakan bahwa Anda telah membaca dan meninjau Perjanjian ini dan bahwa Anda setuju untuk mematuhi ketentuannya. Jika Anda tidak ingin terikat oleh ketentuan Perjanjian ini, Anda disarankan untuk berhenti menggunakan situs web ini.",
@@ -1430,7 +1430,7 @@ export const translations = {
     terms_title: "Términos de Servicio",
     terms_last_updated: "Última actualización: 11 de Enero, 2026",
     terms_intro:
-      "Por favor, lee estos términos de servicio ('Términos', 'Términos de Servicio') cuidadosamente antes de usar el sitio web <strong class='font-black'>Easy Split</strong> operado por <strong class='font-black'>hba-dev</strong> ('nosotros', 'nuestro').",
+      "Por favor, lee estos términos de servicio ('Términos', 'Términos de Servicio') cuidadosamente antes de usar el sitio web <strong class='font-black'>Easy Split</strong> operado por <strong class='font-black'>easysplit</strong> ('nosotros', 'nuestro').",
     terms_conditions_title: "1. Condiciones de uso",
     terms_conditions_desc:
       "Al usar este sitio web, certificas que has leído y revisado este Acuerdo y que aceptas cumplir con sus términos. Si no deseas estar sujeto a los términos de este Acuerdo, te recomendamos que dejes de usar el sitio web en consecuencia.",
@@ -1637,7 +1637,7 @@ export const translations = {
     terms_title: "服务条款",
     terms_last_updated: "最后更新：2026年1月11日",
     terms_intro:
-      "在使用由 <strong class='font-black'>hba-dev</strong>（'我们'）运营的 <strong class='font-black'>Easy Split</strong> 网站之前，请仔细阅读这些服务条款（'条款'，'服务条款'）。",
+      "在使用由 <strong class='font-black'>easysplit</strong>（'我们'）运营的 <strong class='font-black'>Easy Split</strong> 网站之前，请仔细阅读这些服务条款（'条款'，'服务条款'）。",
     terms_conditions_title: "1. 使用条件",
     terms_conditions_desc:
       "使用本网站即表示您证明您已阅读并审阅本协议，并同意遵守其条款。如果您不想受本协议条款的约束，建议您相应地停止使用本网站。",
@@ -1840,7 +1840,7 @@ export const translations = {
     terms_title: "服務條款",
     terms_last_updated: "最後更新：2026年1月11日",
     terms_intro:
-      "在使用由 <strong class='font-black'>hba-dev</strong>（'我們'）運營的 <strong class='font-black'>Easy Split</strong> 網站之前，請仔細閱讀這些服務條款（'條款'，'服務條款'）。",
+      "在使用由 <strong class='font-black'>easysplit</strong>（'我們'）運營的 <strong class='font-black'>Easy Split</strong> 網站之前，請仔細閱讀這些服務條款（'條款'，'服務條款'）。",
     terms_conditions_title: "1. 使用條件",
     terms_conditions_desc:
       "使用本網站即表示您證明您已閱讀並審閱本協議，並同意遵守其條款。如果您不想受本協議條款的約束，建議您相應地停止使用本網站。",
@@ -2051,7 +2051,7 @@ export const translations = {
     terms_title: "Nutzungsbedingungen",
     terms_last_updated: "Zuletzt aktualisiert: 11. Januar 2026",
     terms_intro:
-      "Bitte lesen Sie diese Nutzungsbedingungen ('Bedingungen', 'Nutzungsbedingungen') sorgfältig durch, bevor Sie die Website <strong class='font-black'>Easy Split</strong> nutzen, die von <strong class='font-black'>hba-dev</strong> ('uns', 'wir' oder 'unser') betrieben wird.",
+      "Bitte lesen Sie diese Nutzungsbedingungen ('Bedingungen', 'Nutzungsbedingungen') sorgfältig durch, bevor Sie die Website <strong class='font-black'>Easy Split</strong> nutzen, die von <strong class='font-black'>easysplit</strong> ('uns', 'wir' oder 'unser') betrieben wird.",
     terms_conditions_title: "1. Nutzungsbedingungen",
     terms_conditions_desc:
       "Durch die Nutzung dieser Website bestätigen Sie, dass Sie diese Vereinbarung gelesen und geprüft haben und dass Sie damit einverstanden sind, deren Bedingungen einzuhalten. Wenn Sie nicht an die Bedingungen dieser Vereinbarung gebunden sein möchten, wird Ihnen empfohlen, die Nutzung der Website entsprechend einzustellen.",
@@ -2265,7 +2265,7 @@ export const translations = {
     terms_title: "Условия использования",
     terms_last_updated: "Последнее обновление: 11 января 2026",
     terms_intro:
-      "Пожалуйста, внимательно прочитайте эти условия использования ('Условия', 'Условия использования') перед использованием веб-сайта <strong class='font-black'>Easy Split</strong>, управляемого <strong class='font-black'>hba-dev</strong> ('мы', 'нас' или 'наш').",
+      "Пожалуйста, внимательно прочитайте эти условия использования ('Условия', 'Условия использования') перед использованием веб-сайта <strong class='font-black'>Easy Split</strong>, управляемого <strong class='font-black'>easysplit</strong> ('мы', 'нас' или 'наш').",
     terms_conditions_title: "1. Условия использования",
     terms_conditions_desc:
       "Используя этот веб-сайт, вы подтверждаете, что прочитали и ознакомились с настоящим Соглашением и согласны соблюдать его условия. Если вы не хотите быть связанными условиями настоящего Соглашения, вам рекомендуется прекратить использование веб-сайта.",
@@ -2479,7 +2479,7 @@ export const translations = {
     terms_title: "सेवा की शर्तें",
     terms_last_updated: "अंतिम अद्यतन: 11 जनवरी 2026",
     terms_intro:
-      "कृपया <strong class='font-black'>hba-dev</strong> ('हम', 'हमें' या 'हमारा') द्वारा संचालित <strong class='font-black'>Easy Split</strong> वेबसाइट का उपयोग करने से पहले इन सेवा की शर्तों ('शर्तें', 'सेवा की शर्तें') को ध्यान से पढ़ें।",
+      "कृपया <strong class='font-black'>easysplit</strong> ('हम', 'हमें' या 'हमारा') द्वारा संचालित <strong class='font-black'>Easy Split</strong> वेबसाइट का उपयोग करने से पहले इन सेवा की शर्तों ('शर्तें', 'सेवा की शर्तें') को ध्यान से पढ़ें।",
     terms_conditions_title: "1. उपयोग की शर्तें",
     terms_conditions_desc:
       "इस वेबसाइट का उपयोग करके, आप प्रमाणित करते हैं कि आपने इस समझौते को पढ़ा और समीक्षा की है और आप इसकी शर्तों का पालन करने के लिए सहमत हैं। यदि आप इस समझौते की शर्तों से बाध्य नहीं होना चाहते हैं, तो आपको तदनुसार वेबसाइट का उपयोग बंद करने की सलाह दी जाती है।",
@@ -2689,7 +2689,7 @@ export const translations = {
     terms_title: "Termos de Serviço",
     terms_last_updated: "Última atualização: 11 de janeiro de 2026",
     terms_intro:
-      "Por favor, leia estes termos de serviço ('Termos', 'Termos de Serviço') cuidadosamente antes de usar o site <strong class='font-black'>Easy Split</strong> operado pela <strong class='font-black'>hba-dev</strong> ('nós', 'nos' ou 'nosso').",
+      "Por favor, leia estes termos de serviço ('Termos', 'Termos de Serviço') cuidadosamente antes de usar o site <strong class='font-black'>Easy Split</strong> operado pela <strong class='font-black'>easysplit</strong> ('nós', 'nos' ou 'nosso').",
     terms_conditions_title: "1. Condições de Uso",
     terms_conditions_desc:
       "Ao usar este site, você certifica que leu e revisou este Acordo e concorda em cumprir seus termos. Se você não quiser ficar vinculado aos termos deste Acordo, é aconselhável que pare de usar o site.",

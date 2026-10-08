@@ -146,17 +146,17 @@ const AboutSection = () => {
             <h4 className="font-bold text-pink-400 uppercase text-xs tracking-widest mb-1">
               {t.created_by}
             </h4>
-            <p className="font-black text-xl">hba-dev</p>
+            <p className="font-black text-xl">easysplit</p>
           </div>
           <div>
             <h4 className="font-bold text-pink-400 uppercase text-xs tracking-widest mb-1">
               {t.contact}
             </h4>
             <a
-              href="mailto:hoangbinhan.5398@gmail.com"
+              href="mailto:contact@easysplit.click"
               className="font-medium text-slate-300 hover:text-white transition-colors"
             >
-              hoangbinhan.5398@gmail.com
+              contact@easysplit.click
             </a>
           </div>
         </div> */}

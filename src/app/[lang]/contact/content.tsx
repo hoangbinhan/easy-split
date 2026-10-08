@@ -91,10 +91,10 @@ export default function ContactContent() {
                 </h2>
                 <p className="mb-2 text-sm">{t.contact_email_desc}</p>
                 <a
-                  href="mailto:hoangbinhan.5398@gmail.com"
+                  href="mailto:contact@easysplit.click"
                   className="inline-block font-bold bg-black text-white px-3 py-1 text-sm hover:bg-yellow-400 hover:text-black hover:border-black border-2 border-transparent transition-colors"
                 >
-                  hoangbinhan.5398@gmail.com
+                  contact@easysplit.click
                 </a>
               </div>
             </div>

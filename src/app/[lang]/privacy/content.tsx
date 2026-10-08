@@ -61,10 +61,10 @@ export default function PrivacyContent() {
             <p>
               {t.privacy_contact_desc}{" "}
               <a
-                href="mailto:hoangbinhan.5398@gmail.com"
+                href="mailto:contact@easysplit.click"
                 className="font-bold underline hover:text-blue-600"
               >
-                hoangbinhan.5398@gmail.com
+                contact@easysplit.click
               </a>
               .
             </p>
