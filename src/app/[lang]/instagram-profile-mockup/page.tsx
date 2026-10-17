@@ -12,14 +12,14 @@ export async function generateMetadata({
   const t = translations[lang as Language] || translations["en"];
   const languages: Record<string, string> = {};
   (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/instagram-profile-mockup")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/instagram-profile-mockup")}`;
   });
 
   return {
     title: t.instagram_mockup_title,
     description: t.instagram_mockup_desc,
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/instagram-profile-mockup")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/instagram-profile-mockup")}`,
       languages: languages,
     },
   };

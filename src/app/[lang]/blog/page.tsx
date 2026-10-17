@@ -109,14 +109,14 @@ export async function generateMetadata({
   const meta = blogMeta[lang as Language] || blogMeta["en"];
   const languages: Record<string, string> = {};
   (Object.keys(blogMeta) as Language[]).forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/blog")}`;
   });
 
   return {
     title: meta.title,
     description: meta.description,
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/blog")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/blog")}`,
       languages: languages,
     },
   };

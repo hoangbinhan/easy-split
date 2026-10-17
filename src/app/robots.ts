@@ -15,6 +15,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://easysplit.click/sitemap.xml",
+    sitemap: "https://easy-split.pages.dev/sitemap.xml",
   };
 }

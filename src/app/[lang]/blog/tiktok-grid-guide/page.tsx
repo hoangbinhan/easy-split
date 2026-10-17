@@ -25,14 +25,14 @@ export async function generateMetadata(props: {
 
   const languages: Record<string, string> = {};
   (Object.keys(content) as Language[]).forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog/tiktok-grid-guide")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/blog/tiktok-grid-guide")}`;
   });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/blog/tiktok-grid-guide")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/blog/tiktok-grid-guide")}`,
       languages: languages,
     },
   };
@@ -85,7 +85,7 @@ const content: Record<string, GuideContent> = {
       "Have you seen those celebrity TikTok profiles with giant images made of 9 or 12 small videos? Today I'll show you how to do it in seconds with Easy Split.",
     step1_title: "Access Easy Split & Upload",
     step1_desc_1: "First, go to our free image splitting tool",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "On the main screen, drag and drop the image you want to make into a grid.",
     step1_tip:
@@ -131,7 +131,7 @@ const content: Record<string, GuideContent> = {
       "Bạn thấy những profile TikTok của người nổi tiếng có những bức ảnh khổng lồ ghép từ 9, 12 video/ảnh nhỏ cực ngầu? Hôm nay mình sẽ chỉ bạn cách làm điều đó trong 1 nốt nhạc với Easy Split.",
     step1_title: "Truy cập Easy Split & Upload",
     step1_desc_1: "Đầu tiên, hãy truy cập vào công cụ cắt ảnh miễn phí",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "Tại màn hình chính, bạn kéo thả tấm ảnh bạn muốn làm Grid vào khu vực upload.",
     step1_tip:
@@ -177,7 +177,7 @@ const content: Record<string, GuideContent> = {
       "9개 또는 12개의 작은 비디오로 만든 거대한 이미지로 된 유명인 틱톡 프로필을 보셨나요? Easy Split으로 몇 초 만에 만드는 방법을 알려드립니다.",
     step1_title: "Easy Split 접속 및 업로드",
     step1_desc_1: "먼저 무료 이미지 분할 도구인",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "으로 이동하여 그리드로 만들고 싶은 이미지를 드래그 앤 드롭하세요.",
     step1_tip:
@@ -221,7 +221,7 @@ const content: Record<string, GuideContent> = {
       "9個または12個の小さな動画で作られた巨大な画像を持つ有名人のTikTokプロフィールを見たことがありますか？Easy Splitを使って数秒でそれを行う方法を紹介します。",
     step1_title: "Easy Splitにアクセスしてアップロード",
     step1_desc_1: "まず、無料の画像分割ツール",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "にアクセスし、グリッドにしたい画像をドラッグ＆ドロップします。",
     step1_tip: "ヒント：高品質の画像、縦長の長方形または正方形が最適です。",
@@ -262,7 +262,7 @@ const content: Record<string, GuideContent> = {
       "คุณเคยเห็นโปรไฟล์ TikTok ของคนดังที่มีภาพขนาดใหญ่ที่สร้างจากวิดีโอขนาดเล็ก 9 หรือ 12 รายการหรือไม่? วันนี้ฉันจะแสดงวิธีทำในไม่กี่วินาทีด้วย Easy Split",
     step1_title: "เข้าถึง Easy Split & อัปโหลด",
     step1_desc_1: "ก่อนอื่น ไปที่เครื่องมือแยกภาพฟรีของเรา",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3: "บนหน้าจอหลัก ลากและวางภาพที่คุณต้องการทำเป็นตาราง",
     step1_tip:
       "เคล็ดลับ: เลือกภาพคุณภาพสูง สี่เหลี่ยมผืนผ้าแนวตั้งหรือสี่เหลี่ยมจัตุรัสจะดีที่สุด",
@@ -303,7 +303,7 @@ const content: Record<string, GuideContent> = {
       "Pernahkah Anda melihat profil TikTok selebriti dengan gambar raksasa yang terbuat dari 9 atau 12 video kecil? Hari ini saya akan menunjukkan cara melakukannya dalam hitungan detik dengan Easy Split.",
     step1_title: "Akses Easy Split & Unggah",
     step1_desc_1: "Pertama, buka alat pemecah gambar gratis kami",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "Di layar utama, seret dan lepas gambar yang ingin Anda jadikan grid.",
     step1_tip:
@@ -353,7 +353,7 @@ const content: Record<string, GuideContent> = {
     step1_title: "Accede a Easy Split y Sube",
     step1_desc_1:
       "Primero, ve a nuestra herramienta gratuita de división de imágenes",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "En la pantalla principal, arrastra y suelta la imagen que quieres convertir en una cuadrícula.",
     step1_tip:
@@ -402,7 +402,7 @@ const content: Record<string, GuideContent> = {
       "您见过那些由 9 或 12 个小视频组成的巨大图片的名人 TikTok 个人资料吗？今天我将向您展示如何使用 Easy Split 在几秒钟内完成。",
     step1_title: "访问 Easy Split 并上传",
     step1_desc_1: "首先，通过我们的免费图片分割工具",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3: "在主屏幕上，拖放您想要制作成网格的图片。",
     step1_tip: "提示：选择高质量图片，垂直矩形或正方形效果最好。",
     step2_title: "设置 TikTok 标准参数",
@@ -439,7 +439,7 @@ const content: Record<string, GuideContent> = {
       "您見過那些由 9 或 12 個小視頻組成的巨大圖片的名人 TikTok 個人資料嗎？今天我將向您展示如何使用 Easy Split 在幾秒鐘內完成。",
     step1_title: "訪問 Easy Split 並上傳",
     step1_desc_1: "首先，通過我們的免費圖片分割工具",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3: "在主屏幕上，拖放您想要製作成網格的圖片。",
     step1_tip: "提示：選擇高質量圖片，垂直矩形或正方形效果最好。",
     step2_title: "設置 TikTok 標準參數",
@@ -476,7 +476,7 @@ const content: Record<string, GuideContent> = {
       "Haben Sie diese Promi-TikTok-Profile mit riesigen Bildern gesehen, die aus 9 oder 12 kleinen Videos bestehen? Heute zeige ich Ihnen, wie Sie das in Sekunden mit Easy Split machen.",
     step1_title: "Easy Split aufrufen & Hochladen",
     step1_desc_1: "Gehen Sie zuerst zu unserem kostenlosen Bildteilungstool",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "Ziehen Sie auf dem Hauptbildschirm das Bild, das Sie in ein Raster verwandeln möchten.",
     step1_tip:
@@ -527,7 +527,7 @@ const content: Record<string, GuideContent> = {
     step1_title: "Зайдите в Easy Split и загрузите",
     step1_desc_1:
       "Сначала перейдите к нашему бесплатному инструменту разделения изображений",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "На главном экране перетащите изображение, которое вы хотите превратить в сетку.",
     step1_tip:
@@ -575,7 +575,7 @@ const content: Record<string, GuideContent> = {
       "क्या आपने उन सेलिब्रिटी टिकटोक प्रोफाइल को देखा है जिसमें 9 या 12 छोटे वीडियो से बनी विशाल छवियां होती हैं? आज मैं आपको दिखाऊंगा कि Easy Split के साथ सेकंडों में इसे कैसे किया जाए।",
     step1_title: "Easy Split पर जाएं और अपलोड करें",
     step1_desc_1: "सबसे पहले, हमारे मुफ्त छवि विभाजन टूल पर जाएं",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "मुख्य स्क्रीन पर, उस छवि को खींचें और छोड़ें जिसे आप ग्रिड में बनाना चाहते हैं।",
     step1_tip:
@@ -625,7 +625,7 @@ const content: Record<string, GuideContent> = {
     step1_title: "Acesse o Easy Split e Carregue",
     step1_desc_1:
       "Primeiro, vá para nossa ferramenta gratuita de divisão de imagens",
-    step1_desc_2: "EasySplit.click",
+    step1_desc_2: "easy-split.pages.dev",
     step1_desc_3:
       "Na tela principal, arraste e solte a imagem que você deseja transformar em uma grade.",
     step1_tip:

@@ -144,10 +144,10 @@ const AboutSection = () => {
               {t.contact}
             </h4>
             <a
-              href="mailto:contact@easysplit.click"
+              href="mailto:hoangbinhana3@gmail.com"
               className="font-medium text-slate-300 hover:text-white transition-colors"
             >
-              contact@easysplit.click
+              hoangbinhana3@gmail.com
             </a>
           </div>
         </div> */}

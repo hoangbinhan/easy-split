@@ -1,5 +1,5 @@
 export const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://easysplit.click";
+  process.env.NEXT_PUBLIC_BASE_URL || "https://easy-split.pages.dev";
 
 export const lastModified = "2026-05-18";
 

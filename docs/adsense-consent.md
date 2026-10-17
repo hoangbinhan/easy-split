@@ -17,7 +17,7 @@ The custom banner is not a Google-certified CMP. This repository cannot
 inspect or publish messages inside the AdSense account.
 
 1. In AdSense, open **Privacy & messaging → European regulations**.
-2. Create or inspect the message for `easysplit.click` using Google's CMP.
+2. Create or inspect the message for `easy-split.pages.dev` using Google's CMP.
 3. Include consent, refusal and consent-management options, and publish it
    for EEA, UK and Switzerland traffic. Review the advertising configuration
    against the site's default of non-personalized ads.

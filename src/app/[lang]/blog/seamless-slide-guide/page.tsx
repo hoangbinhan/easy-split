@@ -27,14 +27,14 @@ export async function generateMetadata({
 
   const languages: Record<string, string> = {};
   (Object.keys(content) as Language[]).forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog/seamless-slide-guide")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/blog/seamless-slide-guide")}`;
   });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/blog/seamless-slide-guide")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/blog/seamless-slide-guide")}`,
       languages: languages,
     },
   };
@@ -78,7 +78,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "Do you have wide panoramic photos or beautiful landscapes? Don't let them shrink! Use TikTok's Photo Mode to create an 'infinite scroll' effect that looks amazing.",
     step1_title: "Prepare & Upload",
-    step1_desc: "Visit EasySplit.click and upload your wide image.",
+    step1_desc: "Visit easy-split.pages.dev and upload your wide image.",
     step1_tip:
       "Tip: The wider the image (Panorama), the better the slide effect.",
     step2_title: "Configure Splitting",
@@ -110,7 +110,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "Bạn có những bức ảnh phong cảnh rộng (Panorama) hoặc những bức tranh ngang cực đẹp? Đừng để nó bị thu nhỏ lại! Hãy dùng tính năng Photo Mode của TikTok để tạo hiệu ứng 'trượt vô tận' xem cực đã mắt.",
     step1_title: "Chuẩn bị ảnh & Upload",
-    step1_desc: "Truy cập EasySplit.click và tải lên bức ảnh ngang của bạn.",
+    step1_desc: "Truy cập easy-split.pages.dev và tải lên bức ảnh ngang của bạn.",
     step1_tip: "Mẹo: Ảnh càng dài (Panorama) thì hiệu ứng trượt càng đẹp.",
     step2_title: "Cấu hình cắt ảnh",
     step2_desc:
@@ -142,7 +142,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "넓은 파노라마 사진이나 아름다운 풍경 사진이 있나요? 작게 줄이지 마세요! 틱톡의 사진 모드를 사용하여 놀라워 보이는 '무한 스크롤' 효과를 만드세요.",
     step1_title: "준비 및 업로드",
-    step1_desc: "EasySplit.click을 방문하여 넓은 이미지를 업로드하세요.",
+    step1_desc: "easy-split.pages.dev을 방문하여 넓은 이미지를 업로드하세요.",
     step1_tip: "팁: 이미지(파노라마)가 넓을수록 슬라이드 효과가 더 좋습니다.",
     step2_title: "분할 구성",
     step2_desc:
@@ -174,7 +174,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "広いパノラマ写真や美しい風景写真はありますか？小さくしないでください！TikTokのフォトモードを使用して、驚くほどに見える「無限スクロール」効果を作成します。",
     step1_title: "準備とアップロード",
-    step1_desc: "EasySplit.clickにアクセスして、広い画像をアップロードします。",
+    step1_desc: "easy-split.pages.devにアクセスして、広い画像をアップロードします。",
     step1_tip: "ヒント：画像（パノラマ）が広いほど、スライド効果が向上します。",
     step2_title: "分割の設定",
     step2_desc:
@@ -206,7 +206,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "คุณมีภาพถ่ายพาโนรามากว้างหรือทิวทัศน์ที่สวยงามหรือไม่? อย่าปล่อยให้มันหดตัว! ใช้โหมดภาพถ่ายของ TikTok เพื่อสร้างเอฟเฟกต์ 'เลื่อนไม่สิ้นสุด' ที่ดูน่าทึ่ง",
     step1_title: "เตรียมและอัปโหลด",
-    step1_desc: "ไปที่ EasySplit.click และอัปโหลดภาพกว้างของคุณ",
+    step1_desc: "ไปที่ easy-split.pages.dev และอัปโหลดภาพกว้างของคุณ",
     step1_tip: "เคล็ดลับ: ยิ่งภาพกว้าง (พาโนรามา) เอฟเฟกต์สไลด์ก็จะยิ่งดีขึ้น",
     step2_title: "กำหนดค่าการแยก",
     step2_desc:
@@ -237,7 +237,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "Apakah Anda memiliki foto panorama lebar atau pemandangan indah? Jangan biarkan mengecil! Gunakan Mode Foto TikTok untuk membuat efek 'gulir tak terbatas' yang terlihat menakjubkan.",
     step1_title: "Persiapkan & Unggah",
-    step1_desc: "Kunjungi EasySplit.click dan unggah gambar lebar Anda.",
+    step1_desc: "Kunjungi easy-split.pages.dev dan unggah gambar lebar Anda.",
     step1_tip:
       "Tips: Semakin lebar gambar (Panorama), semakin baik efek slide-nya.",
     step2_title: "Konfigurasi Pemecahan",
@@ -271,7 +271,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "¿Tienes fotos panorámicas amplias o hermosos paisajes? ¡No dejes que se encojan! Usa el Modo Foto de TikTok para crear un efecto de 'desplazamiento infinito' que se ve increíble.",
     step1_title: "Preparar y Subir",
-    step1_desc: "Visita EasySplit.click y sube tu imagen amplia.",
+    step1_desc: "Visita easy-split.pages.dev y sube tu imagen amplia.",
     step1_tip:
       "Consejo: Cuanto más ancha sea la imagen (Panorámica), mejor será el efecto de deslizamiento.",
     step2_title: "Configurar División",
@@ -305,7 +305,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "您有宽幅全景照片或美丽的风景照吗？别让它们缩水！使用 TikTok 的照片模式创建令人惊叹的“无限滚动”效果。",
     step1_title: "准备并上传",
-    step1_desc: "访问 EasySplit.click 并上传您的宽幅图片。",
+    step1_desc: "访问 easy-split.pages.dev 并上传您的宽幅图片。",
     step1_tip: "提示：图片（全景）越宽，滑动效果越好。",
     step2_title: "配置分割",
     step2_desc: "要创建水平滑动效果，我们需要将原始图片垂直分割成相等的部分。",
@@ -333,7 +333,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "你有寬幅全景照片或漂亮的風景照嗎？別讓它們被縮小！使用 TikTok 的照片模式，打造看起來超驚豔的「無限滑動」效果。",
     step1_title: "準備並上傳",
-    step1_desc: "前往 EasySplit.click 並上傳你的寬幅圖片。",
+    step1_desc: "前往 easy-split.pages.dev 並上傳你的寬幅圖片。",
     step1_tip: "小技巧：圖片越寬（全景圖），滑動效果就越好。",
     step2_title: "設定切割方式",
     step2_desc:
@@ -363,7 +363,7 @@ const content: Record<string, GuideContent> = {
       "Haben Sie breite Panoramafotos oder schöne Landschaftsbilder? Lassen Sie sie nicht schrumpfen! Verwenden Sie den Foto-Modus von TikTok, um einen erstaunlichen „Endlos-Scroll“-Effekt zu erzielen.",
     step1_title: "Vorbereiten und Hochladen",
     step1_desc:
-      "Besuchen Sie EasySplit.click und laden Sie Ihr breites Bild hoch.",
+      "Besuchen Sie easy-split.pages.dev und laden Sie Ihr breites Bild hoch.",
     step1_tip:
       "Tipp: Je breiter das Bild (Panorama), desto besser der Slide-Effekt.",
     step2_title: "Aufteilung konfigurieren",
@@ -398,7 +398,7 @@ const content: Record<string, GuideContent> = {
       "У вас есть широкие панорамные фотографии или красивые пейзажи? Не позволяйте им уменьшаться! Используйте фоторежим TikTok, чтобы создать потрясающий эффект бесконечной прокрутки.",
     step1_title: "Подготовка и загрузка",
     step1_desc:
-      "Перейдите на EasySplit.click и загрузите свое широкое изображение.",
+      "Перейдите на easy-split.pages.dev и загрузите свое широкое изображение.",
     step1_tip:
       "Совет: Чем шире изображение (панорама), тем лучше эффект слайда.",
     step2_title: "Настройка разделения",
@@ -431,7 +431,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "क्या आपके पास वाइड पैनोरमिक फ़ोटो या सुंदर लैंडस्केप हैं? उन्हें छोटा न होने दें! TikTok के फ़ोटो मोड का इस्तेमाल करके एक 'इनफ़िनिट स्क्रॉल' इफ़ेक्ट बनाएं जो शानदार दिखे।",
     step1_title: "Prepare & Upload",
-    step1_desc: "EasySplit.click पर जाएं और अपनी वाइड इमेज अपलोड करें।",
+    step1_desc: "easy-split.pages.dev पर जाएं और अपनी वाइड इमेज अपलोड करें।",
     step1_tip:
       "टिप: इमेज (पैनोरमा) जितनी वाइड होगी, स्लाइड इफ़ेक्ट उतना ही बेहतर होगा।",
     step2_title: "Configure Splitting",
@@ -464,7 +464,7 @@ const content: Record<string, GuideContent> = {
     intro:
       "Você tem fotos panorâmicas largas ou paisagens bonitas? Não deixe que elas fiquem pequenas! Use o Modo Foto do TikTok para criar um efeito de 'rolagem infinita' que fica incrível.",
     step1_title: "Preparar e Enviar",
-    step1_desc: "Acesse EasySplit.click e envie sua imagem larga.",
+    step1_desc: "Acesse easy-split.pages.dev e envie sua imagem larga.",
     step1_tip:
       "Dica: Quanto mais larga a imagem (Panorama), melhor será o efeito de deslizamento.",
     step2_title: "Configurar a Divisão",
@@ -545,7 +545,7 @@ export default async function SeamlessSlideGuide({
         <p>
           {t.step1_desc}{" "}
           <Link href={localePath(lang)} className="text-blue-600 hover:underline font-bold">
-            EasySplit.click
+            easy-split.pages.dev
           </Link>
         </p>
         <p>

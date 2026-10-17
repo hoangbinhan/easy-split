@@ -29,14 +29,14 @@ export async function generateMetadata({
   ];
   const languages: Record<string, string> = {};
   supportedLocales.forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/cookie-policy")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/cookie-policy")}`;
   });
 
   return {
     title: `${t.title} | Easy Split`,
     description: t.intro.substring(0, 160),
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/cookie-policy")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/cookie-policy")}`,
       languages: languages,
     },
   };

@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "https://easysplit.click",
+    process.env.NEXT_PUBLIC_BASE_URL || "https://easy-split.pages.dev",
   ),
   title: "Easy Split - Split Photos for TikTok & Instagram",
   description:

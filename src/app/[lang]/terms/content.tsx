@@ -62,10 +62,10 @@ export default function TermsContent() {
             <p>
               {t.terms_contact_desc}{" "}
               <a
-                href="mailto:contact@easysplit.click"
+                href="mailto:hoangbinhana3@gmail.com"
                 className="font-bold underline hover:text-blue-600"
               >
-                contact@easysplit.click
+                hoangbinhana3@gmail.com
               </a>
               .
             </p>

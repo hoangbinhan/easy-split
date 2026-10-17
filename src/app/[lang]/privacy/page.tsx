@@ -14,14 +14,14 @@ export async function generateMetadata({
   const t = translations[lang as Language] || translations["en"];
   const languages: Record<string, string> = {};
   (Object.keys(translations) as Language[]).forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/privacy")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/privacy")}`;
   });
 
   return {
     title: `${t.privacy_title} | Easy Split`,
     description: t.privacy_commitment_desc,
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/privacy")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/privacy")}`,
       languages: languages,
     },
   };

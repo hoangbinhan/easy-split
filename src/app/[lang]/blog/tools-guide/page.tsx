@@ -23,14 +23,14 @@ export async function generateMetadata(props: {
 
   const languages: Record<string, string> = {};
   (Object.keys(content) as Language[]).forEach((l) => {
-    languages[languageTag(l)] = `https://easysplit.click${localePath(l, "/blog/tools-guide")}`;
+    languages[languageTag(l)] = `https://easy-split.pages.dev${localePath(l, "/blog/tools-guide")}`;
   });
 
   return {
     title: `${post?.title} - Easy Split`,
     description: post?.excerpt,
     alternates: {
-      canonical: `https://easysplit.click${localePath(lang, "/blog/tools-guide")}`,
+      canonical: `https://easy-split.pages.dev${localePath(lang, "/blog/tools-guide")}`,
       languages: languages,
     },
   };
